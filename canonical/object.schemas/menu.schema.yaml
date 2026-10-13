@@ -1,0 +1,55 @@
+id: prismata.core.schema.menu
+udi: prismata.core.schema.menu
+kind: schema
+version: 1.0.0
+tenant: null
+source:
+  path: canonical/object.schemas/menu.schema.yaml
+  repo: PrismataCore
+  imported_at: "2026-10-13T00:00:00Z"
+metadata:
+  name: Menu
+  description: Canonical menu structure with header, items, ordering, and layout semantics.
+  tags:
+    - menu
+    - navigation
+    - layout
+content:
+  type: object
+  fields:
+    id:
+      type: string
+      description: Menu identifier.
+    name:
+      type: string
+      description: Menu name.
+    header:
+      type: [string, "null"]
+      description: Reference to a canonical header UDI.
+    items:
+      type: array
+      items:
+        type: string
+      description: Ordered menu item UDI values.
+    layout:
+      type: object
+      description: Layout metadata.
+  required:
+    - id
+    - name
+    - items
+    - layout
+relations:
+  depends_on:
+    - prismata.core.schema.header
+    - prismata.core.schema.menu-item
+    - prismata.core.schema.pane
+  provides:
+    - prismata.core.schema.menu
+  conflicts_with: []
+validation:
+  schema: prismata.core.schema.menu
+  status: valid
+  errors: []
+notes:
+  - Menu structure is limited to canonical schema semantics and does not include runtime preview or SDK logic.

@@ -1,0 +1,79 @@
+id: prismata.core.schema.cmf
+udi: prismata.core.schema.cmf
+kind: schema
+version: 1.0.0
+tenant: null
+source:
+  path: cmf/cmf.schema.yaml
+  repo: PrismataCore
+  imported_at: "2026-10-13T00:00:00Z"
+metadata:
+  name: CMF envelope
+  description: Canonical Metadata Format envelope shared by all PrismataCore schema objects.
+  tags:
+    - cmf
+    - schema
+    - core
+content:
+  type: object
+  fields:
+    id:
+      type: string
+      description: Stable object identifier.
+    udi:
+      type: string
+      description: Canonical Prismata UDI.
+    kind:
+      type: string
+      enum: [schema]
+      description: CMF object kind.
+    version:
+      type: string
+      description: Semantic version of the schema.
+    tenant:
+      type: [string, "null"]
+      description: Tenant scope. Must be null in PrismataCore canonical schemas.
+    source:
+      type: object
+      description: Provenance and import metadata.
+    metadata:
+      type: object
+      description: Schema metadata payload.
+    content:
+      type: object
+      description: Schema definition payload.
+    relations:
+      type: object
+      description: Relationship metadata for dependencies and capability mapping.
+    validation:
+      type: object
+      description: Validation state and issues.
+    notes:
+      type: array
+      items:
+        type: string
+      description: Notes relating to schema generation and compliance.
+  required:
+    - id
+    - udi
+    - kind
+    - version
+    - tenant
+    - source
+    - metadata
+    - content
+    - relations
+    - validation
+    - notes
+relations:
+  depends_on:
+    - prismata.core.schema.schema
+  provides:
+    - prismata.core.schema.cmf
+  conflicts_with: []
+validation:
+  schema: prismata.core.schema.cmf
+  status: valid
+  errors: []
+notes:
+  - Canonical envelope definition for all PrismataCore CMF objects.

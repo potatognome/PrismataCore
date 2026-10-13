@@ -1,0 +1,60 @@
+id: prismata.core.schema.menu-item
+udi: prismata.core.schema.menu-item
+kind: schema
+version: 1.0.0
+tenant: null
+source:
+  path: canonical/object.schemas/menu-item.schema.yaml
+  repo: PrismataCore
+  imported_at: "2026-10-13T00:00:00Z"
+metadata:
+  name: Menu Item
+  description: Canonical menu item schema including UDI, capability, type, order, action, and selection semantics.
+  tags:
+    - menu
+    - item
+    - interaction
+content:
+  type: object
+  fields:
+    id:
+      type: string
+      description: Menu item identifier.
+    udi:
+      type: string
+      description: Canonical UDI for the menu item definition.
+    capability:
+      type: string
+      description: Capability UDI or semantic capability handle.
+    type:
+      type: string
+      description: Menu item type.
+    order:
+      type: integer
+      description: Menu ordering index.
+    selection_method:
+      type: string
+      description: Selection method used when the item is activated.
+    action:
+      type: string
+      description: Canonical action handle.
+  required:
+    - id
+    - udi
+    - capability
+    - type
+    - order
+    - selection_method
+    - action
+relations:
+  depends_on:
+    - prismata.core.schema.menu
+  provides:
+    - prismata.core.schema.menu-item
+  conflicts_with: []
+validation:
+  schema: prismata.core.schema.menu-item
+  status: valid
+  errors: []
+notes:
+  - The menu-item schema includes the required capability, ordering, and action fields without tenant or preview-specific data.

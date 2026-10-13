@@ -1,0 +1,61 @@
+id: prismata.core.schema.pane
+udi: prismata.core.schema.pane
+kind: schema
+version: 1.0.0
+tenant: null
+source:
+  path: canonical/object.schemas/pane.schema.yaml
+  repo: PrismataCore
+  imported_at: "2026-10-13T00:00:00Z"
+metadata:
+  name: Pane
+  description: Canonical pane object schema including layout, padding, border, and colour roles.
+  tags:
+    - pane
+    - layout
+    - core
+content:
+  type: object
+  fields:
+    id:
+      type: string
+      description: Pane identifier.
+    name:
+      type: string
+      description: Pane name.
+    layout:
+      type: object
+      description: Spatial layout instructions.
+    padding:
+      type: object
+      description: Padding settings.
+    border:
+      type: object
+      description: Border configuration.
+    colour_role:
+      type: string
+      description: Reference to a canonical colour role UDI.
+    header:
+      type: [string, "null"]
+      description: Optional header UDI.
+  required:
+    - id
+    - name
+    - layout
+    - padding
+    - border
+    - colour_role
+relations:
+  depends_on:
+    - prismata.core.schema.header
+    - prismata.core.schema.border-role
+    - prismata.core.schema.colour-role
+  provides:
+    - prismata.core.schema.pane
+  conflicts_with: []
+validation:
+  schema: prismata.core.schema.pane
+  status: valid
+  errors: []
+notes:
+  - Canonical pane object without preview-engine execution semantics.

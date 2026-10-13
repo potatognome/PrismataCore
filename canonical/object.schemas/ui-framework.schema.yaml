@@ -1,0 +1,49 @@
+id: prismata.core.schema.ui-framework
+udi: prismata.core.schema.ui-framework
+kind: schema
+version: 1.0.0
+tenant: null
+source:
+  path: canonical/object.schemas/ui-framework.schema.yaml
+  repo: PrismataCore
+  imported_at: "2026-10-13T00:00:00Z"
+metadata:
+  name: UI Framework
+  description: Canonical UI grammar and component definitions for PrismataCore schema consumers.
+  tags:
+    - ui
+    - framework
+    - grammar
+content:
+  type: object
+  fields:
+    id:
+      type: string
+      description: Framework identifier.
+    name:
+      type: string
+      description: Framework name.
+    components:
+      type: object
+      description: Canonical component definitions.
+    grammar:
+      type: object
+      description: UI grammar model.
+  required:
+    - id
+    - name
+    - components
+    - grammar
+relations:
+  depends_on:
+    - prismata.core.schema.pane
+    - prismata.core.schema.menu
+  provides:
+    - prismata.core.schema.ui-framework
+  conflicts_with: []
+validation:
+  schema: prismata.core.schema.ui-framework
+  status: valid
+  errors: []
+notes:
+  - Defines the canonical UI grammar without rendering logic or SDK preview behaviour.

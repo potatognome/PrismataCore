@@ -1,0 +1,49 @@
+id: prismata.core.schema.manifest
+udi: prismata.core.schema.manifest
+kind: schema
+version: 1.0.0
+tenant: null
+source:
+  path: canonical/core.schemas/manifest.schema.yaml
+  repo: PrismataCore
+  imported_at: "2026-10-13T00:00:00Z"
+metadata:
+  name: Manifest
+  description: Canonical manifest schema for CMF bundle declarations in PrismataCore.
+  tags:
+    - manifest
+    - cmf
+    - schema
+content:
+  type: object
+  fields:
+    name:
+      type: string
+      description: Manifest label.
+    version:
+      type: string
+      description: Manifest version.
+    schemas:
+      type: array
+      items:
+        type: string
+      description: UDI list of included canonical schemas.
+    description:
+      type: [string, "null"]
+      description: Optional manifest description.
+  required:
+    - name
+    - version
+    - schemas
+relations:
+  depends_on:
+    - prismata.core.schema.schema
+  provides:
+    - prismata.core.schema.manifest
+  conflicts_with: []
+validation:
+  schema: prismata.core.schema.manifest
+  status: valid
+  errors: []
+notes:
+  - Manifest envelope for canonical PrismataCore CMF bundles.

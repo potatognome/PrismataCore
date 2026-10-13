@@ -1,0 +1,51 @@
+id: prismata.core.schema.colour-role
+udi: prismata.core.schema.colour-role
+kind: schema
+version: 1.0.0
+tenant: null
+source:
+  path: canonical/object.schemas/colour-role.schema.yaml
+  repo: PrismataCore
+  imported_at: "2026-10-13T00:00:00Z"
+metadata:
+  name: Colour Role
+  description: Mapping from semantic roles to canonical colour tokens.
+  tags:
+    - colour
+    - role
+    - semantics
+content:
+  type: object
+  fields:
+    id:
+      type: string
+      description: Role identifier.
+    name:
+      type: string
+      description: Semantic role name.
+    role:
+      type: string
+      description: Canonical semantic role key.
+    colour:
+      type: string
+      description: Canonical colour token.
+    fallback:
+      type: string
+      description: Fallback colour token when a semantic mapping is unresolved.
+  required:
+    - id
+    - name
+    - role
+    - colour
+relations:
+  depends_on:
+    - prismata.core.schema.colour-scheme
+  provides:
+    - prismata.core.schema.colour-role
+  conflicts_with: []
+validation:
+  schema: prismata.core.schema.colour-role
+  status: valid
+  errors: []
+notes:
+  - Canonical semantic-to-colour mapping used by panes, borders, and menus.
