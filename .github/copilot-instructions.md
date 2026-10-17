@@ -1,14 +1,19 @@
 # PrismataCore — Canonical Schema Generation Instructions
 
+## Last Updated: 2026-10-14
+
 ## Purpose
 Agents must generate the canonical PrismataCore schema set and core validators.
 All schemas MUST conform to the Canonical Metadata Format (CMF) and runtime
 Prismata Schematic Object (PSO) model.
 
+## Extensions to this Specification
+The folder copilot-instructions.d contains additional instruction files that extend or override the base instructions for specific scenarios or components.
+
 ## Mandatory Requirements
-1. Every schema MUST include a valid UDI field.
-2. Every schema MUST be wrapped in CMF format.
-3. Every schema MUST produce a valid PSO when loaded.
+1. Every object & every schema MUST be wrapped in CMF format.
+2. Every object & every schema MUST include the required fields: id, udi, kind, version, tenant, source, metadata, relations, validation, notes, and content.
+3. Every object & every schema MUST produce a valid PSO when loaded.
 4. Core validators MUST validate:
    - CMF envelope correctness
    - UDI correctness
@@ -112,3 +117,18 @@ Validators MUST operate ONLY on CMF and PSO envelopes.
 - No SDK tooling
 - No preview engine
 - No UI rendering logic
+
+## UDI Compliance
+
+All artifacts produced or maintained in PrismataCore must comply with the project's UDI policy. Key rules (summary):
+
+- UDIs are four-segment, dot-separated identifiers of the form `namespace.scope.kind.slug` and must match the regex `^[a-z][a-z0-9-]*\.[a-z][a-z0-9-]*\.[a-z][a-z0-9-]*\.[a-z][a-z0-9-]+$`.
+- UDIs must be deterministic, derived from folder scope and `metadata.name` or filename; they must not contain randomness, timestamps, counters, or uppercase letters.
+- For canonical schemas use the pattern: `prismata.core.schema.<basename>` (e.g., `prismata.core.schema.border-pattern`).
+- For registry entries use a deterministic slug combining artifact type and name in kebab-case as the slug, and `registry` as the kind. Example: `prismata.core.registry.border-pattern-single-line`.
+- `tenant` must remain `null` for canonical artifacts.
+- Generators and migration scripts MUST validate UDIs against the compliance policy and fix non-conforming UDIs before committing changes.
+
+See the authoritative UDI specification at: `./copilot-instructions.d/udi-compliance-policy.md` for full rules, mapping tables, and the canonical regex.
+
+When migrating existing artifacts, normalize UDIs to the four-segment form and ensure no collisions. Tests and validators should flag the following drift categories: `MISSING_UDI`, `INVALID_UDI_PATTERN`, `INVALID_NAMESPACE`, `INVALID_KIND`, `INVALID_UDI_ORDERING`, `UDI_COLLISION`.

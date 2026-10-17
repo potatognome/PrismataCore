@@ -3,39 +3,50 @@ udi: prismata.core.schema.menu
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/menu.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Menu
-  description: Canonical menu structure with header, items, ordering, and layout semantics.
+  name: Menu Schema
+  target_kind: menu
+  naming:
+    file_suffix: .menu.object.yaml
+  description: Compositional menu structure with header, items, ordering, and layout semantics.
   tags:
     - menu
     - navigation
     - layout
+
+relations:
+  depends_on:
+    - prismata.core.schema.header
+    - prismata.core.schema.menu-item
+    - prismata.core.schema.pane
+  provides:
+    - prismata.core.schema.menu
+  conflicts_with: []
+
+validation:
+  schema: prismata.core.schema.menu
+  status: valid
+  errors: []
+
+notes:
+  - Menu structure is limited to canonical schema semantics and does not include runtime preview or SDK logic.
+  - Each item in the menu composition must reference a valid UDI.
+  - UDI must be one of the types `menu-item`, `menu`, `header`.
+
 content:
-  type: object
+  type: object-composition
   fields:
-    id:
-      type: string
-      description: Menu identifier.
-    name:
-      type: string
-      description: Menu name.
-    header:
-      type: [string, "null"]
-      description: Reference to a canonical header UDI.
     items:
       type: array
       items:
         type: string
-      description: Ordered menu item UDI values.
-    layout:
-      type: object
-      description: Layout metadata.
+      description: Required. List of UDI strings of the objects representing the menu items.
+
   required:
-    - id
-    - name
     - items
-    - layout

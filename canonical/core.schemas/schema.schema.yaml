@@ -3,56 +3,88 @@ udi: prismata.core.schema.schema
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/core.schemas/schema.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Schema
+  name: Schema Schema
+  target_kind: schema
+  naming:
+    file_suffix: .schema.yaml
   description: Meta-schema describing the canonical PrismataCore schema envelope and behavior.
   tags:
     - schema
     - cmf
     - meta
+
+relations:
+  depends_on:
+    - prismata.core.schema.manifest
+  provides:
+    - prismata.core.schema.schema
+  conflicts_with: []
+
+validation:
+  schema: prismata.core.schema.schema
+  status: valid
+  errors: []
+
+notes:
+  - Canonical meta-schema for PrismataCore CMF objects.
+
 content:
   type: object
   fields:
     id:
       type: string
       description: Canonical schema identifier.
+
     udi:
       type: string
       description: Canonical Prismata UDI.
+
     kind:
       type: string
       enum: [schema]
       description: CMF object kind.
+
     version:
       type: string
       description: Semantic version.
+
     tenant:
       type: [string, "null"]
       description: Tenant scope. Must be null for canonical PrismataCore schemas.
+
     source:
       type: object
       description: Provenance metadata.
+
     metadata:
       type: object
       description: Human-readable schema metadata.
-    content:
-      type: object
-      description: Schema-specific payload.
+
     relations:
       type: object
       description: Dependency and capability relations.
+
     validation:
       type: object
       description: Validation state and errors.
+
     notes:
       type: array
       items:
         type: string
       description: Compliance notes.
+
+    content:
+      type: object
+      description: Schema-specific payload.
+
   required:
     - id
     - udi
@@ -61,19 +93,7 @@ content:
     - tenant
     - source
     - metadata
-    - content
     - relations
     - validation
     - notes
-relations:
-  depends_on:
-    - prismata.core.schema.manifest
-  provides:
-    - prismata.core.schema.schema
-  conflicts_with: []
-validation:
-  schema: prismata.core.schema.schema
-  status: valid
-  errors: []
-notes:
-  - Canonical meta-schema for PrismataCore CMF objects.
+    - content

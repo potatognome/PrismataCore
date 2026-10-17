@@ -3,46 +3,74 @@ udi: prismata.core.schema.header
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/header.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Header
+  name: Header Schema
+  target_kind: header
+  naming:
+    file_suffix: .header.object.yaml
   description: Canonical header schema for menus and panes.
   tags:
     - header
     - layout
     - core
-content:
-  type: object
-  fields:
-    id:
-      type: string
-      description: Header identifier.
-    title:
-      type: string
-      description: Header title text.
-    level:
-      type: integer
-      description: Header structural level.
-    alignment:
-      type: string
-      description: Text alignment semantics.
-  required:
-    - id
-    - title
-    - level
-    - alignment
+
 relations:
   depends_on:
     - prismata.core.schema.colour-role
   provides:
     - prismata.core.schema.header
   conflicts_with: []
+
 validation:
   schema: prismata.core.schema.header
   status: valid
   errors: []
+
 notes:
   - Canonical header structure for panes and menu containers.
+
+content:
+  type: object
+  fields:
+    title:
+      type: string
+      description: Optional. Header title text. Defaults to an empty string, creating a spacer.
+    level:
+      type: integer
+      description: Optional. Header structural level. Sorts low (super) to high (sub). Defaults to align with the surrounding content.
+    padding:
+      type: integer
+      minimum: 1
+      description: Optional. Padding for the header. Defaults to 1 (row).
+    inset:
+      type: integer
+      minimum: 0
+      description: Optional. Inset for the header. Defaults to 0 (no inset).
+    alignment:
+      type: string
+      description: Optional. Text alignment semantics. Defaults to left alignment.
+    border_pattern:
+      type: string
+      description: Optional. Border pattern for the header. Defaults to no border.
+    border_role:
+      type: string
+      description: Optional. Border role for the header. Defaults to the default border role for colour and styling.
+    colour_role:
+      type: string
+      description: Optional. Colour role for the header text. Defaults to the primary space colour role.
+    colour_scheme:
+      type: string
+      description: Optional. Colour scheme for the header background. Defaults to the default colour scheme.
+    header_content:
+      type: array
+      items:
+        type: string
+      description: Optional. Custom content for the header. Defaults to an empty string.
+
+  required: []

@@ -3,37 +3,23 @@ udi: prismata.core.schema.ui-framework
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/ui-framework.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: UI Framework
+  name: UI Framework Schema
+  target_kind: ui-framework
+  naming:
+    file_suffix: .ui-framework.object.yaml
   description: Canonical UI grammar and component definitions for PrismataCore schema consumers.
   tags:
     - ui
     - framework
     - grammar
-content:
-  type: object
-  fields:
-    id:
-      type: string
-      description: Framework identifier.
-    name:
-      type: string
-      description: Framework name.
-    components:
-      type: object
-      description: Canonical component definitions.
-    grammar:
-      type: object
-      description: UI grammar model.
-  required:
-    - id
-    - name
-    - components
-    - grammar
+
 relations:
   depends_on:
     - prismata.core.schema.pane
@@ -41,9 +27,78 @@ relations:
   provides:
     - prismata.core.schema.ui-framework
   conflicts_with: []
+
 validation:
   schema: prismata.core.schema.ui-framework
   status: valid
   errors: []
+
 notes:
   - Defines the canonical UI grammar without rendering logic or SDK preview behaviour.
+
+content:
+  type: object
+  fields:
+    # Style properties for the UI framework.
+    colour_scheme:
+      type: string
+      description: Optional. Colour scheme for the UI framework. Defaults to 'default'.
+    border_pattern:
+      type: string
+      description: Optional. Border pattern for the UI framework. Defaults to 'single-line'.
+
+    panes:
+      type: array
+      items:
+        type: string
+      description: Required. List of UDI strings of the pane objects.
+    menus:
+      type: array
+      items:
+        type: string
+      description: Optional. List of UDI strings of the menu objects.
+
+    pane_bindings:
+      type: array
+      items:
+        type: object
+        fields:
+          pane:
+            type: string
+            description: Required. UDI of the pane.
+          pane_visibility_mode:
+            type: string
+            description: Optional. Visibility mode for the pane. Defaults to 'visible'.
+          pane_visibility_condition:
+            type: array
+            items:
+              type: string
+            description: Only required when pane_visibility_mode is conditional. Condition for the visibility of the pane. Defaults to 'always'.
+          pane_enable_mode:
+            type: string
+            description: Optional. Enable mode for the pane. Defaults to 'enabled'.
+          pane_enable_condition:
+            type: array
+            items:
+              type: string
+            description: Only required when pane_enable_mode is conditional. Condition for the enable state of the pane. Defaults to 'always'.
+          menu:
+            type: string
+            description: Optional. UDI of the menu bound to the pane.
+          menu_visibility_mode:
+            type: string
+            description: Optional. Visibility mode for the menu. Defaults to 'visible'.
+          menu_visibility_condition:
+            type: array
+            items:
+              type: string
+            description: Only required when menu_visibility_mode is conditional. Condition for the visibility of the menu. Defaults to 'always'.
+          menu_enable_mode:
+            type: string
+            description: Optional. Enable mode for the menu. Defaults to 'enabled'.
+          menu_enable_condition:
+            type: array
+            items:
+              type: string
+            description: Only required when menu_enable_mode is conditional. Condition for the enable state of the menu. Defaults to 'always'.
+      description: Optional. List of pane-to-menu bindings.

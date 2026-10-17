@@ -1,0 +1,30 @@
+id: prismata.core.schema.colour-scheme
+udi: prismata.core.schema.colour-scheme
+kind: schema
+version: "1.0.0"
+tenant: null
+
+source:
+  path: /canonical/core.schemas/colour-scheme.schema.yaml
+  repo: core
+  imported_at: "2026-01-01T00:00:00Z"
+
+metadata:
+  name: Colour Scheme
+  description: Base colour scheme
+  tags: ["core", "colour"]
+relations:
+  depends_on: []
+  provides: []
+  conflicts_with: []
+
+validation:
+  schema: prismata.core.schema.schema
+  status: valid
+  errors: []
+
+notes: []
+
+content:
+  # missing fields and required
+  something_else: {}

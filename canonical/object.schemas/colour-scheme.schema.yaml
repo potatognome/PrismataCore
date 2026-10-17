@@ -3,17 +3,38 @@ udi: prismata.core.schema.colour-scheme
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/colour-scheme.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Colour Scheme
+  name: Colour Scheme Schema
+  target_kind: colour-scheme
+  naming:
+    file_suffix: .colour-scheme.object.yaml
   description: Canonical colour palette structure including base colours, semantic colours, and gradients.
   tags:
     - colour
     - palette
     - core
+
+relations:
+  depends_on:
+    - prismata.core.schema.colour-role
+    - prismata.core.schema.chromascheme
+  provides:
+    - prismata.core.schema.colour-scheme
+  conflicts_with: []
+
+validation:
+  schema: prismata.core.schema.colour-scheme
+  status: valid
+  errors: []
+notes:
+  - Canonical colour palette abstraction for rendering and semantic role mapping.
+
 content:
   type: object
   fields:
@@ -32,22 +53,13 @@ content:
     gradients:
       type: object
       description: Gradient definitions.
+    roles:
+      type: object
+      description: Semantic-to-colour role mappings (migrated from Prismata Meta `roles`).
   required:
     - id
     - name
     - base
     - semantic
     - gradients
-relations:
-  depends_on:
-    - prismata.core.schema.colour-role
-    - prismata.core.schema.chromascheme
-  provides:
-    - prismata.core.schema.colour-scheme
-  conflicts_with: []
-validation:
-  schema: prismata.core.schema.colour-scheme
-  status: valid
-  errors: []
-notes:
-  - Canonical colour palette abstraction for rendering and semantic role mapping.
+    - roles

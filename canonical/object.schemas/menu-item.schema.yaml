@@ -3,58 +3,95 @@ udi: prismata.core.schema.menu-item
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/menu-item.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Menu Item
+  name: Menu-Item Schema
+  target_kind: menu-item
+  naming:
+    file_suffix: .menu-item.object.yaml
   description: Canonical menu item schema including UDI, capability, type, order, action, and selection semantics.
   tags:
     - menu
     - item
     - interaction
-content:
-  type: object
-  fields:
-    id:
-      type: string
-      description: Menu item identifier.
-    udi:
-      type: string
-      description: Canonical UDI for the menu item definition.
-    capability:
-      type: string
-      description: Capability UDI or semantic capability handle.
-    type:
-      type: string
-      description: Menu item type.
-    order:
-      type: integer
-      description: Menu ordering index.
-    selection_method:
-      type: string
-      description: Selection method used when the item is activated.
-    action:
-      type: string
-      description: Canonical action handle.
-  required:
-    - id
-    - udi
-    - capability
-    - type
-    - order
-    - selection_method
-    - action
+
 relations:
   depends_on:
     - prismata.core.schema.menu
   provides:
     - prismata.core.schema.menu-item
   conflicts_with: []
+
 validation:
   schema: prismata.core.schema.menu-item
   status: valid
   errors: []
+
 notes:
   - The menu-item schema includes the required capability, ordering, and action fields without tenant or preview-specific data.
+
+content:
+  type: object
+  fields:
+    # Visual and styling fields - headers, icons, borders, and colour schemes.  Only label is required.
+    label:
+      type: string
+      description: Required. Visible menu-item label.
+    icon:
+      type: string
+      description: Optional. Menu item icon identifier appears with label if specified. Default is none.
+    border_pattern:
+      type: string
+      description: Optional. Menu item border pattern identifier.  Default is none.
+    border_role:
+      type: string
+      description: Optional. Menu item border colour & style role identifier.  Default border colour & style role will be applied if not specified.
+    colour_scheme:
+      type: string
+      description: Optional. Menu item colour scheme identifier.  Default colour scheme will be applied if not specified.
+    header:
+      type: object
+      description: Optional. Menu item header object containing text and styling information.  Rarely used but could be used in testing or debugging scenarios.
+    tooltip:
+      type: string
+      description: Optional. Tooltip text for the menu item.
+
+    # Visibility and enablement fields.  All optional.
+    visibility_mode:
+      type: string
+      description: Optional. Menu item visibility mode (e.g., static, conditional).  Default is static (always on).
+    visibility_condition:
+      type: string
+      description: Optional. Condition under which the menu item is visible.  Applies only when visibility_mode is set to conditional.
+    enable_mode:
+      type: string
+      description: Optional. Menu item enable mode (e.g., enabled, conditional, disabled).  Default is enabled.
+    enable_condition:
+      type: string
+      description: Optional. Condition under which the menu item is enabled.  Applies only when enable_mode is set to conditional.
+
+    # Ordering, selection, action and capability fields.  Capability is required.
+    order:
+      type: integer
+      description: Optional. Numeric menu ordering index.  Default order is based on menu object.
+    hotkey:
+      type: string
+      description: Optional. Menu-item keyboard shortcut for the menu item.
+    selection_method:
+      type: string
+      description: Optional. Selection method used when the item is activated.
+    action:
+      type: string
+      description: Optional. Canonical action handle.
+    capability:
+      type: string
+      description: Required. UDI capability for the menu item.
+
+  required:
+    - label
+    - capability

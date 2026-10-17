@@ -3,48 +3,23 @@ udi: prismata.core.schema.pane
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/pane.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Pane
+  name: Pane Schema
+  target_kind: pane
+  naming:
+    file_suffix: .pane.object.yaml
   description: Canonical pane object schema including layout, padding, border, and colour roles.
   tags:
     - pane
     - layout
     - core
-content:
-  type: object
-  fields:
-    id:
-      type: string
-      description: Pane identifier.
-    name:
-      type: string
-      description: Pane name.
-    layout:
-      type: object
-      description: Spatial layout instructions.
-    padding:
-      type: object
-      description: Padding settings.
-    border:
-      type: object
-      description: Border configuration.
-    colour_role:
-      type: string
-      description: Reference to a canonical colour role UDI.
-    header:
-      type: [string, "null"]
-      description: Optional header UDI.
-  required:
-    - id
-    - name
-    - layout
-    - padding
-    - border
-    - colour_role
+
 relations:
   depends_on:
     - prismata.core.schema.header
@@ -53,9 +28,71 @@ relations:
   provides:
     - prismata.core.schema.pane
   conflicts_with: []
+
 validation:
   schema: prismata.core.schema.pane
   status: valid
   errors: []
+
 notes:
   - Canonical pane object without preview-engine execution semantics.
+  - Must use either relative or fixed positional and sizing coordinates 
+  - Relative wins precedence unless explicitly overridden or when terminal sizing is unavailable.
+  - Capabilities producing terminal output will utilize content_role and is_active to determine which, if any, panes to display content.
+
+content:
+  type: object
+  fields:
+    # Visual and layout properties for the pane.
+    border_pattern:
+      type: string
+      description: Optional. Border pattern for the pane. Defaults to double-line.
+    border_role:
+      type: string
+      description: Optional. Border role for the pane. Defaults to the default border role for colour and styling.
+    colour_scheme:
+      type: string
+      description: Optional. Colour scheme for the pane. Defaults to the default colour scheme.
+    colour_role:
+      type: string
+      description: Optional. Colour role for the pane. Defaults to alert-surface.
+    
+    # Positional and dimensional properties for the pane.  Can choose relative or fixed coordinates.
+    x_rel:
+      type: integer
+      description: Optional. X-coordinate (from left) for the pane. Defaults to 1.
+    y_rel:
+      type: integer
+      description: Optional. Y-coordinate (from top) for the pane. Defaults to 1.
+    x_loc:
+      type: integer
+      description: Optional. Fixed X-coordinate (from left) for the pane. Defaults to 1.
+    y_loc:
+      type: integer
+      description: Optional. Fixed Y-coordinate (from top) for the pane. Defaults to 1.
+    rel_width:
+      type: integer
+      description: Optional. Width of the pane. Defaults to 64.
+    rel_height:
+      type: integer
+      description: Optional. Height of the pane. Defaults to 64.
+    fixed_width:
+      type: integer
+      description: Optional. Fixed width of the pane. Defaults to 60.
+    fixed_height:
+      type: integer
+      description: Optional. Fixed height of the pane. Defaults to 36.
+
+    # Content and layout properties for the pane.
+    content_role:
+      type: string
+      description: Optional. Content role for the pane.  Not implemented yet.
+    is_active:
+      type: boolean
+      description: Optional. Indicates if the pane is currently active. Defaults to false.
+    is_wrapped:
+      type: boolean
+      description: Optional. Indicates if the content within the pane should wrap. Defaults to true.
+  
+  required: []
+

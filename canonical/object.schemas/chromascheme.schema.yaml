@@ -3,40 +3,23 @@ udi: prismata.core.schema.chromascheme
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/chromascheme.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Chroma Scheme
+  name: ChromaScheme Schema
+  target_kind: chromascheme
+  naming:
+    file_suffix: .chromascheme.object.yaml
   description: Canonical structure for chroma palettes, role mapping, and metadata.
   tags:
     - chroma
     - palette
     - core
-content:
-  type: object
-  fields:
-    id:
-      type: string
-      description: Chroma scheme identifier.
-    name:
-      type: string
-      description: Human-readable scheme name.
-    palette:
-      type: object
-      description: Named palette entries.
-    roles:
-      type: object
-      description: Semantic chroma role mapping.
-    metadata:
-      type: object
-      description: Chroma provenance and semantic metadata.
-  required:
-    - id
-    - name
-    - palette
-    - roles
+
 relations:
   depends_on:
     - prismata.core.schema.colour-role
@@ -44,9 +27,35 @@ relations:
   provides:
     - prismata.core.schema.chromascheme
   conflicts_with: []
+
 validation:
   schema: prismata.core.schema.chromascheme
   status: valid
   errors: []
+
 notes:
   - Assumes imported Chromaverse content normalized to canonical PrismataCore naming.
+  
+content:
+  type: object
+  fields:
+    colour_set:
+      type: array
+      description: Required. Canonical array of colour definitions (from Prismata Meta `colour_set`).
+      items:
+        type: object
+    geometry:
+      type: object
+      description: Optional. Geometry configuration for chroma generation (parageometric, overlays, expressions).
+    roles:
+      type: object
+      description: Optional.  Semantic chroma role mapping.  Overwritten by colour_role object definitions.
+    metadata:
+      type: object
+      description: Optional. Chroma provenance and semantic metadata.
+  required:
+    - colour_set
+    - geometry
+    - roles
+    - metadata
+

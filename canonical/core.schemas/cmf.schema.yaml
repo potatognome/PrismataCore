@@ -3,17 +3,38 @@ udi: prismata.core.schema.cmf
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
-  path: cmf/cmf.schema.yaml
+  path: canonical/core.schemas/cmf.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: CMF envelope
-  description: Canonical Metadata Format envelope shared by all PrismataCore schema objects.
+  name: CMF envelope Schema
+  target_kind: schema
+  description: Canonical Metadata Format envelope shared by all schemas & objects within the Prismata ecosystem.
   tags:
     - cmf
     - schema
     - core
+
+relations:
+  depends_on:
+    - prismata.core.schema.schema
+  provides:
+    - prismata.core.schema.cmf
+  conflicts_with: []
+
+validation:
+  schema: prismata.core.schema.cmf
+  status: valid
+  errors: []
+
+notes:
+  - Canonical envelope definition for all Prismata CMF objects.  
+  - These fields are all required fields for all objects in the envelope.
+  - These fields are all added in as root-level fields on all CMF objects. (e.g. ui component objects - panes, borders, colour schemes, ui-framework, etc.)
+
 content:
   type: object
   fields:
@@ -39,9 +60,6 @@ content:
     metadata:
       type: object
       description: Schema metadata payload.
-    content:
-      type: object
-      description: Schema definition payload.
     relations:
       type: object
       description: Relationship metadata for dependencies and capability mapping.
@@ -53,6 +71,9 @@ content:
       items:
         type: string
       description: Notes relating to schema generation and compliance.
+    content:
+      type: object
+      description: Object definition payload.
   required:
     - id
     - udi
@@ -61,19 +82,7 @@ content:
     - tenant
     - source
     - metadata
-    - content
     - relations
     - validation
     - notes
-relations:
-  depends_on:
-    - prismata.core.schema.schema
-  provides:
-    - prismata.core.schema.cmf
-  conflicts_with: []
-validation:
-  schema: prismata.core.schema.cmf
-  status: valid
-  errors: []
-notes:
-  - Canonical envelope definition for all PrismataCore CMF objects.
+    - content

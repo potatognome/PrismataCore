@@ -3,17 +3,38 @@ udi: prismata.core.schema.border-role
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/border-role.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Border Role
+  name: Border Role Schema
+  target_kind: border-role
+  naming:
+    file_suffix: .border-role.object.yaml
   description: Canonical semantic border role mapping used by pane and menu layouts.
   tags:
     - border
     - role
     - layout
+
+relations:
+  depends_on:
+    - prismata.core.schema.border-pattern
+  provides:
+    - prismata.core.schema.border-role
+  conflicts_with: []
+
+validation:
+  schema: prismata.core.schema.border-role
+  status: valid
+  errors: []
+
+notes:
+  - Represents semantic border usage without preview-specific rendering logic.
+
 content:
   type: object
   fields:
@@ -34,15 +55,3 @@ content:
     - name
     - role
     - pattern
-relations:
-  depends_on:
-    - prismata.core.schema.border-pattern
-  provides:
-    - prismata.core.schema.border-role
-  conflicts_with: []
-validation:
-  schema: prismata.core.schema.border-role
-  status: valid
-  errors: []
-notes:
-  - Represents semantic border usage without preview-specific rendering logic.

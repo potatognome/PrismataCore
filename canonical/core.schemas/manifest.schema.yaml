@@ -3,47 +3,87 @@ udi: prismata.core.schema.manifest
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/core.schemas/manifest.schema.yaml
   repo: PrismataCore
-  imported_at: "2026-10-13T00:00:00Z"
+  imported_at: "2026-01-01T00:00:00Z"
+
 metadata:
-  name: Manifest
-  description: Canonical manifest schema for CMF bundle declarations in PrismataCore.
+  name: Manifest Schema
+  target_kind: manifest
+  naming:
+    file_suffix: .manifest.yaml
+  description: Canonical schema describing the structure and behavior of PrismataCore project manifests.
   tags:
+    - schema
     - manifest
     - cmf
-    - schema
-content:
-  type: object
-  fields:
-    name:
-      type: string
-      description: Manifest label.
-    version:
-      type: string
-      description: Manifest version.
-    schemas:
-      type: array
-      items:
-        type: string
-      description: UDI list of included canonical schemas.
-    description:
-      type: [string, "null"]
-      description: Optional manifest description.
-  required:
-    - name
-    - version
-    - schemas
+    - core
+
 relations:
-  depends_on:
-    - prismata.core.schema.schema
-  provides:
-    - prismata.core.schema.manifest
+  depends_on: []
+  provides: []
   conflicts_with: []
+
 validation:
-  schema: prismata.core.schema.manifest
+  schema: prismata.core.schema.schema
   status: valid
   errors: []
-notes:
-  - Manifest envelope for canonical PrismataCore CMF bundles.
+
+notes: []
+
+content:
+  fields:
+
+    id:
+      type: string
+      description: Unique identifier for the manifest object.
+
+    name:
+      type: string
+      description: Human-readable name of the manifest.
+
+    version:
+      type: string
+      description: Version of the manifest.
+
+    description:
+      type: string
+      description: Optional human-readable description of the manifest.
+
+    capabilities:
+      type: array
+      description: >
+        List of capability UDIs provided by this manifest. Capabilities define
+        what the project exposes to other components.
+
+    interfaces:
+      type: object
+      description: >
+        Mapping of interface names to interface definitions. Interfaces describe
+        how external systems interact with this project.
+
+    dependencies:
+      type: array
+      description: >
+        List of UDI references to other manifests or objects required by this project.
+
+    tags:
+      type: array
+      description: Optional list of semantic tags associated with this manifest.
+
+    metadata:
+      type: object
+      description: Optional metadata block for tenant or project-specific information.
+
+  required:
+    - id
+    - name
+    - version
+    - description
+    - capabilities
+    - interfaces
+    - dependencies
+    - tags
+    - metadata

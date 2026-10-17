@@ -3,52 +3,56 @@ udi: prismata.core.schema.border-pattern
 kind: schema
 version: 1.0.0
 tenant: null
+
 source:
   path: canonical/object.schemas/border-pattern.schema.yaml
   repo: PrismataCore
   imported_at: "2026-10-13T00:00:00Z"
+
 metadata:
-  name: Border Pattern
+  name: Border Pattern Schema
+  target_kind: border-pattern
+  naming:
+    file_suffix: .border-pattern.object.yaml
   description: Canonical border pattern definition for solid, dashed, inset, and outset borders.
   tags:
     - border
     - pattern
     - styling
-content:
-  type: object
-  fields:
-    id:
-      type: string
-      description: Border pattern identifier.
-    name:
-      type: string
-      description: Pattern name.
-    kind:
-      type: string
-      enum: [solid, dashed, inset, outset]
-      description: Border style category.
-    width:
-      type: integer
-      minimum: 0
-      description: Border width in px-like units.
-    color:
-      type: string
-      description: Border colour token.
-  required:
-    - id
-    - name
-    - kind
-    - width
-    - color
+
 relations:
   depends_on:
     - prismata.core.schema.colour-role
   provides:
     - prismata.core.schema.border-pattern
   conflicts_with: []
+
 validation:
   schema: prismata.core.schema.border-pattern
   status: valid
   errors: []
+
 notes:
   - Standard border pattern catalogue for canonical layout structures.
+
+content:
+  type: object
+  fields:
+    glyphs:
+      type: object
+      description: Mapping of glyph keys to single-character strings for border rendering (e.g. TL, TR, H, V).
+      additionalProperties:
+        type: string
+    thickness:
+      type: integer
+      minimum: 0
+      description: Optional. Border width in px-like units. Defaults to 1 when not specified.
+    padding:
+      type: integer
+      minimum: 0
+      description: Optional. Padding width in px-like units.  Defaults to 0 when not specified.
+    border_role:
+      type: string
+      description: Optional. Border FG|BG colour and styling token.  Defaults to the standard border colour & style role if not specified.
+  required:
+    - glyphs

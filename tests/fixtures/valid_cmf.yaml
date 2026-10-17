@@ -1,0 +1,32 @@
+id: prismata.core.schema.pane
+udi: prismata.core.schema.pane
+kind: schema
+version: "1.0.0"
+tenant: null
+
+source:
+  path: /canonical/core.schemas/pane.schema.yaml
+  repo: core
+  imported_at: "2026-01-01T00:00:00Z"
+
+metadata:
+  name: Pane Schema
+  description: Base pane schema
+  tags: ["core", "pane"]
+relations:
+  depends_on: []
+  provides: []
+  conflicts_with: []
+
+validation:
+  schema: prismata.core.schema.schema
+  status: valid
+  errors: []
+
+notes: []
+
+content:
+  fields:
+    border: { type: "string" }
+    padding: { type: "integer" }
+  required: ["border"]
