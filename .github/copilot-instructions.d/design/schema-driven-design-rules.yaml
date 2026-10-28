@@ -1,0 +1,128 @@
+﻿id: schema-driven-design-rules.agent-instructions
+udi: dev.metadata.agent-instructions.schema-driven-design-rules
+kind: agent-instructions
+version: 1.0.0
+tenant: null
+
+source:
+  author: dev
+  created: 2026-10-27
+  updated: 2026-10-27
+  path: PrismataCore/.github/copilot-instructions.d/design/schema-driven-design-rules.yaml
+
+metadata:
+  name: Schema Driven Design Rules
+  description: Defines requirements and constraints for implementing schema-driven systems, models, configurations, interfaces, and workflows.
+  tags:
+    - schema
+    - design-rules
+    - agent-instructions
+
+relations:
+  domain: design
+
+  scope: |
+    Applies to schema definitions, metadata models, configuration models,
+    composition models, validation models, data contracts, manifests,
+    registries, and schema-driven application architecture.
+
+  exclusions: |
+    - Third-party schemas that must be consumed without modification.
+    - Temporary migration artifacts.
+    - Experimental prototypes not intended for production use.
+
+  priority: high
+
+  conflict-resolution: |
+    prefer-domain: design
+    fallback-to: architecture
+    never-override: compliance
+
+  imports: |
+    - dev.architecture.agent-instructions.schema-rules
+
+notes:
+  - |
+    Establishes standards and expectations for schema-driven design and
+    promotes consistency, maintainability, extensibility, and validation
+    across implementations.
+
+content:
+  global-rules: |
+    - Define structure through schemas rather than hard-coded behavior.
+    - Prefer declarative configuration over imperative implementation.
+    - Maintain separation between schema, data, and presentation.
+    - Ensure schema changes remain backward compatible whenever possible.
+    - Centralize reusable definitions and prevent duplication.
+
+  global-constraints: |
+    - No undocumented schema properties.
+    - No implicit field definitions.
+    - No hard-coded business logic embedded in schema definitions.
+    - All schema changes must remain machine-parseable and deterministic.
+
+  activation:
+    when: |
+      - Creating or modifying schemas.
+      - Designing metadata models.
+      - Defining configuration objects.
+      - Creating validation models.
+      - Refactoring schema-driven systems.
+
+    when-not: |
+      - Editing non-schema content.
+      - Updating unrelated documentation.
+      - Working exclusively with third-party generated artifacts.
+
+  parameters:
+    - name: strict-validation
+      type: boolean
+      default: true
+      description: Require explicit validation rules for all schema fields.
+
+    - name: allow-custom-fields
+      type: boolean
+      default: false
+      description: Permit implementation-specific fields outside the schema definition.
+
+  # examples:
+    # correct: |
+      # Minimal Example:
+        # schema:
+          # name: Person
+          # fields:
+            # - name: firstName
+              # type: string
+
+      # Complete Example:
+        # schema:
+          # name: Person
+          # version: 1.0.0
+          # fields:
+            # - name: firstName
+              # type: string
+              # required: true
+          # validation:
+            # strict: true
+
+    # incorrect: |
+      # Example 1:
+        # fields:
+          # - someUnknownProperty
+
+      # Example 2:
+        # Schema behavior implemented through embedded executable code.
+
+      # Example 3:
+        # Required fields without validation definitions.
+
+      # Example 4:
+        # Duplicate field definitions across multiple schema sources.
+
+  glossary:
+    - schema
+    - metadata
+    - validation
+    - composition
+    - configuration
+    - registry

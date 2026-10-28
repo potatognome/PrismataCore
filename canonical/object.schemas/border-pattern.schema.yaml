@@ -45,7 +45,7 @@ content:
         type: string
     thickness:
       type: integer
-      minimum: 0
+      minimum: 1
       description: Optional. Border width in px-like units. Defaults to 1 when not specified.
     padding:
       type: integer

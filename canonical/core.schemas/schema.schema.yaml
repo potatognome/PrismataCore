@@ -1,4 +1,4 @@
-id: prismata.core.schema.schema
+id: schema
 udi: prismata.core.schema.schema
 kind: schema
 version: 1.0.0

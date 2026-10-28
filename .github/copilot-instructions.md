@@ -1,6 +1,6 @@
 # PrismataCore — Canonical Schema Generation Instructions
 
-## Last Updated: 2026-10-14
+## Last Updated: 2026-10-27
 
 ## Purpose
 Agents must generate the canonical PrismataCore schema set and core validators.

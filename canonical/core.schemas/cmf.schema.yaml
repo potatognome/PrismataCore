@@ -1,4 +1,4 @@
-id: prismata.core.schema.cmf
+id: cmf
 udi: prismata.core.schema.cmf
 kind: schema
 version: 1.0.0

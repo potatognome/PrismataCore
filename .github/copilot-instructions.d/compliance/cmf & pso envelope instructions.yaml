@@ -1,0 +1,260 @@
+id: cmf-pso-envelope-instructions.agent-instructions
+udi: dev.metadata.agent-instructions.cmf-pso-envelope-instructions
+kind: agent-instructions
+version: 1.0.0
+tenant: null
+
+source:
+  author: dev
+  created: 2026-10-19
+  updated: 2026-10-27
+  path: PrismataCore/.github/copilot-instructions.d/compliance/cmf-pso-envelope-instructions.yaml
+
+metadata:
+  name: CMF → PSO Envelope Refactor Instructions
+  description: Defines requirements and constraints for implementing schema-driven systems, models, configurations, interfaces, and workflows.
+  tags:
+    - schema
+    - design-rules
+    - agent-instructions
+
+relations:
+  domain: compliance
+
+  scope: |
+    Applies to schema definitions, metadata models, configuration models,
+    composition models, validation models, data contracts, manifests,
+    registries, and schema-driven application architecture.
+
+  exclusions: |
+    - Third-party schemas that must be consumed without modification.
+    - Temporary migration artifacts.
+    - Experimental prototypes not intended for production use.
+
+  priority: high
+
+  conflict-resolution: |
+    prefer-domain: design
+    fallback-to: architecture
+    never-override: compliance
+
+  imports: |
+    - dev.architecture.agent-instructions.schema-rules
+
+notes:
+  - |
+    Establishes standards and expectations for schema-driven design and
+    promotes consistency, maintainability, extensibility, and validation
+    across implementations.
+
+content:
+  global-rules: |
+    - Define structure through schemas rather than hard-coded behavior.
+    - Prefer declarative configuration over imperative implementation.
+    - Maintain separation between schema, data, and presentation.
+    - Ensure schema changes remain backward compatible whenever possible.
+    - Centralize reusable definitions and prevent duplication.
+
+  global-constraints: |
+    - No undocumented schema properties.
+    - No implicit field definitions.
+    - No hard-coded business logic embedded in schema definitions.
+    - All schema changes must remain machine-parseable and deterministic.
+
+  activation:
+    when: |
+      - Creating or modifying schemas.
+      - Designing metadata models.
+      - Defining configuration objects.
+      - Creating validation models.
+      - Refactoring schema-driven systems.
+
+    when-not: |
+      - Editing non-schema content.
+      - Updating unrelated documentation.
+      - Working exclusively with third-party generated artifacts.
+
+  parameters:
+    - name: strict-validation
+      type: boolean
+      default: true
+      description: Require explicit validation rules for all schema fields.
+
+    - name: allow-custom-fields
+      type: boolean
+      default: false
+      description: Permit implementation-specific fields outside the schema definition.
+
+  # examples:
+    # correct: |
+      # Minimal Example:
+        # schema:
+          # name: Person
+          # fields:
+            # - name: firstName
+              # type: string
+
+      # Complete Example:
+        # schema:
+          # name: Person
+          # version: 1.0.0
+          # fields:
+            # - name: firstName
+              # type: string
+              # required: true
+          # validation:
+            # strict: true
+
+    # incorrect: |
+      # Example 1:
+        # fields:
+          # - someUnknownProperty
+
+      # Example 2:
+        # Schema behavior implemented through embedded executable code.
+
+      # Example 3:
+        # Required fields without validation definitions.
+
+      # Example 4:
+        # Duplicate field definitions across multiple schema sources.
+
+  glossary:
+    - schema
+    - metadata
+    - validation
+    - composition
+    - configuration
+    - registry
+
+
+
+
+
+
+# 
+
+## Created: 2026-10-19  | Last Updated: 2026-10-20
+
+UDI: prismata.plan.agent-instructions.cmf-pso-refactor
+VERSION: 1.0.2
+OWNER: PrismataCore
+COVERS: PrismataCore, PrismataSDK, PrismataCorp, ThoughtFire, Prism repositories.
+
+### SUMMARY
+
+All configuration files, manifests, schemas, and CMF objects must be refactored to comply with the updated CMF → PSO envelope model. This instruction set defines mandatory structural rules, ordering rules, and UDI placement rules. These instructions apply globally to all config files processed by the system.
+
+### GLOBAL RULES
+
+All CMF/PSO objects MUST use the envelope structure containing these main fields:
+
+id: <string>
+udi: <string> 
+kind: <string>
+version: <string>
+tenant: <string> 
+source: <dict> 
+metadata: <dict>
+relations: <dict>
+validation: <dict>
+notes: <list>
+content: <dict>
+
+- All fields are mandatory.  
+- The order must not be changed.
+- The content block MUST ALWAYS be the final main field in the file.
+- No additional main fields may be added.
+
+### UDI RULES
+
+- The udi field is a **four‑segment**, **namespace‑prefixed**, **deterministic**, **immutable** identifier:
+- The udi field MUST be present in every CMF/PSO envelope.
+- It MUST be a fully qualified UDI in the form:
+- <namespace>.<scope>.<kind>.<slug>
+- Refer to ./udi-compliance-policy.md for further UDI specifications.
+
+### SCHEMAS: RULES
+
+- All schemas MUST be updated to reflect the envelope model.
+- Schema definitions describe ONLY the structure of the content block.
+- Envelope fields (id, udi, kind, version, etc.) are NOT part of the schema.
+- Schema files themselves MUST also follow the envelope structure.
+
+### MANIFESTS: RULES
+
+- All manifests MUST be updated to reflect the envelop model.
+- Manifest definitions describe ONLY the structure of the content block.
+- Envelope fields (id, udi, kind, version, etc.) are NOT part of the manifest.
+- Manifest files themselves MUST also follow the envelope structure.
+
+### CONFIG FILES: JSON/YAML
+
+- All config files MUST be rewritten so that:
+- Envelope fields appear first.
+- Content block appears last.
+- No legacy CMF fields remain outside the envelope.
+- All references to schemas, manifests, or bundles use UDI addressing.
+
+### REFORMATTING RULES
+
+1) When refactoring an existing file:
+
+- Extract all envelope-level fields.
+- Insert or update the udi field immediately after id.
+- Move all functional data into the content block.
+- Ensure content is the final block.
+- When encountering nested structures:
+- Only top-level objects use the CMF/PSO envelope.
+- Nested objects inside content follow schema rules only.
+
+2) When encountering missing UDI:
+
+- Generate a unique deterministic UDI using <namespace>.<scope>.<kind>.<slug>
+- Refer to udi-compliance-policy.md for naming conventions
+
+3) When encountering multiple content-like blocks:
+
+- Merge them into a single content block.
+- Preserve all fields.
+
+### VALIDATION RULES
+
+1) After refactoring, every file MUST pass:
+
+- CMF envelope validation
+- PSO envelope validation
+- UDI format validation
+- Schema compliance validation (where matching schema types exist)
+- Ordering validation (content last)
+
+Any file failing validation MUST be rewritten until compliant.
+
+### OUTPUT RULES
+
+1) All rewritten files MUST:
+
+- Preserve original semantics.
+- Preserve all functional fields.
+- Use deterministic formatting.
+- Use stable ordering.
+- Use stable UDI addressing.
+- All rewritten files MUST be idempotent:
+
+Re-running the refactor MUST NOT change the file further.
+
+### AGENT BEHAVIOR RULES
+
+1) Agents MUST NOT:
+
+- Invent new fields.
+- Remove required envelope fields.
+- Place content anywhere except last.
+- Place udi anywhere except directly under id.
+
+2) Agents MUST:
+
+- Normalize indentation.
+- Normalize field ordering.
+- Normalize UDI formatting.
+ -Normalize schema references.

@@ -1,27 +1,23 @@
 # Prismata UDI Compliance Specification
 
-## Last Updated: 2026-09-19
+## Created: 2026-09-19  |  Last Updated: 2026-10-20
 
-### Authoritative Identity Rules for All Artifact Generators, Validators, and Schemas
+UDI: prismata.core.agent-instructions.udi-compliance-policy
+VERSION: 1.0.1
+OWNER: PrismataCore
+COVERS: PrismataCore, PrismataSDK, PrismataCorp, ThoughtFire, Prism repositories.
 
-This document defines the **Universal Deterministic Identifier (UDI)** system for the Prismata ecosystem.  
-All generators, validators, schema authors, and Copilot agents must follow this specification when creating, modifying, or validating Prismata artifacts.
+### PURPOSE: Authoritative Identity Rules for All Artifact Generators, Validators, and Schemas
 
-UDIs are the **single source of truth** for artifact identity across all Prismata subsystems.
-
----
+- This document defines the **Universal Deterministic Identifier (UDI)** system for the Prismata ecosystem.  
+- All generators, validators, schema authors, and Copilot agents must follow this specification when creating, modifying, or validating Prismata artifacts.
+- UDIs are the **single source of truth** for artifact identity across all Prismata subsystems.
 
 # 1. UDI Definition
 
-A UDI is a **four‑segment**, **namespace‑prefixed**, **deterministic**, **immutable** identifier:
-
-```
-namespace.scope.kind.slug
-```
-
-Each segment has strict rules and must appear in the correct order.
-
----
+- A UDI is a **four‑segment**, **namespace‑prefixed**, **deterministic**, **immutable** identifier:
+- <namespace>.<scope>.<kind>.<slug>
+- Each segment has strict rules and must appear in the correct order.
 
 # 2. Segment Rules
 
@@ -49,11 +45,12 @@ Must be one of the **canonical UDI kinds**:
 
 ```
 api-ref
+agent-instructions
 ast-node
 capability
 chroma-scheme
 colour-keys
-colour-roles
+colour-role
 colour-scheme
 composition
 config
@@ -149,12 +146,14 @@ Once published:
 All artifacts participating in Prismata tooling **must** have a UDI.
 
 This includes:
-- canonical schemas  
+- canonical schemas
+- object schemas
 - project schemas  
 - manifests  
 - capabilities  
 - menus  
 - menu items  
+- headers
 - UI framework artifacts  
 - panes  
 - pane roles  
