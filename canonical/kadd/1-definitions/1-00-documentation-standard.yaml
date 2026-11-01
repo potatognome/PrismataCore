@@ -1,0 +1,321 @@
+id: KAD-PRISMATA-1-00
+udi: prismata.core.kad.documentation-standard
+kind: knowledge architecture document
+version: 1.0.0
+tenant: null
+
+source:
+  author: dev
+  created: 2026-10-28
+  updated: 2026-10-28
+  path: PrismataCore/.github/plan-docs.d/doc-std-001.yaml
+
+metadata:
+  name: Project Documentation Standard
+  description: >
+    Layered architecture-first documentation standard.
+  tags:
+    - plan-documents
+    - standards
+    - project-documentation
+
+relations:
+  domain: planning
+  scope: null
+  exclusions: null
+  priority: high
+  conflict-resolution: null
+  imports: null
+
+notes:
+  - Layered architecture-first documentation standard intended for planning, architecture, implementation, operation, and long-term project knowledge management.
+  - Objective: Establish a clear and consistent approach to project documentation that supports planning, architecture, implementation, operation, and long-term knowledge management.
+  - The documentation standard itself is a CMF document and serves as the authoritative schema for documentation generation, validation, migration, reporting, and agent-assisted project analysis.
+
+content:
+  standard:
+    layers:
+      1:
+        name: Definition
+        purpose: >
+          Define project identity, purpose, terminology,
+          scope, and conceptual foundation.
+        description: >
+          Defines project purpose, identity,
+          terminology, and conceptual foundation.
+        prerequisites: []
+        outputs:
+          - concepts
+          - architecture
+      2:
+        name: Architecture
+        purpose: >
+          Define system structure, responsibilities,
+          boundaries, relationships, and architectural decisions.
+        description: >
+          Defines systems, subsystems,
+          relationships, and architectural decisions.
+        prerequisites:
+          - layer-1
+        outputs:
+          - planning
+          - implementation
+      3:
+        name: Planning
+        purpose: >
+          Define what should be built,
+          why it should be built,
+          and how work should be prioritized.
+        description: >
+          Defines requirements, risks,
+          roadmap, and planning artifacts.
+        prerequisites:
+          - layer-1
+          - layer-2
+        outputs:
+          - implementation
+      4:
+        name: Implementation
+        purpose: >
+          Define implementation details,
+          interfaces, models, configuration,
+          storage, and development information.
+        description: >
+          Defines technical implementation,
+          interfaces, schemas, storage,
+          configuration, and development details.
+        prerequisites:
+          - layer-1
+          - layer-2
+          - layer-3
+        outputs:
+          - operation
+      5:
+        name: PostImplementation
+        purpose: >
+          Capture discoveries, observations,
+          lessons learned, retrospectives,
+          and historical project knowledge.
+        description: >
+          Captures observations, lessons,
+          findings, retrospectives,
+          and historical knowledge.
+        prerequisites:
+          - layer-4
+        outputs:
+          - future-improvements
+      9:
+        name: Reference
+        purpose: >
+          Maintain authoritative,
+          evergreen project reference material.
+        description: >
+          Permanent reference documents,
+          glossary, appendices, references,
+          and standards.
+        prerequisites: []
+        outputs:
+          - all-layers
+    documents:
+      - id: DOC-VISION
+        file: 1-01-vision.yaml
+        layer: 1
+        category: definition
+        name: Vision
+        required: true
+        default_status: stub
+      - id: DOC-PROFILE
+        file: 1-02-project-profile.yaml
+        layer: 1
+        category: definition
+        name: Project Profile
+        required: true
+        default_status: stub
+      - id: DOC-CONCEPTS
+        file: 1-03-concepts.yaml
+        layer: 1
+        category: definition
+        name: Concepts
+        required: true
+        default_status: stub
+      - id: DOC-SYSTEMS
+        file: 2-01-systems.yaml
+        layer: 2
+        category: architecture
+        name: Systems
+        required: true
+        default_status: stub
+      - id: DOC-SUBSYSTEMS
+        file: 2-02-subsystems.yaml
+        layer: 2
+        category: architecture
+        name: Subsystems
+        required: true
+        default_status: stub
+      - id: DOC-RELATIONSHIPS
+        file: 2-03-relationships.yaml
+        layer: 2
+        category: architecture
+        name: Relationships
+        required: true
+        default_status: stub
+      - id: DOC-DECISIONS
+        file: 2-04-decisions.yaml
+        layer: 2
+        category: architecture
+        name: Decisions
+        required: true
+        default_status: stub
+      - id: DOC-REQUIREMENTS
+        file: 3-01-requirements.yaml
+        layer: 3
+        category: planning
+        name: Requirements
+        required: true
+        default_status: stub
+      - id: DOC-RISKS
+        file: 3-02-risks.yaml
+        layer: 3
+        category: planning
+        name: Risks
+        required: true
+        default_status: stub
+      - id: DOC-ROADMAP
+        file: 3-03-roadmap.yaml
+        layer: 3
+        category: planning
+        name: Roadmap
+        required: true
+        default_status: stub
+      - id: DOC-INTERFACES
+        file: 4-01-interfaces.yaml
+        layer: 4
+        category: implementation
+        name: Interfaces
+        required: true
+        default_status: stub
+      - id: DOC-DATA-MODEL
+        file: 4-02-data-model.yaml
+        layer: 4
+        category: implementation
+        name: Data Model
+        required: true
+        default_status: stub
+      - id: DOC-STORAGE
+        file: 4-03-storage.yaml
+        layer: 4
+        category: implementation
+        name: Storage
+        required: true
+        default_status: stub
+      - id: DOC-CONFIGURATION
+        file: 4-04-configuration.yaml
+        layer: 4
+        category: implementation
+        name: Configuration
+        required: true
+        default_status: stub
+      - id: DOC-DEVELOPMENT
+        file: 4-05-development.yaml
+        layer: 4
+        category: implementation
+        name: Development
+        required: true
+        default_status: stub
+      - id: DOC-RESEARCH
+        file: 5-01-research.yaml
+        layer: 5
+        category: post-implementation
+        name: Research
+        required: true
+        default_status: stub
+      - id: DOC-LESSONS-LEARNED
+        file: 5-02-lessons-learned.yaml
+        layer: 5
+        category: post-implementation
+        name: Lessons Learned
+        required: true
+        default_status: stub
+      - id: DOC-RETROSPECTIVES
+        file: 5-03-retrospectives.yaml
+        layer: 5
+        category: post-implementation
+        name: Retrospectives
+        required: false
+        default_status: stub
+      - id: DOC-GLOSSARY
+        file: 9-01-glossary.yaml
+        layer: 9
+        category: reference
+        name: Glossary
+        required: true
+        default_status: approved
+      - id: DOC-APPENDICES
+        file: 9-02-appendices.yaml
+        layer: 9
+        category: reference
+        name: Appendices
+        required: false
+        default_status: stub
+      - id: DOC-REFERENCES
+        file: 9-03-references.yaml
+        layer: 9
+        category: reference
+        name: References
+        required: false
+        default_status: stub
+  schema:
+    cmf:
+      required_fields:
+        - id
+        - udi
+        - kind
+        - version
+        - tenant
+        - source
+        - metadata
+        - relations
+        - notes
+        - content
+  governance:
+    statuses:
+      - stub
+      - draft
+      - review
+      - approved
+      - deprecated
+      - archived
+    validation:
+      require_standard_filenames: true
+      require_cmf_envelope: true
+      require_metadata_status: true
+      require_content_section: true
+      require_document_id: true
+      require_document_layer: true
+      require_document_category: true
+      allow_additional_documents: true
+      allow_layer_expansion: true
+      allow_custom_documents: true
+      preserve_unknown_documents: true
+  automation:
+    agent_behavior:
+      prompt_for_missing_files: true
+      prompt_for_stub_documents: true
+      prompt_for_empty_content: true
+      prompt_for_missing_required_sections: true
+      allow_future_extensions: true
+      suggest_next_document_by_layer: true
+      suggest_architecture_before_implementation: true
+      report_project_completeness: true
+      report_layer_completeness: true
+      identify_missing_dependencies: true
+      identify_unreferenced_documents: true
+      identify_orphaned_documents: true
+    tooling:
+      standard_is_source_of_truth: true
+      scaffold_from_standard: true
+      validate_from_standard: true
+      migrate_from_standard: true
+      report_from_standard: true
+      dashboard_from_standard: true
+      agent_analysis_from_standard: true

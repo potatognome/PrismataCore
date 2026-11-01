@@ -7,8 +7,8 @@ tenant: null
 source:
   author: dev
   created: 2026-10-19
-  updated: 2026-10-27
-  path: PrismataCore/.github/copilot-instructions.d/compliance/cmf-pso-envelope-instructions.yaml
+  updated: 2026-10-31
+  path: .github/copilot-instructions.d/compliance/cmf-pso-envelope-instructions.yaml
 
 metadata:
   name: CMF → PSO Envelope Refactor Instructions
