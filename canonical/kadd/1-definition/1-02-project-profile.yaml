@@ -1,0 +1,220 @@
+id: KAD-PRISMATA-1-02
+udi: PRISMATA.CORE.KAD.PROJECT-PROFILE
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-10-31
+  updated: 2026-11-01
+  path: /canonical/kadd/1-definition/1-02-project-profile.yaml
+
+metadata:
+  name: Prismata Project Profile
+  description: Formal project profile, responsibilities, boundaries, classifications, and ecosystem roles for Prismata.
+  tags:
+    - prismata
+    - project-profile
+    - cybernetic-framework
+    - cybernetic-substrate
+    - metadata
+    - governance
+    - interoperability
+
+relations:
+  domain:
+    - Cybernetic Systems
+    - Knowledge Architecture
+    - Metadata Management
+  scope:
+    - Applies to Prismata, PrismataCore, PrismataSDK, PrismataCorp
+    - Project Identity
+    - Responsibilities
+    - Boundaries
+    - Ecosystem Classification
+  exclusions:
+    - Vision
+    - Concepts
+    - Architecture
+    - Planning
+    - Implementation
+    - Research
+  priority: critical
+  conflict-resolution: Project responsibilities and boundaries take precedence over feature expansion and implementation convenience.
+  imports:
+    - KADD-001
+    - KAD-PRISMATA-1-01
+
+notes:
+  - Prismata is intended to remain small, deterministic, portable, and extensible.
+  - Prismata serves as a substrate and foundation rather than a standalone application.
+  - Long-term growth should occur in ecosystem consumers and adjunct systems rather than within Prismata itself.
+
+content:
+  executive-summary: >
+    Prismata is a cybernetic substrate that provides universal identity,
+    structure, capability discovery, validation, knowledge indexing, and
+    interoperability for metadata-driven ecosystems.
+
+  classification:
+    project-type: Cybernetic Framework
+    project-form: Cybernetic Substrate
+
+  purpose: >
+    Provide the foundational standards, structures, validation mechanisms,
+    knowledge organization systems, and interoperability mechanisms required
+    for cybernetic ecosystems, agents, devices, applications, and future
+    intelligent systems.
+
+  primary-responsibilities:
+    - Maintain canonical object schemas.
+    - Maintain canonical laws and behavioral constraints.
+    - Govern and validate UDI identity structures.
+    - Govern and validate CMF artifact structures.
+    - Govern and validate PSO runtime structures.
+    - Maintain capability definitions and capability manifests.
+    - Validate CMF-enclosed artifacts.
+    - Validate PSO runtime objects.
+    - Provide cybernetic interoperability mechanisms.
+    - Organize and index ecosystem knowledge.
+    - Organize and index historical experience.
+    - Preserve discoverability, traceability, and relationship awareness across ecosystem assets.
+
+  explicit-boundaries:
+    responsible-for:
+      - Identity
+      - Structure
+      - Capability discovery
+      - Validation
+      - Knowledge organization
+      - Historical indexing
+      - Interoperability
+      - Core interface primitives
+    not-responsible-for:
+      - Robot cognition
+      - Robot personality
+      - Autonomous reasoning systems
+      - Runtime control loops
+      - Application business logic
+      - Domain-specific implementations
+      - Consumer application functionality
+      - AI model implementation
+      - Specialized user experiences
+
+  ecosystem-pillars:
+    - Identity
+    - Structure
+    - Capability
+    - Knowledge
+    - Validation
+    - Interface
+
+  authoritative-foundations:
+    - UDI
+    - CMF
+    - PSO
+    - Laws
+    - Schemas
+    - Capability Definitions
+    - Capability Manifests
+    - Validation Engine
+    - Knowledge Index
+    - Historical Index
+    - UI Objects
+
+  foundational-definitions:
+    schema:
+      purpose: Defines structure.
+    law:
+      purpose: Defines permitted behavior.
+    cmf:
+      purpose: Canonical artifact envelope.
+    pso:
+      purpose: Runtime object envelope.
+
+  artifact-classes:
+    - KAD
+    - Schema
+    - Law
+    - Manifest
+    - Capability
+    - Configuration
+    - CMF Artifact
+    - PSO Runtime Object
+    - Knowledge Artifact
+    - Historical Artifact
+
+  knowledge-role:
+    title: Knowledge Custodian
+    purpose: >
+      Prismata serves as the canonical librarian, catalog,
+      classification authority, indexing framework, and
+      discovery system for ecosystem knowledge, capabilities,
+      artifacts, and historical experience.
+    responsibility: >
+      Ensure that knowledge remains identifiable, searchable,
+      structured, related, traceable, and discoverable
+      regardless of where that knowledge is physically stored.
+
+  minimum-valid-instance:
+    - UDI Registry
+    - CMF Schemas
+    - PSO Schemas
+    - Core Laws
+    - Validation Engine
+    - Capability Manifest Engine
+    - Knowledge Index
+    - Core UI Objects
+
+  required-foundation-services:
+    vaultguard:
+      classification: Required Foundation Service
+      purpose: >
+        Provides ecosystem security, RBAC, secrets management,
+        artifact protection, archive protection, and trusted
+        access control for Prismata deployments.
+    core-primitives:
+      classification: Required Foundation Service
+      purpose: >
+        Provides the standard operating modules, filesystem
+        abstractions, path helpers, operating system services,
+        utility functions, and manifested capability providers
+        required by higher-level ecosystem components.
+
+  ecosystem-tools:
+    universe:
+      classification: Official Ecosystem Tool
+      role: Reference Authoring Environment
+      purpose: >
+        Provides metadata-driven navigation, editing,
+        generation, visualization, configuration management,
+        archive discovery, schema management, manifest
+        management, UDI management, and structured object
+        creation capabilities for Prismata ecosystems.
+
+  ecosystem-consumers:
+    - Future Ecosystem Applications
+    - ThoughtFire
+    - m3m01r5
+    - PrismCommander
+#    - DocLibrarian
+#    - OrgArchitect
+#    - PrismSense
+#    - Lumen
+
+  design-constraints:
+    - Remain portable across operating systems and hardware platforms.
+    - Remain deployable on low-resource systems.
+    - Prefer metadata over hardcoded behavior.
+    - Prefer standards over specialization.
+    - Preserve compatibility through structured evolution.
+    - Minimize executable complexity.
+    - Maximize discoverability and traceability.
+
+  desired-state: >
+    Prismata remains a small and stable cybernetic substrate that
+    governs identity, structure, capability discovery, validation,
+    knowledge organization, and interoperability while enabling
+    increasingly sophisticated ecosystem applications to evolve
+    independently around it.
