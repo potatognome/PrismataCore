@@ -1,5 +1,5 @@
-id: KAD-PRISMATA-1-01
-udi: prismata.core.kad.vision
+id: KAD-PRISMATA-1-01-VISION
+udi: prismata.kad.definitions.vision
 kind: knowledge architecture document
 version: 1.0.0
 tenant: null
@@ -8,7 +8,7 @@ source:
   author: Prismata Architecture Team
   created: 2026-10-30
   updated: 2026-10-31
-  path: /kadd/1-definitions/1-01-vision.yaml
+  path: canonical/kadd/1-definitions/1-01-vision.yaml
 
 metadata:
   name: Prismata Vision

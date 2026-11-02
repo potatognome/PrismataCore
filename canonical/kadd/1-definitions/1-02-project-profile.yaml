@@ -1,5 +1,5 @@
-id: KAD-PRISMATA-1-02
-udi: PRISMATA.CORE.KAD.PROJECT-PROFILE
+id: KAD-PRISMATA-1-02-PROJECT-PROFILE
+udi: prismata.kad.definitions.project-profile
 kind: KAD
 version: 1.0.0
 tenant: null
@@ -8,7 +8,7 @@ source:
   author: Prismata Architecture Team
   created: 2026-10-31
   updated: 2026-11-01
-  path: /canonical/kadd/1-definition/1-02-project-profile.yaml
+  path: canonical/kadd/1-definitions/1-02-project-profile.yaml
 
 metadata:
   name: Prismata Project Profile

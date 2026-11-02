@@ -1,0 +1,126 @@
+id: KAD-PRISMATA-1-04-PRINCIPLES
+udi: prismata.core.kad.principles
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-10-30
+  updated: 2026-10-30
+  path: /canonical/kadd/1-definitions/1-04-principles.yaml
+
+metadata:
+  name: Prismata Principles
+  description: Foundational principles that guide design, architecture, governance, and evolution within the Prismata ecosystem.
+  tags:
+    - prismata
+    - principles
+    - governance
+    - architecture
+    - metadata
+
+relations:
+  domain:
+    - Foundational Principles
+    - Knowledge Architecture
+    - Cybernetic Systems
+  scope:
+    - Decision Guidance
+    - Design Philosophy
+    - Architectural Thinking
+  exclusions:
+    - Laws
+    - Architecture
+    - Requirements
+    - Implementation Details
+    - Technology Selection
+  priority: critical
+  conflict-resolution: Principles guide decisions when multiple valid approaches exist.
+  imports:
+    - KAD-PRISMATA-1-01
+    - KAD-PRISMATA-1-02
+    - KAD-PRISMATA-1-03
+
+notes:
+  - Principles are guidance rather than enforcement mechanisms.
+  - Laws define permitted behavior; principles influence decisions.
+  - Principles should evolve rarely and only with significant justification.
+
+content:
+
+  purpose: >
+    Principles define the enduring rules of thought that guide
+    decisions throughout the Prismata ecosystem. Unlike laws,
+    principles are not enforced. They exist to influence design,
+    architecture, governance, and evolution.
+
+  principle-groups:
+
+    core:
+
+      identity-before-interaction:
+        udi: prismata.core.principles.identity-before-interaction
+        statement: Everything must have an identity.
+        declaration: I know what I am and how I am referred to.
+        answers: How do I identify and refer to myself and others?
+        rationale: >
+          Assets cannot be governed, discovered, related, or reused
+          unless they possess a unique identity.
+
+      capability-before-composition:
+        udi: prismata.core.principles.capability-before-composition
+        statement: Capability before composition.
+        declaration: >
+          I know what I can do, what I require, and what I produce
+          before I attempt to cooperate with others.
+        answers: What can I do and what do I need?
+        rationale: >
+          Effective composition depends upon a clear understanding
+          of capabilities, requirements, responsibilities, and outputs.
+
+      interoperability-before-isolation:
+        udi: prismata.core.principles.interoperability-before-isolation
+        statement: Cooperation is preferred over isolation.
+        declaration: >
+          I know what I can do for others and what I need in order
+          to do it.
+        answers: Who can help me? Who can I help?
+        rationale: >
+          Systems should be capable of describing themselves and
+          working with other systems through shared standards.
+
+    structural:
+
+      laws-before-automation:
+        udi: prismata.structural.principles.laws-before-automation
+        statement: Laws before automation.
+        declaration: >
+          I know how to interpret and apply the laws before I
+          automate behavior.
+        answers: Is this safe? How do I do this safely?
+        rationale: >
+          Behavior should be governed by defined expectations before
+          being delegated to software, agents, or autonomous systems.
+
+      structure-before-behavior:
+        udi: prismata.structural.principles.structure-before-behavior
+        statement: Structure before behavior.
+        declaration: >
+          I know what I am expected to do, including how, when,
+          and under what conditions I am expected to do it.
+        answers: >
+          What steps do I need to follow, in what order,
+          and using which resources?
+        rationale: >
+          A well-defined structure creates consistency and enables
+          reliable validation, interoperability, and evolution.
+
+      metadata-before-implementation:
+        udi: prismata.structural.principles.metadata-before-implementation
+        statement: Metadata before implementation.
+        declaration: >
+          I keep things neatly and consistently organized and
+          individually labelled so I know where to find everything
+          I need at any time.
+        answers

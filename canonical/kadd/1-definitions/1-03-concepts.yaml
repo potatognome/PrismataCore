@@ -1,13 +1,15 @@
-id: KAD-PRISMATA-1-03
-udi: PRISMATA.CORE.KAD.CONCEPTS
+id: KAD-PRISMATA-1-03-CONCEPTS
+udi: prismata.kad.definitions.concepts
 kind: KAD
 version: 1.0.0
-tenant: PrismataCorp
+tenant: null
+
 source:
   author: Prismata Architecture Team
   created: 2026-10-30
   updated: 2026-10-30
-  path: /canonical/kadd/1-definition/1-03-concepts.yaml
+  path: canonical/kadd/1-definitions/1-03-concepts.yaml
+
 metadata:
   name: Prismata Concepts
   description: Canonical conceptual model for the Prismata ecosystem.
@@ -17,6 +19,7 @@ metadata:
     - foundation
     - metadata
     - architecture
+
 relations:
   domain:
     - Conceptual Modeling
@@ -38,10 +41,12 @@ relations:
     - KAD-PRISMATA-1-01
     - KAD-PRISMATA-1-02
     - KAD-PRISMATA-9-01
+
 notes:
   - Concepts define meaning rather than implementation.
   - Architectural realization of concepts belongs in Layer 2.
   - Concepts should change rarely and evolve cautiously.
+
 content:
 
   concept-groups:

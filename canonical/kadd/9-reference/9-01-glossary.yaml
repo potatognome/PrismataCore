@@ -1,13 +1,15 @@
-id: KAD-PRISMATA-9-01
-udi: PRISMATA.CORE.KAD.GLOSSARY
+id: KAD-PRISMATA-9-01-GLOSSARY
+udi: prismata.kad.definitions.glossary
 kind: KAD
 version: 1.0.0
 tenant: null
+
 source:
   author: Prismata Architecture Team
   created: 2026-10-31
   updated: 2026-11-01
   path: /canonical/kadd/9-reference/9-01-glossary.yaml
+
 metadata:
   name: Prismata Glossary
   description: Canonical definitions for Prismata-specific terminology, acronyms, structures, and ecosystem concepts.
@@ -17,6 +19,7 @@ metadata:
     - terminology
     - definitions
     - reference
+
 relations:
   domain:
     - Terminology
@@ -34,9 +37,11 @@ relations:
   priority: high
   conflict-resolution: Glossary definitions are authoritative for terminology interpretation across all KADs.
   imports:
-    - KADD-001
-    - KAD-PRISMATA-1-01
-    - KAD-PRISMATA-1-02
+    - KAD-PRISMATA-1-00-DOCUMENTATION-DISCIPLINE
+    - KAD-PRISMATA-1-01-VISION
+    - KAD-PRISMATA-1-02-PROJECT-PROFILE
+    - KAD-PRISMATA-1-03-CONCEPTS
+
 notes:
   - Definitions are descriptive only.
   - Architectural rules belong in Laws and Architecture KADs.
@@ -45,6 +50,7 @@ notes:
   - UDI subtype terminology is not currently part of the formal UDI specification.
   - UDI subtypes do not create separate identity namespaces.
   - UDI subtypes shall not be enforced by code, validators, schemas, or standards unless formally adopted in a future KAD.
+
 content:
   terms:
 
