@@ -1,0 +1,329 @@
+id: KAD-PRISMATA-2-02-SUBSYSTEMS
+udi: prismata.kad.architecture.subsystems
+kind: KAD
+version: 1.0.0
+tenant: PrismataCorp
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-02
+  updated: 2026-11-03
+  path: /canonical/kadd/2-architecture/2-02-subsystems.yaml
+metadata:
+  name: Prismata Subsystems
+  description: Detailed architectural decomposition of the major subsystems, foundational assets, validators, tooling, and supporting components that compose the Prismata ecosystem.
+  tags:
+    - prismata
+    - subsystems
+    - architecture
+    - ecosystem
+    - decomposition
+relations:
+  domain:
+    - System Architecture
+    - Subsystem Architecture
+    - Ecosystem Architecture
+  scope:
+    - Subsystem Responsibilities
+    - Foundational Assets
+    - Runtime Components
+    - Tooling Components
+  exclusions:
+    - Interfaces
+    - Data Models
+    - Storage Design
+    - Configuration Design
+    - Implementation Details
+  priority: critical
+  conflict-resolution: Subsystem ownership follows the architectural boundaries established by the Systems KAD.
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.architecture.systems
+    - prismata.kad.reference.glossary
+notes:
+  - Subsystems represent major architectural building blocks.
+  - Some entries represent foundational assets rather than executable subsystems.
+  - Foundational assets are documented because they are structurally required by the ecosystem.
+  - Architectural significance, rather than implementation form, determines inclusion.
+content:
+
+  classification-model:
+
+    Foundation Asset:
+      description: >
+        Canonical assets that define structure, behavior,
+        identity, standards, or ecosystem knowledge.
+
+    Validator:
+      description: >
+        Components responsible for verification,
+        conformance checking, and rule enforcement.
+
+    Registry:
+      description: >
+        Components responsible for discovery,
+        indexing, classification, and lookup.
+
+    Runtime Component:
+      description: >
+        Components that participate in runtime
+        execution, rendering, composition, or interaction.
+
+    Tooling Component:
+      description: >
+        Components that support editing, composition,
+        administration, authoring, experimentation,
+        and development activities.
+
+    Governance Component:
+      description: >
+        Components responsible for governance,
+        stewardship, preservation, policy,
+        administration, and tenant management.
+
+  subsystems:
+
+    PrismataCore:
+
+      purpose: >
+        Own and maintain the canonical definitions,
+        standards, laws, schemas, manifests,
+        examples, validators, and architectural
+        knowledge of the Prismata ecosystem.
+
+      components:
+
+        CMF:
+          classification: Foundation Asset
+          purpose: >
+            Canonical artifact envelope governing
+            persistent ecosystem artifacts.
+
+        UDI:
+          classification: Foundation Asset
+          purpose: >
+            Universal identity mechanism governing
+            ecosystem asset identification.
+
+        Schemas:
+          classification: Foundation Asset
+          purpose: >
+            Canonical structural definitions for ecosystem assets.
+
+        Laws:
+          classification: Foundation Asset
+          purpose: >
+            Canonical behavioral definitions and constraints.
+
+        Manifests:
+          classification: Foundation Asset
+          purpose: >
+            Canonical descriptions of capabilities,
+            dependencies, behaviors, and integrations.
+
+        ObjectRegistry:
+          classification: Registry
+          purpose: >
+            Catalog and discovery mechanism for
+            ecosystem object definitions.
+
+        Documentation:
+          classification: Foundation Asset
+          purpose: >
+            Authoritative knowledge source describing
+            the ecosystem.
+
+        ExampleObjects:
+          classification: Foundation Asset
+          purpose: >
+            Reference implementations demonstrating
+            valid object structures and usage patterns.
+
+        CMFValidators:
+          classification: Validator
+          purpose: >
+            Validate CMF artifacts against laws,
+            schemas, and ecosystem standards.
+
+        SchemaValidators:
+          classification: Validator
+          purpose: >
+            Validate schema correctness and conformance.
+
+        Tests:
+          classification: Validator
+          purpose: >
+            Verify ecosystem correctness, consistency,
+            and expected behavior.
+
+    PrismataSDK:
+
+      purpose: >
+        Provide runtime execution, composition,
+        rendering, tooling, security, editing,
+        administration, and experimentation capabilities.
+
+      components:
+
+        VaultGuard:
+          classification: Governance Component
+          purpose: >
+            Security, RBAC, secrets management,
+            archive protection, tenant isolation,
+            and trusted access control.
+
+        CorePrimitives:
+          classification: Runtime Component
+          purpose: >
+            Ecosystem-wide foundational services,
+            utility capabilities, operating-system
+            abstractions, and common tooling support.
+
+        CapabilityUDI:
+          classification: Foundation Asset
+          purpose: >
+            Identity model governing capability discovery,
+            capability composition, and capability reuse.
+
+        Registries:
+          classification: Registry
+          purpose: >
+            Runtime discovery, indexing, and lookup
+            services used by ecosystem components.
+
+        PSOValidators:
+          classification: Validator
+          purpose: >
+            Validate runtime objects and ensure
+            compliance with PSO standards.
+
+        InterfaceRendering:
+          classification: Runtime Component
+          purpose: >
+            Metadata-driven runtime rendering of
+            ecosystem interfaces.
+
+        UIFrameworks:
+          classification: Runtime Component
+          purpose: >
+            Rendering and composition framework
+            for metadata-driven user interfaces.
+
+        PCMS-2026:
+          classification: Runtime Component
+          purpose: >
+            Menu-driven interaction framework used
+            for navigation, orchestration, and
+            structured interaction.
+
+        MenuRendering:
+          classification: Runtime Component
+          purpose: >
+            Render menu structures, navigation flows,
+            and interaction hierarchies.
+
+        VILE:
+          classification: Tooling Component
+          purpose: >
+            Multiline editing environment for
+            ecosystem assets and content.
+
+        VISE:
+          classification: Tooling Component
+          purpose: >
+            Structured editing environment for
+            schemas, manifests, objects, and metadata.
+
+        Universe:
+          classification: Tooling Component
+          purpose: >
+            Schema editing, object creation,
+            world building, archive indexing,
+            ecosystem administration, and
+            authoring environment services.
+
+        PrismataLabs:
+          classification: Tooling Component
+          purpose: >
+            Sandbox environment for composition,
+            prototyping, experimentation,
+            simulation, testing, and preview.
+
+        ExampleObjects:
+          classification: Foundation Asset
+          purpose: >
+            Runtime-oriented examples demonstrating
+            rendering, composition, interaction,
+            and framework usage.
+
+    PrismataCorp:
+
+      purpose: >
+        Govern, preserve, archive, administer,
+        and steward tenant ecosystems.
+
+      components:
+
+        TenantWorkspaces:
+          classification: Governance Component
+          purpose: >
+            Tenant-specific environments for
+            artifact management and administration.
+
+        TenantVaults:
+          classification: Governance Component
+          purpose: >
+            Secure storage domains for artifacts,
+            knowledge, history, and tenant assets.
+
+        TenantGovernance:
+          classification: Governance Component
+          purpose: >
+            Tenant-specific governance models,
+            policies, standards, and controls.
+
+        TenantSchemaOverrides:
+          classification: Governance Component
+          purpose: >
+            Controlled tenant-specific modifications
+            to canonical schema behavior.
+
+        TenantSchemaExtensions:
+          classification: Governance Component
+          purpose: >
+            Tenant-specific extension mechanisms
+            that expand canonical schemas without
+            replacing them.
+
+        ArchiveStewardship:
+          classification: Governance Component
+          purpose: >
+            Preservation, classification,
+            retention, and stewardship of
+            tenant knowledge and history.
+
+        PreservationServices:
+          classification: Governance Component
+          purpose: >
+            Long-term retention and protection
+            of ecosystem artifacts and archives.
+
+  subsystem-boundary:
+    summary: >
+      PrismataCore owns canonical definitions.
+
+      PrismataSDK owns runtime execution,
+      security, rendering, composition,
+      and tooling.
+
+      PrismataCorp owns governance,
+      stewardship, preservation,
+      archives, and tenant administration.
+
+      Foundational assets define the ecosystem.
+      Subsystems operate the ecosystem.
+      Governance preserves the ecosystem.

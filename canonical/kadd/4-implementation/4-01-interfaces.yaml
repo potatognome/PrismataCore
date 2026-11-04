@@ -1,0 +1,548 @@
+id: KAD-PRISMATA-4-01-INTERFACES
+udi: prismata.kad.implementation.interfaces
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-03
+  updated: 2026-11-03
+  path: /canonical/kadd/4-implementation/4-01-interfaces.yaml
+
+metadata:
+  name: Interfaces
+  description: >
+    Defines capability invocation, parameter acquisition,
+    output generation, adaptive presentation, renderer
+    behavior, output injection, pane roles, UI frameworks,
+    and human and agent interaction patterns throughout
+    the Prismata ecosystem.
+
+  tags:
+    - prismata
+    - interfaces
+    - capabilities
+    - invocation
+    - rendering
+    - ui
+    - frameworks
+    - panes
+
+relations:
+  domain:
+    - Interface Architecture
+    - Presentation Architecture
+    - Capability Invocation
+    - Human Interaction
+    - Agent Interaction
+
+  scope:
+    - Capability Invocation
+    - Menu Systems
+    - Presentation Models
+    - UI Frameworks
+    - Pane Models
+    - Renderers
+    - Output Routing
+
+  exclusions:
+    - Storage Design
+    - Capability Implementations
+    - Business Logic
+    - Security Implementations
+    - Schema Definitions
+
+  priority: critical
+
+  conflict-resolution: >
+    Interface behavior is governed by capability
+    manifests, invocation definitions, renderer
+    services, framework definitions, and ecosystem
+    architectural decisions.
+
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.planning.risks
+    - prismata.kad.planning.roadmap
+    - prismata.kad.reference.glossary
+
+notes:
+  - Everything addressable is selectable.
+  - Everything selectable is resolvable.
+  - Every manifested capability is invokable.
+  - Every addressable asset is previewable.
+  - Preview is the default fallback operator.
+  - Preview is paginated by default.
+  - Interfaces are metadata driven.
+  - Rendering and execution are separate concerns.
+  - Capability outputs are functional outputs rather than presentation instructions.
+  - Renderers are adaptive presentation services.
+  - Pane roles influence presentation decisions.
+  - Interface definitions should prioritize portability across terminals and display environments.
+
+content:
+
+  interface-principles:
+
+    - Everything addressable is selectable.
+    - Everything selectable is resolvable.
+    - Every asset shall be previewable.
+    - Capabilities define behavior.
+    - Capabilities do not define presentation.
+    - Capabilities do not define placement.
+    - Menus define invocation.
+    - Renderers define presentation.
+    - UI frameworks define presentation topology.
+    - Interfaces should be generated from metadata whenever practical.
+    - Missing required inputs should generate acquisition interfaces.
+    - Presentation should adapt to available display space.
+
+  addressable-classes:
+
+    asset:
+      description: >
+        Addressable ecosystem assets.
+
+      examples:
+        - schema
+        - law
+        - document
+        - log-file
+        - menu
+        - menu-item
+        - pane
+        - ui-framework
+        - colour-scheme
+        - border-pattern
+
+    capability:
+      description: >
+        Addressable invokable operations.
+
+      examples:
+        - preview
+        - validate
+        - edit
+        - compare
+        - search
+        - export
+
+    manifest:
+      description: >
+        Addressable capability containers.
+
+      examples:
+        - asset-capabilities
+        - schema-capabilities
+        - archive-capabilities
+
+  invocation-model:
+
+    components:
+
+      operation:
+        description: >
+          The capability being executed.
+
+      target-parameters:
+        description: >
+          Operational inputs required by the capability.
+
+      functional-output:
+        description: >
+          Logical results produced by the capability.
+
+      rendered-output:
+        description: >
+          Presentation of functional outputs.
+
+      injection-site:
+        description: >
+          Destination for rendered outputs.
+
+  menu-item-model:
+
+    purpose: >
+      Menu items act as invocation definitions.
+
+    responsibilities:
+
+      - Select capability
+      - Supply parameters
+      - Supply parameter defaults
+      - Define presentation preferences
+      - Define output routing preferences
+      - Define injection targets
+
+    governing-rules:
+
+      - Menu items should invoke capabilities.
+      - Menu items may preview assets.
+      - Menu items may inject outputs into alternate panes.
+      - Menu items may inject outputs into alternate frameworks.
+      - Menu items may override renderer preferences.
+      - Menu items may provide capability parameters.
+
+  capability-model:
+
+    capability-classes:
+
+      atomic:
+        description: >
+          Single executable operation.
+
+      composite:
+        description: >
+          Multiple capabilities woven together.
+
+      recursive:
+        description: >
+          Capability compositions which invoke other composite capabilities.
+
+    governing-rules:
+
+      - Every cUDI shall exist within a manifest.
+      - Every capability shall be described by a manifest.
+      - One manifest may contain many cUDIs.
+      - Capabilities declare requirements but do not possess them.
+      - Capabilities declare outputs but do not render them.
+      - Capabilities declare behavior but do not determine output placement.
+
+  manifest-model:
+
+    purpose: >
+      Manifests define executable capability metadata.
+
+    capability-definition:
+
+      inputs:
+        description: >
+          Required capability inputs.
+
+      optional-inputs:
+        description: >
+          Optional capability inputs.
+
+      outputs:
+        description: >
+          Functional outputs.
+
+      validation:
+        description: >
+          Validation requirements.
+
+      security:
+        description: >
+          Security requirements.
+
+      acquisition-providers:
+        description: >
+          Input acquisition definitions.
+
+      interface-hints:
+        description: >
+          Invocation and presentation guidance.
+
+    governing-rules:
+
+      - Assets do not require manifests.
+      - Capabilities require manifests.
+      - Manifests define behavior but not state.
+      - Manifests do not possess operational inputs.
+
+  parameter-model:
+
+    types:
+
+      udi:
+        description: >
+          Single addressable ecosystem asset.
+
+      text:
+        description: >
+          UTF-8 text content.
+
+      choice:
+        description: >
+          Selection from a constrained option set.
+
+      collection:
+        description: >
+          Multiple values of another supported type.
+
+  parameter-acquisition-priority:
+
+    1-explicit-input:
+      description: >
+        Inputs supplied directly by invocation.
+
+      examples:
+        - menu-item parameters
+        - agent parameters
+        - capability chaining
+
+    2-capability-providers:
+      description: >
+        Manifest-defined acquisition providers.
+
+    3-generated-acquisition-interface:
+      description: >
+        Dynamically generated interfaces for unresolved parameters.
+
+      examples:
+        - file selector
+        - registry search
+        - UDI selector
+        - text input
+        - choice selector
+
+    4-failure:
+      description: >
+        Invocation fails due to unresolved required inputs.
+
+  fallback-resolution:
+
+    default-operator:
+      name: preview
+
+    behavior: >
+      Addressable assets without executable capability
+      resolution paths shall use Preview as the default
+      fallback operator.
+
+    examples:
+
+      schema:
+        behavior: preview
+
+      document:
+        behavior: preview
+
+      log-file:
+        behavior: preview
+
+      menu:
+        behavior: preview
+
+      pane:
+        behavior: preview
+
+      ui-framework:
+        behavior: preview
+
+  ui-framework-model:
+
+    ui-framework:
+      description: >
+        Top-level presentation topology.
+
+    pane:
+      description: >
+        Addressable presentation region within a framework.
+
+    menu:
+      description: >
+        Addressable collection of menu items.
+
+    menu-item:
+      description: >
+        Addressable invocation definition.
+
+    colour-scheme:
+      description: >
+        Semantic colour role mapping.
+
+    border-pattern:
+      description: >
+        Visual presentation boundary definition.
+
+    governing-rules:
+
+      - UI frameworks shall possess UDI.
+      - Panes shall possess UDI.
+      - Menus shall possess UDI.
+      - Menu items shall possess UDI.
+      - Colour schemes shall possess UDI.
+      - Border patterns shall possess UDI.
+
+  pane-roles:
+
+    description: >
+      Pane roles define semantic presentation intent
+      rather than fixed rendering behavior.
+
+    examples:
+      - primary
+      - secondary
+      - navigation
+      - status
+      - output
+      - dual-pane-main
+      - dual-pane-panel
+      - dual-split-pane
+
+    governing-rules:
+
+      - Pane roles influence renderer decisions.
+      - Pane roles do not dictate capability behavior.
+      - Multiple frameworks may interpret the same role differently.
+
+  rendering-model:
+
+    ownership:
+      owner: PrismataSDK
+
+    purpose: >
+      Renderers are adaptive presentation services
+      responsible for transforming functional outputs
+      into context-appropriate visual representations.
+
+    renderer-responsibilities:
+
+      - Interpret functional outputs
+      - Evaluate pane roles
+      - Evaluate framework layouts
+      - Evaluate display constraints
+      - Evaluate terminal constraints
+      - Select presentation strategies
+      - Produce rendered output
+
+    renderer-inputs:
+
+      - functional-output
+      - pane-role
+      - framework-definition
+      - pane-definition
+      - display-dimensions
+      - terminal-capabilities
+
+    renderer-governing-rules:
+
+      - Renderers are SDK services.
+      - Renderers do not execute capabilities.
+      - Renderers do not define capability behavior.
+      - Renderers adapt presentation to context.
+      - Renderers should maximize information usefulness.
+      - Renderers should adapt to constrained display environments.
+
+  presentation-model:
+
+    functional-output:
+      description: >
+        Logical result produced by a capability.
+
+    presentation-model:
+      description: >
+        Preferred presentation strategy selected by renderers.
+
+    rendered-output:
+      description: >
+        Actual visual representation displayed to users.
+
+    examples:
+
+      collection-of-objects:
+
+        functional-output: collection
+
+        possible-presentations:
+          - table
+          - menu
+          - tree
+          - navigator
+          - summary-view
+
+      schema:
+
+        functional-output: schema-object
+
+        possible-presentations:
+          - schema-view
+          - document-view
+          - navigator-view
+
+  injection-model:
+
+    targets:
+
+      current-pane:
+        description: >
+          Current pane.
+
+      target-pane:
+        description: >
+          Explicit pane UDI.
+
+      pane-role:
+        description: >
+          Pane selected by semantic role.
+
+      current-framework:
+        description: >
+          Current framework.
+
+      target-framework:
+        description: >
+          Explicit framework UDI.
+
+      background:
+        description: >
+          Non-rendered execution target.
+
+    governing-rules:
+
+      - Injection targets may be explicitly defined.
+      - Injection targets may be inferred.
+      - Pane roles may be used during target resolution.
+      - Frameworks determine actual pane placement.
+
+  invocation-lifecycle:
+
+    steps:
+      - Resolve Invocation Definition
+      - Resolve Capability
+      - Resolve Required Inputs
+      - Generate Acquisition Interfaces
+      - Acquire Inputs
+      - Validate Inputs
+      - Resolve Security Requirements
+      - Execute Capability
+      - Produce Functional Outputs
+      - Resolve Injection Targets
+      - Resolve Presentation Strategy
+      - Render Outputs
+      - Inject Outputs
+
+  architectural-summary:
+
+    statement: >
+      Capabilities define behavior.
+
+      Manifests describe capabilities.
+
+      Menu items define invocation.
+
+      Handlers orchestrate execution.
+
+      UI frameworks define presentation topology.
+
+      Pane roles define presentation intent.
+
+      Renderers adapt presentation to context.
+
+      Injection targets determine placement.
+
+      Together these components establish the
+      metadata-driven interface architecture
+      of the Prismata ecosystem.

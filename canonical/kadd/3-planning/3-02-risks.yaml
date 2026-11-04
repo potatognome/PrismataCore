@@ -1,0 +1,258 @@
+id: KAD-PRISMATA-3-02-RISKS
+udi: prismata.kad.planning.risks
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-02
+  updated: 2026-11-03
+  path: /canonical/kadd/3-planning/3-02-risks.yaml
+
+metadata:
+  name: Risks
+  description: Canonical ecosystem risks that may threaten the objectives, architecture, governance, interoperability, preservation, security, and long-term sustainability of the Prismata ecosystem.
+  tags:
+    - prismata
+    - risks
+    - planning
+    - governance
+    - sustainability
+
+relations:
+  domain:
+    - Planning
+    - Risk Management
+    - Governance
+  scope:
+    - Ecosystem Risks
+    - Architectural Risks
+    - Governance Risks
+    - Operational Risks
+  exclusions:
+    - Requirements
+    - Architecture Decisions
+    - Historical Incidents
+    - Implementation Defects
+    - Retrospectives
+  priority: high
+  conflict-resolution: Risks identify potential threats and should inform planning, governance, architecture, and future mitigation activities.
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.reference.glossary
+    
+notes:
+  - Risks identify threats rather than failures.
+  - Risks should remain technology-agnostic whenever practical.
+  - Risks should focus on long-term ecosystem sustainability.
+  - Risk identifiers exist for human readability.
+  - Risk UDIs exist for indexing, traceability, comparison, automation, and relationships.
+  - Risk severity and probability assessments belong to operational governance processes and not to this KAD.
+
+content:
+  risk-types:
+    architectural:
+      description: >
+        Risks affecting ecosystem architecture,
+        structure, composition, scalability,
+        sustainability, or maintainability.
+
+    governance:
+      description: >
+        Risks affecting governance, stewardship,
+        policy, preservation, tenant management,
+        and compliance.
+
+    operational:
+      description: >
+        Risks affecting operation, administration,
+        supportability, and ecosystem lifecycle activities.
+
+    security:
+      description: >
+        Risks affecting trust, access control,
+        confidentiality, integrity, and auditability.
+
+    knowledge:
+      description: >
+        Risks affecting knowledge preservation,
+        discoverability, documentation, and continuity.
+
+    interoperability:
+      description: >
+        Risks affecting integration, capability discovery,
+        cooperation, composition, and compatibility.
+
+  risks:
+    - id: RISK-001
+      udi: prismata.kadd.risks.knowledge-loss-through-undocumented-change
+      type: knowledge
+      title: Knowledge Loss Through Undocumented Change
+      statement: >
+        Ecosystem knowledge may be lost when architectural,
+        structural, governance, or implementation changes are
+        not reflected within KADD artifacts.
+      mitigation: >
+        Maintain documentation discipline and require KADD
+        updates as part of ecosystem change processes.
+
+    - id: RISK-002
+      udi: prismata.kadd.risks.udi-namespace-fragmentation
+      type: architectural
+      title: UDI Namespace Fragmentation
+      statement: >
+        Inconsistent identity practices may reduce
+        discoverability, traceability, interoperability,
+        and governance effectiveness.
+      mitigation: >
+        Maintain centrally governed UDI standards,
+        validators, and naming conventions.
+
+    - id: RISK-003
+      udi: prismata.kadd.risks.schema-sprawl
+      type: architectural
+      title: Schema Sprawl
+      statement: >
+        Uncontrolled schema creation, extension, or duplication
+        may increase complexity and reduce consistency.
+      mitigation: >
+        Promote schema reuse, governance, validation,
+        and architectural review.
+
+    - id: RISK-004
+      udi: prismata.kadd.risks.capability-duplication
+      type: interoperability
+      title: Capability Duplication
+      statement: >
+        Similar capabilities may be recreated rather than reused,
+        reducing discoverability and increasing maintenance effort.
+      mitigation: >
+        Maintain capability registries and encourage
+        capability discovery before creation.
+
+    - id: RISK-005
+      udi: prismata.kadd.risks.metadata-complexity-exceeds-human-understanding
+      type: knowledge
+      title: Metadata Complexity Exceeds Human Understanding
+      statement: >
+        Excessive abstraction or metadata complexity may reduce
+        accessibility and maintainability.
+      mitigation: >
+        Prioritize human understanding and documentation clarity.
+
+    - id: RISK-006
+      udi: prismata.kadd.risks.registry-fragmentation
+      type: interoperability
+      title: Registry Fragmentation
+      statement: >
+        Asset discovery may become inconsistent if registries
+        diverge or become disconnected.
+      mitigation: >
+        Govern registry behavior through shared standards
+        and validation.
+
+    - id: RISK-007
+      udi: prismata.kadd.risks.validation-bypass
+      type: architectural
+      title: Validation Bypass
+      statement: >
+        Assets may enter operational use without proper
+        validation, reducing trust and interoperability.
+      mitigation: >
+        Treat validation as a mandatory ecosystem activity.
+
+    - id: RISK-008
+      udi: prismata.kadd.risks.archive-loss-or-corruption
+      type: governance
+      title: Archive Loss or Corruption
+      statement: >
+        Historical knowledge, artifacts, or governance records
+        may be lost, damaged, or become inaccessible.
+      mitigation: >
+        Maintain preservation, stewardship, redundancy,
+        verification, and recovery practices.
+
+    - id: RISK-009
+      udi: prismata.kadd.risks.tenant-governance-divergence
+      type: governance
+      title: Tenant Governance Divergence
+      statement: >
+        Tenant-specific governance may drift too far from
+        ecosystem standards and reduce interoperability.
+      mitigation: >
+        Maintain clear separation between tenant customization
+        and canonical ecosystem requirements.
+
+    - id: RISK-010
+      udi: prismata.kadd.risks.core-scope-creep
+      type: architectural
+      title: Core Scope Creep
+      statement: >
+        PrismataCore may accumulate responsibilities that belong
+        within SDK, Corp, or consumer applications.
+      mitigation: >
+        Preserve the principle of a minimal executable core.
+
+    - id: RISK-011
+      udi: prismata.kadd.risks.capability-discovery-failure
+      type: interoperability
+      title: Capability Discovery Failure
+      statement: >
+        Capabilities may become difficult to locate,
+        understand, or compose.
+      mitigation: >
+        Maintain manifests, registries, relationships,
+        and capability governance.
+
+    - id: RISK-012
+      udi: prismata.kadd.risks.security-inconsistency
+      type: security
+      title: Security Inconsistency
+      statement: >
+        Security behavior may become fragmented when services
+        implement independent security approaches.
+      mitigation: >
+        Centralize security capabilities through shared services.
+
+    - id: RISK-013
+      udi: prismata.kadd.risks.relationship-integrity-loss
+      type: knowledge
+      title: Relationship Integrity Loss
+      statement: >
+        Asset relationships may become incomplete, inaccurate,
+        or outdated over time.
+      mitigation: >
+        Maintain relationship validation, registries,
+        traceability, and governance reviews.
+
+    - id: RISK-014
+      udi: prismata.kadd.risks.tenant-isolation-failure
+      type: security
+      title: Tenant Isolation Failure
+      statement: >
+        Isolation boundaries between tenants may be weakened,
+        reducing trust and governance effectiveness.
+      mitigation: >
+        Enforce tenant boundaries through governance,
+        vault management, and security controls.
+
+    - id: RISK-015
+      udi: prismata.kadd.risks.loss-of-architectural-discipline
+      type: operational
+      title: Loss of Architectural Discipline
+      statement: >
+        Ecosystem growth may occur faster than governance,
+        documentation, architecture, or planning practices.
+      mitigation: >
+        Maintain a documentation-first and architecture-first
+        discipline throughout ecosystem evolution.

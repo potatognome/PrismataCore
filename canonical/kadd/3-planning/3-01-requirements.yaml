@@ -1,0 +1,276 @@
+id: KAD-PRISMATA-3-01-REQUIREMENTS
+udi: prismata.kad.planning.requirements
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-02
+  updated: 2026-11-03
+  path: /canonical/kadd/3-planning/3-01-requirements.yaml
+
+metadata:
+  name: Requirements
+  description: Canonical ecosystem requirements governing identity, structure, validation, interoperability, governance, preservation, security, and ecosystem operation.
+  tags:
+    - prismata
+    - requirements
+    - planning
+    - governance
+    - validation
+
+relations:
+  domain:
+    - Planning
+    - Requirements
+    - Governance
+  scope:
+    - Ecosystem Requirements
+    - Functional Requirements
+    - Structural Requirements
+    - Governance Requirements
+  exclusions:
+    - Architecture Decisions
+    - Design Details
+    - Implementation Details
+    - Historical Records
+    - Research Findings
+  priority: critical
+  conflict-resolution: Requirements define mandatory outcomes and take precedence over implementation preferences.
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.reference.glossary
+
+notes:
+  - Requirements define mandatory expectations.
+  - Requirements should be technology-agnostic whenever practical.
+  - Requirements should be testable, verifiable, or reviewable.
+  - Requirements describe what must exist rather than how it is implemented.
+  - SHALL statements indicate mandatory compliance.
+  - Requirement identifiers exist for human readability.
+  - Requirement UDIs exist for indexing, traceability, relationships, comparison, automation, and governance.
+
+content:
+  requirement-types:
+    structural:
+      description: >
+        Requirements governing architecture,
+        organization, ownership, identity,
+        structure, and ecosystem boundaries.
+
+    validation:
+      description: >
+        Requirements governing verification,
+        enforcement, correctness, and compliance.
+
+    interoperability:
+      description: >
+        Requirements governing capability discovery,
+        integration, composition, and cooperation.
+
+    governance:
+      description: >
+        Requirements governing stewardship,
+        preservation, archives, security,
+        policy, and tenant management.
+
+    operational:
+      description: >
+        Requirements governing runtime behavior,
+        tooling, interaction, and ecosystem operation.
+
+  requirements:
+
+    - id: REQ-001
+      udi: prismata.kadd.requirements.universal-asset-identity
+      type: structural
+      statement: >
+        Every ecosystem asset SHALL possess a UDI.
+
+    - id: REQ-002
+      udi: prismata.kadd.requirements.cmf-artifact-structure
+      type: structural
+      statement: >
+        Every persistent artifact SHALL conform to a CMF structure.
+
+    - id: REQ-003
+      udi: prismata.kadd.requirements.pso-runtime-structure
+      type: structural
+      statement: >
+        Every runtime object SHALL conform to a PSO structure.
+
+    - id: REQ-004
+      udi: prismata.kadd.requirements.schema-identity
+      type: structural
+      statement: >
+        Every schema SHALL possess a governing UDI.
+
+    - id: REQ-005
+      udi: prismata.kadd.requirements.law-identity
+      type: structural
+      statement: >
+        Every law SHALL possess a governing UDI.
+
+    - id: REQ-006
+      udi: prismata.kadd.requirements.capability-identity
+      type: structural
+      statement: >
+        Every capability SHALL possess a Capability UDI.
+
+    - id: REQ-007
+      udi: prismata.kadd.requirements.manifest-identity
+      type: structural
+      statement: >
+        Every manifest SHALL possess a Manifest UDI.
+
+    - id: REQ-008
+      udi: prismata.kadd.requirements.mandatory-ecosystem-layers
+      type: structural
+      statement: >
+        The ecosystem SHALL maintain the mandatory layers
+        PrismataCore, PrismataSDK, and PrismataCorp.
+
+    - id: REQ-009
+      udi: prismata.kadd.requirements.cmf-validation-before-use
+      type: validation
+      statement: >
+        CMF artifacts SHALL be validated before operational use.
+
+    - id: REQ-010
+      udi: prismata.kadd.requirements.schema-validation-before-adoption
+      type: validation
+      statement: >
+        Schemas SHALL be validated before adoption.
+
+    - id: REQ-011
+      udi: prismata.kadd.requirements.pso-runtime-validation
+      type: validation
+      statement: >
+        Runtime objects SHALL be validated against PSO requirements.
+
+    - id: REQ-012
+      udi: prismata.kadd.requirements.validation-capability-availability
+      type: validation
+      statement: >
+        Validation capabilities SHALL be available throughout the ecosystem.
+
+    - id: REQ-013
+      udi: prismata.kadd.requirements.capability-discoverability
+      type: interoperability
+      statement: >
+        Capabilities SHALL be discoverable through manifests.
+
+    - id: REQ-014
+      udi: prismata.kadd.requirements.asset-discoverability
+      type: interoperability
+      statement: >
+        Ecosystem assets SHALL be discoverable through registries,
+        metadata, indices, or relationships.
+
+    - id: REQ-015
+      udi: prismata.kadd.requirements.capability-composition
+      type: interoperability
+      statement: >
+        Systems SHALL support capability-based composition.
+
+    - id: REQ-016
+      udi: prismata.kadd.requirements.metadata-driven-interoperability
+      type: interoperability
+      statement: >
+        Systems SHALL support metadata-driven interoperability.
+
+    - id: REQ-017
+      udi: prismata.kadd.requirements.tenant-isolation
+      type: governance
+      statement: >
+        Tenant ecosystems SHALL remain logically isolated.
+
+    - id: REQ-018
+      udi: prismata.kadd.requirements.tenant-governance-support
+      type: governance
+      statement: >
+        Tenant workspaces SHALL support tenant-specific governance.
+
+    - id: REQ-019
+      udi: prismata.kadd.requirements.vault-preservation-support
+      type: governance
+      statement: >
+        Tenant vaults SHALL support preservation of artifacts,
+        knowledge, and historical records.
+
+    - id: REQ-020
+      udi: prismata.kadd.requirements.shared-security-services
+      type: governance
+      statement: >
+        Ecosystem security SHALL be provided through shared security services.
+
+    - id: REQ-021
+      udi: prismata.kadd.requirements.knowledge-preservation
+      type: governance
+      statement: >
+        Historical knowledge SHALL be preserved whenever practical.
+
+    - id: REQ-022
+      udi: prismata.kadd.requirements.governance-traceability
+      type: governance
+      statement: >
+        Governance actions SHALL be traceable and auditable.
+
+    - id: REQ-023
+      udi: prismata.kadd.requirements.metadata-driven-rendering
+      type: operational
+      statement: >
+        User interfaces SHALL support metadata-driven rendering.
+
+    - id: REQ-024
+      udi: prismata.kadd.requirements.schema-management-tooling
+      type: operational
+      statement: >
+        Ecosystem tooling SHALL support schema management
+
+    - id: REQ-025
+      udi: prismata.kadd.requirements.object-authoring-tooling
+      type: operational
+      statement: >
+        Ecosystem tooling SHALL support object authoring.
+
+    - id: REQ-026
+      udi: prismata.kadd.requirements.manifest-management-tooling
+      type: operational
+      statement: >
+        Ecosystem tooling SHALL support manifest management.
+
+    - id: REQ-027
+      udi: prismata.kadd.requirements.udi-management-tooling
+      type: operational
+      statement: >
+        Ecosystem tooling SHALL support UDI management.
+
+    - id: REQ-028
+      udi: prismata.kadd.requirements.validation-workflows
+      type: operational
+      statement: >
+        Ecosystem tooling SHALL support validation workflows.
+
+    - id: REQ-029
+      udi: prismata.kadd.requirements.experimentation-environments
+      type: operational
+      statement: >
+        Ecosystem environments SHALL support experimentation,
+        prototyping, and testing.
+
+    - id: REQ-030
+      udi: prismata.kadd.requirements.accessibility-discoverability-maintainability
+      type: operational
+      statement: >
+        Ecosystem operation SHALL prioritize accessibility,
+        discoverability, and maintainability.

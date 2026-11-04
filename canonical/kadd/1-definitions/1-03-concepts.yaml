@@ -6,8 +6,8 @@ tenant: null
 
 source:
   author: Prismata Architecture Team
-  created: 2026-10-30
-  updated: 2026-10-30
+  created: 2026-11-01
+  updated: 2026-11-01
   path: canonical/kadd/1-definitions/1-03-concepts.yaml
 
 metadata:
@@ -38,9 +38,10 @@ relations:
   priority: critical
   conflict-resolution: Concept definitions take precedence over implementation interpretations.
   imports:
-    - KAD-PRISMATA-1-01
-    - KAD-PRISMATA-1-02
-    - KAD-PRISMATA-9-01
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.reference.glossary
 
 notes:
   - Concepts define meaning rather than implementation.

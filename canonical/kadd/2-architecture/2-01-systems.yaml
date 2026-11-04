@@ -1,0 +1,294 @@
+id: KAD-PRISMATA-2-01-SYSTEMS
+udi: prismata.kad.architecture.systems
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-10-30
+  updated: 2026-10-30
+  path: /canonical/kadd/2-architecture/2-01-systems.yaml
+
+metadata:
+  name: Prismata Systems
+  description: High-level architectural systems and ecosystem layers that compose the Prismata ecosystem.
+  tags:
+    - prismata
+    - systems
+    - architecture
+    - ecosystem
+    - layers
+
+relations:
+  domain:
+    - System Architecture
+    - Ecosystem Architecture
+    - Platform Architecture
+
+  scope:
+    - Ecosystem Layers
+    - System Responsibilities
+    - Architectural Ownership
+
+  exclusions:
+    - Subsystems
+    - Internal Components
+    - Runtime Design
+    - Implementation Details
+    - Data Models
+    - Interfaces
+
+  priority: critical
+
+  conflict-resolution: System responsibilities are exclusive and non-overlapping unless explicitly documented.
+
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.reference.glossary
+
+notes:
+  - Prismata is composed of three mandatory architectural layers.
+  - Architectural layers represent different concerns and ownership boundaries.
+  - Layers are intentionally non-overlapping and collision resistant.
+  - Consumer applications are not part of the mandatory Prismata ecosystem layers.
+
+content:
+  ecosystem-architecture:
+    principle: >
+      A complete Prismata ecosystem consists of three mandatory,
+      non-overlapping architectural layers:
+      - PrismataCore
+      - PrismataSDK
+      - PrismataCorp
+
+    rationale: >
+      Each layer exists to solve a distinct concern. Knowledge,
+      structure, implementation, security, governance, and
+      stewardship responsibilities are intentionally separated
+      to minimize coupling and preserve architectural clarity.
+
+  systems:
+    PrismataCore:
+      classification: Mandatory Ecosystem Layer
+      role: Definition Layer
+
+      purpose: >
+        Maintain the canonical definitions, laws, schemas,
+        manifests, identifiers, validation mechanisms, and
+        architectural knowledge that define the Prismata ecosystem.
+
+      responsibilities:
+        - Project documentation
+        - Canonical schemas
+        - Core manifests
+        - UI object schemas
+        - Example object definitions
+        - Object registry
+        - UDI schemas
+        - UDI laws
+        - CMF schemas
+        - CMF laws
+        - PSO schemas
+        - PSO laws
+        - Validators
+        - Validation definitions
+        - Reference tests
+        - Architectural standards
+
+      owns:
+        - Knowledge definitions
+        - Structural definitions
+        - Behavioral definitions
+        - Validation definitions
+        - Identity definitions
+
+      not-responsible-for:
+        - Runtime orchestration
+        - Security services
+        - Secrets management
+        - User interface rendering
+        - Agent cognition
+        - Robot cognition
+        - Archive storage
+        - Tenant governance
+        - Runtime composition
+
+      implementation-model: >
+        PrismataCore is primarily composed of documentation,
+        schemas, manifests, laws, standards, validators,
+        examples, and tests. Executable code is intentionally
+        minimal and limited to validation and verification
+        responsibilities.
+
+      archive-role: >
+        PrismataCore may index knowledge and historical archives
+        but does not own or store those archives.
+
+    PrismataSDK:
+      classification: Mandatory Ecosystem Layer
+      role: Runtime, Security, and Tooling Layer
+
+      purpose: >
+        Provide the operational infrastructure, security,
+        rendering systems, tooling, composition frameworks,
+        runtime implementations, and interaction capabilities
+        required by Prismata ecosystems.
+
+      responsibilities:
+        - Runtime support
+        - Runtime composition
+        - Runtime orchestration support
+        - PSO implementations
+        - Metadata-driven rendering
+        - Metadata-driven interaction
+        - Security services
+        - Tooling services
+        - Development services
+        - Authoring services
+        - Testing environments
+
+      owns:
+        - Runtime implementations
+        - Security implementations
+        - Rendering frameworks
+        - User interaction frameworks
+        - Tooling frameworks
+        - Composition frameworks
+
+      major-systems:
+        VaultGuard:
+          role: Security Foundation
+          purpose: >
+            Provides ecosystem security, RBAC, secrets
+            management, artifact protection, archive
+            protection, tenant isolation, and trusted access
+            services.
+
+        CorePrimitives:
+          role: Foundation Services
+          purpose: >
+            Provides common filesystem services,
+            operating-system abstractions, path helpers,
+            utility functions, shared capability providers,
+            and ecosystem-wide foundational tooling.
+
+        Universe:
+          role: Authoring Environment
+          purpose: >
+            Provides schema editing, object creation,
+            world building, manifest editing, configuration
+            management, archive indexing, and ecosystem
+            administration.
+
+        PrismataLabs:
+          role: Sandbox Environment
+          purpose: >
+            Provides experimentation, composition,
+            testing, preview, simulation, prototyping,
+            and metadata validation environments.
+
+      rendering-responsibilities:
+        - UI object rendering
+        - Menu rendering
+        - Menu item rendering
+        - Pane rendering
+        - Layout rendering
+        - Colour rendering
+        - Colour role rendering
+        - Border pattern rendering
+        - Interaction rendering
+        - Metadata-driven composition
+
+      not-responsible-for:
+        - Canonical law ownership
+        - Canonical schema ownership
+        - Canonical standards ownership
+        - Tenant governance
+        - Archive stewardship
+
+    PrismataCorp:
+      classification: Mandatory Ecosystem Layer
+      role: Governance, Stewardship, and Archive Layer
+
+      purpose: >
+        Provide governance, stewardship, organizational
+        ownership, tenant administration, archive management,
+        artifact preservation, and ecosystem oversight.
+
+      responsibilities:
+        - Governance
+        - Stewardship
+        - Ecosystem administration
+        - Tenant administration
+        - Tenant vault management
+        - Organizational standards
+        - Policy ownership
+        - Archive management
+        - Artifact preservation
+        - Historical preservation
+        - Knowledge preservation
+        - Tenant governance profiles
+
+      owns:
+        - Governance concerns
+        - Stewardship concerns
+        - Archive concerns
+        - Preservation concerns
+        - Tenant concerns
+        - Policy concerns
+        - Organizational concerns
+
+      tenant-model: >
+        PrismataCorp maintains isolated tenant vaults for
+        artifacts, knowledge, history, and governance. Each
+        tenant may possess tenant-specific governance while
+        remaining compatible with ecosystem-wide standards.
+
+      not-responsible-for:
+        - Runtime rendering
+        - Runtime implementation
+        - Validation execution
+        - Core schema definitions
+        - Core law definitions
+        - Tooling implementation
+
+  ecosystem-consumers:
+    classification: Consumer Systems
+
+    description: >
+      Systems built upon Prismata foundations but not
+      considered part of the mandatory Prismata layer model.
+
+    examples:
+      - DocLibrarian
+      - OrgArchitect
+      - PrismSense
+      - Lumen
+      - Future Ecosystem Applications
+
+  external-reference-projects:
+    classification: External References
+    description: >
+      Projects and technologies referenced by Prismata or
+      used alongside Prismata without being owned by Prismata.
+
+    examples:
+      - tUIlKit
+      - Chromaverse
+      - ThoughtFire
+
+  architectural-boundary:
+    summary: >
+      PrismataCore defines.
+      PrismataSDK secures and implements.
+      PrismataCorp governs, preserves, and archives.
+
+      Together these three mandatory layers establish the
+      complete architectural foundation of the Prismata
+      ecosystem.

@@ -43,8 +43,9 @@ relations:
   priority: critical
   conflict-resolution: Project responsibilities and boundaries take precedence over feature expansion and implementation convenience.
   imports:
-    - KADD-001
-    - KAD-PRISMATA-1-01
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.reference.glossary
 
 notes:
   - Prismata is intended to remain small, deterministic, portable, and extensible.

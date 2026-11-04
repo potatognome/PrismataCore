@@ -7,7 +7,7 @@ tenant: null
 source:
   author: dev
   created: 2026-10-28
-  updated: 2026-11-01
+  updated: 2026-11-03
   path: canonical/kadd/1-definitions/1-00-documentation-discipline.yaml
 
 metadata:
@@ -25,7 +25,8 @@ relations:
   exclusions: null
   priority: high
   conflict-resolution: null
-  imports: null
+  imports: 
+    - prismata.kad.reference.glossary
 
 notes:
   - Layered architecture-first documentation standard intended for planning, architecture, implementation, operation, and long-term project knowledge management.

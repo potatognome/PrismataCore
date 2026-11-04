@@ -1,0 +1,418 @@
+id: KAD-PRISMATA-3-03-ROADMAP
+udi: prismata.kad.planning.roadmap
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-02
+  updated: 2026-11-03
+  path: /canonical/kadd/3-planning/3-03-roadmap.yaml
+
+metadata:
+  name: Roadmap
+  description: Planned ecosystem capabilities, initiatives, milestones, and future work intended to advance the Prismata ecosystem while remaining aligned with established architecture, requirements, and governance.
+  tags:
+    - prismata
+    - roadmap
+    - planning
+    - initiatives
+    - future-work
+
+relations:
+  domain:
+    - Planning
+    - Roadmapping
+    - Governance
+  scope:
+    - Future Work
+    - Planned Initiatives
+    - Capability Growth
+    - Ecosystem Evolution
+  exclusions:
+    - Requirements
+    - Architecture Decisions
+    - Research Findings
+    - Historical Records
+    - Completed Work
+  priority: high
+  conflict-resolution: Roadmap items should align with approved architecture, requirements, and governance.
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.planning.risks
+    - prismata.kad.reference.glossary
+
+notes:
+  - Roadmap items describe intended future work.
+  - Roadmap items are planning artifacts rather than commitments.
+  - Roadmap priorities may evolve as requirements, risks, governance, and funding change.
+  - Roadmap identifiers exist for human readability.
+  - Roadmap UDIs exist for indexing, traceability, automation, comparison, and relationships.
+  - Dependencies should reference UDIs rather than local identifiers whenever practical.
+  - Success metrics describe desired outcomes rather than implementation details.
+  - Null success metrics are permitted when success criteria are not yet defined.
+  - Completed roadmap items should be reflected through implementation and post-implementation KADs.
+
+content:
+  statuses:
+    - planned
+    - active
+    - blocked
+    - deferred
+    - completed
+
+  roadmap-items:
+    - id: ROADMAP-001
+      udi: prismata.kadd.roadmap.core-schema-completion
+      title: Core Schema Completion
+      status: planned
+      objective: Complete canonical schema coverage for all foundational ecosystem assets.
+      success-metric: All PrismataCore foundational assets possess canonical schemas.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.universal-identity-through-udi
+          - prismata.kadd.adr.universal-artifact-structure-through-cmf
+          - prismata.kadd.adr.separation-of-structure-and-behavior
+        requirements:
+          - prismata.kadd.requirements.universal-asset-identity
+          - prismata.kadd.requirements.cmf-artifact-structure
+        risks:
+          - prismata.kadd.risks.schema-sprawl
+        roadmap: []
+
+    - id: ROADMAP-002
+      udi: prismata.kadd.roadmap.core-law-completion
+      title: Core Law Completion
+      status: planned
+      objective: Complete canonical law coverage for foundational ecosystem structures and behaviors.
+      success-metric: All canonical schemas have supporting law coverage.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.separation-of-structure-and-behavior
+        requirements:
+          - prismata.kadd.requirements.law-identity
+        risks:
+          - prismata.kadd.risks.validation-bypass
+        roadmap:
+          - prismata.kadd.roadmap.core-schema-completion
+
+    - id: ROADMAP-003
+      udi: prismata.kadd.roadmap.cmf-maturation
+      title: CMF Maturation
+      status: planned
+      objective: Mature and refine CMF standards, schemas, validators, and supporting documentation.
+      success-metric: CMF standards, validators, and documentation are considered production ready.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.universal-artifact-structure-through-cmf
+          - prismata.kadd.adr.validation-as-a-first-class-capability
+        requirements:
+          - prismata.kadd.requirements.cmf-artifact-structure
+          - prismata.kadd.requirements.cmf-validation-before-use
+        risks:
+          - prismata.kadd.risks.validation-bypass
+        roadmap:
+          - prismata.kadd.roadmap.core-schema-completion
+          - prismata.kadd.roadmap.core-law-completion
+
+    - id: ROADMAP-004
+      udi: prismata.kadd.roadmap.pso-maturation
+      title: PSO Maturation
+      status: planned
+      objective: Mature and refine PSO standards, schemas, validators, and lifecycle definitions.
+      success-metric: PSO runtime standards support all approved runtime object classes.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.universal-runtime-structure-through-pso
+          - prismata.kadd.adr.validation-as-a-first-class-capability
+        requirements:
+          - prismata.kadd.requirements.pso-runtime-structure
+          - prismata.kadd.requirements.pso-runtime-validation
+        risks:
+          - prismata.kadd.risks.validation-bypass
+        roadmap:
+          - prismata.kadd.roadmap.core-schema-completion
+          - prismata.kadd.roadmap.core-law-completion
+
+    - id: ROADMAP-005
+      udi: prismata.kadd.roadmap.capability-ecosystem
+      title: Capability Ecosystem
+      status: planned
+      objective: Expand capability definitions, manifests, registries, and composition models.
+      success-metric: Capabilities are discoverable, composable, and registry-driven.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.capability-based-composition
+        requirements:
+          - prismata.kadd.requirements.capability-identity
+          - prismata.kadd.requirements.manifest-identity
+          - prismata.kadd.requirements.capability-discoverability
+          - prismata.kadd.requirements.capability-composition
+        risks:
+          - prismata.kadd.risks.capability-duplication
+          - prismata.kadd.risks.capability-discovery-failure
+        roadmap:
+          - prismata.kadd.roadmap.cmf-maturation
+          - prismata.kadd.roadmap.pso-maturation
+
+    - id: ROADMAP-006
+      udi: prismata.kadd.roadmap.registry-framework
+      title: Registry Framework Expansion
+      status: planned
+      objective: Develop ecosystem-wide discovery and indexing capabilities.
+      success-metric: Assets, capabilities, and objects are discoverable through registries.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.knowledge-organization-through-registries-and-indices
+        requirements:
+          - prismata.kadd.requirements.asset-discoverability
+        risks:
+          - prismata.kadd.risks.registry-fragmentation
+        roadmap:
+          - prismata.kadd.roadmap.capability-ecosystem
+
+    - id: ROADMAP-007
+      udi: prismata.kadd.roadmap.universe-authoring-environment
+      title: Universe Authoring Environment
+      status: planned
+      objective: Provide comprehensive authoring, editing, administration, and ecosystem management capabilities.
+      success-metric: Core ecosystem assets can be administered through Universe.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.metadata-driven-interface-rendering
+        requirements:
+          - prismata.kadd.requirements.schema-management-tooling
+          - prismata.kadd.requirements.object-authoring-tooling
+          - prismata.kadd.requirements.manifest-management-tooling
+          - prismata.kadd.requirements.udi-management-tooling
+        risks:
+          - prismata.kadd.risks.loss-of-architectural-discipline
+        roadmap:
+          - prismata.kadd.roadmap.registry-framework
+
+    - id: ROADMAP-008
+      udi: prismata.kadd.roadmap.universe-schema-editor
+      title: Universe Schema Editor
+      status: planned
+      objective: Provide structured schema management and editing capabilities.
+      success-metric: Schemas can be created, modified, validated, and published through Universe.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.metadata-driven-interface-rendering
+        requirements:
+          - prismata.kadd.requirements.schema-management-tooling
+        risks: []
+        roadmap:
+          - prismata.kadd.roadmap.universe-authoring-environment
+
+    - id: ROADMAP-009
+      udi: prismata.kadd.roadmap.universe-object-designer
+      title: Universe Object Designer
+      status: planned
+      objective: Enable creation, composition, preview, and validation of ecosystem objects.
+      success-metric: Object creation and validation workflows no longer require manual file editing.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.metadata-driven-interface-rendering
+        requirements:
+          - prismata.kadd.requirements.object-authoring-tooling
+          - prismata.kadd.requirements.validation-workflows
+        risks: []
+        roadmap:
+          - prismata.kadd.roadmap.universe-schema-editor
+
+    - id: ROADMAP-010
+      udi: prismata.kadd.roadmap.ui-framework-evolution
+      title: UI Framework Evolution
+      status: planned
+      objective: Expand metadata-driven interface composition and rendering.
+      success-metric: Interface layouts are fully metadata driven.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.metadata-driven-interface-rendering
+          - prismata.kadd.adr.metadata-before-implementation
+        requirements:
+          - prismata.kadd.requirements.metadata-driven-rendering
+        risks:
+          - prismata.kadd.risks.metadata-complexity-exceeds-human-understanding
+        roadmap:
+          - prismata.kadd.roadmap.pso-maturation
+
+    - id: ROADMAP-011
+      udi: prismata.kadd.roadmap.pcms-2026-evolution
+      title: PCMS-2026 Evolution
+      status: planned
+      objective: Expand menu-driven orchestration, navigation, presentation, and interaction capabilities.
+      success-metric: PCMS-2026 supports all primary interactive workflows.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.metadata-driven-interface-rendering
+        requirements:
+          - prismata.kadd.requirements.metadata-driven-rendering
+        risks: []
+        roadmap:
+          - prismata.kadd.roadmap.ui-framework-evolution
+
+    - id: ROADMAP-012
+      udi: prismata.kadd.roadmap.vile-editor
+      title: VILE Editor
+      status: planned
+      objective: Provide multiline editing workflows for text-centric ecosystem assets.
+      success-metric: Documentation assets can be managed through VILE.
+      dependencies:
+        adrs: []
+        requirements:
+          - prismata.kadd.requirements.schema-management-tooling
+        risks: []
+        roadmap:
+          - prismata.kadd.roadmap.universe-authoring-environment
+
+    - id: ROADMAP-013
+      udi: prismata.kadd.roadmap.vise-structured-editor
+      title: VISE Structured Editor
+      status: planned
+      objective: Provide structured editing workflows for schemas, manifests, objects, and metadata.
+      success-metric: Structured assets can be edited without direct YAML manipulation.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.metadata-before-implementation
+        requirements:
+          - prismata.kadd.requirements.schema-management-tooling
+          - prismata.kadd.requirements.object-authoring-tooling
+          - prismata.kadd.requirements.manifest-management-tooling
+        risks:
+          - prismata.kadd.risks.schema-sprawl
+        roadmap:
+          - prismata.kadd.roadmap.universe-schema-editor
+
+    - id: ROADMAP-014
+      udi: prismata.kadd.roadmap.prismata-labs-expansion
+      title: PrismataLabs Expansion
+      status: planned
+      objective: Expand experimentation, composition, simulation, testing, and preview capabilities.
+      success-metric: New runtime concepts can be validated without impacting production systems.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.validation-as-a-first-class-capability
+        requirements:
+          - prismata.kadd.requirements.experimentation-environments
+        risks: []
+        roadmap:
+          - prismata.kadd.roadmap.vise-structured-editor
+          - prismata.kadd.roadmap.ui-framework-evolution
+
+    - id: ROADMAP-015
+      udi: prismata.kadd.roadmap.vaultguard-foundation
+      title: VaultGuard Foundation
+      status: planned
+      objective: Mature security, RBAC, archive protection, secrets management, and tenant isolation services.
+      success-metric: Security services are consumed through VaultGuard rather than duplicated implementations.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.tenant-isolation-through-governance-boundaries
+          - prismata.kadd.adr.security-as-a-shared-ecosystem-responsibility
+        requirements:
+          - prismata.kadd.requirements.tenant-isolation
+          - prismata.kadd.requirements.shared-security-services
+        risks:
+          - prismata.kadd.risks.security-inconsistency
+          - prismata.kadd.risks.tenant-isolation-failure
+        roadmap: []
+
+    - id: ROADMAP-016
+      udi: prismata.kadd.roadmap.tenant-governance-model
+      title: Tenant Governance Model
+      status: planned
+      objective: Support tenant-specific governance while preserving compatibility with canonical ecosystem standards.
+      success-metric: Tenants can customize governance without breaking ecosystem compatibility.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.tenant-isolation-through-governance-boundaries
+        requirements:
+          - prismata.kadd.requirements.tenant-governance-support
+        risks:
+          - prismata.kadd.risks.tenant-governance-divergence
+        roadmap:
+          - prismata.kadd.roadmap.vaultguard-foundation
+
+    - id: ROADMAP-017
+      udi: prismata.kadd.roadmap.tenant-archive-stewardship
+      title: Tenant Archive Stewardship
+      status: planned
+      objective: Expand preservation, archival, and stewardship capabilities for tenant ecosystems.
+      success-metric: Tenant archives are preserved, searchable, and recoverable.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.knowledge-preservation-over-replacement
+        requirements:
+          - prismata.kadd.requirements.vault-preservation-support
+          - prismata.kadd.requirements.knowledge-preservation
+        risks:
+          - prismata.kadd.risks.archive-loss-or-corruption
+        roadmap:
+          - prismata.kadd.roadmap.tenant-governance-model
+
+    - id: ROADMAP-018
+      udi: prismata.kadd.roadmap.ecosystem-knowledge-indexing
+      title: Ecosystem Knowledge Indexing
+      status: planned
+      objective: Improve classification, indexing, relationships, discoverability, and knowledge navigation.
+      success-metric: Ecosystem knowledge is discoverable through indexed relationships.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.knowledge-organization-through-registries-and-indices
+        requirements:
+          - prismata.kadd.requirements.asset-discoverability
+        risks:
+          - prismata.kadd.risks.knowledge-loss-through-undocumented-change
+          - prismata.kadd.risks.relationship-integrity-loss
+        roadmap:
+          - prismata.kadd.roadmap.registry-framework
+
+    - id: ROADMAP-019
+      udi: prismata.kadd.roadmap.reference-object-library
+      title: Reference Object Library
+      status: planned
+      objective: Expand the collection of validated reference objects, examples, and implementation patterns.
+      success-metric: Every major schema family contains validated reference objects.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.validation-as-a-first-class-capability
+        requirements:
+          - prismata.kadd.requirements.cmf-validation-before-use
+        risks:
+          - prismata.kadd.risks.schema-sprawl
+        roadmap:
+          - prismata.kadd.roadmap.cmf-maturation
+
+    - id: ROADMAP-020
+      udi: prismata.kadd.roadmap.ecosystem-consumer-support
+      title: Ecosystem Consumer Support
+      status: planned
+      objective: Improve the ability of external ecosystem projects to adopt and leverage Prismata standards, capabilities, and governance models.
+      success-metric: Consumer projects can integrate with Prismata using documented standards and registries.
+      dependencies:
+        adrs:
+          - prismata.kadd.adr.capability-based-composition
+          - prismata.kadd.adr.knowledge-organization-through-registries-and-indices
+        requirements:
+          - prismata.kadd.requirements.capability-discoverability
+          - prismata.kadd.requirements.asset-discoverability
+          - prismata.kadd.requirements.capability-composition
+        risks:
+          - prismata.kadd.risks.capability-duplication
+          - prismata.kadd.risks.capability-discovery-failure
+        roadmap:
+          - prismata.kadd.roadmap.capability-ecosystem
+          - prismata.kadd.roadmap.registry-framework

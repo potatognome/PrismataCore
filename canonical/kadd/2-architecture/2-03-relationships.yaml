@@ -1,0 +1,185 @@
+id: KAD-PRISMATA-2-03-RELATIONSHIPS
+udi: prismata.kad.architecture.relationships
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team 
+  created: 2026-11-02
+  updated: 2026-11-03
+  path: /canonical/kadd/2-architecture/2-03-relationships.yaml 
+
+metadata:
+  name: Prismata Relationships
+  description: Canonical architectural relationships, dependencies, ownership boundaries, cardinalities, and interaction patterns between Prismata systems, subsystems, assets, and ecosystem participants.
+  tags:
+    - prismata
+    - relationships
+    - architecture
+    - dependencies
+    - ownership
+    - cardinality
+
+relations:
+  domain:
+    - Architecture
+    - Relationships
+    - Dependencies
+  scope:    
+    - System Relationships
+    - Subsystem Relationships
+    - Ownership Relationships
+    - Dependency Relationships
+    - Cardinality Definitions
+  exclusions:
+    - Implementation Details
+    - Runtime Flows
+    - Interfaces
+    - Data Models
+    - Deployment Design
+  priority: critical
+  conflict-resolution: Relationship ownership follows the architectural boundaries defined in Systems and Subsystems KADs.
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.reference.glossary
+
+notes:
+  - Relationships describe architectural dependency and ownership rather than execution order.
+  - Relationships should remain stable even if implementations change.
+  - Ownership relationships are preferred over implementation relationships.
+  - Cardinalities describe architectural expectations rather than storage implementation details. 
+  
+content:
+  relationship-principles:
+    - Definitions should not depend upon implementations.
+    - Implementations should depend upon definitions.
+    - Governance should preserve separation between tenants.
+    - Assets should be discoverable through identity.
+    - Capabilities should be discoverable through manifests.
+    - Validation should occur before operational usage.
+    - Archives should preserve provenance and traceability.
+  
+  cardinality-model:
+    notation:
+      "1:1": One to One
+      "1:N": One to Many
+      "N:1": Many to One
+      "N:N": Many to Many
+
+  cardinalities:
+    identity-relationships:
+      UDI-to-Asset:
+        cardinality: "1:1"
+        description: >
+          A UDI identifies exactly one ecosystem asset.
+          An asset possesses exactly one governing UDI.
+      CapabilityUDI-to-Capability:
+        cardinality: "1:1"
+        description: >
+          A Capability UDI identifies exactly one capability.
+          A capability possesses exactly one Capability UDI.
+          
+    schema-relationships:
+      Schema-to-Artifact:
+        cardinality: "1:N"
+        description: >
+          A schema may govern many artifacts.
+          An artifact conforms to one primary governing schema.
+        Schema-to-PSO:
+          cardinality: "1:N"
+          description: >
+            A schema may govern many runtime objects.
+        Schema-to-ExampleObject:
+          cardinality: "1:N"
+          description: >
+            A schema may have many example objects.
+    
+    law-relationships:
+      Law-to-Schema:
+        cardinality: "N:N"
+        description: >
+          Laws may apply to many schemas.
+          Schemas may be governed by many laws.
+      Law-to-Artifact:
+        cardinality: "N:N"
+        description: >
+          Laws may govern many artifacts.
+          Artifacts may be subject to many laws.
+    
+    capability-relationships:
+      Capability-to-CapabilityUDI:
+        cardinality: "1:1"
+        description: >
+          Each capability possesses one Capability UDI.
+          Each Capability UDI identifies one capability.
+      Capability-to-Manifest:
+        cardinality: "N:N"
+        description: >
+          A capability may be described by multiple manifests.
+          A manifest may describe one or many capabilities.
+      Manifest-to-ManifestUDI:
+        cardinality: "1:1"
+        description: >
+          Each manifest possesses one Manifest UDI.
+          Each Manifest UDI identifies one manifest.
+      Capability-to-Capability:
+        cardinality: "N:N"
+        description: >
+          Capabilities may require, consume, extend,
+          aggregate, or compose with other capabilities.
+      
+      registry-relationships:
+        Registry-to-Asset:
+          cardinality: "1:N"
+          description: >
+            A registry may index many ecosystem assets.
+        Asset-to-Registry:
+          cardinality: "N:N"
+          description: >
+            An asset may appear within multiple registries.
+
+      ecosystem-relationships:
+        PrismataCore-to-PrismataSDK:
+          cardinality: "1:N"
+          description: >
+            PrismataCore definitions may support many SDK components.
+        PrismataCore-to-PrismataCorp:
+          cardinality: "1:N"
+          description: >
+            PrismataCore definitions may govern many tenant ecosystems.
+        EcosystemConsumer-to-PrismataLayer:
+          cardinality: "N:N"
+          description: >
+            Consumers may depend on many Prismata layers and
+            each layer may support many consumer applications.
+
+      tenant-relationships:
+        Tenant-to-Workspace:
+          cardinality: "1:N"
+          description: >
+            A tenant may own multiple workspaces.
+        Tenant-to-Vault:
+          cardinality: "1:N"
+          description: >
+            A tenant may own multiple vaults.
+        Tenant-to-SchemaOverride:
+          cardinality: "1:N"
+          description: >
+            A tenant may define many schema overrides.
+        Tenant-to-SchemaExtension:
+          cardinality: "1:N"
+          description: >
+            A tenant may define many schema extensions.
+        Tenant-to-Archive:
+          cardinality: "1:N"
+          description: >
+            A tenant may own many archives.
+

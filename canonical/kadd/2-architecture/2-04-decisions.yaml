@@ -1,0 +1,224 @@
+id: KAD-PRISMATA-2-04-DECISIONS
+udi: prismata.kad.architecture.decisions
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-02
+  updated: 2026-11-03
+  path: /canonical/kadd/2-architecture/2-04-decisions.yaml
+
+metadata:
+  name: Architectural Decisions
+  description: Canonical architectural positions that define how Prismata is intended to be structured, governed, implemented, secured, and evolved.
+  tags:
+    - prismata
+    - decisions
+    - architecture
+    - adr
+    - governance
+
+relations:
+  domain:
+    - Architecture
+    - Governance
+    - Standards
+  scope:
+    - Architectural Positions
+    - Ecosystem Decisions
+    - Structural Decisions
+  exclusions:
+    - Historical Decisions
+    - Requirements
+    - Roadmaps
+    - Implementation Details
+    - Research Findings
+    - Retrospectives
+  priority: critical
+  conflict-resolution: Architectural decisions take precedence over implementation preferences and localized design choices.
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.reference.glossary
+
+notes:
+  - Architectural decisions describe intended architecture rather than historical outcomes.
+  - Architectural decisions answer important architectural questions.
+  - Architectural decisions are expected to evolve rarely.
+  - Historical implementation choices belong in Lessons Learned and Retrospectives.
+  - ADR identifiers exist for human readability.
+  - ADR UDIs exist for discovery, indexing, comparison, relationships, automation, and cross-project traceability.
+  - ADRs are first-class ecosystem assets and may participate in registries, references, and relationship graphs.
+
+content:
+  - id: ADR-001
+    udi: prismata.kadd.adr.universal-identity-through-udi
+    title: Universal Identity Through UDI
+    question: How should ecosystem assets be identified?
+    position: >
+      All ecosystem assets shall possess a UDI.
+    rationale: >
+      Identity enables discoverability, traceability,
+      governance, interoperability, preservation,
+      and relationship management.
+
+  - id: ADR-002
+    udi: prismata.kadd.adr.universal-artifact-structure-through-cmf
+    title: Universal Artifact Structure Through CMF
+    question: How should persistent artifacts be structured?
+    position: >
+      Persistent ecosystem artifacts shall be enclosed
+      within a CMF structure.
+    rationale: >
+      Consistent artifact structure improves validation,
+      interoperability, discoverability, governance,
+      and long-term maintainability.
+
+  - id: ADR-003
+    udi: prismata.kadd.adr.universal-runtime-structure-through-pso
+    title: Universal Runtime Structure Through PSO
+    question: How should runtime entities be structured?
+    position: >
+      Runtime entities shall be represented through
+      the PSO model.
+    rationale: >
+      A shared runtime structure enables predictable
+      validation, rendering, composition, interaction,
+      and lifecycle management.
+
+  - id: ADR-004
+    udi: prismata.kadd.adr.metadata-before-implementation
+    title: Metadata Before Implementation
+    question: Where should complexity primarily reside?
+    position: >
+      Complexity should reside in metadata before
+      executable implementation whenever practical.
+    rationale: >
+      Metadata is easier to inspect, understand,
+      validate, preserve, govern, and evolve than
+      embedded implementation logic.
+
+  - id: ADR-005
+    udi: prismata.kadd.adr.capability-based-composition
+    title: Capability-Based Composition
+    question: How should systems cooperate?
+    position: >
+      Systems should interact through discoverable
+      capabilities described by manifests.
+    rationale: >
+      Capability-driven composition encourages reuse,
+      interoperability, extensibility, and modularity.
+
+  - id: ADR-006
+    udi: prismata.kadd.adr.three-mandatory-ecosystem-layers
+    title: Three Mandatory Ecosystem Layers
+    question: How should ecosystem responsibilities be separated?
+    position: >
+      The ecosystem shall be organized into the three
+      mandatory layers PrismataCore, PrismataSDK,
+      and PrismataCorp.
+    rationale: >
+      Separation of definition, implementation,
+      security, governance, stewardship, and archival
+      concerns reduces coupling and improves clarity.
+
+  - id: ADR-007
+    udi: prismata.kadd.adr.minimal-executable-core
+    title: Minimal Executable Core
+    question: What belongs inside PrismataCore?
+    position: >
+      PrismataCore shall remain primarily composed of
+      documentation, standards, schemas, manifests,
+      laws, validators, examples, and tests.
+    rationale: >
+      The long-term value of Prismata resides in
+      knowledge, standards, structure, and governance
+      rather than executable implementation.
+
+  - id: ADR-008
+    udi: prismata.kadd.adr.validation-as-a-first-class-capability
+    title: Validation as a First-Class Capability
+    question: How should ecosystem correctness be enforced?
+    position: >
+      Validation shall be treated as a foundational
+      ecosystem capability.
+    rationale: >
+      Consistent validation improves quality,
+      interoperability, trust, governance,
+      and maintainability.
+
+  - id: ADR-009
+    udi: prismata.kadd.adr.tenant-isolation-through-governance-boundaries
+    title: Tenant Isolation Through Governance Boundaries
+    question: How should tenant ecosystems be managed?
+    position: >
+      Tenant ecosystems shall remain isolated through
+      governance boundaries, workspaces, and vaults.
+    rationale: >
+      Isolation improves governance, stewardship,
+      security, preservation, and tenant autonomy.
+
+  - id: ADR-010
+    udi: prismata.kadd.adr.metadata-driven-interface-rendering
+    title: Metadata-Driven Interface Rendering
+    question: How should interfaces be defined and rendered?
+    position: >
+      Interfaces should be rendered from metadata-defined
+      objects, layouts, styling, and interaction models.
+    rationale: >
+      Metadata-driven rendering improves consistency,
+      customization, portability, reuse, and evolution.
+
+  - id: ADR-011
+    udi: prismata.kadd.adr.knowledge-preservation-over-replacement
+    title: Knowledge Preservation Over Replacement
+    question: What should happen to accumulated knowledge and experience?
+    position: >
+      Knowledge, history, and experience should be
+      preserved whenever practical.
+    rationale: >
+      Preserved knowledge increases long-term value,
+      improves learning, and reduces repeated mistakes.
+
+  - id: ADR-012
+    udi: prismata.kadd.adr.separation-of-structure-and-behavior
+    title: Separation of Structure and Behavior
+    question: How should structure and behavior be defined?
+    position: >
+      Schemas shall define structure and laws shall
+      define permitted behavior.
+    rationale: >
+      Separating structure from behavior improves clarity,
+      maintainability, governance, validation,
+      and architectural flexibility.
+
+  - id: ADR-013
+    udi: prismata.kadd.adr.security-as-a-shared-ecosystem-responsibility
+    title: Security as a Shared Ecosystem Responsibility
+    question: How should security be provided throughout the ecosystem?
+    position: >
+      Security capabilities shall be provided through
+      shared ecosystem services rather than duplicated
+      implementation.
+    rationale: >
+      Centralized security models improve consistency,
+      governance, auditability, stewardship, and trust.
+
+  - id: ADR-014
+    udi: prismata.kadd.adr.knowledge-organization-through-registries-and-indices
+    title: Knowledge Organization Through Registries and Indices
+    question: How should ecosystem knowledge be organized and discovered?
+    position: >
+      Ecosystem assets should be discoverable through
+      registries, indices, metadata, and relationships.
+    rationale: >
+      Discoverability enables navigation, reuse,
+      governance, preservation, and operational awareness.

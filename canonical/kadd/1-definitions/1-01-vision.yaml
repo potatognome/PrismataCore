@@ -43,7 +43,8 @@ relations:
   priority: critical
   conflict-resolution: Vision, identity, structure, and knowledge preservation take precedence over implementation convenience.
   imports:
-    - KADD-001
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.reference.glossary
 
 notes:
   - Prismata is intended to remain small, deterministic, portable, and extensible.

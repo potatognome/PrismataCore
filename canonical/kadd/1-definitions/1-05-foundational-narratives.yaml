@@ -1,0 +1,116 @@
+id: KAD-PRISMATA-1-05-FOUNDATIONAL-NARRATIVES
+udi: prismata.kad.definitions.foundational-narratives
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-02
+  updated: 2026-11-02
+  path: /canonical/kadd/1-definitions/1-05-foundational-narratives.yaml
+
+metadata:
+  name: Foundational Narratives
+  description: >
+    A collection of illustrative narratives describing realistic,
+    hypothetical, historical, composite, speculative, or experiential
+    situations in which Prismata provides meaningful value.
+    Foundational narratives exist to communicate ecosystem purpose,
+    operational context, human outcomes, opportunities, challenges,
+    and long-term value through story-driven scenarios rather than
+    requirements, architecture, implementation, or approved work.
+
+  tags:
+    - prismata
+    - narratives
+    - scenarios
+    - operational
+    - context
+    - story-driven
+    - reference
+
+relations:
+  domain:
+    - Operational Context
+    - User Scenarios
+    - Ecosystem Narratives
+  scope:
+    - Illustrative Scenarios
+    - Human-Centered Examples
+    - Problem Context
+    - Ecosystem Value
+    - Opportunity Exploration
+  exclusions:
+    - Requirements
+    - Architecture
+    - Design Decisions
+    - Implementation Details
+    - Test Cases
+    - Historical Records
+    - Research Findings
+    - Feature Requests
+    - Approved Roadmap Items
+
+  priority: low
+
+  conflict-resolution: >
+    Foundational narratives are illustrative and exploratory.
+    Narratives may inspire future concepts, planning,
+    requirements, capabilities, or ecosystem opportunities,
+    but do not constitute approved work. Vision, Principles,
+    Concepts, Architecture, Laws, Requirements, and Roadmaps
+    always take precedence.
+
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.reference.glossary
+
+notes:
+  - Foundational narratives are illustrative rather than authoritative.
+  - Narratives may be hypothetical, historical, composite, speculative, or experiential.
+  - Narratives are intended to communicate value rather than requirements.
+  - Narratives should prioritize human understanding over technical precision.
+  - Narratives should describe situations that exist before, during, or after Prismata adoption.
+  - Narratives are non-exhaustive and are not intended to represent all possible use cases.
+  - Narratives may be revised independently of architecture and implementation.
+  - Narratives may include individuals, organizations, agents, devices, robots, educational environments, or future ecosystem participants.
+  - Narratives should focus on outcomes, challenges, decisions, risks, and benefits.
+  - Narratives should avoid prescribing implementation approaches.
+  - Agents may use narratives as contextual inspiration during analysis, ideation, planning, and exploration activities.
+  - Narratives may inform future concepts, requirements, capabilities, or ecosystem opportunities.
+  - No implementation, module, feature, capability, or roadmap item shall be created solely because it appears in an operational narrative.
+  - Narrative-derived ideas should be promoted to planning artifacts for review and approval before implementation consideration.
+  - Foundational narratives represent possibilities, not commitments.
+  - Foundational narratives are intended to expand understanding, not define scope.
+
+content:
+  purpose: >
+    Foundational narratives describe meaningful situations,
+    environments, challenges, opportunities, and outcomes
+    that help illustrate the value of the Prismata ecosystem.
+
+  narrative-guidance:
+    objective: null
+    target-audience: null
+    assumptions: []
+    constraints: []
+    observations: []
+
+  narratives: []
+
+  opportunities:
+    emerging-opportunities: []
+    planning-candidates: []
+    future-considerations: []
+
+  lessons:
+    observations: []
+    recurring-themes: []
+    identified-gaps: []
+
+  closing-summary: null

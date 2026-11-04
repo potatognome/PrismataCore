@@ -1,5 +1,5 @@
 id: KAD-PRISMATA-9-01-GLOSSARY
-udi: prismata.kad.definitions.glossary
+udi: prismata.kad.reference.glossary
 kind: KAD
 version: 1.0.0
 tenant: null
@@ -37,11 +37,20 @@ relations:
   priority: high
   conflict-resolution: Glossary definitions are authoritative for terminology interpretation across all KADs.
   imports:
-    - KAD-PRISMATA-1-00-DOCUMENTATION-DISCIPLINE
-    - KAD-PRISMATA-1-01-VISION
-    - KAD-PRISMATA-1-02-PROJECT-PROFILE
-    - KAD-PRISMATA-1-03-CONCEPTS
-
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.planning.risks
+    - prismata.kad.planning.roadmap
+ 
 notes:
   - Definitions are descriptive only.
   - Architectural rules belong in Laws and Architecture KADs.

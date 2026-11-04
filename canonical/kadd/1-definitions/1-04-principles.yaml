@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-04-PRINCIPLES
-udi: prismata.core.kad.principles
+udi: prismata.kad.definitions-principles
 kind: KAD
 version: 1.0.0
 tenant: null
 
 source:
   author: Prismata Architecture Team
-  created: 2026-10-30
-  updated: 2026-10-30
+  created: 2026-11-01
+  updated: 2026-11-01
   path: /canonical/kadd/1-definitions/1-04-principles.yaml
 
 metadata:
@@ -38,9 +38,11 @@ relations:
   priority: critical
   conflict-resolution: Principles guide decisions when multiple valid approaches exist.
   imports:
-    - KAD-PRISMATA-1-01
-    - KAD-PRISMATA-1-02
-    - KAD-PRISMATA-1-03
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.reference.glossary
 
 notes:
   - Principles are guidance rather than enforcement mechanisms.
