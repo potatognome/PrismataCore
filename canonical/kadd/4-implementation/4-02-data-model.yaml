@@ -1,0 +1,404 @@
+id: KAD-PRISMATA-4-02
+udi: prismata.kad.implementation.data-model
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-03
+  updated: 2026-11-05
+  path: /canonical/kadd/4-implementation/4-02-data-model.yaml
+
+metadata:
+  name: Data Model
+  description: >
+    Defines the canonical classification hierarchy,
+    object envelopes, identity model, relationship
+    model, and data ownership model used throughout
+    the Prismata ecosystem.
+
+  tags:
+    - prismata
+    - data-model
+    - cmf
+    - pso
+    - udi
+    - identity
+    - architecture
+
+relations:
+  domain:
+    - Data Architecture
+    - Identity Architecture
+    - Object Modeling
+
+  scope:
+    - Classification Hierarchy
+    - Object Envelopes
+    - Identity
+    - Relationships
+    - Data Ownership
+
+  exclusions:
+    - Storage Implementation
+    - Database Design
+    - Serialization Formats
+    - Runtime Execution Logic
+    - Interface Behavior
+
+  priority: critical
+
+  conflict-resolution: >
+    Data model definitions govern ecosystem object
+    classification, identity, ownership, persistence,
+    and relationships.
+
+  imports:
+    - KAD-PRISMATA-1-03
+    - KAD-PRISMATA-2-01
+    - KAD-PRISMATA-2-02
+    - KAD-PRISMATA-2-03
+    - KAD-PRISMATA-2-04
+    - KAD-PRISMATA-4-01
+
+notes:
+  - Not all addressable entities are artifacts.
+  - Capabilities are addressable but are not CMF artifacts.
+  - Manifests are CMF artifacts.
+  - Interface objects are distinct from artifacts.
+  - Runtime objects are distinct from artifacts.
+  - Registries are discovery infrastructure rather than authoritative data sources.
+  - Validators are infrastructure components.
+  - Renderers are infrastructure components.
+  - Invocation handlers are infrastructure components.
+  - PSO mirrors the CMF structural model.
+  - UDI identity does not imply executability.
+  - Describe should be available for all addressable entities.
+  - Execution capability depends on manifest availability and authorization.
+
+content:
+
+  classification-hierarchy:
+
+    addressable-entities:
+
+      artifacts:
+
+        description: >
+          Persistent identifiable ecosystem objects.
+
+        examples:
+          - documents
+          - schemas
+          - laws
+          - manifests
+          - configurations
+          - archives
+          - knowledge-assets
+          - reference-assets
+
+      capabilities:
+
+        description: >
+          Addressable executable behaviors.
+
+        classifications:
+          - atomic
+          - composite
+          - recursive
+
+      interface-objects:
+
+        description: >
+          Addressable objects whose primary purpose
+          is interaction, presentation, navigation,
+          or interface composition.
+
+        examples:
+          - ui-framework
+          - pane
+          - menu
+          - menu-item
+          - colour-scheme
+          - colour-role
+          - border-pattern
+
+      runtime-objects:
+
+        description: >
+          Addressable runtime entities whose primary
+          purpose is operational execution.
+
+        examples:
+          - pso-runtime-object
+          - agent-runtime-object
+          - execution-context
+          - generated-runtime-object
+          - cached-runtime-object
+
+  infrastructure:
+
+    description: >
+      Supporting ecosystem services that assist
+      discovery, execution, rendering, validation,
+      security, and orchestration.
+
+    components:
+      - registries
+      - validators
+      - renderers
+      - invocation-handlers
+      - security-services
+
+  identity-model:
+
+    universal-identity:
+
+      description: >
+        Every addressable entity possesses a UDI.
+
+    governing-rules:
+
+      - Identity does not imply executability.
+      - Identity does not imply persistence.
+      - Identity does not imply ownership.
+      - Identity enables discovery.
+      - Identity enables relationships.
+      - Identity enables traceability.
+
+  artifact-model:
+
+    definition: >
+      A persistent identifiable ecosystem object.
+
+    envelope:
+      type: CMF
+
+    required-fields:
+      - id
+      - udi
+      - kind
+      - version
+      - tenant
+      - metadata
+      - source
+      - relations
+      - notes
+      - content
+
+    governing-rules:
+
+      - Artifacts shall be enclosed within CMF.
+      - Artifacts shall possess UDI.
+      - Artifacts shall support relationships.
+      - Artifacts shall support versioning.
+
+  capability-model:
+
+    definition: >
+      An addressable executable behavior.
+
+    envelope:
+      type: none
+
+    ownership:
+      defined-by: manifest
+
+    governing-rules:
+
+      - Capabilities are not CMF artifacts.
+      - Capabilities are addressable through cUDI.
+      - Capabilities shall be declared in manifests.
+      - Capabilities may be atomic.
+      - Capabilities may be composite.
+      - Capabilities may be recursive.
+
+  manifest-model:
+
+    definition: >
+      A persistent artifact that describes one or
+      more capabilities.
+
+    classification: artifact
+
+    governing-rules:
+
+      - Manifests are CMF artifacts.
+      - Manifests shall possess manifest UDI.
+      - One manifest may define many capabilities.
+      - Capabilities may only exist through manifests.
+      - Manifests describe behavior but do not execute behavior.
+
+  interface-object-model:
+
+    definition: >
+      An addressable object whose primary purpose
+      is interaction or presentation.
+
+    examples:
+      - ui-framework
+      - pane
+      - menu
+      - menu-item
+      - colour-scheme
+      - colour-role
+      - border-pattern
+
+    governing-rules:
+
+      - Interface objects shall possess UDI.
+      - Interface objects may be previewed.
+      - Interface objects are not capabilities.
+      - Interface objects are not runtime objects.
+
+  runtime-object-model:
+
+    definition: >
+      An operational entity used during runtime execution.
+
+    envelope:
+      type: PSO
+
+    required-fields:
+      - id
+      - udi
+      - kind
+      - version
+      - tenant
+      - metadata
+      - source
+      - relations
+      - notes
+      - content
+
+    governing-rules:
+
+      - Runtime objects shall use PSO.
+      - PSO mirrors CMF structure.
+      - Runtime objects may be ephemeral.
+      - Runtime objects may be generated dynamically.
+      - Runtime objects shall possess UDI when addressable.
+
+  registry-model:
+
+    classification: infrastructure
+
+    purpose: >
+      Discovery and indexing.
+
+    governing-rules:
+
+      - Registries are indexes.
+      - Registries are not authoritative sources.
+      - Registries may index multiple entity types.
+      - Registries support discovery and navigation.
+
+  relationship-model:
+
+    supported-relationships:
+
+      - ownership
+      - dependency
+      - composition
+      - reference
+      - containment
+      - extension
+      - implementation
+      - governance
+
+    governing-rules:
+
+      - Relationships shall reference UDI.
+      - Relationships may cross classifications.
+      - Relationships should remain stable across implementations.
+
+  describe-model:
+
+    purpose: >
+      Universal identification and inspection
+      mechanism for addressable entities.
+
+    governing-rules:
+
+      - All addressable entities should support describe.
+      - Describe occurs before execution decisions.
+      - Describe may occur without execute permissions.
+      - Describe may occur without preview permissions.
+      - Describe results may be displayed or suppressed.
+      - Display behavior is configurable.
+
+    outputs:
+
+      entity-type:
+        description: >
+          Identified classification.
+
+      identity:
+        description: >
+          UDI and identifying metadata.
+
+      relationships:
+        description: >
+          Known relationships.
+
+      capabilities:
+        description: >
+          Known executable behaviors.
+
+      execution-status:
+        description: >
+          Authorized, unauthorized, executable,
+          non-executable, or unknown.
+
+  execution-model:
+
+    capability-invocation:
+
+      description: >
+        Execution path for capability UDIs.
+
+      lifecycle:
+        - identify
+        - describe
+        - authorize
+        - acquire-inputs
+        - confirm
+        - execute
+        - render
+
+    asset-invocation:
+
+      description: >
+        Execution path for non-capability UDIs.
+
+      lifecycle:
+        - identify
+        - describe
+        - determine-supported-actions
+        - preview
+        - render
+
+  architectural-summary:
+
+    statement: >
+      Artifacts preserve knowledge.
+
+      Manifests describe capabilities.
+
+      Capabilities define behavior.
+
+      Interface objects define interaction.
+
+      Runtime objects enable execution.
+
+      Registries enable discovery.
+
+      UDI enables identity.
+
+      CMF governs persistent objects.
+
+      PSO governs runtime objects.
+
+      Together these models form the canonical
+      Prismata data architecture.

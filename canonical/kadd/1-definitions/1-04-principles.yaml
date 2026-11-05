@@ -7,7 +7,7 @@ tenant: null
 source:
   author: Prismata Architecture Team
   created: 2026-11-01
-  updated: 2026-11-01
+  updated: 2026-11-05
   path: /canonical/kadd/1-definitions/1-04-principles.yaml
 
 metadata:
@@ -25,18 +25,25 @@ relations:
     - Foundational Principles
     - Knowledge Architecture
     - Cybernetic Systems
+
   scope:
     - Decision Guidance
     - Design Philosophy
     - Architectural Thinking
+
   exclusions:
     - Laws
     - Architecture
     - Requirements
     - Implementation Details
     - Technology Selection
+
   priority: critical
-  conflict-resolution: Principles guide decisions when multiple valid approaches exist.
+
+  conflict-resolution: >
+    Principles guide decisions when multiple valid
+    approaches exist.
+
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
@@ -48,6 +55,7 @@ notes:
   - Principles are guidance rather than enforcement mechanisms.
   - Laws define permitted behavior; principles influence decisions.
   - Principles should evolve rarely and only with significant justification.
+  - Principles provide direction when architecture, requirements, or implementation approaches are not yet defined.
 
 content:
 
@@ -64,33 +72,40 @@ content:
       identity-before-interaction:
         udi: prismata.core.principles.identity-before-interaction
         statement: Everything must have an identity.
-        declaration: I know what I am and how I am referred to.
-        answers: How do I identify and refer to myself and others?
+        declaration: >
+          I know what I am and how I am referred to.
+        answers: >
+          How do I identify and refer to myself and others?
         rationale: >
-          Assets cannot be governed, discovered, related, or reused
-          unless they possess a unique identity.
+          Assets cannot be governed, discovered, related,
+          validated, or reused unless they possess a
+          unique identity.
 
       capability-before-composition:
         udi: prismata.core.principles.capability-before-composition
         statement: Capability before composition.
         declaration: >
-          I know what I can do, what I require, and what I produce
-          before I attempt to cooperate with others.
-        answers: What can I do and what do I need?
+          I know what I can do, what I require, and what I
+          produce before I attempt to cooperate with others.
+        answers: >
+          What can I do and what do I need?
         rationale: >
-          Effective composition depends upon a clear understanding
-          of capabilities, requirements, responsibilities, and outputs.
+          Effective composition depends upon a clear
+          understanding of capabilities, inputs,
+          outputs, and responsibilities.
 
       interoperability-before-isolation:
         udi: prismata.core.principles.interoperability-before-isolation
         statement: Cooperation is preferred over isolation.
         declaration: >
-          I know what I can do for others and what I need in order
-          to do it.
-        answers: Who can help me? Who can I help?
+          I know what I can do for others and what I need
+          in order to do it.
+        answers: >
+          Who can help me? Who can I help?
         rationale: >
-          Systems should be capable of describing themselves and
-          working with other systems through shared standards.
+          Systems should be capable of describing themselves
+          and working with other systems through shared
+          standards and discoverable interfaces.
 
     structural:
 
@@ -98,31 +113,160 @@ content:
         udi: prismata.structural.principles.laws-before-automation
         statement: Laws before automation.
         declaration: >
-          I know how to interpret and apply the laws before I
-          automate behavior.
-        answers: Is this safe? How do I do this safely?
+          I know how to interpret and apply the laws before
+          I automate behavior.
+        answers: >
+          Is this safe? How do I do this safely?
         rationale: >
-          Behavior should be governed by defined expectations before
-          being delegated to software, agents, or autonomous systems.
+          Behavior should be governed by defined expectations
+          before being delegated to software, agents, or
+          autonomous systems.
 
       structure-before-behavior:
         udi: prismata.structural.principles.structure-before-behavior
         statement: Structure before behavior.
         declaration: >
-          I know what I am expected to do, including how, when,
-          and under what conditions I am expected to do it.
+          I know what I am expected to do, including how,
+          when, and under what conditions I am expected
+          to do it.
         answers: >
           What steps do I need to follow, in what order,
           and using which resources?
         rationale: >
-          A well-defined structure creates consistency and enables
-          reliable validation, interoperability, and evolution.
+          A well-defined structure creates consistency and
+          enables reliable validation, interoperability,
+          and evolution.
 
       metadata-before-implementation:
         udi: prismata.structural.principles.metadata-before-implementation
         statement: Metadata before implementation.
         declaration: >
-          I keep things neatly and consistently organized and
-          individually labelled so I know where to find everything
-          I need at any time.
-        answers
+          I keep things neatly and consistently organized
+          and individually labelled so I know where to find
+          everything I need at any time.
+        answers: >
+          Where do I find the tool I need?
+        rationale: >
+          Metadata should describe systems clearly enough
+          that implementations can remain small,
+          replaceable, and adaptable.
+
+      complexity-in-metadata:
+        udi: prismata.structural.principles.complexity-in-metadata
+        statement: Complexity belongs in metadata rather than executable code.
+        declaration: >
+          I prefer complexity that can be inspected,
+          understood, validated, modified, governed,
+          and preserved.
+        answers: >
+          Where should complexity live?
+        rationale: >
+          Metadata is easier to inspect, validate,
+          preserve, govern, and evolve than embedded
+          implementation logic.
+
+      adaptability-through-composition:
+        udi: prismata.structural.principles.adaptability-through-composition
+        statement: Systems should evolve through metadata and composition rather than replacement.
+        declaration: >
+          I prefer adaptation through reuse, extension,
+          composition, and reconfiguration.
+        answers: >
+          How do I evolve without starting over?
+        rationale: >
+          Long-lived systems should evolve through
+          composition, metadata, and capability reuse
+          before creating entirely new implementations.
+
+    knowledge:
+
+      human-understanding-first:
+        udi: prismata.knowledge.principles.human-understanding-first
+        statement: Human understanding remains central.
+        declaration: >
+          I know how to communicate in a way that human
+          beings can understand, and they are often my
+          primary audience.
+        answers: >
+          How do I explain or describe this to humans?
+        rationale: >
+          Systems should help people comprehend, manage,
+          govern, and reason about complexity rather than
+          obscure it.
+
+      knowledge-before-code:
+        udi: prismata.knowledge.principles.knowledge-before-code
+        statement: Knowledge before code.
+        declaration: >
+          I know the value of proper planning and the
+          importance of understanding the problem before
+          writing code.
+        answers: >
+          What will I need this for?
+        rationale: >
+          Knowledge has a longer lifespan than implementation
+          and should be preserved independently from
+          technology choices.
+
+      preservation-before-replacement:
+        udi: prismata.knowledge.principles.preservation-before-replacement
+        statement: Experience must be preserved.
+        declaration: >
+          I know the value of historical knowledge and
+          lessons learned.
+        answers: >
+          What can I learn from the past?
+        rationale: >
+          Historical knowledge and lessons learned are
+          valuable assets and should not be discarded
+          simply because newer solutions exist.
+
+    service:
+
+      accessibility-before-complexity:
+        udi: prismata.service.principles.accessibility-before-complexity
+        statement: Accessibility is more important than sophistication.
+        declaration: >
+          I know that technology should be usable and
+          understandable by a wide range of people.
+        answers: >
+          Who can use this?
+        rationale: >
+          Technology should remain approachable,
+          affordable, and deployable across a diverse
+          range of environments.
+
+      reuse-before-duplication:
+        udi: prismata.service.principles.reuse-before-duplication
+        statement: Reuse before duplication.
+        declaration: >
+          I know how to use my tools effectively and
+          leverage what already exists before creating
+          something new.
+        answers: >
+          How can I reuse what I already have?
+        rationale: >
+          Existing capabilities, structures, knowledge,
+          and assets should be preferred over creating
+          new versions of the same concept.
+
+  cybernetic-core:
+
+    declaration:
+      - Everything knows what it is.
+      - Everything knows what it can do.
+      - Everything can cooperate.
+
+    significance: >
+      These principles represent the foundational
+      cybernetic assumptions of the Prismata ecosystem
+      and form the basis for identity, capability
+      discovery, interoperability, composition,
+      governance, and knowledge organization.
+
+  closing-statement: >
+    Prismata succeeds when identity, structure,
+    knowledge, capability, validation, interoperability,
+    and understanding become easier to discover,
+    easier to manage, easier to reuse, easier to govern,
+    and easier to preserve over time.
