@@ -1,0 +1,347 @@
+id: KAD-PRISMATA-4-05
+udi: prismata.kad.implementation.development
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-08
+  updated: 2026-11-08
+  path: /canonical/kadd/4-implementation/4-05-development.yaml
+
+metadata:
+  name: Development
+  description: >
+    Defines the development lifecycle, capability onboarding,
+    ingestion processes, bootstrap processes, compliance
+    expectations, registration workflows, and development
+    practices used throughout the Prismata ecosystem.
+
+  tags:
+    - prismata
+    - development
+    - capabilities
+    - ingestion
+    - bootstrap
+    - genesis
+    - manifests
+    - compliance
+
+relations:
+  domain:
+    - Development Lifecycle
+    - Capability Lifecycle
+    - Ingestion
+    - Bootstrap
+    - Genesis
+
+  scope:
+    - Native Development
+    - External Code Ingestion
+    - Capability Registration
+    - Compliance
+    - Bootstrap and Recovery
+
+  exclusions:
+    - Business Logic
+    - Runtime Configuration
+    - Interface Rendering Details
+    - Storage Implementations
+    - Security Implementations
+
+  priority: critical
+
+  conflict-resolution: >
+    Development activities shall prioritize compliance,
+    discoverability, interoperability, preservation,
+    and architectural consistency over implementation
+    convenience.
+
+  imports:
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.implementation.data-model
+    - prismata.kad.implementation.storage
+    - prismata.kad.implementation.configuration
+
+notes:
+  - Version 1.0.0 represents an early implementation draft.
+  - This document is intentionally incomplete and expected to evolve.
+  - A dedicated KAD review pass should be completed before this document is considered stable.
+  - Several concepts within this document may require refinement based on future updates to earlier KADs.
+  - Bootstrap, genesis, ingestion, registration, compliance, and capability lifecycle definitions should be revisited following architecture review.
+  - This document currently establishes direction rather than final policy.
+  - Native Prismata development and external code ingestion are intentionally treated as separate workflows.
+  - Genesis is expected to occur during initial deployment and only rarely thereafter in stable environments.
+
+content:
+
+  status:
+    maturity: draft
+    review-required: true
+    architecture-review-pending: true
+
+  purpose: >
+    Establish a preliminary framework describing how
+    functionality enters, evolves, becomes discoverable,
+    becomes compliant, initializes, and participates
+    within the Prismata ecosystem.
+
+  development-principles:
+
+    - Discoverability before execution.
+    - Manifestation before orchestration.
+    - Reuse before duplication.
+    - Metadata before implementation whenever practical.
+    - Compliance before registration.
+    - Preservation before replacement.
+    - Existing compatible objects should be reused before generating new objects.
+
+  development-units:
+
+    PrismataCore:
+      primary-unit: schema
+
+    PrismataSDK:
+      primary-units:
+        - capability
+        - manifest
+        - implementation
+        - interface-object-definition
+
+    PrismataCorp:
+      primary-units:
+        - tenant-artifact
+        - tenant-interface-object
+        - tenant-configuration
+
+  capability-model:
+
+    required-components:
+      - cUDI
+      - manifest
+      - implementation
+
+    optional-components:
+      - inputs
+      - outputs
+      - validation-rules
+      - security-rules
+      - renderer-hints
+      - interface-hints
+
+    governing-rules:
+      - Every capability shall possess a cUDI.
+      - Every capability shall be described by a manifest.
+      - A capability may exist without inputs.
+      - A capability may exist without outputs.
+      - Capabilities become discoverable through manifests.
+      - A menu item is optional for capability operation.
+
+  compliance-model:
+
+    minimum-prismata-compliance:
+      - capability-udi
+      - manifest
+      - implementation
+      - registration
+      - discoverability
+
+    compliance-characteristics:
+      - addressable
+      - describable
+      - discoverable
+      - invokable
+      - composable
+
+    governing-rules:
+      - Compliance shall be declared through the manifest.
+      - Unmanifested code is not considered Prismata compliant.
+      - Code without a cUDI is considered unaddressable.
+      - Unaddressable code remains invisible to ecosystem discovery.
+
+  native-development-lifecycle:
+
+    sequence:
+      - define-capability
+      - assign-cudi
+      - create-manifest
+      - implement-code
+      - validate
+      - register
+      - integrate
+      - test
+
+    objective: >
+      Produce a fully discoverable and compliant
+      capability using Prismata-native workflows.
+
+  ingestion:
+
+    purpose: >
+      Discover, analyze, describe, and onboard
+      external or previously unmanaged code into
+      the Prismata ecosystem.
+
+    activities:
+      - ast-analysis
+      - capability-discovery
+      - manifest-generation
+      - capability-registration
+      - udi-assignment
+      - discoverability-validation
+
+    outputs:
+      - generated-cudi
+      - generated-manifest
+      - registration-artifacts
+      - capability-metadata
+
+    governing-rules:
+      - Existing code does not need to be written for Prismata.
+      - Ingestion may assign capability identities.
+      - Ingestion may generate manifests.
+      - Ingestion may generate registration artifacts.
+      - Ingestion shall not automatically alter original source code.
+      - Ingestion may expose existing modules for future capability composition.
+
+  genesis:
+
+    purpose: >
+      Perform primary ecosystem initialization,
+      recovery verification, capability discovery,
+      interface validation, primitive registration,
+      and minimum operational state establishment.
+
+    primary-host:
+      application: Universe
+
+    responsibilities:
+      - validate-core-assets
+      - validate-interface-objects
+      - validate-registries
+      - validate-tenant-assets
+      - discover-ingestable-assets
+      - register-primitives
+      - restore-minimum-operational-state
+      - generate-missing-required-assets
+      - verify-runtime-readiness
+
+    execution-scenarios:
+      - initial-prismata-installation
+      - initial-universe-installation
+      - initial-prismatalabs-installation
+      - tenant-creation
+      - recovery-mode
+      - post-breaking-upgrade
+
+    governing-rules:
+      - Genesis should reuse existing compatible assets whenever possible.
+      - Genesis may generate missing required assets.
+      - Genesis should establish minimum operational viability.
+      - Genesis may invoke ingestion activities.
+      - Genesis should rarely be required after successful initialization.
+
+  minimum-operational-state:
+
+    examples:
+      - registry-availability
+      - primitive-availability
+      - renderer-availability
+      - interface-object-availability
+      - manifest-discoverability
+      - capability-registration
+
+  satisficing-resolution:
+
+    definition: >
+      The process of locating existing compatible objects
+      that satisfy declared requirements without attempting
+      optimization.
+
+    examples:
+      - pane-selection
+      - colour-scheme-selection
+      - border-pattern-selection
+      - framework-selection
+
+    governing-rules:
+      - Reuse is preferred over generation.
+      - Compatible objects should be reused when available.
+      - Generation should occur only when suitable objects are unavailable.
+      - Exact object identities should not be required when compatible alternatives exist.
+
+  object-requirement-model:
+
+    requirement-types:
+
+      explicit:
+        description: >
+          Requires a specific object by UDI.
+
+      preferred:
+        description: >
+          Prefers a specific object but may accept alternatives.
+
+      compatible:
+        description: >
+          Accepts any object satisfying stated requirements.
+
+    example:
+      capability: hello-udi
+
+      requirements:
+        - minimum-two-unique-panes
+        - minimum-two-unique-colour-schemes
+        - minimum-two-unique-border-patterns
+
+  hello-udi:
+
+    purpose: >
+      Reference capability demonstrating identity,
+      discovery, invocation, composition, rendering,
+      compatibility resolution, and object interaction.
+
+    significance:
+      - identity-demonstration
+      - manifest-demonstration
+      - invocation-demonstration
+      - rendering-demonstration
+      - composition-demonstration
+      - interface-demonstration
+      - satisficing-resolution-demonstration
+
+  unresolved-topics:
+
+    - bootstrap-versus-genesis-boundaries
+    - registration-workflow-refinement
+    - compliance-level-classification
+    - capability-publication-workflow
+    - module-packaging-model
+    - ingestion-output-standards
+    - recovery-workflow-standardization
+
+  review-notice: >
+    This document intentionally serves as a starter draft.
+    Earlier KADs have continued evolving during development
+    discussions and should be reviewed before finalizing this
+    implementation guidance. Additional revisions are expected
+    following formal KAD review and consistency analysis.
+
+  closing-statement: >
+    Development within Prismata prioritizes discoverability,
+    addressability, composability, preservation,
+    interoperability, and metadata-driven integration.
+    New functionality should become capable of participating
+    in the ecosystem through identity, manifests,
+    registration, and discoverable relationships rather than
+    through implementation-specific coupling.

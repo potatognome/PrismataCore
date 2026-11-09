@@ -1,0 +1,334 @@
+id: KAD-PRISMATA-4-04
+udi: prismata.kad.implementation.configuration
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-07
+  updated: 2026-11-08
+  path: /canonical/kadd/4-implementation/4-04-configuration.yaml
+
+metadata:
+  name: Configuration
+  description: >
+    Defines the configuration architecture, precedence
+    hierarchy, inheritance model, override behavior,
+    configuration artifacts, and governance rules used
+    throughout the Prismata ecosystem.
+
+  tags:
+    - prismata
+    - configuration
+    - governance
+    - runtime
+    - tenant
+    - workspace
+
+relations:
+  domain:
+    - Configuration Architecture
+    - Governance
+    - Runtime Behavior
+
+  scope:
+    - Configuration Artifacts
+    - Override Resolution
+    - Inheritance
+    - Runtime Configuration
+    - Tenant Configuration
+
+  exclusions:
+    - Architecture Decisions
+    - Interface Implementations
+    - Storage Implementations
+    - Business Logic
+    - Capability Definitions
+
+  priority: critical
+
+  conflict-resolution: >
+    Configuration may influence behavior but shall
+    not redefine architecture, identity models,
+    interface contracts, capability definitions,
+    schema structures, or ecosystem laws.
+
+  imports:
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.architecture.decisions
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.implementation.data-model
+    - prismata.kad.implementation.storage
+
+notes:
+  - Configuration exists to alter settings rather than behavior.
+  - Capabilities define behavior.
+  - Configuration influences behavior.
+  - Configuration does not define new capabilities.
+  - Configuration artifacts are CMF-enclosed artifacts.
+  - Configuration artifacts are versioned, archived, searchable, and governed.
+  - Override behavior is full replacement unless a configuration schema explicitly specifies otherwise.
+  - Merge behavior is schema governed.
+
+content:
+
+  configuration-principles:
+
+    - Configuration alters settings rather than behavior.
+    - Configuration shall be metadata driven.
+    - Configuration shall be addressable and discoverable.
+    - Configuration shall be governed through schemas.
+    - Configuration shall support archival and versioning.
+    - Runtime configuration has highest precedence.
+    - Core configuration provides default behavior.
+    - Override behavior is explicit.
+    - Merge behavior is schema controlled.
+
+  configuration-hierarchy:
+
+    precedence-order:
+
+      1-runtime:
+        description: >
+          Runtime PSO configuration.
+
+      2-tenant:
+        description: >
+          Tenant-specific configuration.
+
+      3-workspace:
+        description: >
+          Shared workspace configuration.
+
+      4-core:
+        description: >
+          Canonical Prismata configuration.
+
+    governing-rule: >
+      Higher layers fully override lower layers
+      unless merge behavior is explicitly defined.
+
+  configuration-locations:
+
+    core:
+      owner: PrismataCore
+      purpose: >
+        Canonical ecosystem defaults.
+
+    workspace:
+      owner: PrismataCorp
+      location: /.workspace
+      purpose: >
+        Shared tenant-accessible configuration.
+
+    tenant:
+      owner: Tenant
+      location: /tenant/<tenant>
+      purpose: >
+        Tenant-specific configuration assets.
+
+    runtime:
+      owner: Runtime Context
+      envelope: PSO
+      purpose: >
+        Temporary operational overrides.
+
+  configuration-artifact-model:
+
+    classification: artifact
+
+    envelope: CMF
+
+    governing-rules:
+
+      - Configuration artifacts shall be CMF enclosed.
+      - Configuration artifacts shall possess UDI.
+      - Configuration artifacts shall be schema governed.
+      - Configuration artifacts shall support archival.
+      - Configuration artifacts shall support versioning.
+
+    example-filename:
+      - artifact-preview.config.yaml
+      - interaction.config.yaml
+      - archive-policy.config.yaml
+
+  override-model:
+
+    default-mode: full-override
+
+    behavior: >
+      A configuration located at a higher level
+      replaces the lower-level configuration.
+
+    example:
+
+      core:
+        preview: paginated
+
+      tenant:
+        preview: elevator
+
+      effective:
+        preview: elevator
+
+  merge-model:
+
+    purpose: >
+      Support controlled additive or selective
+      inheritance where explicitly defined.
+
+    governing-rule: >
+      Merge behavior shall be specified by the
+      governing configuration schema and not by
+      the configuration engine itself.
+
+    example-modes:
+      - additive
+      - selective
+      - custom
+
+  configurable-domains:
+
+    interaction:
+      examples:
+        - verbose-mode
+        - describe-display
+        - confirmation-prompts
+        - preview-preferences
+        - invocation-experience
+
+    rendering:
+      examples:
+        - renderer-preferences
+        - default-frameworks
+        - pane-preferences
+        - display-behavior
+
+    governance:
+      examples:
+        - tenant-policies
+        - retention-policies
+        - audit-policies
+
+    storage:
+      examples:
+        - archive-policies
+        - retention-rules
+        - recompilation-preferences
+
+    search:
+      examples:
+        - search-scopes
+        - discovery-preferences
+        - registry-scopes
+
+  non-configurable-domains:
+
+    architecture:
+      examples:
+        - ecosystem-layers
+        - architectural-decisions
+        - foundational-principles
+
+    identity:
+      examples:
+        - UDI-structure
+        - UDI-resolution-rules
+
+    envelopes:
+      examples:
+        - CMF-root-structure
+        - PSO-root-structure
+
+    versioning:
+      examples:
+        - semantic-versioning-model
+
+  invocation-configuration:
+
+    examples:
+
+      verbose-mode:
+        description: >
+          Determines whether descriptive information
+          should be displayed to users.
+
+      confirm-before-execute:
+        description: >
+          Determines whether confirmation prompts
+          should occur before execution.
+
+      describe-display:
+        description: >
+          Controls display visibility of description
+          information during execution workflows.
+
+    governing-rules:
+
+      - Describe shall always execute.
+      - Display of Describe output is configurable.
+      - Confirmation prompts are configurable.
+      - Execution behavior is controlled by authorization and capability resolution.
+
+  runtime-configuration:
+
+    envelope: PSO
+
+    purpose: >
+      Support temporary execution context,
+      operational overrides, and session-specific
+      configuration.
+
+    characteristics:
+      - transient
+      - highest-precedence
+      - context-aware
+
+  universe-integration:
+
+    primary-editor:
+      application: Universe
+
+    structured-editor:
+      application: VISE
+
+    purpose: >
+      Provide structured editing, validation,
+      archival validation, schema validation,
+      and configuration lifecycle management.
+
+  validation:
+
+    governing-rules:
+
+      - Configuration artifacts shall be schema validated.
+      - Configuration artifacts shall be CMF validated.
+      - Configuration changes shall participate in archival evaluation.
+      - Invalid configuration shall not become effective.
+
+  architectural-summary:
+
+    statement: >
+      Configuration controls settings rather than behavior.
+
+      Capabilities define behavior.
+
+      Configuration artifacts are CMF-enclosed,
+      schema-governed, versioned, archived,
+      searchable, and addressable artifacts.
+
+      Runtime overrides Tenant.
+
+      Tenant overrides Workspace.
+
+      Workspace overrides Core.
+
+      Full override is the default behavior.
+
+      Merge behavior is controlled by schema.
+
+      Together these rules establish a predictable,
+      metadata-driven configuration architecture
+      for the Prismata ecosystem.

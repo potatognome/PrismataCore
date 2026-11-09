@@ -1,0 +1,423 @@
+id: KAD-PRISMATA-4-03
+udi: prismata.kad.implementation.storage
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-07
+  updated: 2026-11-07
+  path: /canonical/kadd/4-implementation/4-03-storage.yaml
+
+metadata:
+  name: Storage
+
+  description: >
+    Defines the storage architecture, ownership model,
+    preservation model, archival strategy, versioning
+    behavior, registry model, workspace model, and
+    artifact lifecycle used throughout the Prismata ecosystem.
+
+  tags:
+    - prismata
+    - storage
+    - archive
+    - workspace
+    - vault
+    - preservation
+    - versioning
+
+relations:
+  domain:
+    - Storage Architecture
+    - Preservation
+    - Stewardship
+    - Governance
+
+  scope:
+    - Artifact Storage
+    - Runtime Storage
+    - Workspace Management
+    - Archival Systems
+    - Version Management
+
+  exclusions:
+    - Interface Design
+    - Runtime Execution
+    - Capability Implementations
+    - Security Implementations
+    - Database Implementations
+
+  priority: critical
+
+  conflict-resolution: >
+    Canonical artifacts, tenant ownership,
+    preservation requirements, and governance
+    policies take precedence over storage
+    optimization decisions.
+
+  imports:
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.implementation.data-model
+
+notes:
+  - Storage exists to preserve knowledge rather than files.
+  - CMF artifacts are the authoritative sources of truth.
+  - Registries are discovery indexes and not authoritative sources of truth.
+  - Historical artifacts remain searchable after archival.
+  - Archive entries remain individually addressable.
+  - Deletion is exceptional and discouraged.
+  - Preservation is preferred over replacement.
+  - Summarization and recompilation may reduce storage cost without replacing original preserved artifacts.
+  - Storage behavior may vary by operating mode, tenant policy, artifact class, and governance rules.
+
+content:
+  storage-principles:
+    - The CMF artifact file is the source of truth.
+    - Everything else is derived.
+    - Preservation is preferred over deletion.
+    - Historical records remain searchable.
+    - Registries accelerate discovery but do not replace artifacts.
+    - Knowledge should survive implementation changes.
+    - Storage should preserve lineage, context, and traceability.
+
+  ownership-model:
+    PrismataCore:
+      owns:
+        - canonical-schemas
+        - canonical-laws
+        - canonical-manifests
+        - canonical-reference-assets
+        - validators
+        - tests
+
+    PrismataCorp:
+      owns:
+        - workspace-manageent
+        - tenant-management
+        - tenant-governance
+        - archives
+        - preservation-services
+        - stewardship-services
+
+    Tenant:
+      owns:
+        - tenant-artifacts
+        - tenant-interface-objects
+        - tenant-overrides
+        - tenant-extensions
+        - tenant-metadata
+
+  source-of-truth-model:
+    authoritative-source:
+      description: >
+        The CMF artifact itself is always the
+        authoritative source.
+
+    derived-assets:
+      examples:
+        - registry-entries
+        - search-indices
+        - archive-indices
+        - summaries
+        - recompilations
+        - reports
+        - caches
+
+      governing-rule: >
+        Derived assets shall never replace the
+        authoritative CMF artifact.
+
+  workspace-model:
+    definition: >
+      A shared storage area containing tenant-accessible
+      artifacts, registries, metadata, and operational
+      content that is not part of PrismataCore.
+
+    characteristics:
+      - shared-storage
+      - tenant-accessible
+      - registry-hosting
+      - artifact-hosting
+
+    ownership:
+      owner: PrismataCorp
+
+    tenant-structure:
+
+      shared:
+        description: >
+          Shared tenant-accessible artifacts and metadata.
+
+      tenant:
+        description: >
+          Tenant-specific artifacts, overrides,
+          extensions, and governance assets.
+
+  registry-model:
+    purpose: >
+      Discovery, indexing, classification,
+      navigation, and lookup.
+
+    governing-rules:
+      - Registries are indexes.
+      - Registries are not authoritative.
+      - Registries may be rebuilt from authoritative artifacts.
+      - Registries support discovery rather than ownership.
+      - Registry entries shall reference UDIs.
+
+    typical-layout:
+      examples:
+        - registry/ui-framework.d
+        - registry/pane.d
+        - registry/menu.d
+        - registry/menu-item.d
+
+  vault-model:
+    definition: >
+      A governance, preservation, and security domain
+      responsible for protecting artifacts, archives,
+      secrets, tenant assets, and future protected assets.
+
+    responsibilities:
+      - preservation
+      - governance
+      - security
+      - tenant-isolation
+      - secrets-management
+      - archival-protection
+      - auditability
+
+    owner: VaultGuard
+
+  archive-model:
+
+    purpose: >
+      Preserve historical artifact states as
+      independently addressable artifacts.
+
+    governing-rules:
+      - Archive entries are immutable.
+      - Historical artifacts remain searchable.
+      - Historical artifacts remain addressable.
+      - Archive entries preserve full CMF content.
+      - Archive entries preserve metadata.
+      - Archive entries preserve relationships.
+      - Archive entries preserve lineage.
+
+    archive-entry:
+
+      description: >
+        A complete preserved artifact rather than a diff.
+
+    archive-udi:
+      description: >
+        Archive identifiers are generated by appending
+        a timestamp suffix to an existing UDI.
+
+      example: >
+        prismata.schema.sample-schema-2026-11-01-13-42-17
+
+  versioning-model:
+    scheme: semantic-versioning
+
+    major:
+      description: >
+        Breaking structural or behavioral compatibility.
+
+    minor:
+      description: >
+        Backward-compatible feature evolution.
+
+    patch:
+      description: >
+        Corrections, refinements, fixes, or minor updates.
+
+    compatibility-rule: >
+      Artifacts sharing a major version should remain
+      sufficiently compatible for cooperative operation.
+
+  uniqueness-validation:
+    purpose: >
+      Determine whether a version represents a
+      materially unique artifact state.
+
+    comparison-order:
+      - content
+      - metadata
+      - relations
+      - notes
+      - source
+
+    ignored-candidates:
+      - last-updated
+      - generated-timestamps
+      - similar-operational-metadata
+
+    outcome:
+      unique:
+        action: archive-and-version
+
+      existing-historical-match:
+        action: reversion-evaluation
+
+      duplicate:
+        action: no-archive-required
+
+  reversion-model:
+    definition: >
+      A detected condition where artifact content
+      matches a previously archived state.
+
+    operating-behavior:
+      user-mode:
+        action: prompt
+
+      agent-mode:
+        action: policy-driven
+
+    available-actions:
+      - restore-existing-version
+      - create-new-version
+      - cancel
+
+    optional-follow-up:
+      - retire-unwanted-version
+      - deprecate-unwanted-version
+
+  lifecycle-model:
+    preferred-lifecycle:
+
+      - create
+      - validate
+      - store
+      - discover
+      - use
+      - modify
+      - validate
+      - archive
+      - preserve
+      - retire
+      - restore
+
+    discouraged:
+      - delete
+
+  retirement-model:
+
+    retired:
+      description: >
+        Preserved and addressable but no longer
+        recommended for active use.
+
+    deprecated:
+      description: >
+        Still supported but superseded by a preferred artifact.
+
+    superseded:
+      description: >
+        Explicitly replaced by a newer preferred artifact.
+
+  artifact-class-behavior:
+
+    schemas:
+      preferred-lifecycle:
+        - preserve
+        - deprecate
+        - supersede
+
+    laws:
+      preferred-lifecycle:
+        - preserve
+        - deprecate
+        - supersede
+
+    manifests:
+
+      preferred-lifecycle:
+        - archive
+        - deprecate
+        - deep-archive
+
+    documents:
+      preferred-lifecycle:
+        - archive
+        - summarize
+        - preserve
+
+    logs:
+      preferred-lifecycle:
+        - archive
+        - recompile
+        - summarize
+        - preserve
+
+  recompilation-model:
+
+    definition: >
+      The process of replacing large collections
+      of historical content with summarized or
+      condensed artifacts while preserving original
+      historical records.
+
+    governing-rules:
+      - Original artifacts remain preserved.
+      - Recompiled artifacts are derived.
+      - Summaries are derived.
+      - Historical artifacts remain authoritative.
+      - Recompilation does not alter original artifacts.
+
+    examples:
+      - log-summaries
+      - archive-summaries
+      - historical-rollups
+
+  runtime-storage:
+    runtime-objects:
+      envelope: PSO
+
+    governing-rules:
+      - Runtime objects may be ephemeral.
+      - Runtime objects may be persisted.
+      - Runtime objects may be archived.
+      - Runtime objects may become historical artifacts.
+      - Runtime objects may be summarized or recompiled.
+
+  search-model:
+    primary-search-target:
+      - authoritative-artifacts
+      - archived-artifacts
+
+    secondary-search-target:
+      - summaries
+      - recompilations
+      - indices
+
+    governing-rule: >
+      Original historical artifacts remain the
+      authoritative searchable source.
+
+  architectural-summary:
+    statement: >
+      CMF artifacts are authoritative.
+      Registries are indexes.
+      Workspaces provide shared storage.
+      Tenants own tenant assets.
+      Vaults provide security, governance,
+      preservation, and stewardship.
+      Archives preserve historical artifacts.
+      Semantic versioning governs compatibility.
+      Preservation is preferred over deletion.
+      Historical artifacts remain searchable,
+      addressable, and authoritative.
+      Storage exists to preserve knowledge,
+      context, lineage, and understanding rather
+      than merely preserve files.
