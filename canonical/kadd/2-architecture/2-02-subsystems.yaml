@@ -2,12 +2,14 @@ id: KAD-PRISMATA-2-02-SUBSYSTEMS
 udi: prismata.kad.architecture.subsystems
 kind: KAD
 version: 1.0.0
-tenant: PrismataCorp
+tenant: null
+
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-03
+  updated: 2026-11-09
   path: /canonical/kadd/2-architecture/2-02-subsystems.yaml
+
 metadata:
   name: Prismata Subsystems
   description: Detailed architectural decomposition of the major subsystems, foundational assets, validators, tooling, and supporting components that compose the Prismata ecosystem.
@@ -17,6 +19,7 @@ metadata:
     - architecture
     - ecosystem
     - decomposition
+
 relations:
   domain:
     - System Architecture
@@ -33,8 +36,11 @@ relations:
     - Storage Design
     - Configuration Design
     - Implementation Details
+
   priority: critical
+
   conflict-resolution: Subsystem ownership follows the architectural boundaries established by the Systems KAD.
+
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
@@ -44,15 +50,15 @@ relations:
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
     - prismata.kad.reference.glossary
+
 notes:
   - Subsystems represent major architectural building blocks.
   - Some entries represent foundational assets rather than executable subsystems.
   - Foundational assets are documented because they are structurally required by the ecosystem.
   - Architectural significance, rather than implementation form, determines inclusion.
+
 content:
-
   classification-model:
-
     Foundation Asset:
       description: >
         Canonical assets that define structure, behavior,
@@ -86,9 +92,7 @@ content:
         administration, and tenant management.
 
   subsystems:
-
     PrismataCore:
-
       purpose: >
         Own and maintain the canonical definitions,
         standards, laws, schemas, manifests,
@@ -96,7 +100,6 @@ content:
         knowledge of the Prismata ecosystem.
 
       components:
-
         CMF:
           classification: Foundation Asset
           purpose: >
@@ -161,14 +164,12 @@ content:
             and expected behavior.
 
     PrismataSDK:
-
       purpose: >
         Provide runtime execution, composition,
         rendering, tooling, security, editing,
         administration, and experimentation capabilities.
 
       components:
-
         VaultGuard:
           classification: Governance Component
           purpose: >
