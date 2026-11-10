@@ -1,211 +1,273 @@
-# Prismata KADD Review Report
+# Prismata KADD Review Report (Full Re-run)
 
 Date: 2026-11-09
-Scope: Review of the current YAML KAD collection under /PrismataCore/canonical/kadd.
+Scope: Full review of all YAML documents under [PrismataCore/canonical/kadd](PrismataCore/canonical/kadd), including the latest glossary revision, the completed appendices and references KADs, and the newly added lessons-learned content.
 
 ## Executive Summary
 
-The Prismata KADD collection demonstrates a strong architecture-first foundation and a clear conceptual identity. The definitions and architecture layers are notably mature, coherent, and internally aligned around a disciplined model of identity, metadata, validation, governance, and ecosystem separation.
+The Prismata KADD collection is now materially stronger than in the previous review. The glossary has been expanded and improved, the lessons-learned KAD has been populated, and the reference layer is now complete enough to provide useful structure rather than empty placeholders.
 
-The primary concerns are not conceptual drift or weak intent. The main risks are continuity and completeness gaps:
+The collection continues to demonstrate a strong architecture-first model and a coherent knowledge architecture philosophy. The main remaining issues are not fundamental conceptual drift, but continuity gaps, traceability cleanup, and a few glossary quality issues.
 
-- Layer 5 (post-implementation) is effectively empty.
-- Layer 9 reference files are partially empty.
-- Several roadmap items reference requirements and risks that are not defined in the current requirement set.
-- Some implementation KADs are explicitly draft-level and flag architecture review pending.
-- Naming and path consistency issues remain in a few files and source paths.
+The significant improvements since the prior review are:
 
-Overall, the project is architecturally promising and structurally strong, but it still needs completion work before it can be treated as a fully reliable knowledge graph baseline.
+- The glossary has been expanded with structured categories and more explicit governance and knowledge terminology.
+- The lessons-learned KAD is now populated with real project learning and evidence.
+- The appendixes KAD is active and provides practical structural context, onboarding guidance, governance workflow references, and ecosystem belief summaries.
+- The references KAD now provides a usable internal, methodological, standard, historical, and conceptual bibliography.
 
-## KAD Inventory and Status
+The remaining concerns are:
 
-Reviewed YAML KAD collection totals:
+- 5-01 research is still empty.
+- 5-03 retrospectives is still empty.
+- 1-05 foundational narratives remains empty.
+- A few glossary entries are still structurally incomplete or contain placeholder quality issues.
+- Roadmap dependency traceability still needs cleanup.
+- The implementation layer remains partially draft-level and should be treated as provisional governance until review is complete.
 
-- 24 YAML files found across the KADD structure.
-- 19 files populated with substantive content.
-- 5 files are empty or effectively empty.
-- Most material content lives in Layer 1 through Layer 4, which is the strongest portion of the collection.
+Overall assessment: the KADD collection is now much healthier and substantially closer to a durable project knowledge base, but it is still not fully stabilized as a complete formal body of project knowledge.
 
-Current status by layer:
+## Review Scope and Inventory
 
-- Layer 1: Definition — Strong, coherent, and broadly complete.
-- Layer 2: Architecture — Strong, structured, and directionally mature.
-- Layer 3: Planning — Strong but contains traceability gaps.
-- Layer 4: Implementation — Good direction, but draft-level maturity remains in some areas.
-- Layer 5: Post-Implementation — Missing or empty; critical gap.
-- Layer 9: Reference — Incomplete; glossary is present, appendices and references are empty.
+Reviewed all files under the canonical KADD directory:
 
-## Detailed Layer Assessment
+- 1-definitions
+- 2-architecture
+- 3-planning
+- 4-implementation
+- 5-post-implementation
+- 9-reference
+
+Current file state summary:
+
+- Fully populated and substantive: most Layer 1–4 KADs, the glossary, 9-02 appendices, 9-03 references, and 5-02 lessons learned.
+- Still empty or skeletal: 1-05 foundational narratives, 5-01 research, 5-03 retrospectives.
+- Partially complete but draft-level: 4-05 development.
+
+## Layer-by-Layer Assessment
 
 ### Layer 1 — Definition
 
+Status: Strong and substantially mature.
+
 Strengths:
 
-- Clear mission, identity, and ecosystem purpose are well documented.
-- The vision statement is ambitious but grounded in practical architecture.
-- The project profile and concepts establish a stable foundation for identity, structure, capability, governance, and knowledge.
-- Principles are thoughtful, additive, and aligned with the broader architecture.
+- Mission, purpose, and ecosystem intent remain clear and consistent.
+- The vision, project profile, concepts, and principles are coherent and reinforce one another.
+- The definitions layer remains a credible foundation for architecture and governance.
+- The glossary updates significantly improve terminology continuity across the project.
 
-Observed gaps:
+Issues:
 
-- The foundational narratives document exists but is effectively empty, reducing its value as a story-driven contextual layer.
-- The layer is conceptually robust but would benefit from stronger cross-linking to concrete measurable outcomes and limiting scope boundaries.
+- 1-05 foundational narratives is empty, reducing the story-driven contextual layer that should help explain value and human-centered outcomes.
+- A few terms in the glossary are still rough around the edges and need polishing.
 
-Assessment: High maturity and a strong foundation for downstream architecture.
+Assessment: High maturity, strong conceptual structure, and ready for continued evolution.
 
 ### Layer 2 — Architecture
 
+Status: Strong, well-structured, and directionally mature.
+
 Strengths:
 
-- The system layer clearly separates PrismataCore, PrismataSDK, and PrismataCorp.
-- The separation of definitions, runtime/security/tooling, and governance/archive responsibilities is one of the strongest aspects of the KADD collection.
-- Decision records are explicit and numerous, with identifiable ADR structure and durable governance intent.
-- Relationship modeling introduces useful directional logic and ownership boundaries.
+- Clear separation of responsibilities across PrismataCore, PrismataSDK, and PrismataCorp.
+- The architecture remains coherent and intellectually disciplined.
+- Decisions, relationships, and systems continue to reinforce a stable architecture-first stance.
+- Ownership boundaries are well-framed and strongly aligned to the vision.
 
-Observed gaps:
+Issues:
 
-- Some relationship and subsystem definitions are wide in ambition but not yet fully enumerated in operational terms.
-- The architecture is strong conceptually, but some implementation-oriented responsibilities still bleed into higher-level architectural language.
-- Architecture is broader than current implementation evidence, so a stabilization pass would help preserve long-term integrity.
+- Some architectural language remains broader than the available implementation evidence.
+- Some subsystem and relationship terminology requires tighter consistency with the glossary and future implementation artifacts.
 
-Assessment: High architectural maturity with a clear and defensible structure.
+Assessment: One of the strongest portions of the KADD collection.
 
 ### Layer 3 — Planning
 
+Status: Good structure, but traceability needs cleanup.
+
 Strengths:
 
-- Requirements are explicit, technology-agnostic, and strongly aligned to architecture.
-- Risks are well enumerated and properly framed as ecosystem-level concerns.
-- Roadmap items are numerous and traceability-aware.
+- Requirements are explicit, technology-agnostic, and consistent with the project’s principles.
+- Risks are well framed and organized by domain.
+- Roadmap entries are broad and well structured.
 
-Observed gaps:
+Issues:
 
-- Roadmap dependencies reference requirements and risks that are not present or not obviously defined in the current requirement set.
-- Some roadmap entries cite requirements like schema-management-tooling, object-authoring-tooling, validation-workflows, metadata-driven-rendering, and experimentation-environments without clear KAD coverage.
-- The planning layer is directionally strong but not yet fully traceable to an authoritative requirement baseline.
+- Roadmap dependency references still appear to rely on requirements or risks that are only partially or indirectly represented.
+- Requirement-to-roadmap traceability should be tightened before the planning layer is treated as fully stable.
 
-Assessment: Strong planning discipline, but traceability and requirement completeness need tightening.
+Assessment: Strong planning discipline, but not yet fully rigorous in dependency traceability.
 
 ### Layer 4 — Implementation
 
+Status: Promising but provisional.
+
 Strengths:
 
-- Implementation KADs are coherent, domain-specific, and aligned with the architecture-first model.
-- Interface and configuration layers show strong emphasis on metadata-driven behavior and governance.
-- Storage and configuration documents bring practical clarity to stewardship and override behavior.
+- Interface, data model, storage, configuration, and development KADs show substantial architecture awareness.
+- The implementation layer reflects real design thinking around metadata-driven behavior, governance, and ecosystem structure.
+- The storage and configuration layers are especially useful and actionable.
 
-Observed gaps:
+Issues:
 
-- The development document explicitly states it is a draft and requires architecture review.
-- Several files show naming inconsistencies, including default IDs missing consistent suffix conventions.
-- Some path entries are inconsistent: some use relative paths, others use leading slash paths.
-- Several implementation concepts appear ahead of the actual canonical standards they rely on.
+- 4-05 development remains explicitly draft-level and architecture-review-pending.
+- Some naming, metadata, and ID patterns remain inconsistent across implementation files.
+- Some implementation artifacts appear ahead of the canonical standards they intend to rely upon.
 
-Assessment: Good early implementation model, but it is not yet stable enough to serve as a final implementation contract.
+Assessment: Good direction and useful structure, but not yet a final implementation policy layer.
 
 ### Layer 5 — Post-Implementation
 
-Observed issues:
+Status: Improved, but incomplete.
 
-- 5-01-research.yaml is empty.
-- 5-02-lessons.learned.yaml is empty.
-- 5-03-retrospectives.yaml is empty.
+Strengths:
 
-Impact:
+- 5-02 lessons learned is now populated and gives the project a real learning record.
+- This is a major improvement in preserving organizational memory and architecture learning.
 
-- The collection cannot yet preserve project learning, operational history, or retrospective governance in a durable way.
-- This creates a transparency gap and weakens the knowledge-preservation objective that is central to the Prismata vision.
+Issues:
 
-Assessment: Critical gap and the largest continuity risk in the KADD set.
+- 5-01 research is still empty.
+- 5-03 retrospectives is still empty.
+- Without these, the post-implementation layer still lacks a complete continuity model.
+
+Assessment: Substantially better than the previous snapshot, but not complete enough to fully satisfy the intended KADD lifecycle.
 
 ### Layer 9 — Reference
 
-Observed issues:
+Status: Much stronger than before.
 
-- 9-01-glossary.yaml is present and meaningful.
-- 9-02-appendixes.yaml is empty.
-- 9-03-references.yaml is empty.
+Strengths:
 
-Impact:
+- 9-01 glossary is significantly improved and now organized by categories.
+- 9-02 appendices now provides useful context, governance workflow support, onboarding material, and ecosystem beliefs.
+- 9-03 references now provides a meaningful internal/external bibliography and provenance model.
 
-- The reference layer does not yet provide a durable source of external and internal support documentation.
-- The glossary is helpful, but the absence of appendices and references undermines institutional memory and cross-reference quality.
+Issues:
 
-Assessment: Partially complete, but not yet a production-grade reference layer.
+- Some glossary entries are still incomplete or unpolished.
+- The glossary includes a few quality defects: a misspelling of “Canonical” as “Canonial”, an incomplete “nul” acronym placeholder, and missing or empty definitions for a few entries.
+- The reference layer is now good, but the glossary still needs a cleanup pass to ensure complete, valid, and consistent entries across all terms.
 
-## Top 10 Strengths
+Assessment: Reference layer is now materially improved and should be treated as a useful supporting structure, with a final glossary normalization pass still recommended.
 
-1. Clear architecture-first discipline and strong conceptual foundation.
-2. Explicit separation of responsibilities across PrismataCore, PrismataSDK, and PrismataCorp.
-3. Broad, thoughtful definition layer with strong mission and vision framing.
-4. Requirements are explicit and aligned to architecture rather than implementation detail.
-5. Validations, checks, and governance concerns are treated as first-class concepts.
-6. The glossary is comprehensive and useful for cross-document consistency.
-7. Relationship modeling gives the ecosystem a grounded dependency and ownership vocabulary.
-8. Decision records make architectural intent understandable and reviewable.
-9. Knowledge preservation and metadata-first thinking are central to project language.
-10. The KADD structure itself is well organized and gives a durable knowledge architecture model.
+## Glossary Quality Review
 
-## Top 10 Risks
+The updated glossary is a clear improvement, but several issues remain that should be corrected before it is treated as final canonical terminology.
 
-1. Layer 5 documentation is empty, creating a gap in historical learning and continuity.
-2. Layer 9 reference files are empty, weakening the authoritative project reference base.
-3. Roadmap dependencies reference requirements that are not fully defined in the current requirement collection.
-4. The development document is explicitly marked draft and architecture-review-pending.
-5. Naming inconsistency exists in several files and identifiers, reducing registry consistency.
-6. Source path inconsistency reduces traceability and repository hygiene.
-7. Some concepts are strategically strong but not yet transformed into fully finished canonical artifacts.
-8. The KADD set is broader than its implementation evidence, which may increase drift risk.
-9. Relationship and governance boundaries are clear, but operational implementation traceability is not yet sufficiently complete.
-10. The collection is structurally good but still vulnerable to scope creep and missing canonical documentation continuity.
+Observed quality issues:
 
-## Top 10 Opportunities
+1. “Canonial Metadata Framework” is likely a typo and should be “Canonical Metadata Framework”.
+2. “acronym: nul” is clearly a placeholder/incomplete entry and should be replaced with a valid value or removed.
+3. Some glossary entries are missing a full definition block, especially where the file ends with a partial or empty value.
+4. A few definitions are structurally complete but would benefit from tighter conceptual precision and consistency.
+5. The glossary should be checked for definitive term coverage versus the rest of the KAD set to ensure it captures operational vocabulary used in planning and implementation docs.
 
-1. Complete the post-implementation layer with research, lessons learned, retrospectives, and historical context.
-2. Fill the appendices and references to anchor the KADD collection to authoritative external and internal support documents.
-3. Validate roadmap dependencies against the canonical requirement set and close traceability gaps.
-4. Stabilize the implementation layer by promoting draft items to stronger canonical standards.
-5. Normalize file naming conventions to the strict KADD pattern.
-6. Standardize path metadata to a single canonical source path style.
-7. Expand glossary coverage for operational terms that appear in roadmap and implementation files.
-8. Create a lightweight governance checklist for future KAD creation and review.
-9. Introduce a versioning review flow for architecture decisions, requirements, and roadmap changes.
-10. Use the KADD set as a future knowledge graph input by adding missing identity and relationship traceability metadata.
+Recommended action: perform a final glossary normalization pass to ensure every entry is complete, semantically stable, and free of placeholders.
 
-## Top 10 Recommended Actions
+## KAD Inventory and Maturity Summary
 
-1. Complete Layer 5 with research, lessons learned, and retrospectives.
-2. Fill the empty reference documents and create a minimum viable bibliography and appendices base.
-3. Audit roadmap-to-requirement traceability and close any undefined dependency references.
-4. Promote the development KAD from draft to stable or explicitly label it as an approved pilot standard.
-5. Normalize identifiers and file names to consistent KADD patterns.
-6. Standardize source path metadata and avoid mixed path styles.
-7. Establish a KAD review gate before any new roadmap or implementation document is treated as authoritative.
-8. Add explicit governance for glossary term creation and relationship terminology definitions.
-9. Tighten requirement completeness by making each roadmap dependency map to a present canonical requirement.
-10. Treat KADD as a maintainable knowledge graph rather than a static document set, with continuous metadata validation.
+- 1-00 documentation discipline — strong and foundational.
+- 1-01 vision — strong and mature.
+- 1-02 project profile — strong and coherent.
+- 1-03 concepts — strong and conceptually mature.
+- 1-04 principles — strong and valuable.
+- 1-05 narratives — empty and should be completed.
+- 2-01 systems — strong and coherent.
+- 2-02 subsystems — strong and useful.
+- 2-03 relationships — well structured and useful.
+- 2-04 decisions — valuable and strong governance record.
+- 3-01 requirements — good and aligned.
+- 3-02 risks — good and useful.
+- 3-03 roadmap — useful but traceability needs review.
+- 4-01 interfaces — strong direction.
+- 4-02 data model — good structure, but some consistency gaps remain.
+- 4-03 storage — strong and practical.
+- 4-04 configuration — solid and well-framed.
+- 4-05 development — useful but draft-level and provisional.
+- 5-01 research — empty.
+- 5-02 lessons learned — improved and populated.
+- 5-03 retrospectives — empty.
+- 9-01 glossary — improved but still needs cleanup.
+- 9-02 appendices — now materially useful.
+- 9-03 references — now materially useful.
+
+## Strengths
+
+1. The project continues to reflect a consistent architecture-first philosophy.
+2. The glossary is now much stronger and more useful.
+3. Lessons learned are now preserved in a formal KAD.
+4. Appendices and references give the reference layer real substance.
+5. System, subsystem, and relationship layers remain coherent and strong.
+6. Requirements and risks are still well aligned to the project’s mission and values.
+7. Governance and documentation discipline remain explicit and durable.
+8. The project has a strong conceptual identity and direction.
+9. The KADD structure remains a useful durable framework for future evolution.
+10. The collection is now much nearer to being a true knowledge base than before.
+
+## Risks
+
+1. 5-01 research remains empty.
+2. 5-03 retrospectives remains empty.
+3. 1-05 foundational narratives remains empty.
+4. Glossary cleanup is still necessary to remove placeholder or incomplete entries.
+5. Roadmap dependency traceability still needs cleanup.
+6. 4-05 development still has draft and review-pending status.
+7. Some naming and metadata consistency issues remain across implementation documents.
+8. The architecture remains broader than the current implementation evidence in some places.
+9. There is still some risk of drift between conceptual intent and execution maturity.
+10. The KADD collection is now stronger, but is still not a fully closed loop of knowledge, review, and governance.
+
+## Opportunities
+
+1. Fill the empty research file with actual findings and investigations.
+2. Add a structured retrospective KAD for project reflection and learning closure.
+3. Populate foundational narratives with scenario-based context and value descriptions.
+4. Finalize glossary normalization to remove placeholder and incomplete entries.
+5. Tighten roadmap requirement traceability.
+6. Stabilize the development KAD through formal architecture review.
+7. Extend lessons-learned records as more project experience is gained.
+8. Continue using 9-02 appendices and 9-03 references as foundational project knowledge support.
+9. Add additional glossary terms where operational language appears in roadmap and implementation KADs.
+10. Treat the KADD collection as an active knowledge graph rather than a static document set.
+
+## Recommended Actions
+
+1. Complete 5-01 research with a formal evidence record and open questions.
+2. Complete 5-03 retrospectives with structured review content and action tracking.
+3. Populate 1-05 foundational narratives with scenario-driven human context.
+4. Perform a final glossary cleanup pass and remove placeholder entries.
+5. Normalize the glossary term definitions and verify complete coverage across the KADD set.
+6. Review roadmap-to-requirement traceability and close any unresolved dependencies.
+7. Complete architecture review for 4-05 development before treating it as stable policy.
+8. Standardize naming, ID, and path conventions across KAD files.
+9. Continue to expand lessons learned as a durable project memory base.
+10. Maintain the KADD collection as a governance-informed living knowledge artifact.
 
 ## Scoring
 
-- Definition Layer Score: 88/100
-- Architecture Layer Score: 86/100
-- Planning Layer Score: 82/100
-- Implementation Layer Score: 78/100
-- Knowledge Quality Score: 80/100
-- Concept Viability Score: 87/100
-- Cost Efficiency Score: 83/100
-- Knowledge Graph Readiness Score: 76/100
+- Definition Layer Score: 90/100
+- Architecture Layer Score: 89/100
+- Planning Layer Score: 84/100
+- Implementation Layer Score: 80/100
+- Knowledge Quality Score: 88/100
+- Concept Viability Score: 89/100
+- Cost Efficiency Score: 84/100
+- Knowledge Graph Readiness Score: 81/100
 
-## Overall Assessment
+## Final Assessment
 
-The Prismata KADD collection is architecturally credible, conceptually mature, and designed around durable knowledge principles. It is clearly built to support a long-lived ecosystem model rather than a short-lived project artifact.
+The KADD collection is now in a substantially healthier state. The updated glossary, the new lessons-learned content, and the newly populated appendices and references KADs all improve clarity, continuity, and governance maturity.
 
-The gap is not conceptual architecture; it is completeness, continuity, and operational maturity. If the project resolves the empty Layer 5 and Layer 9 files, aligns the roadmap to a canonical requirements baseline, and stabilizes the implementation layer, the KADD collection would become a strong project-wide knowledge foundation.
+The project is still not fully complete as a canonical knowledge system, but the most important structural issues have been reduced. The remaining work is largely governance refinement, glossary cleanup, research/retrospective continuity, and traceability validation.
 
-## Proposed next step
-
-This review should be followed by a targeted editorial and governance pass that closes the continuity gaps without altering the canonical architecture intent. Any direct KAD edits should be proposed and approved through the project proposal process rather than as ad hoc changes.
+This is now a strong and credible project knowledge foundation with a clear path to stabilization.
 
 ## Proposal Record
 
-The detailed change proposals are recorded in the companion file: change-proposal.md.
+The current proposal record is stored in [PrismataCore/.github/.agent-reports/kadd/change-proposal.md](PrismataCore/.github/.agent-reports/kadd/change-proposal.md).
+
+The canonical Layer 9 files reviewed were [PrismataCore/canonical/kadd/9-reference/9-01-glossary.yaml](PrismataCore/canonical/kadd/9-reference/9-01-glossary.yaml), [PrismataCore/canonical/kadd/9-reference/9-02-appendixes.yaml](PrismataCore/canonical/kadd/9-reference/9-02-appendixes.yaml), and [PrismataCore/canonical/kadd/9-reference/9-03-references.yaml](PrismataCore/canonical/kadd/9-reference/9-03-references.yaml).
+
+This report should be treated as the current authoritative review for the KADD collection in its latest state.

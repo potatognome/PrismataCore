@@ -1,193 +1,206 @@
 # KADD Change Proposals
 
+## Status Overview
+
+This proposal set reflects the current state of the full KADD collection after the latest glossary revisions, the completion of the appendices and references KADs, and the addition of lessons-learned content. Several gaps are now resolved or partially resolved; the remaining open items are the ones that still affect long-term completeness and governance quality.
+
 ## Proposal 1
 
 KAD:
-5-01-research.yaml
+1-definitions/1-05-foundational-narratives.yaml
 
 Finding:
-The post-implementation research document is empty, leaving a major gap in the project’s ability to preserve lessons, findings, and research continuity.
+The foundational narratives KAD remains empty even though the rest of the definition layer is materially complete.
 
 Recommendation:
-Add a structured research KAD that records relevant findings, unknowns, and discovery outcomes across the Prismata ecosystem.
+Populate the narratives KAD with 3–5 scenario-driven examples that illustrate human-centered value and ecosystem context without creating implementation commitments.
 
 Rationale:
-The broader KADD system explicitly frames knowledge preservation as a core objective. An empty research KAD weakens continuity and reduces future reuse of project understanding.
+Narratives are part of the intended KADD value model and help communicate why the project matters to people and institutions.
 
 Benefits:
-- Preserves research context
-- Improves operational memory
-- Supports future planning decisions
+- Better human context
+- Improved onboarding and understanding
+- Stronger scenario-driven planning foundation
 
 Risks:
-- If left empty, knowledge will remain unrecorded and hard to recover later.
+- Continued emptiness weakens the conceptual and educational value of the definitions layer.
 
 Suggested Change:
-Populate the file with structured sections for research objectives, findings, open questions, evidence, and implications.
+Add scenario entries covering governance, adoption, operational change, and ecosystem value.
 
 Suggested Content:
-- purpose
-- research-themes
-- findings
-- open-questions
-- decision-impact
-- related-artifacts
+- narrative-id
+- actors
+- scenario
+- challenge
+- outcome
+- lesson
 
 Impact Assessment:
-Low effort, high strategic value, and significant long-term knowledge benefit.
+Low effort, high value.
+
+Status: Open
 
 ---
 
 ## Proposal 2
 
 KAD:
-5-02-lessons.learned.yaml
+5-01-research.yaml
 
 Finding:
-The lessons learned file is empty despite the discipline emphasizing preserved experience and historical knowledge.
+The research KAD remains empty and still does not preserve the project’s structured findings and unresolved questions.
 
 Recommendation:
-Create the document with structured lessons, root causes, and corrective actions derived from current project experience.
+Create a minimal but useful research KAD with findings, open questions, evidence, and implications.
 
 Rationale:
-Lessons learned are a key mechanism for preserving knowledge beyond implementation specifics.
+A durable knowledge framework should preserve research context as a first-class artifact.
 
 Benefits:
-- Improves reuse of project insights
-- Reduces repeated mistakes
-- Strengthens governance continuity
+- Better continuity of discovery
+- Improved review of open questions
+- More durable project memory
 
 Risks:
-- Repeated defects and weak knowledge retention if not captured.
+- Research outcomes will remain implicit and less reusable.
 
 Suggested Change:
-Add sections for repeating patterns, lessons, owner, context, and recommended follow-up.
+Populate with sections for purpose, findings, unknowns, evidence, and decisions influenced by the research.
 
 Suggested Content:
-- lesson-id
-- context
-- issue
-- lesson
-- action
-- owner
-- status
+- objective
+- research-themes
+- findings
+- open-questions
+- evidence
+- implications
 
 Impact Assessment:
-Low effort, high value, and direct improvement to project maturity.
+Low effort, high strategic value.
+
+Status: Open
 
 ---
 
 ## Proposal 3
 
 KAD:
-5-03-retrospectives.yaml
+5-02-lessons.learned.yaml
 
 Finding:
-The retrospective document is empty, leaving no formal record of project reflection or governance closure.
+The lessons-learned KAD is now populated and should continue to be maintained as the project evolves.
 
 Recommendation:
-Define a retrospective structure aligned to the project’s architecture and planning cycles.
+Expand the lesson records over time and treat the file as a living knowledge artifact rather than a one-time document.
 
 Rationale:
-Retrospectives are necessary for continuous knowledge preservation and disciplined architectural improvement.
+The current records provide a strong foundation and demonstrate the value of preserving project learning over time.
 
 Benefits:
-- Encourages reflection and improvement
-- Creates governance continuity
-- Documents what should be kept, changed, or retired
+- Better historical continuity
+- Reduced recurrence of mistakes
+- Improved governance learning
 
 Risks:
-- Lack of explicit retrospective structure weakens future learning and accountability.
+- Without maintenance, the record will become stale or incomplete.
 
 Suggested Change:
-Add sections for what went well, what changed, what failed, and what should be improved next.
+Continue adding lessons as new governance, technical, or architectural patterns emerge.
 
 Suggested Content:
-- retrospective-id
-- timeframe
-- scope
-- positives
-- failures
-- learnings
-- follow-up-actions
+- lesson-id
+- context
+- observation
+- lesson
+- evidence
+- recommendations
 
 Impact Assessment:
-Moderate effort but high strategic value for organizational learning.
+Resolved in principle; maintenance required.
+
+Status: Open (maintenance)
 
 ---
 
 ## Proposal 4
 
 KAD:
-9-02-appendixes.yaml
+5-03-retrospectives.yaml
 
 Finding:
-The appendices file is empty despite the reference layer being a part of the KADD structure.
+The retrospective KAD remains empty.
 
 Recommendation:
-Populate appendices with support material, glossary mapping, canonical examples, and project-specific reference patterns.
+Add a retrospective structure aligned with architecture review, governance review, and project learning cycles.
 
 Rationale:
-Appendices provide stable context for ecosystem participants and reduce ambiguity in interpretation.
+Retrospectives close the loop on learning and provide formal closure for project change.
 
 Benefits:
-- Better project traceability
-- Improved onboarding
-- Better support for future agents and maintainers
+- Stronger reflection and accountability
+- Better follow-through on improvement actions
+- Improved project continuity
 
 Risks:
-- Missing operational references makes interpretation harder.
+- Without retrospectives, the project lacks a formal closure mechanism for learning and change.
 
 Suggested Change:
-Create a baseline appendices KAD with system context, examples, and supporting material.
+Add sections for wins, failed assumptions, follow-up actions, and operational recommendations.
 
 Suggested Content:
-- appendix-id
-- purpose
-- content
-- related-kads
-- usage-guidance
+- retrospective-id
+- timeframe
+- positives
+- negatives
+- lessons
+- follow-up-actions
 
 Impact Assessment:
-Low effort but useful for knowledge durability and usability.
+Moderate effort, high learning value.
+
+Status: Open
 
 ---
 
 ## Proposal 5
 
 KAD:
-9-03-references.yaml
+9-01-glossary.yaml
 
 Finding:
-The reference file is empty, leaving the resource layer without an authoritative support list.
+The glossary has improved materially, but some entries remain incomplete, inconsistent, or malformed.
 
 Recommendation:
-Add a curated reference list for canonical standards, documents, and external dependencies.
+Perform a final glossary normalization pass to correct typos, complete missing definitions, and eliminate placeholder values.
 
 Rationale:
-Reference integrity is critical to long-term maintainability and ecosystem traceability.
+The glossary is now a strong reference layer, but it still needs quality cleanup before it is considered final canonical terminology.
 
 Benefits:
-- Better discovery of supporting material
-- Stronger cross-document trust
-- Better project continuity and onboarding
+- Better consistency across KADs
+- Fewer interpretation ambiguities
+- More reliable future indexing and validation
 
 Risks:
-- Future contributors may not know which references are authoritative.
+- Incomplete glossary entries create ambiguity and weaken the value of the reference layer.
 
 Suggested Change:
-Build a reference catalog with titles, types, owners, and relevance to the Prismata ecosystem.
+Correct terms such as “Canonial Metadata Framework,” replace “nul” placeholders, and complete incomplete definitions.
 
 Suggested Content:
-- reference-id
-- title
-- type
+- entry-id
+- term
+- acronym
+- definition
 - owner
-- url-or-location
-- relevance
+- validation-status
 
 Impact Assessment:
-Low-to-moderate effort and important for governance hygiene.
+Low-to-moderate effort, high quality benefit.
+
+Status: Open
 
 ---
 
@@ -197,33 +210,36 @@ KAD:
 3-planning/3-03-roadmap.yaml
 
 Finding:
-Several roadmap items cite requirements or risks that are not present in the current requirement baseline, creating traceability drift.
+Roadmap dependency traceability still needs review against the current requirement and risk baseline.
 
 Recommendation:
-Audit the roadmap dependencies and remove or replace undefined references with a validated requirement set.
+Audit dependency mappings and remove or replace references that are not clearly supported by the canonical planning set.
 
 Rationale:
-Roadmap items should map to explicit and authoritative planning artifacts to remain trustworthy and reviewable.
+Stable planning depends on a clear and trustworthy requirement-to-roadmap chain.
 
 Benefits:
-- Better traceability
-- More reliable project planning
-- Easier validation and risk management
+- Better planning quality
+- Stronger governance confidence
+- Reduced drift risk
 
 Risks:
-- Unchecked dependency drift may cause misaligned planning and false execution assumptions.
+- Misaligned dependencies can produce false confidence in roadmap execution.
 
 Suggested Change:
-Add a dependency validation checklist and only permit requirements/risks referenced by actual KADs.
+Create a validation checklist for roadmap dependencies and ensure each item resolves to a supported requirement or risk record.
 
 Suggested Content:
-- validated-dependencies
-- missing-references
-- review-status
-- mapping-source
+- dependency-check
+- source-kad
+- verified-status
+- missing-reference
+- reviewer
 
 Impact Assessment:
-Moderate effort with a strong return in governance quality.
+Moderate effort, strong governance value.
+
+Status: Open
 
 ---
 
@@ -233,34 +249,36 @@ KAD:
 4-implementation/4-05-development.yaml
 
 Finding:
-The development KAD explicitly states that it is a draft and requires architecture review, suggesting incomplete implementation governance.
+The development KAD remains explicitly draft-level and architecture-review-pending.
 
 Recommendation:
-Either complete the architecture review and stabilize the document or clearly label it as a pilot framework until the review is finished.
+Finalize a review gate or designate the document as a provisional working policy until it receives architecture approval.
 
 Rationale:
-A draft document with explicit review requirements should not be treated as final implementation policy without an explicit approval gate.
+Draft-level policy should not be treated as final governance without explicit approval.
 
 Benefits:
-- Reduces false confidence
-- Preserves review discipline
-- Improves architectural accountability
+- Better clarity of maturity
+- Reduced false confidence
+- More structured review governance
 
 Risks:
-- Teams may infer policy from an unapproved draft and create inconsistent implementations.
+- Readers may misinterpret the document as approved policy when it is not.
 
 Suggested Change:
-Add a formal approval gate, maturity tag, and canonical ownership marker.
+Add explicit review status, owner, and next review date metadata.
 
 Suggested Content:
 - maturity
-- architecture-review-status
+- review-status
 - owner
 - approved-by
 - next-review-date
 
 Impact Assessment:
-Moderate effort, high governance value.
+Moderate effort, important governance benefit.
+
+Status: Open
 
 ---
 
@@ -270,34 +288,35 @@ KAD:
 4-implementation/4-02-data-model.yaml
 
 Finding:
-The data model file uses some inconsistent ID and naming patterns compared to the other KAD files.
+Some naming and ID conventions remain inconsistent with the broader KADD pattern.
 
 Recommendation:
-Normalize the KAD IDs and naming conventions to match the rest of the KADD pattern and official layer naming.
+Normalize file IDs, metadata names, and pattern consistency across the implementation layer.
 
 Rationale:
-Consistent naming supports indexing, automation, and cross-document validation.
+Consistency improves automation, cross-document traceability, and long-term maintenance quality.
 
 Benefits:
-- Better machine readability
-- More stable registry behavior
-- Better future validation tooling
+- Better indexing
+- More stable automation support
+- Cleaner metadata hygiene
 
 Risks:
-- Inconsistent IDs create ambiguity for automation and indexing tasks.
+- Ongoing inconsistencies weaken the quality of the knowledge model.
 
 Suggested Change:
-Standardize file IDs and metadata names to the KAD-PRISMATA-4-02-DATA-MODEL pattern used elsewhere when appropriate.
+Standardize naming to the project’s dominant KAD pattern and update path metadata where required.
 
 Suggested Content:
 - id
 - udi
 - metadata.name
 - source.path
-- canonical filename
 
 Impact Assessment:
-Low effort with moderate value for consistency and tooling reliability.
+Low effort, moderate value.
+
+Status: Open
 
 ---
 
@@ -307,69 +326,111 @@ KAD:
 canonical/kadd/*
 
 Finding:
-Some source path entries are inconsistent, mixing relative paths with leading slash paths.
+Source paths and metadata remain somewhat inconsistent across the KADD files.
 
 Recommendation:
-Standardize all source.path values to a single repository-relative convention.
+Standardize source.path formatting and path conventions across the KAD collection.
 
 Rationale:
-Path consistency is a small but important element of provenance, maintainability, and automation trust.
+A consistent provenance model improves trust, maintenance, and automation reliability.
 
 Benefits:
 - Cleaner traceability
-- Easier automation
-- Better repository hygiene
+- Better project hygiene
+- Easier future automation
 
 Risks:
-- Mixed path conventions create confusion for tooling and review.
+- Inconsistent metadata reduces confidence in document provenance.
 
 Suggested Change:
-Use a single canonical pattern such as canonical/kadd/<layer>/<file>.yaml.
+Adopt a single canonical repository-relative path convention for all KADs.
 
 Suggested Content:
 - source.path
-- canonical repository location
-- repository-relative path
+- canonical-location
+- repo-relative-path
 
 Impact Assessment:
-Low effort and direct improvement to provenance quality.
+Low effort, strong governance improvement.
+
+Status: Open
 
 ---
 
 ## Proposal 10
 
 KAD:
-1-definitions/1-05-foundational-narratives.yaml
+9-02-appendices.yaml
 
 Finding:
-The foundational narratives document exists but is empty, limiting the storytelling layer that should communicate ecosystem value and problem context.
+The appendixes file is now populated and provides strong support, but it should be continued as a maintained reference and onboarding asset.
 
 Recommendation:
-Populate the narratives file with a minimum viable set of human-centered scenario narratives tied to the Prismata vision.
+Treat appendices as an active project support layer and expand it as additional ecosystem context emerges.
 
 Rationale:
-Narratives provide context for human understanding and future requirements work, and they are explicitly intended to support exploration without committing to implementation.
+The appendices document is valuable because it reduces onboarding friction and gives the project a durable interpretive layer.
 
 Benefits:
-- Improves understanding of value and context
-- Supports future planning and opportunity exploration
-- Better communicates non-technical outcomes
+- Better onboarding
+- Better project communication
+- More durable interpretive context
 
 Risks:
-- Empty narrative content reduces the project’s ability to demonstrate value and operational context.
+- A static appendix will soon become stale if not reviewed and expanded.
 
 Suggested Change:
-Add 3-5 narrative scenarios covering operations, governance, and ecosystem adoption.
+Add new appendices for emerging concepts, workflows, or future ecosystem references as they appear.
 
 Suggested Content:
-- narrative-id
-- scenario
-- actors
-- challenge
-- outcome
-- learning
+- appendix-id
+- title
+- purpose
+- content
+- related-kad
 
 Impact Assessment:
-Low effort and highly beneficial for communication and future design alignment.
+Low effort, high practical value.
+
+Status: Open (maintenance)
+
+---
+
+## Proposal 11
+
+KAD:
+9-03-references.yaml
+
+Finding:
+The references KAD is now populated and useful, but it should continue to evolve as project lineage and external influence become clearer.
+
+Recommendation:
+Continue to curate and maintain the reference catalog as the project’s knowledge lineage expands.
+
+Rationale:
+This file is now a proper provenance and influences record, which is important for long-term understanding.
+
+Benefits:
+- Better provenance
+- Better historical understanding
+- Better support for future architecture decisions
+
+Risks:
+- If not maintained, the reference catalog will fall behind the project’s actual lineage.
+
+Suggested Change:
+Add future references as new standards, methods, or influences emerge.
+
+Suggested Content:
+- reference-id
+- title
+- type
+- owner
+- relevance
+
+Impact Assessment:
+Low effort, high continuity value.
+
+Status: Open (maintenance)
 
 ---
