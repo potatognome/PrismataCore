@@ -1,0 +1,303 @@
+id: KAD-PRISMATA-9-02-APPENDICES
+udi: prismata.kad.reference.appendices
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-09
+  updated: 2026-11-09
+  path: canonical/kadd/9-reference/9-02-appendices.yaml
+
+metadata:
+  name: Appendices
+
+  description: >
+    Supplemental reference material that provides context,
+    supporting information, taxonomies, quick-reference guides,
+    lineage information, governance workflows, and ecosystem
+    supporting documentation that does not naturally belong
+    within Vision, Concepts, Architecture, Planning,
+    Implementation, Research, or Lessons Learned KADs.
+
+  tags:
+    - prismata
+    - appendices
+    - reference
+    - governance
+    - architecture
+    - taxonomy
+    - kadd
+
+relations:
+  domain:
+    - Reference Material
+    - Supporting Information
+    - Governance Support
+    - Knowledge Architecture
+
+  scope:
+    - Ecosystem Context
+    - Taxonomies
+    - Quick References
+    - Project Lineage
+    - Governance Workflows
+
+  exclusions:
+    - Requirements
+    - Architecture Decisions
+    - Roadmap Commitments
+    - Implementation Specifications
+    - Research Findings
+    - Lessons Learned
+
+  priority: medium
+
+  conflict-resolution: >
+    Appendix content is informative and supplemental.
+    Canonical definitions remain governed by the Glossary.
+    Architectural authority remains governed by Architecture,
+    Decisions, and related KADs.
+
+  imports:
+    - prismata.kad.reference.glossary
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.relationships
+
+notes:
+  - Appendices provide supporting context.
+  - Appendix content may evolve independently of implementation.
+  - Appendices may contain visual, conceptual, descriptive, or illustrative material.
+  - Appendices should prioritize clarity and discoverability.
+  - Appendix content should remain implementation-agnostic whenever possible.
+
+content:
+
+  purpose: >
+    Provide durable supporting material that improves
+    navigation, understanding, onboarding, governance,
+    and knowledge continuity across the Prismata ecosystem.
+
+  appendices:
+    - appendix_id: APPENDIX-001
+      udi: prismata.kad.appendix.ecosystem-lineage
+      title: Ecosystem Lineage
+      description: >
+        High-level lineage showing the evolution of ideas that
+        ultimately influenced Prismata.
+
+      content:
+        lineage:
+          - Lumen Project
+          - Operational Data Migration Experience
+          - Metadata-Oriented Thinking
+          - Knowledge Preservation Concerns
+          - Architecture-First Development
+          - Prismata
+          - KADD
+
+        observations:
+          - Real-world operational work frequently revealed architectural shortcomings.
+          - Repeated implementations exposed missing abstractions.
+          - Knowledge preservation became a primary concern.
+
+    - appendix_id: APPENDIX-002
+      udi: prismata.kad.appendix.kadd-layer-overview
+      title: KADD Layer Overview
+      description: >
+        High-level overview of KADD layers and responsibilities.
+
+      content:
+        layers:
+          layer-1:
+            name: Definition
+            purpose: Define why the project exists.
+
+          layer-2:
+            name: Architecture
+            purpose: Define what exists and how it is organized.
+
+          layer-3:
+            name: Planning
+            purpose: Define intended outcomes and priorities.
+
+          layer-4:
+            name: Implementation
+            purpose: Define implementation details and execution.
+
+          layer-5:
+            name: Post Implementation
+            purpose: Capture learning and historical knowledge.
+
+          layer-9:
+            name: Reference
+            purpose: Maintain durable supporting knowledge.
+
+    - appendix_id: APPENDIX-003
+      udi: prismata.kad.appendix.document-lifecycle
+      title: Knowledge Lifecycle
+      description: >
+        Illustrative lifecycle of knowledge as it matures.
+
+      content:
+        lifecycle:
+          - Narrative
+          - Vision
+          - Concept
+          - Architecture
+          - Decision
+          - Planning
+          - Implementation
+          - Research
+          - Lessons Learned
+          - Historical Knowledge
+
+        observations:
+          - Not all narratives become concepts.
+          - Not all concepts become implementations.
+          - Learning may restart the cycle.
+
+    - appendix_id: APPENDIX-004
+      udi: prismata.kad.appendix.relationship-taxonomy
+      title: Relationship Taxonomy
+      description: >
+        Consolidated view of preferred relationship terminology.
+
+      content:
+        structural:
+          - contains
+          - part_of
+          - owns
+          - owned_by
+
+        dependency:
+          - depends_on
+          - provides
+          - uses
+          - references
+
+        lifecycle:
+          - creates
+          - manages
+          - destroys
+
+        inheritance:
+          - inherits
+          - extends
+          - implements
+
+        data:
+          - stores
+          - retrieves
+          - produces
+          - consumes
+          - transforms
+
+        event:
+          - publishes
+          - subscribes_to
+          - triggers
+
+        notes:
+          - Relationship definitions remain governed by the Glossary.
+          - Relationship usage should remain consistent across KADs.
+
+    - appendix_id: APPENDIX-005
+      udi: prismata.kad.appendix.proposal-governance-workflow
+      title: Proposal Governance Workflow
+      description: >
+        High-level workflow describing governance of canonical artifacts.
+
+      content:
+        workflow:
+          - Analyze
+          - Identify Finding
+          - Generate Recommendation
+          - Create Change Proposal
+          - Principal Review
+          - Accept Or Reject
+          - Update Canonical Artifact
+
+        principles:
+          - Canonical KADs are read-only to agents.
+          - Recommendations are preferred over direct modification.
+          - Author intent should be preserved.
+
+    - appendix_id: APPENDIX-006
+      udi: prismata.kad.appendix.kadd-agent-quick-reference
+      title: KADD Agent Quick Reference
+      description: >
+        Condensed overview of expected KADD agent behavior.
+
+      content:
+        priorities:
+          - Knowledge Before Code
+          - Architecture Before Implementation
+          - Metadata Before Logic
+          - Governance Before Automation
+          - Intent Before Optimization
+
+        source-of-truth:
+          - KAD Collection
+
+        protected-artifacts:
+          - Canonical KADs
+
+        modification-model:
+          - Proposal Based
+
+    - appendix_id: APPENDIX-007
+      udi: prismata.kad.appendix.prismata-core-beliefs
+      title: Core Ecosystem Beliefs
+      description: >
+        Summary of recurring ecosystem themes.
+
+      content:
+        beliefs:
+          - Knowledge is more durable than implementation.
+          - Metadata is more reusable than code.
+          - Architecture should explain implementation.
+          - Governance should preserve intent.
+          - Concepts should stabilize before implementation.
+          - Repeated solutions often indicate missing abstractions.
+          - Human understanding is a first-class design concern.
+          - Cognitive load is an important project cost.
+          - Knowledge should outlive technologies.
+          - Standards and disciplines create leverage.
+
+  onboarding-summary:
+    intended-audience:
+      - New Contributors
+      - Architects
+      - Project Maintainers
+      - Agent Developers
+      - Future Ecosystem Consumers
+
+    read-order:
+      - 1-01-vision.yaml
+      - 1-03-concepts.yaml
+      - 2-01-systems.yaml
+      - 2-03-relationships.yaml
+      - 2-04-decisions.yaml
+      - 9-01-glossary.yaml
+      - 9-02-appendices.yaml
+
+    expected-outcomes:
+      - Understand ecosystem purpose.
+      - Understand major concepts.
+      - Understand governance rules.
+      - Understand architectural boundaries.
+      - Understand terminology.
+
+  closing-summary: >
+    Appendices provide supporting structure around the
+    Prismata ecosystem without creating requirements,
+    implementation commitments, or architectural authority.
+
+    Their purpose is to improve discoverability,
+    onboarding, navigation, governance understanding,
+    and long-term knowledge continuity.

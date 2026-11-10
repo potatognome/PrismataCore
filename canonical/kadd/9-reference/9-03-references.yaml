@@ -1,0 +1,344 @@
+id: KAD-PRISMATA-9-03-REFERENCES
+udi: prismata.kad.reference.references
+kind: KAD
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-09
+  updated: 2026-11-09
+  path: canonical/kadd/9-reference/9-03-references.yaml
+
+metadata:
+  name: References
+
+  description: >
+    Canonical catalog of internal, external, conceptual,
+    methodological, technical, historical, and inspirational
+    references that have influenced, informed, or support
+    the Prismata ecosystem and KADD discipline.
+
+  tags:
+    - prismata
+    - references
+    - bibliography
+    - influences
+    - methodologies
+    - standards
+    - governance
+
+relations:
+  domain:
+    - Reference Material
+    - Knowledge Sources
+    - Supporting Information
+    - Ecosystem Influences
+
+  scope:
+    - Internal References
+    - External References
+    - Industry Standards
+    - Methodologies
+    - Historical Influences
+    - Inspirational Sources
+    - Educational Influences
+
+  exclusions:
+    - Requirements
+    - Architecture Decisions
+    - Implementation Specifications
+    - Roadmap Commitments
+    - Lessons Learned
+
+  priority: medium
+
+  conflict-resolution: >
+    References provide supporting context and provenance.
+    Authoritative definitions remain governed by the Glossary.
+    Authoritative architecture remains governed by Architecture,
+    Decisions, and associated KADs.
+
+  imports:
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.appendices
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.concepts
+    - prismata.kad.architecture.decisions
+
+notes:
+  - References may be internal, external, conceptual, historical, or inspirational.
+  - Inclusion within this document does not imply adoption or endorsement.
+  - References may inform future concepts, architecture, planning, research, or governance.
+  - References exist to preserve lineage, provenance, and context.
+  - Internal project artifacts should be preferred where authoritative ecosystem guidance exists.
+
+content:
+
+  purpose: >
+    Preserve the knowledge lineage, influences, standards,
+    methodologies, and supporting materials that contribute
+    to understanding the Prismata ecosystem and KADD discipline.
+
+  reference-categories:
+
+    internal-references:
+
+      description: >
+        Canonical Prismata ecosystem artifacts.
+
+      references:
+
+        - reference_id: REF-001
+          udi: prismata.kad.reference.kadd-001
+          title: KADD-001
+          type: internal-discipline
+          owner: Prismata Architecture Team
+          location: prismata.kad.definitions.documentation-discipline
+
+          relevance: >
+            Foundational definition of the Knowledge Architecture
+            Documentation Discipline.
+
+        - reference_id: REF-002
+          udi: prismata.kad.reference.glossary
+          title: Prismata Glossary
+          type: internal-reference
+          owner: Prismata Architecture Team
+          location: prismata.kad.reference.glossary
+
+          relevance: >
+            Canonical terminology authority for the ecosystem.
+
+        - reference_id: REF-003
+          udi: prismata.kad.reference.kadd-agent
+          title: KADD Agent
+          type: internal-governance
+          owner: Prismata Architecture Team
+          location: kadd-agent.md
+
+          relevance: >
+            Defines expected agent behavior, governance,
+            analysis, and proposal-generation policies.
+
+    methodologies:
+
+      description: >
+        Practices and approaches that influenced ecosystem design.
+
+      references:
+        - reference_id: REF-101
+          udi: prismata.kad.reference.methodology.c4
+          title: C4 Model
+          type: methodology
+          owner: Simon Brown
+          relevance: >
+            Layered architectural communication approach that
+            influenced architecture-first thinking.
+
+        - reference_id: REF-102
+          udi: prismata.kad.reference.methodology.adr
+          title: Architecture Decision Records
+          type: methodology
+          owner: Community Practice
+
+          relevance: >
+            Influenced Prismata decision governance and
+            architectural decision documentation.
+
+        - reference_id: REF-103
+          udi: prismata.kad.reference.methodology.knowledge-first
+          title: Knowledge-First Development
+          type: conceptual-methodology
+          owner: Prismata
+
+          relevance: >
+            Emerging project philosophy emphasizing durable
+            knowledge before implementation.
+
+    standards:
+
+      description: >
+        Technical and data standards relevant to operational,
+        architectural, and ecosystem work.
+
+      references:
+
+        - reference_id: REF-201
+          udi: prismata.kad.reference.standard.yaml
+          title: YAML
+          type: data-standard
+          owner: Industry Standard
+          relevance: >
+            Primary structured document format for KADs.
+
+        - reference_id: REF-202
+          udi: prismata.kad.reference.standard.csv
+          title: CSV
+          type: data-standard
+          owner: Industry Standard
+
+          relevance: >
+            Common data interchange format frequently encountered
+            during operational data migration work.
+
+        - reference_id: REF-203
+          udi: prismata.kad.reference.standard.utf8
+          title: UTF-8
+          type: encoding-standard
+          owner: Industry Standard
+
+          relevance: >
+            Character encoding standard frequently involved in
+            migration and interoperability challenges.
+
+        - reference_id: REF-204
+          udi: prismata.kad.reference.standard.iso8601
+          title: ISO8601
+          type: date-standard
+          owner: International Standard
+
+          relevance: >
+            Standardized date representation heavily utilized in
+            data normalization and interoperability efforts.
+
+    historical-influences:
+      description: >
+        Experiences and initiatives that influenced ecosystem evolution.
+
+      references:
+        - reference_id: REF-301
+          udi: prismata.kad.reference.history.lumen
+          title: Lumen Project
+          type: historical-influence
+          owner: The Principal
+
+          relevance: >
+            One of the earliest initiatives contributing to the
+            development of architecture-first and knowledge-centric thinking.
+
+        - reference_id: REF-302
+          udi: prismata.kad.reference.history.data-migration
+          title: Large-Scale Data Migration Experience
+          type: historical-influence
+          owner: The Principal
+
+          relevance: >
+            Repeated encounters with data quality, encoding,
+            normalization, validation, and governance issues
+            exposed the need for durable abstractions and
+            reusable architecture.
+
+        - reference_id: REF-303
+          udi: prismata.kad.reference.history.python-toolchain
+          title: Rapid Utility Tool Development
+          type: historical-influence
+          owner: The Principal
+
+          relevance: >
+            Creation of numerous one-off utilities highlighted
+            the absence of shared capability models and common
+            architectural foundations.
+
+        - reference_id: REF-304
+          udi: prismata.kad.reference.history.python-typescript-transition
+          title: Python to TypeScript Evolution
+          type: historical-influence
+          owner: The Principal
+
+          relevance: >
+            Demonstrated the risks of implementation-centric
+            thinking and reinforced the need to separate
+            architecture from technology.
+
+    conceptual-influences:
+      description: >
+        Foundational ideas that contributed to Prismata's philosophy.
+
+      references:
+        - reference_id: REF-401
+          udi: prismata.kad.reference.concept.metadata-driven
+          title: Metadata-Driven Systems
+          type: conceptual-influence
+
+          relevance: >
+            Influenced the belief that metadata should be treated
+            as a primary source of behavior and understanding.
+
+        - reference_id: REF-402
+          udi: prismata.kad.reference.concept.knowledge-preservation
+          title: Knowledge Preservation
+          type: conceptual-influence
+
+          relevance: >
+            Influenced the creation of durable knowledge artifacts
+            independent of implementation.
+
+        - reference_id: REF-403
+          udi: prismata.kad.reference.concept.capability-thinking
+          title: Capability-Oriented Thinking
+          type: conceptual-influence
+
+          relevance: >
+            Encouraged abstraction away from implementations
+            toward reusable conceptual capabilities.
+
+        - reference_id: REF-404
+          udi: prismata.kad.reference.concept.governance
+          title: Governance-As-Architecture
+          type: conceptual-influence
+
+          relevance: >
+            Influenced the treatment of governance as a first-class
+            ecosystem concern rather than a secondary process.
+
+    future-consumers:
+      description: >
+        Anticipated consumers of shared ecosystem knowledge.
+
+      references:
+        - reference_id: REF-501
+          udi: prismata.kad.reference.future.doclibrarian
+          title: DocLibrarian
+          type: future-consumer
+
+          relevance: >
+            Documentation and knowledge management consumer of
+            KADD-derived artifacts.
+
+        - reference_id: REF-502
+          udi: prismata.kad.reference.future.orgarchitect
+          title: OrgArchitect
+          type: future-consumer
+
+          relevance: >
+            Organizational and architectural analysis consumer
+            of ecosystem knowledge.
+
+        - reference_id: REF-503
+          udi: prismata.kad.reference.future.prismsense
+          title: PrismSense
+          type: future-consumer
+
+          relevance: >
+            Diagnostics, validation, governance, and
+            ecosystem health analysis consumer.
+
+  reference-principles:
+    - References establish provenance.
+    - References preserve lineage.
+    - References support understanding.
+    - References do not create authority by themselves.
+    - References may influence future concepts and decisions.
+    - Historical experiences are valid reference sources.
+    - Operational experiences may be as valuable as formal standards.
+
+  closing-summary: >
+    This catalog provides a durable record of influences,
+    standards, methodologies, experiences, and supporting
+    materials that contributed to the evolution of Prismata.
+
+    The purpose of this document is not to define architecture
+    or requirements, but to preserve the lineage of ideas,
+    experiences, and references that contributed to the
+    development of the ecosystem and KADD discipline.
