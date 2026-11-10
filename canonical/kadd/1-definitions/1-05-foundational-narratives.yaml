@@ -7,7 +7,7 @@ tenant: null
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-02
+  updated: 2026-11-09
   path: /canonical/kadd/1-definitions/1-05-foundational-narratives.yaml
 
 metadata:
@@ -35,12 +35,14 @@ relations:
     - Operational Context
     - User Scenarios
     - Ecosystem Narratives
+
   scope:
     - Illustrative Scenarios
     - Human-Centered Examples
     - Problem Context
     - Ecosystem Value
     - Opportunity Exploration
+
   exclusions:
     - Requirements
     - Architecture
@@ -95,22 +97,397 @@ content:
     that help illustrate the value of the Prismata ecosystem.
 
   narrative-guidance:
-    objective: null
-    target-audience: null
-    assumptions: []
-    constraints: []
-    observations: []
 
-  narratives: []
+    objective: >
+      Communicate the human value of Prismata by illustrating
+      realistic situations in which knowledge architecture,
+      metadata-driven systems, durable documentation,
+      governance, and long-term knowledge preservation
+      create meaningful outcomes.
+
+    target-audience:
+      - Project Architects
+      - Knowledge Workers
+      - Independent Developers
+      - Technical Leaders
+      - Future Contributors
+      - Educators
+      - Students
+
+    assumptions:
+      - Complexity increases as projects mature.
+      - Human memory is unreliable over long periods.
+      - Architectural decisions are frequently lost.
+      - Documentation often becomes disconnected from implementation.
+      - Future contributors may have no direct knowledge of historical decisions.
+
+    constraints:
+      - Narratives are illustrative only.
+      - Narratives do not constitute approved requirements.
+      - Narratives do not imply roadmap commitment.
+      - Narratives do not prescribe implementation.
+
+    observations:
+      - Knowledge loss often creates more long-term cost than coding mistakes.
+      - Teams frequently rediscover previously solved problems.
+      - Architectural intent is often lost over time.
+      - Durable knowledge structures can reduce cognitive load.
+
+  narratives:
+
+    - narrative_id: NARRATIVE-001
+
+      udi: prismata.kad.narrative.the-forgotten-architecture
+
+      title: The Forgotten Architecture
+
+      type: experiential
+
+      timeframe: future
+
+      actors:
+        - Independent Developer
+        - Prismata Ecosystem
+        - Future AI Agents
+
+      scenario: >
+        An independent developer spends years building
+        an increasingly sophisticated ecosystem consisting
+        of concepts, tools, documents, services, and ideas.
+
+      challenge: >
+        Architectural decisions become scattered across
+        conversations, notes, code, and memory.
+
+        Understanding why things exist becomes more difficult
+        than implementing them.
+
+      turning-point: >
+        The project begins preserving concepts, architecture,
+        decisions, relationships, and lessons as durable
+        knowledge assets rather than relying on source code.
+
+      outcome: >
+        Architecture becomes understandable independent
+        of implementation.
+
+        Future technologies, frameworks, and tooling can
+        change while intent remains intact.
+
+      benefits:
+        - Reduced cognitive load
+        - Reduced architectural drift
+        - Better onboarding
+        - Improved AI reasoning
+        - Greater continuity
+
+      narrative-value: >
+        Illustrates how durable knowledge can become more
+        valuable than the implementation itself.
+
+    - narrative_id: NARRATIVE-002
+
+      udi: prismata.kad.narrative.the-community-stem-lab
+
+      title: The Community STEM Lab
+
+      type: speculative
+
+      timeframe: future
+
+      actors:
+        - Students
+        - Educators
+        - Community Organization
+        - Prismata Ecosystem
+
+      scenario: >
+        A community learning program wants to teach systems
+        thinking, planning, architecture, and problem solving.
+
+      challenge: >
+        Students often learn implementation before learning
+        how ideas, systems, and responsibilities fit together.
+
+      turning-point: >
+        The community adopts a KADD-inspired approach that
+        teaches vision, concepts, architecture, relationships,
+        planning, and implementation as distinct layers.
+
+      outcome: >
+        Students develop stronger systems thinking skills and
+        can transfer those skills into software, robotics,
+        websites, presentations, and other domains.
+
+      benefits:
+        - Better systems thinking
+        - Better planning
+        - Improved knowledge retention
+        - Technology-independent learning
+
+      narrative-value: >
+        Demonstrates that KADD organizes knowledge rather than
+        software and can be applied beyond traditional development.
+
+    - narrative_id: NARRATIVE-003
+
+      udi: prismata.kad.narrative.the-endless-data-migration
+
+      title: The Endless Data Migration
+
+      type: historical
+
+      timeframe: past
+
+      actors:
+        - Data Migration Analyst
+        - Customer Organizations
+        - Legacy Systems
+        - Reporting Systems
+
+      scenario: >
+        A large-scale data migration initiative requires hundreds
+        of independently submitted files to be validated, cleaned,
+        transformed, standardized, and imported into target systems.
+
+        More than three hundred sixty file submissions are processed
+        over approximately ten months.
+
+      challenge: >
+        Incoming data contains encoding issues, spreadsheet quirks,
+        malformed exports, inconsistent date formats, missing data,
+        duplicate records, and reporting inconsistencies.
+
+        Common issues include:
+
+        - UTF-8 conversion
+        - Byte Order Mark handling
+        - Mojibake
+        - ISO8601 formatting
+        - CSV inconsistencies
+        - Spreadsheet interpretation differences
+        - Missing required fields
+
+        Approximately twenty-two percent of required fields are
+        missing from portions of the migration data.
+
+      observation: >
+        More than fifteen Python utilities are created in only a
+        few months to address individual operational problems.
+
+        Although successful, the tools evolve independently.
+
+        Similar concerns repeatedly appear:
+
+        - Validation
+        - Mapping
+        - Date normalization
+        - Data quality analysis
+        - Fuzzy matching
+        - Encoding correction
+        - Reporting
+
+        Yet every solution develops slightly different
+        terminology, assumptions, structures, and
+        configuration conventions.
+
+      turning-point: >
+        Reflection reveals that the primary challenge was not
+        data transformation.
+
+        The deeper challenge was the absence of a durable
+        knowledge architecture capable of representing
+        recurring categories of work.
+
+      outcome: >
+        Future thinking begins shifting toward architecture,
+        concepts, metadata, governance, capabilities,
+        and reusable knowledge structures.
+
+      benefits:
+        - Revealed the cost of missing abstractions
+        - Highlighted the value of shared terminology
+        - Demonstrated the need for reusable capabilities
+        - Exposed the need for metadata-driven governance
+
+      lessons:
+        - Repeated solutions often indicate a missing abstraction.
+        - Successful implementation does not guarantee architectural quality.
+        - Durable knowledge structures reduce future operational burden.
+        - Consistent naming is a governance concern rather than merely a coding concern.
+
+      narrative-value: >
+        Illustrates how operational pressure can expose missing
+        concepts, governance, and knowledge structures long before
+        those deficiencies are formally recognized.
+
+    - narrative_id: NARRATIVE-004
+
+      udi: prismata.kad.narrative.the-implementation-trap
+
+      title: The Implementation Trap
+
+      type: historical
+
+      timeframe: past
+
+      actors:
+        - Independent Developer
+        - Python Codebase
+        - TypeScript Codebase
+        - Future Ecosystem
+
+      scenario: >
+        A growing software project begins in Python and later
+        expands into TypeScript.
+
+        The project continually evolves, is repeatedly refactored,
+        and undergoes constant implementation changes.
+
+      challenge: >
+        Architectural understanding increasingly depends upon
+        the code itself.
+
+        Significant effort is spent:
+
+        - Refactoring
+        - Reorganizing
+        - Renaming
+        - Revisiting old ideas
+        - Reconciling multiple implementations
+
+        Despite constant activity, the ecosystem does not feel
+        like a unified whole.
+
+      observation: >
+        Similar concepts repeatedly appear:
+
+        - Metadata
+        - Identity
+        - Configuration
+        - Validation
+        - Relationships
+        - Documents
+
+        Yet they often appear under different names,
+        structures, configuration models, and
+        implementation patterns.
+
+        The code evolves, but the knowledge model remains implicit.
+
+      turning-point: >
+        Continued refactoring no longer feels like meaningful
+        progress.
+
+        A realization emerges:
+
+        The issue is not implementation quality.
+
+        The issue is the absence of a durable architectural
+        knowledge model independent of implementation.
+
+        The focus shifts from preserving code to preserving
+        concepts, intent, and relationships.
+
+      outcome: >
+        The ecosystem is reduced to foundational elements:
+
+        - Vision
+        - Concepts
+        - Architecture
+        - Relationships
+        - Decisions
+        - Governance
+        - Knowledge
+
+        Implementation becomes a consumer of knowledge rather
+        than the source of knowledge.
+
+        Technologies become replaceable.
+
+        Concepts become durable.
+
+        KADD emerges as a mechanism for preserving intent
+        independent of implementation.
+
+      benefits:
+        - Improved architectural clarity
+        - Reduced technology attachment
+        - Better AI understanding
+        - Better human understanding
+        - Lower rewrite risk
+
+      lessons:
+        - Architecture should explain implementation.
+        - Refactoring cannot compensate for missing concepts.
+        - Repeated implementation effort often signals a knowledge gap.
+        - Knowledge archives are more durable than code archives.
+        - Technologies are temporary; intent should be long-lived.
+
+      narrative-value: >
+        Illustrates how implementation-focused development can
+        create an illusion of progress while architectural
+        understanding remains incomplete.
+
+        Demonstrates one of the core motivations behind KADD:
+        preserving knowledge independently of implementation.
 
   opportunities:
-    emerging-opportunities: []
-    planning-candidates: []
-    future-considerations: []
+
+    emerging-opportunities:
+      - Knowledge-first project planning
+      - Durable architectural archives
+      - AI-assisted knowledge stewardship
+      - Metadata-driven governance
+      - Cross-project knowledge reuse
+      - Educational applications of KADD
+
+    planning-candidates:
+      - Architectural onboarding systems
+      - Knowledge graph exploration tools
+      - Narrative-driven documentation experiences
+      - Educational curriculum generation
+      - Organizational knowledge preservation
+
+    future-considerations:
+      - KADD beyond software development
+      - Cross-domain knowledge management
+      - Long-term historical archives
+      - Agent-assisted governance
+      - Knowledge-centric ecosystems
 
   lessons:
-    observations: []
-    recurring-themes: []
-    identified-gaps: []
 
-  closing-summary: null
+    observations:
+      - Architectural understanding often degrades faster than implementation.
+      - Human memory is an unreliable long-term storage mechanism.
+      - Durable knowledge artifacts reduce rediscovery effort.
+      - Story-driven examples effectively communicate value.
+      - Repeated solutions frequently reveal missing abstractions.
+
+    recurring-themes:
+      - Knowledge preservation
+      - Cognitive load reduction
+      - Architectural continuity
+      - Governance
+      - Metadata-driven thinking
+      - Long-term maintainability
+
+    identified-gaps:
+      - Additional educational narratives
+      - Organizational adoption narratives
+      - Governance-focused narratives
+      - Community and open-source examples
+
+  closing-summary: >
+    Prismata exists to help preserve, understand, govern,
+    organize, and evolve knowledge in a durable manner.
+
+    These narratives are not requirements, commitments,
+    implementation plans, or approved work.
+
+    They are illustrative examples intended to communicate
+    the value of knowledge architecture, metadata-driven
+    thinking, durable governance, and long-term knowledge
+    preservation across a wide variety of past, present,
+    and future situations.
