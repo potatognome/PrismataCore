@@ -1,0 +1,165 @@
+id: PRISMATA-KAD-5-02-001
+udi: dev.prismata.kad.lessons-learned.5-02-001
+kind: lessons-learned
+version: 1.1.0
+tenant: null
+
+source:
+  author: The Principal
+  created: 2026-11-09
+  updated: 2026-11-09
+  path: PrismataCore/.github/plan-docs.d/5-02-lessons-learned.yaml
+
+metadata:
+  name: Lessons Learned
+
+  description: >
+    Captures significant lessons learned during the architectural
+    development of Prismata and the creation of KADD.
+
+  tags:
+    - lessons-learned
+    - architecture
+    - kadd
+    - planning
+    - governance
+    - knowledge-management
+    - prismata
+
+relations:
+  domain: project-governance
+  scope: prismata-ecosystem
+  exclusions: null
+
+  priority: high
+
+  conflict-resolution: preserve-author-intent
+
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.planning.risks
+    - prismata.kad.planning.roadmap
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.implementation.data-model
+    - prismata.kad.implementation.storage
+    - prismata.kad.implementation.configuration
+    - prismata.kad.implementation.development
+    - prismata.kad.reference.glossary
+    
+notes:
+  - Lessons Learned Records (LLRs) are first-class knowledge artifacts.
+  - LLRs capture validated learning derived from project experience.
+  - LLRs may be referenced by future KADs, ADRs, governance rules, diagnostics, and agents.
+  - Lessons should remain implementation-agnostic whenever possible.
+
+content:
+
+  lesson-records:
+
+    - id: LLR-001
+      udi: dev.prismata.lessons.architecture-refactors-are-usually-concept-refactors
+      title: Architecture Refactors Are Usually Concept Refactors
+      status: accepted
+      category: architecture
+
+      context: >
+        Multiple significant refactoring cycles occurred during
+        ecosystem evolution.
+
+      observation: >
+        Most refactors were triggered by concept refinement,
+        ownership changes, responsibility changes, or boundary
+        clarification rather than implementation defects.
+
+      lesson: >
+        Architectural instability typically originates from
+        incomplete conceptual understanding rather than poor code.
+
+      evidence:
+        - Metadata ownership revisions
+        - Responsibility redistribution
+        - Architectural boundary realignment
+
+      implications:
+        - Concepts should stabilize before implementation.
+        - Responsibilities require explicit ownership.
+        - Architecture reviews provide greater value than early optimization.
+
+      recommendations:
+        - Prioritize concept development.
+        - Validate responsibilities early.
+        - Review architecture before implementation.
+
+      related:
+        - 1-03-concepts.yaml
+        - 2-01-systems.yaml
+        - 2-04-decisions.yaml
+
+    - id: LLR-002
+      udi: dev.prismata.lessons.understanding-architecture-reduces-dependence-on-code
+      title: Understanding Architecture Reduces Dependence On Code
+      status: accepted
+      category: architecture
+
+      context: >
+        Project understanding previously depended heavily upon
+        remembering implementation details.
+
+      observation: >
+        Architectural understanding was often lost whenever
+        implementation details became outdated or unfamiliar.
+
+      lesson: >
+        Understanding architecture is more sustainable than
+        understanding implementation.
+
+      evidence:
+        - Frequent rediscovery of project structure
+        - Implementation-specific reasoning dominating discussions
+
+      implications:
+        - Architectural artifacts should be durable.
+        - Project understanding should not depend on source code.
+
+      recommendations:
+        - Maintain architecture-first documentation.
+        - Preserve architecture independently of code.
+
+      related:
+        - 1-01-vision.yaml
+        - 2-01-systems.yaml
+        - 2-03-relationships.yaml
+
+    - id: LLR-003
+      udi: dev.prismata.lessons.knowledge-is-more-durable-than-implementation
+      title: Knowledge Is More Durable Than Implementation
+      status: accepted
+      category: governance
+
+      context: >
+        Multiple implementation approaches were evaluated
+        while project intent remained largely stable.
+
+      observation: >
+        Implementation changed repeatedly while concepts,
+        architecture, and direction remained consistent.
+
+      lesson: >
+        Knowledge assets have a longer useful lifespan
+        than implementation assets.
+      
+      evidence:
+        - Repeated architectural evolution
+        - Stable conceptual direction
+
+      

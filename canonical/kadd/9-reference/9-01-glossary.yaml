@@ -1,41 +1,55 @@
 id: KAD-PRISMATA-9-01-GLOSSARY
 udi: prismata.kad.reference.glossary
 kind: KAD
-version: 1.0.0
+version: 2.0.0
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-31
-  updated: 2026-11-01
-  path: /canonical/kadd/9-reference/9-01-glossary.yaml
+  updated: 2026-11-09
+  path: canonical/kadd/9-reference/9-01-glossary.yaml
 
 metadata:
   name: Prismata Glossary
-  description: Canonical definitions for Prismata-specific terminology, acronyms, structures, and ecosystem concepts.
+  description: >
+    Canonical definitions for Prismata-specific terminology,
+    acronyms, structures, disciplines, governance concepts,
+    architectural concepts, and ecosystem vocabulary.
+
   tags:
     - prismata
     - glossary
     - terminology
     - definitions
     - reference
+    - governance
+    - architecture
+    - knowledge-management
 
 relations:
   domain:
     - Terminology
     - Knowledge Architecture
     - Metadata Governance
+
   scope:
     - Prismata Terminology
     - KADD Terminology
     - Ecosystem Concepts
+
   exclusions:
     - Generic Industry Terminology
     - Technology-Specific Definitions
     - Architectural Decisions
     - Implementation Details
+
   priority: high
-  conflict-resolution: Glossary definitions are authoritative for terminology interpretation across all KADs.
+
+  conflict-resolution: >
+    Glossary definitions are authoritative for terminology
+    interpretation across all KADs.
+
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
@@ -50,264 +64,453 @@ relations:
     - prismata.kad.planning.requirements
     - prismata.kad.planning.risks
     - prismata.kad.planning.roadmap
- 
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.implementation.data-model
+    - prismata.kad.implementation.storage
+    - prismata.kad.implementation.configuration
+    - prismata.kad.implementation.development
+
 notes:
   - Definitions are descriptive only.
   - Architectural rules belong in Laws and Architecture KADs.
-  - Terminology should evolve conservatively to preserve consistency across the ecosystem.
-  - UDI subtype terminology exists for planning, documentation, and descriptive clarity only.
-  - UDI subtype terminology is not currently part of the formal UDI specification.
-  - UDI subtypes do not create separate identity namespaces.
-  - UDI subtypes shall not be enforced by code, validators, schemas, or standards unless formally adopted in a future KAD.
+  - Terminology should evolve conservatively.
+  - Glossary entries are first-class knowledge artifacts.
+  - Every glossary entry shall maintain a stable id and udi.
+  - Relationship terminology should remain consistent across the ecosystem.
+  - Definitions should favor conceptual durability over implementation specificity.
 
 content:
-  terms:
 
-    Prismata:
-      acronym: null
-      definition: >
-        A cybernetic substrate that provides universal identity,
-        structure, capability discovery, validation, knowledge
-        indexing, and interoperability for metadata-driven ecosystems.
+  categories:
 
-    KADD:
-      acronym: Knowledge Architecture Documentation Discipline
-      definition: >
-        An architecture-first documentation discipline used to define,
-        organize, govern, and evolve knowledge throughout a project's
-        lifecycle.
+    ecosystem:
 
-    KAD:
-      acronym: Knowledge Architecture Document
-      definition: >
-        A structured document that captures knowledge within the KADD
-        discipline.
+      - id: GLOSSARY-001
+        udi: prismata.kad.glossary.prismata
+        term: Prismata
+        acronym: null
+        definition: >
+          A cybernetic substrate that provides universal identity,
+          structure, capability discovery, validation, knowledge
+          indexing, and interoperability for metadata-driven ecosystems.
 
-    UDI:
-      acronym: Universal Document Identifier
-      definition: >
-        A collision-free identity system used to uniquely identify
-        artifacts, capabilities, runtime objects, documents,
-        configurations, schemas, laws, and other ecosystem assets.
+      - id: GLOSSARY-002
+        udi: prismata.kad.glossary.universe
+        term: Universe
+        acronym: null
+        definition: >
+          The official ecosystem authoring environment used to create,
+          edit, visualize, configure, discover, and manage Prismata
+          artifacts, schemas, manifests, identities, archive indexes,
+          and related assets.
 
-    UDI Subtype:
-      acronym: null
-      definition: >
-        A descriptive classification applied to a UDI for planning,
-        documentation, discussion, and communication purposes. UDI
-        subtypes provide semantic clarity regarding the type of asset
-        being identified while remaining within the same universal
-        identity system.
+      - id: GLOSSARY-003
+        udi: prismata.kad.glossary.vaultguard
+        term: VaultGuard
+        acronym: null
+        definition: >
+          The ecosystem security foundation responsible for RBAC,
+          secrets management, artifact protection, archive protection,
+          and trusted access control.
 
-    cUDI:
-      acronym: Capability UDI
-      definition: >
-        An informal UDI subtype used to describe a UDI assigned to a
-        capability. A cUDI provides the canonical identity and
-        addressing mechanism for a capability.
+      - id: GLOSSARY-004
+        udi: prismata.kad.glossary.coreprimitives
+        term: CorePrimitives
+        acronym: null
+        definition: >
+          The foundational utility layer providing common operating
+          services, filesystem abstractions, path helpers, utility
+          functions, and shared capability providers.
 
-    mUDI:
-      acronym: Manifest UDI
-      definition: >
-        An informal UDI subtype used to describe a UDI assigned to a
-        manifest artifact. An mUDI identifies the descriptive artifact
-        associated with a capability or other manifested asset.
+      - id: GLOSSARY-005
+        udi: prismata.kad.glossary.ecosystem-consumer
+        term: Ecosystem Consumer
+        acronym: null
+        definition: >
+          An application, agent, device, system, or service that
+          utilizes Prismata standards, structures, capabilities,
+          validation mechanisms, or knowledge.
 
-    sUDI:
-      acronym: Schema UDI
-      definition: >
-        An informal UDI subtype used to describe a UDI assigned to a
-        schema artifact.
+    documentation:
+      - id: GLOSSARY-006
+        udi: prismata.kad.glossary.kadd
+        term: KADD
+        acronym: Knowledge Architecture Documentation Discipline
+        definition: >
+          An architecture-first documentation discipline used to define,
+          organize, govern, preserve, and evolve knowledge throughout
+          a project's lifecycle.
 
-    oUDI:
-      acronym: Object UDI
-      definition: >
-        An informal UDI subtype used to describe a UDI assigned to an
-        object definition, including interface objects and other
-        reusable object assets.
+      - id: GLOSSARY-007
+        udi: prismata.kad.glossary.kad
+        term: KAD
+        acronym: Knowledge Architecture Document
+        definition: >
+          A structured document that captures durable knowledge within
+          the KADD discipline.
 
-    dUDI:
-      acronym: Document UDI
-      definition: >
-        An informal UDI subtype used to describe a UDI assigned to a
-        document artifact.
+      - id: GLOSSARY-008
+        udi: prismata.kad.glossary.kad-collection
+        term: KAD Collection
+        acronym: null
+        definition: >
+          A logically related collection of KADs that collectively
+          represent the knowledge base for a project, initiative,
+          organization, or ecosystem component.
 
-    rUDI:
-      acronym: Runtime UDI
-      definition: >
-        An informal UDI subtype used to describe a UDI assigned to a
-        runtime-generated artifact such as a report, log, event,
-        session record, diagnostic output, snapshot, or similar
-        transient runtime asset.
+      - id: GLOSSARY-009
+        udi: prismata.kad.glossary.formal-concept-document
+        term: Formal Concept Document
+        acronym: null
+        definition: >
+          A protected authoring artifact whose purpose is to define,
+          preserve, communicate, and govern concepts, intent,
+          rationale, and architectural understanding.
 
-    CMF:
-      acronym: Canonical Metadata Framework
-      definition: >
-        The canonical artifact envelope used to structure and
-        describe persistent ecosystem artifacts.
+      - id: GLOSSARY-010
+        udi: prismata.kad.glossary.authors-notes
+        term: Author's Notes
+        acronym: null
+        definition: >
+          Canonical artifacts that preserve author intent and provide
+          authoritative conceptual guidance independent of implementation.
 
-    PSO:
-      acronym: Prismata Schematic Object
-      definition: >
-        The runtime object envelope used to structure and describe
-        runtime entities within the ecosystem.
+    identity:
 
-    Schema:
-      acronym: null
-      definition: >
-        A formal definition that describes structure.
+      - id: GLOSSARY-011
+        udi: prismata.kad.glossary.udi
+        term: UDI
+        acronym: Universal Document Identifier
+        definition: >
+          A collision-free identity system used to uniquely identify
+          artifacts, capabilities, runtime objects, documents,
+          configurations, schemas, laws, and other ecosystem assets.
 
-    Law:
-      acronym: null
-      definition: >
-        A formal definition that describes permitted behavior.
+      - id: GLOSSARY-012
+        udi: prismata.kad.glossary.udi-subtype
+        term: UDI Subtype
+        acronym: null
+        definition: >
+          A descriptive classification applied to a UDI for planning,
+          documentation, discussion, and communication purposes.
 
-    Capability:
-      acronym: null
-      definition: >
-        A declared function, service, behavior, or responsibility
-        that may be provided or required by a component.
+      - id: GLOSSARY-013
+        udi: prismata.kad.glossary.cudi
+        term: cUDI
+        acronym: Capability UDI
+        definition: >
+          An informal UDI subtype used to describe a capability identity.
 
-    Capability Definition:
-      acronym: null
-      definition: >
-        The canonical description of a capability including its
-        purpose, intent, identity, and conceptual behavior.
+      - id: GLOSSARY-014
+        udi: prismata.kad.glossary.mudi
+        term: mUDI
+        acronym: Manifest UDI
+        definition: >
+          An informal UDI subtype used to describe a manifest artifact.
 
-    Capability Manifest:
-      acronym: null
-      definition: >
-        A CMF-enclosed artifact that describes a capability,
-        including what it provides, what it requires, what it
-        produces, how it may be accessed, and the metadata
-        necessary for discovery, validation, composition,
-        and integration.
+      - id: GLOSSARY-015
+        udi: prismata.kad.glossary.sudi
+        term: sUDI
+        acronym: Schema UDI
+        definition: >
+          An informal UDI subtype used to describe a schema artifact.
 
-    Artifact:
-      acronym: null
-      definition: >
-        Any identifiable ecosystem asset governed through UDI,
-        CMF, schemas, and laws.
+      - id: GLOSSARY-016
+        udi: prismata.kad.glossary.oudi
+        term: oUDI
+        acronym: Object UDI
+        definition: >
+          An informal UDI subtype used to describe an object definition
+          or reusable object asset.
 
-    CMF Artifact:
-      acronym: null
-      definition: >
-        A persistent artifact enclosed within a CMF envelope.
+      - id: GLOSSARY-017
+        udi: prismata.kad.glossary.dudi
+        term: dUDI
+        acronym: Document UDI
+        definition: >
+          An informal UDI subtype used to describe a document artifact.
 
-    PSO Runtime Object:
-      acronym: null
-      definition: >
-        A runtime entity enclosed within a PSO envelope.
+      - id: GLOSSARY-018
+        udi: prismata.kad.glossary.rudi
+        term: rUDI
+        acronym: Runtime UDI
+        definition: >
+          An informal UDI subtype used to describe runtime-generated
+          artifacts.
 
-    Knowledge Artifact:
-      acronym: null
-      definition: >
-        An artifact whose primary purpose is the preservation,
-        organization, communication, or management of knowledge.
+    architecture:
 
-    Historical Artifact:
-      acronym: null
-      definition: >
-        An artifact representing preserved experience,
-        operational history, decisions, observations, events,
-        or learned knowledge.
+      - id: GLOSSARY-019
+        udi: prismata.kad.glossary.architectural-intent
+        term: Architectural Intent
+        acronym: null
+        definition: >
+          The desired responsibilities, boundaries, relationships,
+          and outcomes defined by architecture independent of
+          implementation details.
 
-    Knowledge Custodian:
-      acronym: null
-      definition: >
-        The role performed by Prismata as the canonical
-        librarian, catalog, classification authority,
-        indexing framework, and discovery system for
-        ecosystem knowledge.
+      - id: GLOSSARY-020
+        udi: prismata.kad.glossary.capability
+        term: Capability
+        acronym: null
+        definition: >
+          A declared function, service, behavior, or responsibility
+          that may be provided or required by a component.
 
-    Knowledge Index:
-      acronym: null
-      definition: >
-        The collection of classifications, references,
-        metadata, and relationships used to discover and
-        locate knowledge assets.
+      - id: GLOSSARY-021
+        udi: prismata.kad.glossary.capability-definition
+        term: Capability Definition
+        acronym: null
+        definition: >
+          The canonical description of a capability including its
+          purpose, intent, identity, and conceptual behavior.
 
-    Historical Index:
-      acronym: null
-      definition: >
-        The collection of classifications, references,
-        metadata, and relationships used to discover and
-        locate historical assets.
+      - id: GLOSSARY-022
+        udi: prismata.kad.glossary.capability-manifest
+        term: Capability Manifest
+        acronym: null
+        definition: >
+          A CMF-enclosed artifact that describes a capability,
+          including what it provides, requires, produces,
+          exposes, and governs.
 
-    Validation Engine:
-      acronym: null
-      definition: >
-        The Prismata component responsible for evaluating
-        compliance with schemas, laws, manifests, and
-        structural requirements.
+      - id: GLOSSARY-023
+        udi: prismata.kad.glossary.interoperability
+        term: Interoperability
+        acronym: null
+        definition: >
+          The ability of ecosystem components to interact through
+          shared identity, structure, capability descriptions,
+          and validation standards.
 
-    Canonical:
-      acronym: null
-      definition: >
-        The authoritative version of an artifact, definition,
-        standard, schema, law, or knowledge asset.
+    knowledge:
 
-    Universe:
-      acronym: null
-      definition: >
-        The official ecosystem authoring environment used to
-        create, edit, visualize, configure, discover, and
-        manage Prismata artifacts, schemas, manifests,
-        identities, archive indexes, and related assets.
+      - id: GLOSSARY-024
+        udi: prismata.kad.glossary.knowledge-object
+        term: Knowledge Object
+        acronym: null
+        definition: >
+          Any identifiable object whose primary purpose is the
+          preservation, communication, organization, governance,
+          or management of knowledge.
 
-    VaultGuard:
-      acronym: null
-      definition: >
-        The ecosystem security foundation responsible for
-        RBAC, secrets management, artifact protection,
-        archive protection, and trusted access control.
+      - id: GLOSSARY-025
+        udi: prismata.kad.glossary.knowledge-artifact
+        term: Knowledge Artifact
+        acronym: null
+        definition: >
+          A persistent artifact whose primary purpose is to preserve
+          or communicate knowledge.
 
-    CorePrimitives:
-      acronym: null
-      definition: >
-        The foundational utility layer providing common
-        operating services, filesystem abstractions, path
-        helpers, utility functions, and shared capability
-        providers.
+      - id: GLOSSARY-026
+        udi: prismata.kad.glossary.historical-artifact
+        term: Historical Artifact
+        acronym: null
+        definition: >
+          An artifact representing preserved experience,
+          decisions, observations, events, or learned knowledge.
 
-    Ecosystem Consumer:
-      acronym: null
-      definition: >
-        An application, agent, device, system, or service
-        that utilizes Prismata standards, structures,
-        capabilities, validation mechanisms, or knowledge.
+      - id: GLOSSARY-027
+        udi: prismata.kad.glossary.knowledge-index
+        term: Knowledge Index
+        acronym: null
+        definition: >
+          The collection of classifications, references,
+          metadata, and relationships used to discover and
+          locate knowledge assets.
 
-    Interoperability:
-      acronym: null
-      definition: >
-        The ability of ecosystem components to interact
-        through shared identity, structure, capability
-        descriptions, and validation standards.
+      - id: GLOSSARY-028
+        udi: prismata.kad.glossary.historical-index
+        term: Historical Index
+        acronym: null
+        definition: >
+          The collection of classifications, references,
+          metadata, and relationships used to discover and
+          locate historical assets.
 
-    Metadata:
-      acronym: null
-      definition: >
-        Structured descriptive information used to define,
-        classify, identify, relate, validate, or discover
-        ecosystem assets.
+      - id: GLOSSARY-029
+        udi: prismata.kad.glossary.knowledge-graph
+        term: Knowledge Graph
+        acronym: null
+        definition: >
+          A navigable representation of knowledge objects and
+          their relationships that enables discovery, validation,
+          traceability, analysis, and reasoning.
 
-    Metadata-Driven:
-      acronym: null
-      definition: >
-        A design approach in which behavior, relationships,
-        orchestration, and system understanding are primarily
-        derived from metadata rather than hardcoded
-        implementation.
+      - id: GLOSSARY-030
+        udi: prismata.kad.glossary.authoritative-knowledge-base
+        term: Authoritative Knowledge Base
+        acronym: null
+        definition: >
+          The designated collection of artifacts considered the
+          definitive source of project knowledge and intent.
 
-    Source of Truth:
-      acronym: null
-      definition: >
-        The authoritative location or artifact from which
-        information is considered definitive.
+      - id: GLOSSARY-031
+        udi: prismata.kad.glossary.knowledge-custodian
+        term: Knowledge Custodian
+        acronym: null
+        definition: >
+          The role performed by Prismata as the canonical
+          librarian, indexing framework, classification authority,
+          and discovery system for ecosystem knowledge.
 
-    Source of Law:
-      acronym: null
-      definition: >
-        The authoritative collection of laws, standards,
-        rules, and behavioral constraints that govern
-        ecosystem validation and operation.
+    governance:
+      - id: GLOSSARY-032
+        udi: prismata.kad.glossary.principal
+        term: Principal
+        acronym: null
+        definition: >
+          The authoritative owner and steward of project intent,
+          architecture, governance, and canonical knowledge artifacts.
+
+      - id: GLOSSARY-033
+        udi: prismata.kad.glossary.proposal-based-governance
+        term: Proposal-Based Governance
+        acronym: null
+        definition: >
+          A governance model in which canonical artifacts are modified
+          through reviewable proposals rather than direct automated
+          updates.
+
+      - id: GLOSSARY-034
+        udi: prismata.kad.glossary.change-proposal
+        term: Change Proposal
+        acronym: null
+        definition: >
+          A structured recommendation describing one or more proposed
+          modifications to canonical artifacts.
+
+      - id: GLOSSARY-035
+        udi: prismata.kad.glossary.source-of-truth
+        term: Source of Truth
+        acronym: null
+        definition: >
+          The authoritative artifact or location from which
+          information is considered definitive.
+
+      - id: GLOSSARY-036
+        udi: prismata.kad.glossary.source-of-law
+        term: Source of Law
+        acronym: null
+        definition: >
+          The authoritative collection of rules, laws,
+          standards, and behavioral constraints that govern
+          ecosystem validation and operation.
+
+      - id: GLOSSARY-037
+        udi: prismata.kad.glossary.adr
+        term: ADR
+        acronym: Architecture Decision Record
+        definition: >
+          A structured record documenting an architectural decision,
+          its context, rationale, consequences, and governance status.
+
+      - id: GLOSSARY-038
+        udi: prismata.kad.glossary.llr
+        term: LLR
+        acronym: Lessons Learned Record
+        definition: >
+          A structured record documenting validated learning,
+          observations, implications, evidence, and recommendations
+          derived from project experience.
+
+    metadata:
+      - id: GLOSSARY-039
+        udi: prismata.kad.glossary.cmf
+        term: CMF
+        acronym: Canonial Metadata Framework
+        definition: >
+          The canonical artifact envelope used to structure and
+          describe persistent ecosystem artifacts.
+
+      - id: GLOSSARY-040
+        udi: prismata.kad.glossary.pso
+        term: PSO
+        acronym: Prismata Schematic Object
+        definition: >
+          The runtime object envelope used to structure and describe
+          runtime entities within the ecosystem.
+
+      - id: GLOSSARY-041
+        udi: prismata.kad.glossary.schema
+        term: Schema
+        acronym: null
+        definition: >
+          A formal definition that describes structure.
+
+      - id: GLOSSARY-042
+        udi: prismata.kad.glossary.law
+        term: Law
+        acronym: null
+        definition: >
+          A formal definition that describes permitted behavior.
+
+      - id: GLOSSARY-043
+        udi: prismata.kad.glossary.metadata
+        term: Metadata
+        acronym: null
+        definition: 
+          Structured descriptive information used to define,
+          classify, identify, relate, validate, or discover assets.
+
+      - id: GLOSSARY-044
+        udi: prismata.kad.glossary.metadata-driven
+        term: Metadata-Driven
+        acronym: null
+        definition: >
+          A design approach in which behavior, relationships,
+          orchestration, and system understanding are derived
+          primarily from metadata rather than hardcoded implementation.
+
+    diagnostics:
+      - id: GLOSSARY-045
+        udi: prismata.kad.glossary.validation-engine
+        term: Validation Engine
+        acronym: null
+        definition: >
+          The component responsible for evaluating compliance
+          with schemas, laws, manifests, standards, and
+          structural requirements.
+
+      - id: GLOSSARY-046
+        udi: prismata.kad.glossary.knowledge-integrity-review
+        term: Knowledge Integrity Review
+        acronym: nul
+        definition: >
+          A structured analysis process that evaluates consistency,
+          completeness, ambiguity, traceability, viability,
+          governance, and quality across a KAD collection.
+
+      - id: GLOSSARY-047
+        udi: prismata.kad.glossary.knowledge-graph-readiness
+        term: Knowledge Graph Readiness
+        acronym: null
+        definition: >
+          A measure of how effectively a collection of knowledge
+          artifacts can be transformed into a navigable and
+          analyzable knowledge graph.
+
+      - id: GLOSSARY-048
+        udi: prismata.kad.glossary.concept-viability
+        term: Concept Viability
+        acronym: null
+        definition: >
+          An assessment of whether a concept is necessary,
+          distinct, scalable, reusable, and maintainable.
+
+      - id: GLOSSARY-049
+        udi: prismata.kad.glossary.cost-efficiency-assessment
+        term: Cost Efficiency Assessment
+        acronym: null
+        definition: >
+          An evaluation of development cost, maintenance cost,
+          cognitive cost, automation cost, and reuse potential
+          relative to delivered value.
+
+      - id: GLOSSARY-050
+        udi: prismata.kad.glossary.canonical
+        term: Canonical
+        acronym: null
+        definition: >
+          The authoritative version of an artifact, definition,
+          standard, schema, law, or knowledge asset.
