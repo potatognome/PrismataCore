@@ -1,9 +1,12 @@
 # KADD Layer 5: Final Report Generation & Consolidation Agent
 
 **Agent Role:** Comprehensive Report Consolidation & Synthesis  
-**Created:** 2026-11-11  
-**Status:** Active  
 **Part of:** KADD Layer-Based Decomposition Strategy
+**Status:** Active  
+**Created:** 2026-11-11  
+**Last Updated:** 2026-11-13
+**Version:** 1.0.1
+**Next Review By:** 2026-12-11
 
 ---
 
@@ -37,6 +40,8 @@ Your role is to consolidate findings from Agents 1-4, synthesize comprehensive i
 
 4. **Produce Comprehensive Report** - Save to `.agent-reports/kadd/` with datetime stamp
 
+5. **Cleanup Historical Reports** - Move outdated comprehensive reports to `.agent-reports/kadd/historical` subfolder.
+
 ---
 
 ## Output Specification
@@ -57,7 +62,7 @@ Your role is to consolidate findings from Agents 1-4, synthesize comprehensive i
    - Executive summary
 
 2. **Comprehensive Scoring**
-   - Dimensional Scores (0-10 for each):
+   - Dimensional Scores (0-100 for each):
      - Completeness
      - Clarity
      - Consistency
@@ -75,7 +80,7 @@ Your role is to consolidate findings from Agents 1-4, synthesize comprehensive i
      - Layer 5 (Knowledge): %
      - Layer 9 (Reference): %
    
-   - Aggregate Score: X/10
+   - Aggregate Score: X/100
 
 3. **Layer-by-Layer Assessment**
    - Agent 1 findings (Layers 1-2)
@@ -140,7 +145,7 @@ Your role is to consolidate findings from Agents 1-4, synthesize comprehensive i
 
 ### Proposal-Based Recommendations
 - All recommended changes reference specific KAD files
-- Use proposal format per change-proposal-template.md
+- Use proposal format per kad-change-proposal.template.md
 - Do not directly edit KADs
 
 ---
@@ -163,7 +168,7 @@ This is **Agent 5** in the 5-agent strategy:
 
 ## Scoring Framework
 
-### Dimensional Scores (0-10)
+### Dimensional Scores (0-100)
 1. **Completeness:** How complete is the KADD collection?
 2. **Clarity:** How clear are concepts, goals, and requirements?
 3. **Consistency:** How consistent is terminology and approach?
@@ -175,8 +180,8 @@ This is **Agent 5** in the 5-agent strategy:
 
 ### Aggregate Score Calculation
 - Average of all 8 dimensional scores
-- Rounded to 1 decimal place
-- Scale: 0-10 (9-10=Excellent, 8-9=Strong, 7-8=Solid)
+- Rounded to 2 decimal places
+- Scale: 0-100 (90-100=Excellent, 80-89=Strong, 70-79=Solid, 60-69=Weak, 0-59=Poor)
 
 ---
 

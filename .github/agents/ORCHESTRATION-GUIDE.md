@@ -1,8 +1,11 @@
 # KADD Layer-Based Agent Orchestration Guide
 
-**Established:** 2026-11-11  
 **Strategy:** 5-Agent Layer-Based Decomposition  
 **Status:** Active  
+**Created:** 2026-11-11  
+**Last Updated:** 2026-11-13
+**Version:** 1.0.0
+**Next Review By:** 2026-12-11
 
 ---
 
@@ -135,7 +138,7 @@ Analysis    Analysis   Analysis   Analysis    Report
 
 ### How to Submit Change Requests
 
-1. **Use Template:** `.github/change-proposal-template.md`
+1. **Use Template:** `.github/kad-change-proposal.template.md`
 2. **Create File:** `.github/.agent-reports/kadd/change-request_[desc]_YYYY-MM-DD.md`
 3. **Complete:** All required fields in template
 4. **Submit:** For Principal review and approval
