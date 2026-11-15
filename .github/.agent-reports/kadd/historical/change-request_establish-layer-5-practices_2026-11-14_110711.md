@@ -128,7 +128,7 @@ KADD’s strategic value depends on durable post-implementation learning. Withou
 ## Decision & Approval
 
 ### Decision
-- [ ] Approved
+- [x] Approved
 - [ ] Approved with modifications
 - [ ] Deferred
 - [ ] Rejected
