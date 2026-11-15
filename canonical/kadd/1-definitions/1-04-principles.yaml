@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-1-04-PRINCIPLES
-udi: prismata.kad.definitions-principles
-kind: KAD
-version: 1.0.0
+udi: prismata.kad.definitions.principles
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-01
-  updated: 2026-11-05
-  path: /canonical/kadd/1-definitions/1-04-principles.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/1-definitions/1-04-principles.yaml
 
 metadata:
   name: Prismata Principles
@@ -50,6 +50,8 @@ relations:
     - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Principles are guidance rather than enforcement mechanisms.
@@ -58,6 +60,14 @@ notes:
   - Principles provide direction when architecture, requirements, or implementation approaches are not yet defined.
 
 content:
+  status:
+    maturity: mature
+    last-review-date: 2026-11-11
+    review-status: complete
+    review-cycle: 3 months
+    review-past-due: false
+    next-review-date: 2027-02-11
+
 
   purpose: >
     Principles define the enduring rules of thought that guide

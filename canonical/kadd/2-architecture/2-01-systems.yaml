@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-2-01-SYSTEMS
 udi: prismata.kad.architecture.systems
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-30
-  updated: 2026-10-30
-  path: /canonical/kadd/2-architecture/2-01-systems.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/2-architecture/2-01-systems.yaml
 
 metadata:
   name: Prismata Systems
@@ -51,6 +51,8 @@ relations:
     - prismata.kad.definitions.principles
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Prismata is composed of three mandatory architectural layers.
@@ -59,6 +61,15 @@ notes:
   - Consumer applications are not part of the mandatory Prismata ecosystem layers.
 
 content:
+  status:
+    maturity: definitive
+    last-review-date: 2026-11-11
+    review-status: complete
+    review-cycle: 1 month
+    review-past-due: false
+    next-review-date: 2026-12-11
+
+
   ecosystem-architecture:
     principle: >
       A complete Prismata ecosystem consists of three mandatory,

@@ -1,14 +1,14 @@
-id: KAD-PRISMATA-4-03
+id: KAD-PRISMATA-4-03-STORAGE
 udi: prismata.kad.implementation.storage
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-07
-  updated: 2026-11-07
-  path: /canonical/kadd/4-implementation/4-03-storage.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/4-implementation/4-03-storage.yaml
 
 metadata:
   name: Storage
@@ -67,6 +67,9 @@ relations:
     - prismata.kad.architecture.decisions
     - prismata.kad.implementation.interfaces
     - prismata.kad.implementation.data-model
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Storage exists to preserve knowledge rather than files.
@@ -80,6 +83,14 @@ notes:
   - Storage behavior may vary by operating mode, tenant policy, artifact class, and governance rules.
 
 content:
+  status:
+    maturity: developing
+    last-review-date: 2026-11-11
+    review-status: ready-for-review
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
+ 
   storage-principles:
     - The CMF artifact file is the source of truth.
     - Everything else is derived.

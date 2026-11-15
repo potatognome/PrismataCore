@@ -1,14 +1,14 @@
-id: KAD-PRISMATA-4-05
+id: KAD-PRISMATA-4-05-DEVELOPMENT
 udi: prismata.kad.implementation.development
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.5
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-08
-  updated: 2026-11-08
-  path: /canonical/kadd/4-implementation/4-05-development.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/4-implementation/4-05-development.yaml
 
 metadata:
   name: Development
@@ -72,24 +72,33 @@ relations:
     - prismata.kad.implementation.data-model
     - prismata.kad.implementation.storage
     - prismata.kad.implementation.configuration
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
-  - Version 1.0.0 represents an early implementation draft.
-  - This document is intentionally incomplete and expected to evolve.
-  - A dedicated KAD review pass should be completed before this document is considered stable.
-  - Several concepts within this document may require refinement based on future updates to earlier KADs.
-  - Bootstrap, genesis, ingestion, registration, compliance, and capability lifecycle definitions should be revisited following architecture review.
-  - This document currently establishes direction rather than final policy.
-  - Native Prismata development and external code ingestion are intentionally treated as separate workflows.
-  - Genesis is expected to occur during initial deployment and only rarely thereafter in stable environments.
+  - Version 1.0.0 represented the initial implementation draft and established the foundational development framework.
+  - A dedicated Layer 4 implementation KAD review pass was completed on 2026-11-11.
+  - A cross-layer KAD review pass was completed on 2026-11-11.
+  - Bootstrap, Genesis, ingestion, registration, compliance, capability classification, capability composition, and capability lifecycle definitions have been refined through architecture review.
+  - Manifests have been established as the primary registration and discovery unit.
+  - Candidate capabilities have been established as a first-class lifecycle stage.
+  - Capability classifications and compliance profiles have been separated into distinct architectural concerns.
+  - Describe has been established as a foundational architectural primitive.
+  - Capability Access Matrix (CAM) has been established as the canonical capability authorization model.
+  - Native Prismata development and external code ingestion remain intentionally distinct onboarding paths.
+  - Genesis is expected to occur primarily during initialization, recovery, tenant creation, and version-transition scenarios.
+  - Future revisions should focus primarily on operational refinement, ecosystem validation, and cross-KAD alignment.
 
 content:
-
   status:
-    maturity: draft
-    review-required: true
-    architecture-review-pending: true
-
+    maturity: emergent
+    last-review-date: 2026-11-11
+    review-status: recently updated
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
+ 
   purpose: >
     Establish a preliminary framework describing how
     functionality enters, evolves, becomes discoverable,
@@ -97,7 +106,6 @@ content:
     within the Prismata ecosystem.
 
   development-principles:
-
     - Discoverability before execution.
     - Manifestation before orchestration.
     - Reuse before duplication.
@@ -107,7 +115,6 @@ content:
     - Existing compatible objects should be reused before generating new objects.
 
   development-units:
-
     PrismataCore:
       primary-unit: schema
 
@@ -124,8 +131,158 @@ content:
         - tenant-interface-object
         - tenant-configuration
 
-  capability-model:
+  compliance-model:
+    compliance-profile:
+      dimensions:
+        - addressable
+        - manifested
+        - discoverable
+        - registered
+        - invokable
+        - composable
+        - validated
+        - tested
+        - native
 
+      governing-rules:
+        - Compliance shall be evaluated independently across dimensions.
+        - Partial compliance shall be supported.
+        - Compliance reporting shall identify missing dimensions.
+
+    compliance-characteristics:
+      - addressable
+      - describable
+      - discoverable
+      - invokable
+      - composable
+
+    governing-rules:
+      - Compliance shall be declared through the manifest.
+      - Unmanifested code is not considered Prismata compliant.
+      - Code without a cUDI is considered unaddressable.
+      - Unaddressable code remains invisible to ecosystem discovery.
+
+  lifecycle-status:
+    discovered:
+      description: >
+        Identified but not yet manifested.
+
+    candidate:
+      description: >
+        Manifested and addressable but awaiting approval.
+
+    approved:
+      description: >
+        Accepted for registration.
+
+    registered:
+      description: >
+        Available for discovery and use.
+
+    deprecated:
+      description: >
+        Supported but no longer recommended.
+
+    retired:
+      description: >
+        Preserved but removed from active use.
+
+  registration-model:
+    registration-unit:
+      type: manifest
+
+    governing-rules:
+      - Manifests are the primary registration unit.
+      - Capabilities are discovered through manifests.
+      - Registration should occur at manifest scope.
+      - A manifest may contain one or more capabilities.
+      - Capability discovery shall not require separate registration records.
+
+  manifest-scope:
+    definition: >
+      A manifest represents a bounded collection
+      of related capabilities and supporting
+      metadata.
+
+    governing-rules:
+      - A manifest may contain one or more capabilities.
+      - A capability shall belong to one manifest.
+      - Capabilities within a manifest should share a common purpose.
+      - Manifests are the primary discovery, registration, and governance unit.
+
+  manifest-lifecycle:
+    sequence:
+      - created
+      - candidate
+      - approved
+      - registered
+      - deprecated
+      - retired
+      - archived
+
+    governing-rules:
+      - Manifests are the primary registration unit.
+      - Manifest status governs contained capability status.
+      - Candidate manifests may expose candidate capabilities.
+    
+  discovery-model:
+    governing-rules:
+      - Manifests are the primary discovery unit.
+      - Capabilities are discovered through manifests.
+      - Registry scans should target manifests.
+      - Registration should occur at manifest scope.
+      - Discovery metadata should be maintained within manifests.
+
+  menu-invocation-model:
+    governing-rules:
+      - Menu items should target UDIs.
+      - Menu items may target capabilities.
+      - Menu items may target artifacts.
+      - Menu items may target interface objects.
+      - Manifests should be resolved through capability discovery processes.
+      - Menu items should not require direct manifest references.
+
+  foundational-architectural-primitives:
+    describe:
+      description: >
+        The universal inspection operation used to
+        identify, classify, summarize, and explain
+        an addressable entity.
+
+      characteristics:
+        - universally-applicable
+        - low-risk
+        - non-destructive
+        - handler-accessible
+        - security-fallback
+
+      governing-rules:
+        - Describe should be available for every addressable entity.
+        - Describe should execute before higher-risk actions when practical.
+        - Describe may be used as a fallback when another capability is unavailable.
+        - Describe should remain available even when preview, edit, or execution is denied.
+
+  capability-access-matrix:
+
+    acronym: CAM
+
+    purpose: >
+      Determine whether a capability may execute
+      within a specific context.
+
+    governing-rules:
+      - Capability handlers shall evaluate CAM before execution.
+      - Capability validation may include CAM verification.
+      - CAM evaluation may permit, deny, or conditionally allow execution.
+      - Visibility does not imply authorization.
+      - Enablement does not imply authorization.
+
+    outcomes:
+      - permitted
+      - denied
+      - conditional
+
+  capability-model:
     required-components:
       - cUDI
       - manifest
@@ -147,75 +304,176 @@ content:
       - Capabilities become discoverable through manifests.
       - A menu item is optional for capability operation.
 
-  compliance-model:
+  capability-structure:
+    atomic:
+      description: >
+        A capability that performs a single unit of work.
 
-    minimum-prismata-compliance:
-      - capability-udi
-      - manifest
-      - implementation
-      - registration
-      - discoverability
+    composite:
+      description: >
+        A capability composed of one or more
+        capabilities executed in a defined sequence.
 
-    compliance-characteristics:
-      - addressable
-      - describable
-      - discoverable
-      - invokable
-      - composable
+    recursive:
+      description: >
+        A capability capable of invoking itself
+        directly or indirectly.
 
     governing-rules:
-      - Compliance shall be declared through the manifest.
-      - Unmanifested code is not considered Prismata compliant.
-      - Code without a cUDI is considered unaddressable.
-      - Unaddressable code remains invisible to ecosystem discovery.
+      - Every capability should declare a structure type.
+      - Composite capabilities may orchestrate atomic capabilities.
+      - Genesis is a composite capability.
 
-  native-development-lifecycle:
+  capability-classification:
+    purpose: >
+      Classify capabilities according to their
+      operational role within the ecosystem.
 
-    sequence:
-      - define-capability
-      - assign-cudi
-      - create-manifest
-      - implement-code
-      - validate
-      - register
-      - integrate
-      - test
+    classes:
 
-    objective: >
-      Produce a fully discoverable and compliant
-      capability using Prismata-native workflows.
+      core:
+        description: >
+          Fundamental ecosystem interaction capabilities
+          commonly available through core Prismata services.
+          Core capabilities may be inherited by addressable
+          entities and may also be exposed as standalone
+          manifested capabilities.
 
-  ingestion:
+        examples:
+          - select
+          - deselect
+          - preview
+
+      tooling:
+        description: >
+          Capabilities responsible for authoring,
+          initialization, ingestion, governance,
+          maintenance, registration, and ecosystem
+          administration.
+
+        examples:
+          - genesis
+          - ingestion
+          - registry-scan
+          - manifest-generation
+
+      operational:
+        description: >
+          Capabilities that perform domain, workflow,
+          transformation, validation, comparison,
+          or execution-oriented work.
+
+        examples:
+          - validate
+          - compare
+          - export
+
+      interface:
+        description: >
+          Capabilities responsible for rendering,
+          presentation, interface composition,
+          and user interaction.
+
+        examples:
+          - render-framework
+          - render-pane
+          - inject-content
+
+      diagnostic:
+        description: >
+          Capabilities responsible for inspection,
+          analysis, testing, verification,
+          monitoring, and ecosystem diagnostics.
+
+        examples:
+          - health-check
+          - compliance-check
+          - hello-udi
+
+      security:
+        description: >
+          Capabilities responsible for authorization,
+          authentication, security validation,
+          capability access evaluation, and
+          protected resource access.
+
+        examples:
+          - authorize
+          - vault-access
+          - credential-resolution
+          - evaluate-cam
+
+    governing-rules:
+      - Capabilities may possess multiple classifications.
+      - Capability classifications are independent of compliance status.
+      - Capability classifications describe purpose rather than implementation.
+      - Core capabilities may be inherited or explicitly manifested.
+      - Core capabilities may be exposed through default interface actions.
+      - Standalone manifestations of core capabilities shall be treated as ordinary manifested capabilities.
+
+  capability-composition:
 
     purpose: >
-      Discover, analyze, describe, and onboard
-      external or previously unmanaged code into
-      the Prismata ecosystem.
-
-    activities:
-      - ast-analysis
-      - capability-discovery
-      - manifest-generation
-      - capability-registration
-      - udi-assignment
-      - discoverability-validation
-
-    outputs:
-      - generated-cudi
-      - generated-manifest
-      - registration-artifacts
-      - capability-metadata
+      Enable capabilities to orchestrate other
+      capabilities to produce higher-level behavior.
 
     governing-rules:
-      - Existing code does not need to be written for Prismata.
-      - Ingestion may assign capability identities.
-      - Ingestion may generate manifests.
-      - Ingestion may generate registration artifacts.
-      - Ingestion shall not automatically alter original source code.
-      - Ingestion may expose existing modules for future capability composition.
+      - Composite capabilities may invoke atomic capabilities.
+      - Composite capabilities may invoke other composite capabilities.
+      - Capability composition should favor reuse over duplication.
+      - Composed capabilities remain independently addressable.
+      
+  candidate-capabilities:
+    purpose: >
+      Provide an intermediate lifecycle stage between
+      discovery and registration.
+
+    governing-rules:
+      - Candidate capabilities shall receive cUDIs.
+      - Candidate capabilities shall possess manifests.
+      - Candidate capabilities may be discoverable.
+      - Candidate capabilities are not automatically approved.
+      - Candidate status shall be recorded in manifest metadata.
+
+    lifecycle:
+      - discovered
+      - candidate
+      - approved
+      - registered
+
+  capability-origin:
+
+    native:
+      description: >
+        A capability developed specifically for
+        the Prismata ecosystem.
+
+    ingested:
+      description: >
+        A capability derived through ingestion
+        of an existing external implementation.
+
+    governing-rules:
+      - Origin shall not determine capability value.
+      - Origin may contribute to compliance reporting.
+      - Native and ingested capabilities shall participate equally in discovery.
+
+  handler-execution-sequence:
+
+    sequence:
+      - resolve-target
+      - describe
+      - resolve-capability
+      - evaluate-cam
+      - execute
+      - render-result
+
+    governing-rules:
+      - Handlers should resolve target identity before execution.
+      - CAM evaluation should occur before capability execution.
+      - Describe may act as a fallback operation.
 
   genesis:
-
     purpose: >
       Perform primary ecosystem initialization,
       recovery verification, capability discovery,
@@ -251,8 +509,57 @@ content:
       - Genesis may invoke ingestion activities.
       - Genesis should rarely be required after successful initialization.
 
-  minimum-operational-state:
+  native-development-lifecycle:
+    sequence:
+      - define-capability
+      - assign-cudi
+      - create-manifest
+      - implement-code
+      - validate
+      - register
+      - integrate
+      - test
 
+    objective: >
+      Produce a fully discoverable and compliant
+      capability using Prismata-native workflows.
+
+  ingestion:
+    purpose: >
+      Discover, analyze, describe, and onboard
+      external or previously unmanaged code into
+      the Prismata ecosystem.
+
+    activities:
+      - ast-analysis
+      - capability-discovery
+      - manifest-generation
+      - capability-registration
+      - udi-assignment
+      - discoverability-validation
+
+    outputs:
+      - generated-cudi
+      - generated-manifest
+      - registration-artifacts
+      - capability-metadata
+
+    governing-rules:
+      - Existing code does not need to be written for Prismata.
+      - Ingestion may assign capability identities.
+      - Ingestion may generate manifests.
+      - Ingestion may generate registration artifacts.
+      - Ingestion shall not automatically alter original source code.
+      - Ingestion may expose existing modules for future capability composition.
+
+  candidate-discovery:
+    governing-rules:
+      - Candidate capabilities shall be addressable.
+      - Candidate capabilities may appear in discovery results.
+      - Candidate capabilities should be identified as candidates when displayed.
+      - Candidate capabilities shall not be treated as fully compliant by default.
+
+  minimum-operational-state:
     examples:
       - registry-availability
       - primitive-availability
@@ -262,7 +569,6 @@ content:
       - capability-registration
 
   satisficing-resolution:
-
     definition: >
       The process of locating existing compatible objects
       that satisfy declared requirements without attempting
@@ -281,35 +587,101 @@ content:
       - Exact object identities should not be required when compatible alternatives exist.
 
   object-requirement-model:
-
     requirement-types:
-
       explicit:
         description: >
           Requires a specific object by UDI.
-
       preferred:
         description: >
           Prefers a specific object but may accept alternatives.
-
       compatible:
         description: >
           Accepts any object satisfying stated requirements.
 
     example:
       capability: hello-udi
-
       requirements:
         - minimum-two-unique-panes
         - minimum-two-unique-colour-schemes
         - minimum-two-unique-border-patterns
 
-  hello-udi:
+  asset-acquisition-order:
+    sequence:
+      - exact-match
+      - compatible-match
+      - generated-asset
 
+    governing-rules:
+      - Existing assets shall be reused before generation.
+      - Compatible assets shall be preferred over generation.
+      - Asset generation shall occur only when requirements cannot otherwise be satisfied.
+
+  interface-resolution:
+    ownership:
+      source: manifest
+
+    governing-rules:
+      - Manifests may define interface requirements.
+      - Manifests may declare preferred interface characteristics.
+      - Manifests shall not require ownership of interface objects.
+      - Interface objects should be acquired through resolution processes.
+      - Exact object selection should only occur when explicitly required.
+      - Compatible object acquisition should be preferred.
+      - Generated objects should be treated as a last resort.
+
+    examples:
+      - minimum-pane-count
+      - preferred-layout
+      - preferred-colour-scheme-count
+      - preferred-border-pattern-count
+
+  interface-execution-separation:
+    governing-rules:
+      - Visibility is an interface concern.
+      - Enablement is an interface concern.
+      - Authorization is a CAM concern.
+      - Hidden capabilities may still be executable.
+      - Visible capabilities may still be denied.
+      - Disabled interface elements shall not imply denied authorization.
+
+  hello-udi:
     purpose: >
       Reference capability demonstrating identity,
       discovery, invocation, composition, rendering,
       compatibility resolution, and object interaction.
+
+    description: >
+      A reference capability that demonstrates how
+      addressable Prismata objects discover, describe,
+      render, and interact with one another.
+
+    how-it-works:
+      - The capability is invoked through its cUDI.
+      - The manifest requirements are resolved.
+      - A compatible UI framework is selected or generated.
+      - Two unique panes are acquired through satisficing resolution.
+      - Each pane identifies itself using its UDI.
+      - The left pane introduces itself to the right pane.
+      - The right pane introduces itself to the left pane.
+      - Each pane describes the objects associated with the opposing pane.
+      - The framework renders both panes side by side.
+      - The user observes addressability, discovery, composition, and rendering in operation.
+
+    classifications:
+      - reference
+      - diagnostic
+      - educational
+
+    recommended-uses:
+      - installation-validation
+      - genesis-validation
+      - capability-demonstration
+      - interface-demonstration
+      - onboarding
+
+    governing-rules:
+      - Hello UDI should remain intentionally simple.
+      - Hello UDI should demonstrate ecosystem behaviour rather than business functionality.
 
     significance:
       - identity-demonstration
@@ -320,28 +692,113 @@ content:
       - interface-demonstration
       - satisficing-resolution-demonstration
 
+  version-governance:
+    capability-version-authority:
+      source: manifest
+
+    governing-rules:
+      - Manifest version governs capability version.
+      - Implementation versions may differ from manifest versions.
+      - Capability compatibility shall be evaluated against manifest version.
+
+  validation-reporting:
+
+    governing-rules:
+      - Validation should identify missing compliance dimensions.
+      - Validation should identify failed CAM checks.
+      - Validation should distinguish candidate, compliant, and non-compliant states.
+      - Validation results should support human and agent interpretation.
+
+  bounded-capability-collections:
+
+    governing-rules:
+      - Capabilities within a manifest should share a common purpose.
+      - Manifest boundaries should favor cohesion over convenience.
+      - Unrelated capabilities should not be grouped solely to reduce artifact count.
+      - Extremely small manifests should be consolidated when practical.
+      - Excessively large manifests should be decomposed.
+
+  resolved-topics-archive:
+    capability-governance:
+      - manifest-version-governance
+      - manifest-registration-model
+      - candidate-capability-lifecycle
+      - capability-origin-classification
+
+    discovery-and-registration:
+      - manifests-as-primary-discovery-unit
+      - manifests-as-primary-registration-unit
+      - manifest-centric-capability-discovery
+
+    initialization:
+      - genesis-definition
+      - genesis-composite-capability-model
+      - asset-acquisition-order
+
+    compliance-and-security:
+      - compliance-profile-model
+      - capability-access-matrix
+      - candidate-compliance-handling
+      - describe-as-fallback-operation
+
+    interface-resolution:
+      - interface-requirements-owned-by-manifests
+      - satisficing-resolution-model
+      - menu-invocation-target-model
+
+    capability-architecture:
+      - capability-classification-model
+      - capability-structure-model
+      - bounded-capability-collections
+      - capability-composition-model
+
+    reference-implementations:
+      - hello-udi-reference-capability
+
+    notes:
+      - Previous discussions resolved registration unit selection.
+      - Previous discussions resolved candidate capability handling.
+      - Previous discussions resolved manifest version governance.
+
   unresolved-topics:
+    capability-governance:
+      - capability-publication-workflow
+      - compliance-profile-refinement
 
-    - bootstrap-versus-genesis-boundaries
-    - registration-workflow-refinement
-    - compliance-level-classification
-    - capability-publication-workflow
-    - module-packaging-model
-    - ingestion-output-standards
-    - recovery-workflow-standardization
+    packaging-and-distribution:
+      - module-packaging-model
 
+    operational-processes:
+      - ingestion-output-standards
+      - recovery-workflow-standardization
+
+    cross-kad-alignment:
+      - glossary-updates
+      - interface-kad-alignment
+      - data-model-kad-alignment
+      - storage-kad-alignment
+    
   review-notice: >
-    This document intentionally serves as a starter draft.
-    Earlier KADs have continued evolving during development
-    discussions and should be reviewed before finalizing this
-    implementation guidance. Additional revisions are expected
-    following formal KAD review and consistency analysis.
+    This document has completed its initial implementation review and now establishes
+    normative guidance for development, ingestion, registration, capability
+    composition, candidate handling, and initialization workflows.
 
+    Future revisions should focus on refinement, operational validation,
+    cross-KAD alignment, and ecosystem maturation rather than foundational
+    architectural discovery.
+    
   closing-statement: >
-    Development within Prismata prioritizes discoverability,
-    addressability, composability, preservation,
-    interoperability, and metadata-driven integration.
-    New functionality should become capable of participating
-    in the ecosystem through identity, manifests,
-    registration, and discoverable relationships rather than
-    through implementation-specific coupling.
+    Development within Prismata prioritizes discoverability, addressability,
+    composability, preservation, interoperability, validation, and
+    metadata-driven integration.
+
+    Capabilities are organized through manifests, governed through compliance
+    profiles, resolved through discoverable metadata, and secured through Capability
+    Access Matrix (CAM) evaluation.
+
+    New functionality should become capable of participating in the ecosystem through
+    identity, manifests, composition, registration, discovery, and reusable
+    architectural primitives rather than implementation-specific coupling.
+
+    The preferred outcome of development is not merely executable code, but durable,
+    understandable, addressable, and governable knowledge.

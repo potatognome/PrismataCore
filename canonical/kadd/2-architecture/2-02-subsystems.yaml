@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-2-02-SUBSYSTEMS
 udi: prismata.kad.architecture.subsystems
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
-  author: Prismata Architecture Team
+  author: Principal
   created: 2026-11-02
-  updated: 2026-11-09
-  path: /canonical/kadd/2-architecture/2-02-subsystems.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/2-architecture/2-02-subsystems.yaml
 
 metadata:
   name: Prismata Subsystems
@@ -50,6 +50,8 @@ relations:
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Subsystems represent major architectural building blocks.
@@ -58,6 +60,14 @@ notes:
   - Architectural significance, rather than implementation form, determines inclusion.
 
 content:
+  status:
+    maturity: comprehensive
+    last-review-date: 2026-11-11
+    review-status: complete
+    review-cycle: 1 month
+    review-past-due: false
+    next-review-date: 2026-12-11
+
   classification-model:
     Foundation Asset:
       description: >

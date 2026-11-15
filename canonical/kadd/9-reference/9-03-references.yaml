@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-03-REFERENCES
 udi: prismata.kad.reference.references
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.2
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  updated: 2026-11-09
+  updated: 2026-11-14
   path: canonical/kadd/9-reference/9-03-references.yaml
 
 metadata:
@@ -74,6 +74,13 @@ notes:
   - Internal project artifacts should be preferred where authoritative ecosystem guidance exists.
 
 content:
+  status:
+    maturity: rapidly-evolving
+    last-review-date: 2026-11-11
+    review-status: ready-for-review
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
 
   purpose: >
     Preserve the knowledge lineage, influences, standards,
@@ -81,20 +88,16 @@ content:
     to understanding the Prismata ecosystem and KADD discipline.
 
   reference-categories:
-
     internal-references:
-
       description: >
         Canonical Prismata ecosystem artifacts.
 
       references:
-
         - reference_id: REF-001
-          udi: prismata.kad.reference.kadd-001
-          title: KADD-001
+          udi: prismata.kad.definitions.documentation-discipline
+          title: KADD-1-00
           type: internal-discipline
           owner: Prismata Architecture Team
-          location: prismata.kad.definitions.documentation-discipline
 
           relevance: >
             Foundational definition of the Knowledge Architecture
@@ -105,7 +108,6 @@ content:
           title: Prismata Glossary
           type: internal-reference
           owner: Prismata Architecture Team
-          location: prismata.kad.reference.glossary
 
           relevance: >
             Canonical terminology authority for the ecosystem.
@@ -122,7 +124,6 @@ content:
             analysis, and proposal-generation policies.
 
     methodologies:
-
       description: >
         Practices and approaches that influenced ecosystem design.
 
@@ -157,13 +158,11 @@ content:
             knowledge before implementation.
 
     standards:
-
       description: >
         Technical and data standards relevant to operational,
         architectural, and ecosystem work.
 
       references:
-
         - reference_id: REF-201
           udi: prismata.kad.reference.standard.yaml
           title: YAML

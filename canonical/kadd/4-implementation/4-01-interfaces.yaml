@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-4-01-INTERFACES
 udi: prismata.kad.implementation.interfaces
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-03
-  updated: 2026-11-03
-  path: /canonical/kadd/4-implementation/4-01-interfaces.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/4-implementation/4-01-interfaces.yaml
 
 metadata:
   name: Interfaces
@@ -76,6 +76,8 @@ relations:
     - prismata.kad.planning.risks
     - prismata.kad.planning.roadmap
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Everything addressable is selectable.
@@ -92,9 +94,15 @@ notes:
   - Interface definitions should prioritize portability across terminals and display environments.
 
 content:
+  status:
+    maturity: developing
+    last-review-date: 2026-11-11
+    review-status: ready-for-review
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
 
   interface-principles:
-
     - Everything addressable is selectable.
     - Everything selectable is resolvable.
     - Every asset shall be previewable.
@@ -312,37 +320,29 @@ content:
         Invocation fails due to unresolved required inputs.
 
   fallback-resolution:
-
     default-operator:
-      name: preview
+      name: describe
 
     behavior: >
       Addressable assets without executable capability
-      resolution paths shall use Preview as the default
+      resolution paths shall use Describe as the default
       fallback operator.
 
     examples:
-
       schema:
-        behavior: preview
-
+        behavior: describe
       document:
-        behavior: preview
-
+        behavior: describe
       log-file:
-        behavior: preview
-
+        behavior: describe
       menu:
-        behavior: preview
-
+        behavior: describe
       pane:
-        behavior: preview
-
+        behavior: describe
       ui-framework:
-        behavior: preview
+        behavior: describe
 
   ui-framework-model:
-
     ui-framework:
       description: >
         Top-level presentation topology.
@@ -377,7 +377,6 @@ content:
       - Border patterns shall possess UDI.
 
   pane-roles:
-
     description: >
       Pane roles define semantic presentation intent
       rather than fixed rendering behavior.

@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-02-PROJECT-PROFILE
 udi: prismata.kad.definitions.project-profile
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
-  author: Prismata Architecture Team
+  author: Principal
   created: 2026-10-31
-  updated: 2026-11-01
+  updated: 2026-11-14
   path: canonical/kadd/1-definitions/1-02-project-profile.yaml
 
 metadata:
@@ -46,6 +46,8 @@ relations:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Prismata is intended to remain small, deterministic, portable, and extensible.
@@ -53,6 +55,14 @@ notes:
   - Long-term growth should occur in ecosystem consumers and adjunct systems rather than within Prismata itself.
 
 content:
+  status:
+    maturity: mature
+    last-review-date: 2026-11-11
+    review-status: complete
+    review-cycle: 3 months
+    review-past-due: false
+    next-review-date: 2027-02-11
+
   executive-summary: >
     Prismata is a cybernetic substrate that provides universal identity,
     structure, capability discovery, validation, knowledge indexing, and

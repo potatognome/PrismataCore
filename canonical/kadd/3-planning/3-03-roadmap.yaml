@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-3-03-ROADMAP
 udi: prismata.kad.planning.roadmap
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.3
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-03
-  path: /canonical/kadd/3-planning/3-03-roadmap.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/3-planning/3-03-roadmap.yaml
 
 metadata:
   name: Roadmap
@@ -36,8 +36,10 @@ relations:
     - Research Findings
     - Historical Records
     - Completed Work
+
   priority: high
   conflict-resolution: Roadmap items should align with approved architecture, requirements, and governance.
+
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
@@ -52,6 +54,8 @@ relations:
     - prismata.kad.planning.requirements
     - prismata.kad.planning.risks
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Roadmap items describe intended future work.
@@ -65,6 +69,14 @@ notes:
   - Completed roadmap items should be reflected through implementation and post-implementation KADs.
 
 content:
+  status:
+    maturity: evolving
+    last-review-date: 2026-11-11
+    review-status: ready-for-review
+    review-cycle: 14 days
+    review-past-due: false
+    next-review-date: 2026-11-14
+
   statuses:
     - planned
     - active

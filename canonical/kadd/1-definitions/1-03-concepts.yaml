@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-03-CONCEPTS
 udi: prismata.kad.definitions.concepts
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
-  author: Prismata Architecture Team
+  author: Principal
   created: 2026-11-01
-  updated: 2026-11-01
+  updated: 2026-11-14
   path: canonical/kadd/1-definitions/1-03-concepts.yaml
 
 metadata:
@@ -35,13 +35,17 @@ relations:
     - Implementation Details
     - Technology Selection
     - Development Practices
+
   priority: critical
   conflict-resolution: Concept definitions take precedence over implementation interpretations.
+
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
     - prismata.kad.definitions.project-profile
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Concepts define meaning rather than implementation.
@@ -49,19 +53,26 @@ notes:
   - Concepts should change rarely and evolve cautiously.
 
 content:
+  status:
+    maturity: mature
+    last-review-date: 2026-11-11
+    review-status: complete
+    review-cycle: 3 months
+    review-past-due: false
+    next-review-date: 2027-02-11
 
   concept-groups:
-
     identity:
-
       purpose: >
         Identity enables every ecosystem asset to be uniquely
         named, located, referenced, related, discovered, and
         traced throughout its lifecycle.
 
       concepts:
-
         UDI:
+          acronym: UDI
+          description: Universal Deterministic Identifier
+          aka: Universal Deterministic Identity
           purpose: >
             Provide universal and collision-free identification
             for ecosystem assets.
@@ -82,16 +93,17 @@ content:
             the ecosystem.
 
     structure:
-
       purpose: >
         Structure provides predictable organization and
         classification for artifacts and runtime entities.
 
       concepts:
-
         CMF:
+          acronym: CMF
+          description: Common Metadata Framework
+          aka: Common Metadata Format
           purpose: >
-            Provide the canonical structure for persistent
+            Provide the common structure for persistent
             artifacts.
 
           significance: >
@@ -100,6 +112,10 @@ content:
             discoverability characteristics.
 
         PSO:
+          acronym: PSO
+          description: Prismata Structured Object
+          aka: Prismata Schematic Object
+  
           purpose: >
             Provide the canonical structure for runtime objects.
 
@@ -107,6 +123,9 @@ content:
             PSO enables runtime entities to participate in the
             same identity, metadata, validation, and discovery
             model as persistent artifacts.
+            PSO provides a consistent runtime representation for 
+            ecosystem assets and are a reflection of their respective
+            CMF counterpart.
 
         Schema:
           purpose: >
@@ -123,13 +142,11 @@ content:
             understandable forms.
 
     capability:
-
       purpose: >
         Capability concepts define what ecosystem components can
         do and what they require from other components.
 
       concepts:
-
         Capability:
           purpose: >
             Represent a function, service, behavior, or
@@ -156,14 +173,12 @@ content:
             structures, identities, and capability descriptions.
 
     governance:
-
       purpose: >
         Governance provides the rules, constraints, expectations,
         and validation mechanisms that promote consistency and
         trust.
 
       concepts:
-
         Law:
           purpose: >
             Define permitted behavior.
@@ -187,14 +202,12 @@ content:
             and constraints.
 
     knowledge:
-
       purpose: >
         Knowledge concepts ensure that information, experience,
         and historical understanding remain organized,
         discoverable, and reusable.
 
       concepts:
-
         Knowledge:
           purpose: >
             Represent information that has meaning, context,
@@ -232,14 +245,12 @@ content:
             Define the authoritative origin of information.
 
     interaction:
-
       purpose: >
         Interaction concepts enable humans, agents, devices,
         and systems to understand and work with ecosystem
         assets.
 
       concepts:
-
         Interface:
           purpose: >
             Provide structured interaction with ecosystem
@@ -266,13 +277,11 @@ content:
             metadata instead of hardcoded logic.
 
     ecosystem:
-
       purpose: >
         Ecosystem concepts describe the broader landscape in
         which Prismata operates.
 
       concepts:
-
         Artifact:
           purpose: >
             Represent a governed ecosystem asset.
@@ -304,7 +313,6 @@ content:
             higher-level ecosystem services and applications.
 
   foundational-relationships:
-
     - UDI provides identity.
     - Schemas define structure.
     - Laws define permitted behavior.

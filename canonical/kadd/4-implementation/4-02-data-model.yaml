@@ -1,14 +1,15 @@
-id: KAD-PRISMATA-4-02
+id: KAD-PRISMATA-4-02-DATA-MODEL
 udi: prismata.kad.implementation.data-model
 kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-03
-  updated: 2026-11-05
-  path: /canonical/kadd/4-implementation/4-02-data-model.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/4-implementation/4-02-data-model.yaml
 
 metadata:
   name: Data Model
@@ -55,12 +56,15 @@ relations:
     and relationships.
 
   imports:
-    - KAD-PRISMATA-1-03
-    - KAD-PRISMATA-2-01
-    - KAD-PRISMATA-2-02
-    - KAD-PRISMATA-2-03
-    - KAD-PRISMATA-2-04
-    - KAD-PRISMATA-4-01
+    - prismata.kad.definitions.concepts
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Not all addressable entities are artifacts.
@@ -78,13 +82,17 @@ notes:
   - Execution capability depends on manifest availability and authorization.
 
 content:
+  status:
+    maturity: developing
+    last-review-date: 2026-11-11
+    review-status: ready-for-review
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
 
   classification-hierarchy:
-
     addressable-entities:
-
       artifacts:
-
         description: >
           Persistent identifiable ecosystem objects.
 
@@ -99,7 +107,6 @@ content:
           - reference-assets
 
       capabilities:
-
         description: >
           Addressable executable behaviors.
 
@@ -109,7 +116,6 @@ content:
           - recursive
 
       interface-objects:
-
         description: >
           Addressable objects whose primary purpose
           is interaction, presentation, navigation,
@@ -125,7 +131,6 @@ content:
           - border-pattern
 
       runtime-objects:
-
         description: >
           Addressable runtime entities whose primary
           purpose is operational execution.
@@ -138,7 +143,6 @@ content:
           - cached-runtime-object
 
   infrastructure:
-
     description: >
       Supporting ecosystem services that assist
       discovery, execution, rendering, validation,
@@ -152,14 +156,11 @@ content:
       - security-services
 
   identity-model:
-
     universal-identity:
-
       description: >
         Every addressable entity possesses a UDI.
 
     governing-rules:
-
       - Identity does not imply executability.
       - Identity does not imply persistence.
       - Identity does not imply ownership.
@@ -168,7 +169,6 @@ content:
       - Identity enables traceability.
 
   artifact-model:
-
     definition: >
       A persistent identifiable ecosystem object.
 
@@ -188,14 +188,12 @@ content:
       - content
 
     governing-rules:
-
       - Artifacts shall be enclosed within CMF.
       - Artifacts shall possess UDI.
       - Artifacts shall support relationships.
       - Artifacts shall support versioning.
 
   capability-model:
-
     definition: >
       An addressable executable behavior.
 
@@ -206,7 +204,6 @@ content:
       defined-by: manifest
 
     governing-rules:
-
       - Capabilities are not CMF artifacts.
       - Capabilities are addressable through cUDI.
       - Capabilities shall be declared in manifests.
@@ -215,7 +212,6 @@ content:
       - Capabilities may be recursive.
 
   manifest-model:
-
     definition: >
       A persistent artifact that describes one or
       more capabilities.
@@ -223,7 +219,6 @@ content:
     classification: artifact
 
     governing-rules:
-
       - Manifests are CMF artifacts.
       - Manifests shall possess manifest UDI.
       - One manifest may define many capabilities.
@@ -231,7 +226,6 @@ content:
       - Manifests describe behavior but do not execute behavior.
 
   interface-object-model:
-
     definition: >
       An addressable object whose primary purpose
       is interaction or presentation.
@@ -246,14 +240,12 @@ content:
       - border-pattern
 
     governing-rules:
-
       - Interface objects shall possess UDI.
       - Interface objects may be previewed.
       - Interface objects are not capabilities.
       - Interface objects are not runtime objects.
 
   runtime-object-model:
-
     definition: >
       An operational entity used during runtime execution.
 
@@ -273,7 +265,6 @@ content:
       - content
 
     governing-rules:
-
       - Runtime objects shall use PSO.
       - PSO mirrors CMF structure.
       - Runtime objects may be ephemeral.
@@ -281,23 +272,19 @@ content:
       - Runtime objects shall possess UDI when addressable.
 
   registry-model:
-
     classification: infrastructure
 
     purpose: >
       Discovery and indexing.
 
     governing-rules:
-
       - Registries are indexes.
       - Registries are not authoritative sources.
       - Registries may index multiple entity types.
       - Registries support discovery and navigation.
 
   relationship-model:
-
     supported-relationships:
-
       - ownership
       - dependency
       - composition
@@ -308,19 +295,16 @@ content:
       - governance
 
     governing-rules:
-
       - Relationships shall reference UDI.
       - Relationships may cross classifications.
       - Relationships should remain stable across implementations.
 
   describe-model:
-
     purpose: >
       Universal identification and inspection
       mechanism for addressable entities.
 
     governing-rules:
-
       - All addressable entities should support describe.
       - Describe occurs before execution decisions.
       - Describe may occur without execute permissions.
@@ -352,9 +336,7 @@ content:
           non-executable, or unknown.
 
   execution-model:
-
     capability-invocation:
-
       description: >
         Execution path for capability UDIs.
 
@@ -368,7 +350,6 @@ content:
         - render
 
     asset-invocation:
-
       description: >
         Execution path for non-capability UDIs.
 
@@ -380,25 +361,15 @@ content:
         - render
 
   architectural-summary:
-
     statement: >
       Artifacts preserve knowledge.
-
       Manifests describe capabilities.
-
       Capabilities define behavior.
-
       Interface objects define interaction.
-
       Runtime objects enable execution.
-
       Registries enable discovery.
-
       UDI enables identity.
-
       CMF governs persistent objects.
-
       PSO governs runtime objects.
-
       Together these models form the canonical
       Prismata data architecture.

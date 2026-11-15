@@ -1,0 +1,190 @@
+id: KAD-PRISMATA-5-03-RETROSPECTIVES
+udi: prismata.kad.post-implementation.retrospectives
+kind: knowledge-architecture-document
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-14
+  updated: 2026-11-14
+  path: canonical/kadd/5-post-implementation/5-03-retrospectives.yaml
+
+metadata:
+  name: Retrospectives
+  description: >
+    Defines the structure, purpose, governance,
+    capture, analysis, and preservation of
+    retrospective reviews across the Prismata
+    ecosystem.
+
+  tags:
+    - prismata
+    - retrospectives
+    - review
+    - improvement
+    - governance
+    - lessons-learned
+    - post-implementation
+
+relations:
+  domain:
+    - Retrospectives
+    - Continuous Improvement
+    - Governance
+    - Knowledge Preservation
+
+  scope:
+    - Retrospective Records
+    - Review Processes
+    - Improvement Opportunities
+    - Success Analysis
+    - Failure Analysis
+
+  exclusions:
+    - Requirements
+    - Research
+    - Architectural Decisions
+    - Operational Procedures
+    - Roadmap Planning
+
+  priority: high
+
+  conflict-resolution: >
+    Retrospectives capture reflection,
+    analysis, observations, successes,
+    challenges, and improvement opportunities.
+    Retrospectives do not directly modify
+    architecture, law, policy, or governance
+    without review and approval.
+
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.principles
+    - prismata.kad.planning.risks
+    - prismata.kad.post-implementation.research
+    - prismata.kad.reference.glossary
+
+notes:
+  - Retrospectives should focus on learning rather than blame.
+  - Successes should be documented as rigorously as failures.
+  - Improvement opportunities should be actionable when possible.
+  - Retrospectives should contribute to organizational memory.
+  - Retrospectives are intended to improve future outcomes rather than judge past decisions.
+
+content:
+  status:
+    maturity: first-draft
+    last-review-date: null
+    review-status: not-reviewed
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-14
+ 
+  purpose: >
+    Capture structured reflection on completed
+    initiatives, phases, projects, releases,
+    research activities, governance events,
+    and ecosystem outcomes.
+
+  retrospective-principles:
+
+    - Preserve context.
+    - Preserve outcomes.
+    - Preserve rationale.
+    - Focus on improvement.
+    - Document successes.
+    - Document failures.
+    - Preserve organizational learning.
+
+  retrospective-categories:
+
+    project:
+      description: >
+        Reviews focused on projects,
+        deliverables, milestones,
+        and objectives.
+
+    architectural:
+      description: >
+        Reviews focused on architectural
+        outcomes, decisions, assumptions,
+        and consequences.
+
+    governance:
+      description: >
+        Reviews focused on processes,
+        policies, standards, and
+        organizational effectiveness.
+
+    operational:
+      description: >
+        Reviews focused on execution,
+        maintenance, support,
+        and operational performance.
+
+  retrospective-record-model:
+
+    required-elements:
+      - title
+      - scope
+      - review-period
+      - successes
+      - challenges
+      - observations
+      - recommendations
+
+    optional-elements:
+      - metrics
+      - references
+      - related-research
+      - related-lessons-learned
+
+  retrospective-lifecycle:
+
+    - scheduled
+    - active
+    - completed
+    - archived
+
+  recommended-analysis-topics:
+
+    - what-worked-well
+    - what-did-not-work-well
+    - unexpected-outcomes
+    - assumption-validity
+    - process-efficiency
+    - governance-effectiveness
+    - future-opportunities
+
+  governance-rules:
+
+    - Retrospective findings should remain discoverable.
+    - Retrospectives should preserve context.
+    - Retrospectives should not assign blame.
+    - Retrospectives should encourage future improvement.
+    - Recommendations should be actionable when possible.
+    - Significant findings should be considered for lessons learned records.
+
+  relationships:
+
+    inputs:
+      - research
+      - projects
+      - initiatives
+      - releases
+      - governance-events
+
+    outputs:
+      - recommendations
+      - lessons-learned
+      - future-research
+      - improvement-proposals
+
+  closing-statement: >
+    Retrospectives transform experience into
+    organizational knowledge. Their purpose is
+    to help future participants benefit from
+    previous successes, failures, observations,
+    and refinements while preserving a durable
+    historical record of ecosystem evolution.

@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-2-03-RELATIONSHIPS
 udi: prismata.kad.architecture.relationships
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team 
   created: 2026-11-02
-  updated: 2026-11-03
-  path: /canonical/kadd/2-architecture/2-03-relationships.yaml 
+  updated: 2026-11-14
+  path: canonical/kadd/2-architecture/2-03-relationships.yaml 
 
 metadata:
   name: Prismata Relationships
@@ -50,6 +50,8 @@ relations:
     - prismata.kad.architecture.systems
     - prismata.kad.architecture.subsystems
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Relationships describe architectural dependency and ownership rather than execution order.
@@ -58,6 +60,14 @@ notes:
   - Cardinalities describe architectural expectations rather than storage implementation details. 
   
 content:
+  status:
+    maturity: formal
+    last-review-date: 2026-11-11
+    review-status: complete
+    review-cycle: 2 month
+    review-past-due: false
+    next-review-date: 2027-1-11
+
   relationship-principles:
     - Definitions should not depend upon implementations.
     - Implementations should depend upon definitions.

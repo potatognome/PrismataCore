@@ -1,0 +1,199 @@
+id: KAD-PRISMATA-5-01-RESEARCH
+udi: prismata.kad.post-implementation.research
+kind: knowledge-architecture-document
+version: 1.0.0
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-14
+  updated: 2026-11-14
+  path: canonical/kadd/5-post-implementation/5-01-research.yaml
+
+metadata:
+  name: Research
+  description: >
+    Defines the structure, purpose, governance,
+    capture, validation, and preservation of
+    research conducted throughout the Prismata
+    ecosystem lifecycle.
+
+  tags:
+    - prismata
+    - research
+    - discovery
+    - experimentation
+    - validation
+    - knowledge
+    - governance
+    - post-implementation
+
+relations:
+  domain:
+    - Research
+    - Knowledge Acquisition
+    - Validation
+    - Discovery
+
+  scope:
+    - Research Records
+    - Research Practices
+    - Research Governance
+    - Research Outcomes
+    - Research Preservation
+
+  exclusions:
+    - Lessons Learned
+    - Retrospectives
+    - Architectural Decisions
+    - Requirements
+    - Roadmap Management
+
+  priority: high
+
+  conflict-resolution: >
+    Research artifacts preserve observations,
+    experiments, discoveries, hypotheses,
+    investigations, and findings. Research
+    does not create architectural law and
+    shall not override approved architectural
+    decisions without governance review.
+
+  imports:
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.architecture.decisions
+    - prismata.kad.implementation.development
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
+
+notes:
+  - Research may validate existing assumptions or challenge them.
+  - Research records should preserve both successful and unsuccessful findings.
+  - Research artifacts should remain discoverable after decisions are made.
+  - Experimental failures may possess equal long-term value to successful outcomes.
+  - Research findings should contribute to future lessons learned records where appropriate.
+
+content:
+  status:
+    maturity: first-draft
+    last-review-date: null
+    review-status: not-reviewed
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-14
+ 
+  purpose: >
+    Preserve validated learning, research outcomes,
+    investigations, experiments, observations,
+    evaluations, and findings that contribute
+    to ecosystem understanding.
+
+  research-principles:
+
+    - Preserve evidence.
+    - Preserve context.
+    - Preserve assumptions.
+    - Preserve unsuccessful outcomes.
+    - Preserve rationale.
+    - Favor validation over speculation.
+    - Separate observation from conclusion.
+
+  research-categories:
+    architectural:
+      description: >
+        Research related to architecture,
+        governance, structure, composition,
+        and ecosystem evolution.
+
+    technical:
+      description: >
+        Research related to implementation,
+        performance, scalability, interoperability,
+        tooling, or platform design.
+
+    operational:
+      description: >
+        Research related to deployment,
+        maintenance, administration,
+        support, or ecosystem operation.
+
+    exploratory:
+      description: >
+        Early-stage investigations intended
+        to evaluate opportunities, concepts,
+        or future directions.
+
+  research-record-model:
+    required-elements:
+      - title
+      - objective
+      - scope
+      - assumptions
+      - methodology
+      - observations
+      - findings
+      - conclusions
+
+    optional-elements:
+      - references
+      - recommendations
+      - follow-up-actions
+      - supporting-artifacts
+
+  research-lifecycle:
+    - proposed
+    - active
+    - completed
+    - validated
+    - archived
+
+  governance-rules:
+    - Research records should be addressable.
+    - Research records should be discoverable.
+    - Research records should be preserved.
+    - Research should identify assumptions explicitly.
+    - Conclusions should be supported by evidence.
+    - Research may inform future governance decisions.
+    - Research does not independently establish architectural law.
+
+  outcomes:
+    positive:
+      description: >
+        Findings supporting a hypothesis,
+        proposal, approach, or design.
+
+    negative:
+      description: >
+        Findings contradicting a hypothesis,
+        proposal, approach, or design.
+
+    inconclusive:
+      description: >
+        Findings insufficient to determine
+        a clear outcome.
+
+  relationships:
+    inputs:
+      - requirements
+      - risks
+      - proposals
+      - lessons-learned
+      - retrospectives
+
+    outputs:
+      - findings
+      - recommendations
+      - follow-up-research
+      - governance-proposals
+      - lessons-learned
+
+  closing-statement: >
+    Research preserves validated learning for
+    future consumers of ecosystem knowledge.
+    Its purpose is not merely to discover
+    answers but to preserve understanding in
+    a durable, discoverable, and governable
+    form.

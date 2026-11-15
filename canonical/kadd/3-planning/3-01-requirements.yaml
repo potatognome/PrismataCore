@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-3-01-REQUIREMENTS
 udi: prismata.kad.planning.requirements
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.3
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-03
-  path: /canonical/kadd/3-planning/3-01-requirements.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/3-planning/3-01-requirements.yaml
 
 metadata:
   name: Requirements
@@ -36,8 +36,10 @@ relations:
     - Implementation Details
     - Historical Records
     - Research Findings
+
   priority: critical
   conflict-resolution: Requirements define mandatory outcomes and take precedence over implementation preferences.
+
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
@@ -49,6 +51,8 @@ relations:
     - prismata.kad.architecture.relationships
     - prismata.kad.architecture.decisions
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Requirements define mandatory expectations.
@@ -60,6 +64,14 @@ notes:
   - Requirement UDIs exist for indexing, traceability, relationships, comparison, automation, and governance.
 
 content:
+  status:
+    maturity: definitive
+    last-review-date: 2026-11-11
+    review-status: passed-review
+    review-cycle: 1 month
+    review-past-due: false
+    next-review-date: 2026-12-11
+
   requirement-types:
     structural:
       description: >

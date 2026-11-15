@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-01-GLOSSARY
 udi: prismata.kad.reference.glossary
-kind: KAD
-version: 2.0.0
+kind: knowledge architecture document
+version: 1.1.3
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-31
-  updated: 2026-11-09
+  updated: 2026-11-14
   path: canonical/kadd/9-reference/9-01-glossary.yaml
 
 metadata:
@@ -80,11 +80,16 @@ notes:
   - Definitions should favor conceptual durability over implementation specificity.
 
 content:
-
+  status:
+    maturity: rapidly-evolving
+    last-review-date: 2026-11-11
+    review-status: recently updated
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
+ 
   categories:
-
     ecosystem:
-
       - id: GLOSSARY-001
         udi: prismata.kad.glossary.prismata
         term: Prismata
@@ -418,11 +423,12 @@ content:
       - id: GLOSSARY-039
         udi: prismata.kad.glossary.cmf
         term: CMF
-        acronym: Canonial Metadata Framework
+        acronym: Common Metadata Framework
         definition: >
-          The canonical artifact envelope used to structure and
-          describe persistent ecosystem artifacts.
-
+          The common artifact envelope used to structure,
+          identify, classify, govern, validate, archive,
+          and describe persistent ecosystem artifacts.
+          
       - id: GLOSSARY-040
         udi: prismata.kad.glossary.pso
         term: PSO
@@ -514,3 +520,94 @@ content:
         definition: >
           The authoritative version of an artifact, definition,
           standard, schema, law, or knowledge asset.
+
+      - id: GLOSSARY-051
+        udi: prismata.kad.glossary.genesis
+        term: Genesis
+        acronym: null
+        definition: >
+          A composite tooling capability hosted primarily
+          within Universe that performs initialization,
+          discovery, registration, validation, recovery,
+          primitive registration, and establishment of
+          minimum operational state.
+
+      - id: GLOSSARY-052
+        udi: prismata.kad.glossary.cam
+        term: CAM
+        acronym: Capability Access Matrix
+        definition: >
+          The authorization model used to determine
+          whether a capability may execute within a
+          specific context. CAM evaluation is performed
+          independently of visibility, enablement,
+          capability classification, or interface state.
+
+      - id: GLOSSARY-053
+        udi: prismata.kad.glossary.describe
+        term: Describe
+        acronym: null
+        definition: >
+          A foundational architectural primitive used
+          to identify, classify, summarize, and explain
+          an addressable entity. Describe is the
+          preferred fallback operation and may remain
+          available when higher-risk actions are denied.
+
+      - id: GLOSSARY-054
+        udi: prismata.kad.glossary.candidate-capability
+        term: Candidate Capability
+        acronym: null
+        definition: >
+          A discovered capability that has been assigned
+          identity and manifested metadata but has not
+          yet completed approval or registration.
+
+      - id: GLOSSARY-055
+        udi: prismata.kad.glossary.satisficing-resolution
+        term: Satisficing Resolution
+        acronym: null
+        definition: >
+          The process of locating compatible existing
+          objects that satisfy declared requirements
+          without attempting exhaustive optimization
+          or global selection.
+
+      - id: GLOSSARY-056
+        udi: prismata.kad.glossary.compliance-profile
+        term: Compliance Profile
+        acronym: null
+        definition: >
+          A multidimensional assessment describing
+          which compliance characteristics are satisfied
+          by an artifact, capability, manifest, object,
+          or other addressable ecosystem entity.
+
+      - id: GLOSSARY-057
+        udi: prismata.kad.glossary.capability-classification
+        term: Capability Classification
+        acronym: null
+        definition: >
+          A taxonomy used to categorize capabilities
+          according to operational purpose independent
+          of compliance state, lifecycle status,
+          implementation details, or authorization.
+
+      - id: GLOSSARY-058
+        udi: prismata.kad.glossary.bounded-capability-collection
+        term: Bounded Capability Collection
+        acronym: null
+        definition: >
+          A cohesive collection of related capabilities
+          organized within a single manifest and sharing
+          a common operational purpose.
+
+      - id: GLOSSARY-059
+        udi: prismata.kad.glossary.capability-origin
+        term: Capability Origin
+        acronym: null
+        definition: >
+          A classification identifying whether a
+          capability was developed natively for
+          Prismata or derived through ingestion
+          of an existing implementation.

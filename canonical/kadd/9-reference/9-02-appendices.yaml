@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-02-APPENDICES
 udi: prismata.kad.reference.appendices
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.2
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  updated: 2026-11-09
+  updated: 2026-11-14
   path: canonical/kadd/9-reference/9-02-appendices.yaml
 
 metadata:
@@ -76,7 +76,14 @@ notes:
   - Appendix content should remain implementation-agnostic whenever possible.
 
 content:
-
+  status:
+    maturity: rapidly-evolving
+    last-review-date: 2026-11-11
+    review-status: ready-for-review
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
+ 
   purpose: >
     Provide durable supporting material that improves
     navigation, understanding, onboarding, governance,

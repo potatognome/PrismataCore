@@ -1,14 +1,14 @@
-id: PRISMATA-KAD-5-02-001
-udi: dev.prismata.kad.lessons-learned.5-02-001
-kind: lessons-learned
-version: 1.1.0
+id: PRISMATA-KAD-5-02-LESSONS-LEARNED
+udi: prismata.kad.post-implementation.lessons-learned
+kind: knowledge architecture document
+version: 1.0.3
 tenant: null
 
 source:
   author: The Principal
   created: 2026-11-09
-  updated: 2026-11-09
-  path: PrismataCore/.github/plan-docs.d/5-02-lessons-learned.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/5-post-implementation/5-02-lessons-learned.yaml
 
 metadata:
   name: Lessons Learned
@@ -55,6 +55,8 @@ relations:
     - prismata.kad.implementation.configuration
     - prismata.kad.implementation.development
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
     
 notes:
   - Lessons Learned Records (LLRs) are first-class knowledge artifacts.
@@ -63,9 +65,15 @@ notes:
   - Lessons should remain implementation-agnostic whenever possible.
 
 content:
-
+  status:
+    maturity: early-development
+    last-review-date: 2026-11-11
+    review-status: recently updated
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
+ 
   lesson-records:
-
     - id: LLR-001
       udi: dev.prismata.lessons.architecture-refactors-are-usually-concept-refactors
       title: Architecture Refactors Are Usually Concept Refactors

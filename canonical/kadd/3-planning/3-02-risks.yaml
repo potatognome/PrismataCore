@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-3-02-RISKS
 udi: prismata.kad.planning.risks
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.3
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-03
-  path: /canonical/kadd/3-planning/3-02-risks.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/3-planning/3-02-risks.yaml
 
 metadata:
   name: Risks
@@ -36,8 +36,10 @@ relations:
     - Historical Incidents
     - Implementation Defects
     - Retrospectives
+
   priority: high
   conflict-resolution: Risks identify potential threats and should inform planning, governance, architecture, and future mitigation activities.
+  
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
@@ -50,6 +52,8 @@ relations:
     - prismata.kad.architecture.decisions
     - prismata.kad.planning.requirements
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
     
 notes:
   - Risks identify threats rather than failures.
@@ -60,6 +64,14 @@ notes:
   - Risk severity and probability assessments belong to operational governance processes and not to this KAD.
 
 content:
+  status:
+    maturity: definitive
+    last-review-date: 2026-11-11
+    review-status: passed-review
+    review-cycle: 1 month
+    review-past-due: false
+    next-review-date: 2026-12-11
+
   risk-types:
     architectural:
       description: >

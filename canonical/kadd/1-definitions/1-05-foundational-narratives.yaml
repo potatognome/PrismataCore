@@ -1,14 +1,14 @@
 id: KAD-PRISMATA-1-05-FOUNDATIONAL-NARRATIVES
 udi: prismata.kad.definitions.foundational-narratives
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-09
-  path: /canonical/kadd/1-definitions/1-05-foundational-narratives.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/1-definitions/1-05-foundational-narratives.yaml
 
 metadata:
   name: Foundational Narratives
@@ -71,6 +71,8 @@ relations:
     - prismata.kad.definitions.concepts
     - prismata.kad.definitions.principles
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Foundational narratives are illustrative rather than authoritative.
@@ -91,6 +93,14 @@ notes:
   - Foundational narratives are intended to expand understanding, not define scope.
 
 content:
+  status:
+    maturity: developing
+    last-review-date: 2026-11-11
+    review-status: updated
+    review-cycle: 1 months
+    review-past-due: false
+    next-review-date: 2027-12-11
+
   purpose: >
     Foundational narratives describe meaningful situations,
     environments, challenges, opportunities, and outcomes

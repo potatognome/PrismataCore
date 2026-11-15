@@ -1,14 +1,14 @@
-id: KAD-PRISMATA-4-04
+id: KAD-PRISMATA-4-04-CONFIGURATION
 udi: prismata.kad.implementation.configuration
-kind: KAD
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-07
-  updated: 2026-11-08
-  path: /canonical/kadd/4-implementation/4-04-configuration.yaml
+  updated: 2026-11-14
+  path: canonical/kadd/4-implementation/4-04-configuration.yaml
 
 metadata:
   name: Configuration
@@ -61,6 +61,9 @@ relations:
     - prismata.kad.implementation.interfaces
     - prismata.kad.implementation.data-model
     - prismata.kad.implementation.storage
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Configuration exists to alter settings rather than behavior.
@@ -73,9 +76,15 @@ notes:
   - Merge behavior is schema governed.
 
 content:
+  status:
+    maturity: developing
+    last-review-date: 2026-11-11
+    review-status: ready-for-review
+    review-cycle: 10 days
+    review-past-due: false
+    next-review-date: 2026-11-21
 
   configuration-principles:
-
     - Configuration alters settings rather than behavior.
     - Configuration shall be metadata driven.
     - Configuration shall be addressable and discoverable.
@@ -87,21 +96,16 @@ content:
     - Merge behavior is schema controlled.
 
   configuration-hierarchy:
-
     precedence-order:
-
       1-runtime:
         description: >
           Runtime PSO configuration.
-
       2-tenant:
         description: >
           Tenant-specific configuration.
-
       3-workspace:
         description: >
           Shared workspace configuration.
-
       4-core:
         description: >
           Canonical Prismata configuration.
@@ -111,7 +115,6 @@ content:
       unless merge behavior is explicitly defined.
 
   configuration-locations:
-
     core:
       owner: PrismataCore
       purpose: >
@@ -266,14 +269,12 @@ content:
           information during execution workflows.
 
     governing-rules:
-
       - Describe shall always execute.
       - Display of Describe output is configurable.
       - Confirmation prompts are configurable.
       - Execution behavior is controlled by authorization and capability resolution.
 
   runtime-configuration:
-
     envelope: PSO
 
     purpose: >
@@ -287,7 +288,6 @@ content:
       - context-aware
 
   universe-integration:
-
     primary-editor:
       application: Universe
 
@@ -300,9 +300,7 @@ content:
       and configuration lifecycle management.
 
   validation:
-
     governing-rules:
-
       - Configuration artifacts shall be schema validated.
       - Configuration artifacts shall be CMF validated.
       - Configuration changes shall participate in archival evaluation.
@@ -312,23 +310,15 @@ content:
 
     statement: >
       Configuration controls settings rather than behavior.
-
       Capabilities define behavior.
-
       Configuration artifacts are CMF-enclosed,
       schema-governed, versioned, archived,
       searchable, and addressable artifacts.
-
       Runtime overrides Tenant.
-
       Tenant overrides Workspace.
-
       Workspace overrides Core.
-
       Full override is the default behavior.
-
       Merge behavior is controlled by schema.
-
       Together these rules establish a predictable,
       metadata-driven configuration architecture
       for the Prismata ecosystem.

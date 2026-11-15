@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-01-VISION
 udi: prismata.kad.definitions.vision
 kind: knowledge architecture document
-version: 1.0.0
+version: 1.0.4
 tenant: null
 
 source:
-  author: Prismata Architecture Team
+  author: Principal
   created: 2026-10-30
-  updated: 2026-10-31
+  updated: 2026-11-14
   path: canonical/kadd/1-definitions/1-01-vision.yaml
 
 metadata:
@@ -40,11 +40,16 @@ relations:
     - Implementation Details
     - Planning Artifacts
     - Technology Selections
+
   priority: critical
+
   conflict-resolution: Vision, identity, structure, and knowledge preservation take precedence over implementation convenience.
+
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
 
 notes:
   - Prismata is intended to remain small, deterministic, portable, and extensible.
@@ -52,6 +57,14 @@ notes:
   - Long-term success is measured by preserved knowledge, interoperability, accessibility, and reduced complexity.
 
 content:
+  status:
+    maturity: mature
+    last-review-date: 2026-11-11
+    review-status: complete
+    review-cycle: 3 months
+    review-past-due: false
+    next-review-date: 2027-02-11
+
   purpose: >
     Prismata exists to provide the foundational identity, structure, memory,
     validation, and knowledge framework required to build adaptive cybernetic
