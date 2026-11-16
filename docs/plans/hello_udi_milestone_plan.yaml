@@ -3,8 +3,8 @@
 # CMF-Enveloped Planning Document
 # PrismataCore + PrismataSDK Collaborative Milestone Plan
 
-id: prismata.core.plan.hello_udi_milestone_plan
-udi: prismata.core.plan.hello_udi_milestone_plan
+id: prismata.core.document.hello-udi-milestone-plan
+udi: prismata.core.document.hello-udi-milestone-plan
 kind: milestone-plan
 version: 1.0.0
 tenant: null
@@ -427,7 +427,7 @@ content:
             - target_pane_udi: prismata.example.pane.lh_test
             - action_type: execute_capability
         - type: menu_item
-          ubi: prismata.example.menu_item.test_rh
+          udi: prismata.example.menu_item.test_rh
           schema_reference: prismata.core.schema.menu-item
           content_requirements:
             - capability_udi: prismata.example.capability.hello_udi
