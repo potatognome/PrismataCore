@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-02-SUBSYSTEMS
 udi: prismata.kad.architecture.subsystems
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Principal
   created: 2026-11-02
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/2-architecture/2-02-subsystems.yaml
 
 metadata:
@@ -58,15 +58,21 @@ notes:
   - Some entries represent foundational assets rather than executable subsystems.
   - Foundational assets are documented because they are structurally required by the ecosystem.
   - Architectural significance, rather than implementation form, determines inclusion.
+  - Subsystem decomposition remains architectural guidance and should remain stable unless governance explicitly revises the decomposition model.
 
 content:
   status:
     maturity: comprehensive
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: complete
     review-cycle: 1 month
     review-past-due: false
-    next-review-date: 2026-12-11
+    next-review-date: 2026-12-15
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: monthly
+    review-principle: subsystem boundaries remain architectural decomposition guidance and should only change through explicit stewardship review
 
   classification-model:
     Foundation Asset:

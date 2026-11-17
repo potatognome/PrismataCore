@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-5-03-RETROSPECTIVES
 udi: prismata.kad.post-implementation.retrospectives
-kind: knowledge-architecture-document
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.2
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-14
-  updated: 2026-11-14
+  last-updated: 2026-11-16
   path: canonical/kadd/5-post-implementation/5-03-retrospectives.yaml
 
 metadata:
@@ -71,21 +71,44 @@ notes:
   - Improvement opportunities should be actionable when possible.
   - Retrospectives should contribute to organizational memory.
   - Retrospectives are intended to improve future outcomes rather than judge past decisions.
+  - Retrospective records are part of the KADD proposal-review-archive workflow and must retain traceability from proposal to implementation to archival status.
 
 content:
   status:
-    maturity: first-draft
-    last-review-date: null
-    review-status: not-reviewed
-    review-cycle: 10 days
+    maturity: developing
+    last-review-date: 2026-11-15
+    review-status: passed-review
+    review-cycle: 3 months
     review-past-due: false
-    next-review-date: 2026-11-14
- 
+    next-review-date: 2027-02-15
+
   purpose: >
     Capture structured reflection on completed
     initiatives, phases, projects, releases,
     research activities, governance events,
     and ecosystem outcomes.
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: quarterly
+    review-principle: retrospectives improve future decisions without overriding approved architecture or policy
+    archive-policy: preserve-by-status
+    action-tracking: required
+    proposal-review-lifecycle:
+      - proposed
+      - in-review
+      - changes-requested
+      - approved
+      - implemented
+      - archived
+    proposal-workflow:
+      proposal-directory: .github/.agent-reports/kadd/proposals
+      review-directory: .github/.agent-reports/kadd/reviews
+      archive-directory: .github/.agent-reports/kadd/archive
+      historical-directory: .github/.agent-reports/kadd/historical
+      decision-principle: >
+        Retrospective actions and governance changes shall be managed through the
+        same proposal-review-archive process used for KADD records.
 
   retrospective-principles:
 
@@ -96,6 +119,23 @@ content:
     - Document successes.
     - Document failures.
     - Preserve organizational learning.
+
+  retrospective-record-model:
+    required-elements:
+      - title
+      - scope
+      - review-period
+      - successes
+      - challenges
+      - observations
+      - recommendations
+      - action-items
+      - follow-up-owner
+    optional-elements:
+      - metrics
+      - references
+      - related-research
+      - related-lessons-learned
 
   retrospective-categories:
 
@@ -123,28 +163,12 @@ content:
         maintenance, support,
         and operational performance.
 
-  retrospective-record-model:
-
-    required-elements:
-      - title
-      - scope
-      - review-period
-      - successes
-      - challenges
-      - observations
-      - recommendations
-
-    optional-elements:
-      - metrics
-      - references
-      - related-research
-      - related-lessons-learned
-
   retrospective-lifecycle:
 
     - scheduled
     - active
     - completed
+    - adopted
     - archived
 
   recommended-analysis-topics:

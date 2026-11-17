@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-01-VISION
 udi: prismata.kad.definitions.vision
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Principal
   created: 2026-10-30
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/1-definitions/1-01-vision.yaml
 
 metadata:
@@ -55,15 +55,21 @@ notes:
   - Prismata is intended to remain small, deterministic, portable, and extensible.
   - Prismata is a foundation for applications and ecosystems rather than the applications themselves.
   - Long-term success is measured by preserved knowledge, interoperability, accessibility, and reduced complexity.
+  - Vision and scope remain strategic intent and should only change through explicit governance review.
 
 content:
   status:
     maturity: mature
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: complete
     review-cycle: 3 months
     review-past-due: false
-    next-review-date: 2027-02-11
+    next-review-date: 2027-02-15
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: quarterly
+    review-principle: vision remains strategic intent and should not be treated as feature commitment or implementation detail
 
   purpose: >
     Prismata exists to provide the foundational identity, structure, memory,

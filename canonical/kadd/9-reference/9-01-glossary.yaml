@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-01-GLOSSARY
 udi: prismata.kad.reference.glossary
 kind: knowledge architecture document
-version: 1.1.3
+version: 1.1.5
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-31
-  updated: 2026-11-14
+  last-updated: 2026-11-16
   path: canonical/kadd/9-reference/9-01-glossary.yaml
 
 metadata:
@@ -81,13 +81,18 @@ notes:
 
 content:
   status:
-    maturity: rapidly-evolving
-    last-review-date: 2026-11-11
-    review-status: recently updated
-    review-cycle: 10 days
+    maturity: comprehensive
+    last-review-date: 2026-11-15
+    review-status: passed-review
+    review-cycle: 2 weeks
     review-past-due: false
-    next-review-date: 2026-11-21
- 
+    next-review-date: 2026-11-29
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: bi-weekly
+    review-principle: glossary terminology remains authoritative for ecosystem interpretation and should change only with explicit stewardship review
+
   categories:
     ecosystem:
       - id: GLOSSARY-001
@@ -481,7 +486,7 @@ content:
       - id: GLOSSARY-046
         udi: prismata.kad.glossary.knowledge-integrity-review
         term: Knowledge Integrity Review
-        acronym: nul
+        acronym: KIR
         definition: >
           A structured analysis process that evaluates consistency,
           completeness, ambiguity, traceability, viability,

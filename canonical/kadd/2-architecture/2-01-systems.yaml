@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-01-SYSTEMS
 udi: prismata.kad.architecture.systems
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-30
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/2-architecture/2-01-systems.yaml
 
 metadata:
@@ -59,16 +59,21 @@ notes:
   - Architectural layers represent different concerns and ownership boundaries.
   - Layers are intentionally non-overlapping and collision resistant.
   - Consumer applications are not part of the mandatory Prismata ecosystem layers.
+  - Architectural layer boundaries remain stewardship guidance and should only change through explicit governance review.
 
 content:
   status:
     maturity: definitive
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: complete
-    review-cycle: 1 month
+    review-cycle: 3 months
     review-past-due: false
-    next-review-date: 2026-12-11
+    next-review-date: 2027-02-15
 
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: quarterly
+    review-principle: system boundaries remain architectural intent and should only change through explicit governance review
 
   ecosystem-architecture:
     principle: >

@@ -1,13 +1,13 @@
 id: PRISMATA-KAD-5-02-LESSONS-LEARNED
 udi: prismata.kad.post-implementation.lessons-learned
 kind: knowledge architecture document
-version: 1.0.3
+version: 1.0.5
 tenant: null
 
 source:
   author: The Principal
   created: 2026-11-09
-  updated: 2026-11-14
+  last-updated: 2026-11-16
   path: canonical/kadd/5-post-implementation/5-02-lessons-learned.yaml
 
 metadata:
@@ -63,16 +63,67 @@ notes:
   - LLRs capture validated learning derived from project experience.
   - LLRs may be referenced by future KADs, ADRs, governance rules, diagnostics, and agents.
   - Lessons should remain implementation-agnostic whenever possible.
+  - Lessons Learned entries participate in the KADD review lifecycle to ensure recommendations remain current, traceable, and properly archived.
 
 content:
   status:
-    maturity: early-development
-    last-review-date: 2026-11-11
-    review-status: recently updated
-    review-cycle: 10 days
+    maturity: mature
+    last-review-date: 2026-11-15
+    review-status: complete
+    review-cycle: 3 months
     review-past-due: false
-    next-review-date: 2026-11-21
- 
+    next-review-date: 2027-02-15
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: quarterly
+    review-principle: lessons learned remain evidence-based, durable, and aligned with project intent without becoming normative
+    archive-policy: preserve-by-status
+    proposal-review-lifecycle:
+      - proposed
+      - in-review
+      - changes-requested
+      - approved
+      - implemented
+      - archived
+    adoption-criteria:
+      - evidence has been preserved
+      - cross-reference to affected architecture or planning artifacts exists
+      - the lesson is actionable for future design or governance decisions
+    operational-review-workflow:
+      proposal-directory: .github/.agent-reports/kadd/proposals
+      review-directory: .github/.agent-reports/kadd/reviews
+      archive-directory: .github/.agent-reports/kadd/archive
+      historical-directory: .github/.agent-reports/kadd/historical
+
+  lesson-record-standards:
+    required-elements:
+      - id
+      - udi
+      - title
+      - status
+      - category
+      - context
+      - observation
+      - lesson
+      - evidence
+      - implications
+      - recommendations
+      - related
+    status-values:
+      - proposed
+      - accepted
+      - adopted
+      - superseded
+      - archived
+
+  lesson-lifecycle:
+    - captured
+    - reviewed
+    - adopted
+    - referenced
+    - archived
+
   lesson-records:
     - id: LLR-001
       udi: dev.prismata.lessons.architecture-refactors-are-usually-concept-refactors

@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-3-01-REQUIREMENTS
 udi: prismata.kad.planning.requirements
 kind: knowledge architecture document
-version: 1.0.3
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/3-planning/3-01-requirements.yaml
 
 metadata:
@@ -59,6 +59,7 @@ notes:
   - Requirements should be technology-agnostic whenever practical.
   - Requirements should be testable, verifiable, or reviewable.
   - Requirements describe what must exist rather than how it is implemented.
+  - Requirements should remain traceable to architecture, roadmap, and governance decisions.
   - SHALL statements indicate mandatory compliance.
   - Requirement identifiers exist for human readability.
   - Requirement UDIs exist for indexing, traceability, relationships, comparison, automation, and governance.
@@ -66,11 +67,26 @@ notes:
 content:
   status:
     maturity: definitive
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: passed-review
-    review-cycle: 1 month
+    review-cycle: 1 months
     review-past-due: false
-    next-review-date: 2026-12-11
+    next-review-date: 2026-12-15
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: monthly
+    review-principle: requirements remain traceable to authoritative architecture, risk, and roadmap decisions and should not be treated as ad hoc implementation preferences
+
+  traceability:
+    owner: prismata-architecture-team
+    review-frequency: monthly
+    review-principle: requirements remain traceable to architecture, risks, and roadmap decisions
+    evidence-model:
+      - requirement-id
+      - source-architecture-decision
+      - linked-risk
+      - dependent-roadmap-item
 
   requirement-types:
     structural:

@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-4-04-CONFIGURATION
 udi: prismata.kad.implementation.configuration
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-07
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/4-implementation/4-04-configuration.yaml
 
 metadata:
@@ -74,15 +74,21 @@ notes:
   - Configuration artifacts are versioned, archived, searchable, and governed.
   - Override behavior is full replacement unless a configuration schema explicitly specifies otherwise.
   - Merge behavior is schema governed.
+  - Configuration precedence remains a governance and runtime guidance mechanism subordinate to canonical architecture, identity, and tenant policy.
 
 content:
   status:
     maturity: developing
-    last-review-date: 2026-11-11
-    review-status: ready-for-review
-    review-cycle: 10 days
+    last-review-date: 2026-11-15
+    review-status: passed-review
+    review-cycle: 2 weeks
     review-past-due: false
-    next-review-date: 2026-11-21
+    next-review-date: 2026-11-29
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: bi-weekly
+    review-principle: configuration policy remains aligned to architecture, runtime constraints, and tenant governance requirements
 
   configuration-principles:
     - Configuration alters settings rather than behavior.

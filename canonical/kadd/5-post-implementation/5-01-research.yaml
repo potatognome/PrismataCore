@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-5-01-RESEARCH
 udi: prismata.kad.post-implementation.research
-kind: knowledge-architecture-document
-version: 1.0.0
+kind: knowledge architecture document
+version: 1.0.2
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-14
-  updated: 2026-11-14
+  last-updated: 2026-11-16
   path: canonical/kadd/5-post-implementation/5-01-research.yaml
 
 metadata:
@@ -75,21 +75,44 @@ notes:
   - Research artifacts should remain discoverable after decisions are made.
   - Experimental failures may possess equal long-term value to successful outcomes.
   - Research findings should contribute to future lessons learned records where appropriate.
+  - Research records remain evidence-preserving and non-normative unless explicit governance converts them into approved decisions, policy, or architecture revisions.
+  - Research records participate in the KADD proposal-review-archive workflow so that updates, approvals, and archival decisions remain traceable.
 
 content:
   status:
-    maturity: first-draft
-    last-review-date: null
-    review-status: not-reviewed
-    review-cycle: 10 days
+    maturity: developing
+    last-review-date: 2026-11-15
+    review-status: passed-review
+    review-cycle: 3 months
     review-past-due: false
-    next-review-date: 2026-11-14
- 
+    next-review-date: 2027-02-15
+
   purpose: >
     Preserve validated learning, research outcomes,
     investigations, experiments, observations,
     evaluations, and findings that contribute
     to ecosystem understanding.
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: quarterly
+    review-principle: research captures validated findings and remains discoverable without becoming normative unless explicitly adopted through governance review
+    archive-policy: preserve-by-status
+    proposal-review-lifecycle:
+      - proposed
+      - in-review
+      - changes-requested
+      - approved
+      - implemented
+      - archived
+    proposal-workflow:
+      proposal-directory: .github/.agent-reports/kadd/proposals
+      review-directory: .github/.agent-reports/kadd/reviews
+      archive-directory: .github/.agent-reports/kadd/archive
+      historical-directory: .github/.agent-reports/kadd/historical
+      decision-principle: >
+        Research updates and governance proposals shall remain traceable through
+        review, approval, implementation, and archival status.
 
   research-principles:
 
@@ -100,6 +123,26 @@ content:
     - Preserve rationale.
     - Favor validation over speculation.
     - Separate observation from conclusion.
+
+  research-standards:
+    evidence-quality:
+      - findings must be traceable to observations, experiments, or documented evidence
+      - assumptions must be stated explicitly
+      - conclusions must distinguish observation from inference
+      - unresolved questions must be recorded for follow-on research
+    source-traceability:
+      - related requirements, decisions, and implementation artifacts should be referenced
+      - evidence should remain discoverable and addressable
+    lifecycle-governance:
+      - research may transition from exploratory to validated only after review
+      - inconclusive or invalid findings remain preserved as evidence, not discarded
+
+  research-lifecycle:
+    - proposed
+    - active
+    - validated
+    - adopted
+    - archived
 
   research-categories:
     architectural:
@@ -142,13 +185,6 @@ content:
       - recommendations
       - follow-up-actions
       - supporting-artifacts
-
-  research-lifecycle:
-    - proposed
-    - active
-    - completed
-    - validated
-    - archived
 
   governance-rules:
     - Research records should be addressable.

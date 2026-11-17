@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-04-DECISIONS
 udi: prismata.kad.architecture.decisions
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/2-architecture/2-04-decisions.yaml
 
 metadata:
@@ -59,15 +59,21 @@ notes:
   - ADR identifiers exist for human readability.
   - ADR UDIs exist for discovery, indexing, comparison, relationships, automation, and cross-project traceability.
   - ADRs are first-class ecosystem assets and may participate in registries, references, and relationship graphs.
+  - Decision records are durable architectural guidance and should only change through explicit governance review rather than ad hoc implementation drift.
 
 content:
   status:
     maturity: structured
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: complete
-    review-cycle: 2 month
+    review-cycle: 2 months
     review-past-due: false
-    next-review-date: 2027-1-11
+    next-review-date: 2027-01-15
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: bi-monthly
+    review-principle: architectural decisions remain durable guidance and should only change through explicit governance review
 
   - id: ADR-001
     udi: prismata.kadd.adr.universal-identity-through-udi

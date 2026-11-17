@@ -5,7 +5,7 @@ Scope: Recommended proposal-based changes for every KADD layer
 
 ## Overview
 
-This proposal set contains the recommended change requests generated from the latest review of the canonical KADD collection. All proposals remain proposal-based and do not modify the authoritative source KADs directly.
+This proposal set contains the recommended change requests generated from the latest review of the canonical KADD collection. All proposals remain proposal-based and do not modify the authoritative source KADs directly. The review process now includes an operational proposal/review/archive workflow to keep change records current, reviewable, and easily archival-safe.
 
 ## Layer Summary
 

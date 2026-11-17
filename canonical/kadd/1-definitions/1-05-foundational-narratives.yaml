@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-05-FOUNDATIONAL-NARRATIVES
 udi: prismata.kad.definitions.foundational-narratives
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/1-definitions/1-05-foundational-narratives.yaml
 
 metadata:
@@ -95,16 +95,36 @@ notes:
 content:
   status:
     maturity: developing
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: updated
     review-cycle: 1 months
     review-past-due: false
-    next-review-date: 2027-12-11
+    next-review-date: 2026-12-15
 
   purpose: >
     Foundational narratives describe meaningful situations,
     environments, challenges, opportunities, and outcomes
     that help illustrate the value of the Prismata ecosystem.
+    They help contributors understand why durable knowledge,
+    governance, and coherent systems thinking matter in the real world.
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: monthly
+    review-principle: narratives are illustrative, non-authoritative, and not treated as approved work
+
+  narrative-coverage:
+    minimum-coverage:
+      - human-value-context
+      - ecosystem-friction-and-failure
+      - stakeholder-interaction
+      - future-state-knowledge-preservation
+    guidance: >
+      Each narrative should illustrate a distinct human or ecosystem
+      condition and should remain explicitly non-authoritative.
+      Where a narrative would otherwise imply approved scope,
+      it should be reframed as exploratory context rather than a
+      requirement or roadmap commitment.
 
   narrative-guidance:
 

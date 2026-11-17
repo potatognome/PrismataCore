@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-3-03-ROADMAP
 udi: prismata.kad.planning.roadmap
 kind: knowledge architecture document
-version: 1.0.3
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/3-planning/3-03-roadmap.yaml
 
 metadata:
@@ -67,15 +67,21 @@ notes:
   - Success metrics describe desired outcomes rather than implementation details.
   - Null success metrics are permitted when success criteria are not yet defined.
   - Completed roadmap items should be reflected through implementation and post-implementation KADs.
+  - Roadmap items remain directional planning guidance and should not be treated as binding delivery commitments without explicit approval.
 
 content:
   status:
     maturity: evolving
-    last-review-date: 2026-11-11
-    review-status: ready-for-review
-    review-cycle: 14 days
+    last-review-date: 2026-11-15
+    review-status: passed review
+    review-cycle: 2 weeks
     review-past-due: false
-    next-review-date: 2026-11-14
+    next-review-date: 2026-11-29
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: bi-weekly
+    review-principle: roadmap items must stay aligned to requirements, risks, constraints, and release readiness
 
   statuses:
     - planned

@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-03-REFERENCES
 udi: prismata.kad.reference.references
 kind: knowledge architecture document
-version: 1.0.2
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  updated: 2026-11-14
+  last-updated: 2026-11-16
   path: canonical/kadd/9-reference/9-03-references.yaml
 
 metadata:
@@ -72,15 +72,22 @@ notes:
   - References may inform future concepts, architecture, planning, research, or governance.
   - References exist to preserve lineage, provenance, and context.
   - Internal project artifacts should be preferred where authoritative ecosystem guidance exists.
+  - Reference records should preserve provenance and supporting context without being mistaken for normative policy or implementation requirements.
+  - The KADD review cycle uses a standardized proposal-review-archive template set to maintain consistent status tracking, decision records, and archive flow across governance updates.
 
 content:
   status:
     maturity: rapidly-evolving
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: ready-for-review
-    review-cycle: 10 days
+    review-cycle: 2 weeks
     review-past-due: false
-    next-review-date: 2026-11-21
+    next-review-date: 2026-11-29
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: bi-weekly
+    review-principle: references preserve lineage and supporting context without conferring authoritative policy or architecture
 
   purpose: >
     Preserve the knowledge lineage, influences, standards,
@@ -122,6 +129,19 @@ content:
           relevance: >
             Defines expected agent behavior, governance,
             analysis, and proposal-generation policies.
+
+        - reference_id: REF-004
+          udi: prismata.kad.reference.kadd-review-templates
+          title: KADD Review Cycle Templates
+          type: internal-governance-template
+          owner: Prismata Architecture Team
+          location: .github/.agent-reports/kadd/templates/
+
+          relevance: >
+            Standard proposal, review, and archive template files used to manage
+            the recurring KADD review cycle. The template set defines the expected
+            operating format for proposal intake, review findings, decision status,
+            implementation updates, and final archival records.
 
     methodologies:
       description: >

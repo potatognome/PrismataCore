@@ -118,6 +118,21 @@ Validators MUST operate ONLY on CMF and PSO envelopes.
 - No preview engine
 - No UI rendering logic
 
+## KADD Governance and Proposal Workflow
+
+PrismataCore maintains a layered KADD workflow for reviewing, updating, approving, and archiving change records. The authoritative KADs live in `canonical/kadd/`, while the operational review and archival process lives in `.github/.agent-reports/kadd/`.
+
+Agents and contributors must follow the operational workflow:
+
+- Proposals are created and tracked under `.github/.agent-reports/kadd/proposals/`.
+- Review records and recommendation memos are stored under `.github/.agent-reports/kadd/reviews/`.
+- Approved or superseded matters are archived under `.github/.agent-reports/kadd/archive/`.
+- Historical snapshots remain in `.github/.agent-reports/kadd/historical/` for traceability.
+- Status values must be explicit: `Proposed`, `In Review`, `Changes Requested`, `Approved`, `Implemented`, `Archived`, or `Rejected`.
+- Canonical KAD updates should be aligned with the approved proposal and should preserve the governance record through the review and archival lifecycle.
+
+Use the templates in `.github/.agent-reports/kadd/templates/` for proposal, review, and archive record creation. See `.github/copilot-instructions.d/kadd-workflow.md` for the full change-management protocol.
+
 ## UDI Compliance
 
 All artifacts produced or maintained in PrismataCore must comply with the project's UDI policy. Key rules (summary):

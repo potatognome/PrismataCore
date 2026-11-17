@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-02-APPENDICES
 udi: prismata.kad.reference.appendices
 kind: knowledge architecture document
-version: 1.0.2
+version: 1.0.3
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/9-reference/9-02-appendices.yaml
 
 metadata:
@@ -74,16 +74,22 @@ notes:
   - Appendices may contain visual, conceptual, descriptive, or illustrative material.
   - Appendices should prioritize clarity and discoverability.
   - Appendix content should remain implementation-agnostic whenever possible.
+  - Appendix material should remain supplemental context and not be treated as authoritative architectural or policy direction unless explicitly stated.
 
 content:
   status:
     maturity: rapidly-evolving
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: ready-for-review
-    review-cycle: 10 days
+    review-cycle: 2 weeks
     review-past-due: false
-    next-review-date: 2026-11-21
- 
+    next-review-date: 2026-11-29
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: bi-weekly
+    review-principle: appendices provide supporting context and should remain supplemental rather than authoritative policy
+
   purpose: >
     Provide durable supporting material that improves
     navigation, understanding, onboarding, governance,

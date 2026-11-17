@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-00-DOCUMENTATION-DISCIPLINE
 udi: prismata.kad.definitions.documentation-discipline
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Principal
   created: 2026-10-28
-  updated: 2026-11-14
+  last-updated: 2026-11-14
   path: canonical/kadd/1-definitions/1-00-documentation-discipline.yaml
 
 metadata:
@@ -34,15 +34,21 @@ notes:
   - Layered architecture-first documentation standard intended for planning, architecture, implementation, operation, and long-term project knowledge management.
   - Objective - Establish a clear and consistent approach to project documentation that supports planning, architecture, implementation, operation, and long-term knowledge management.
   - The documentation standard itself is a CMF document and serves as the authoritative schema for documentation generation, validation, migration, reporting, and agent-assisted project analysis.
+  - This discipline guides authoring and stewardship but does not impose operational policy unless a separate governance authority explicitly adopts it.
 
 content:
   status:
     maturity: mature
-    last-review-date: 2026-11-11
+    last-review-date: 2026-11-15
     review-status: complete
     review-cycle: 3 months
     review-past-due: false
-    next-review-date: 2027-02-11
+    next-review-date: 2027-02-15
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: quarterly
+    review-principle: documentation discipline remains authoring guidance and should not be treated as operational policy or implementation mandate
 
   standard:
     layers:

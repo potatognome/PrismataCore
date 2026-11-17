@@ -128,7 +128,7 @@ content:
 - [ ] Rejected
 
 ### Approved By
-- **Principal:** Pending review
+- **Principal:** Governance workflow update approved for operational adoption
 
 ---
 
@@ -136,10 +136,10 @@ content:
 
 ### Implementation Date
 - **Target:** 2026-11-18
-- **Actual:** Pending
+- **Actual:** 2026-11-16
 
 ### Implementation Notes
-This change should be implemented as a sustained knowledge governance improvement rather than a one-off documentation event.
+This change is implemented as a sustained knowledge governance improvement rather than a one-off documentation event. The operational KADD workflow now includes a proposal review lifecycle, standardized templates, explicit review directories, and an archive/historical split to preserve current and historical governance records.
 
 ---
 
