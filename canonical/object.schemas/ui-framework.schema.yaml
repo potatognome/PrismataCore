@@ -102,3 +102,4 @@ content:
               type: string
             description: Only required when menu_enable_mode is conditional. Condition for the enable state of the menu. Defaults to 'always'.
       description: Optional. List of pane-to-menu bindings.
+  required: []
