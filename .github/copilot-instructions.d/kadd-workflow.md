@@ -12,15 +12,18 @@ The KADD governance workflow is a repeatable review cycle for proposals, reviews
 
 1. Proposal creation in `.github/.agent-reports/kadd/proposals/inbox/` or `proposals/active/`.
 2. Review documentation in `.github/.agent-reports/kadd/reviews/` or inline within the proposal.
-3. Decision update indicating one of: Proposed, In Review, Changes Requested, Approved, Implemented, Archived, Rejected.
-4. Archive of final accepted or superseded artifacts in `.github/.agent-reports/kadd/archive/` and retention in `.github/.agent-reports/kadd/historical/` when traceability matters.
+3. Decision update indicating one of: Proposed, In Review, Changes Requested, Approved, Actioned, Archived, Rejected.
+4. Once implementation is complete, mark the proposal `Status: Actioned` and move or file it in `.github/.agent-reports/kadd/actioned-workflow/`.
+5. Archive of final accepted or superseded artifacts in `.github/.agent-reports/kadd/archive/` and retention in `.github/.agent-reports/kadd/historical/` when traceability matters.
 
 ## Documentation Rules
 
 - Maintain current status in the document header.
 - Record owner, review date, and decision rationale.
 - Distinguish between a recommendation and the final decision.
+- When a proposal is approved and implemented, mark it `Actioned` and file it under `.github/.agent-reports/kadd/actioned-workflow/`.
 - Preserve prior versions in historical archives when the document materially changes.
+    - Run the reference-validation pass for glossary, appendices, and references during each review cycle.
 
 ## KADD Review Practices
 
@@ -39,4 +42,8 @@ Use the templates in `.github/.agent-reports/kadd/templates/` for standard workf
 
 ## Governance Principle
 
-The value of KADD is not only in creating documents; it is in preserving a disciplined chain of review, decision, implementation, and archival memory.
+The value of KADD is not only in creating documents; it is in preserving a disciplined chain of review, decision, implementation, actioning, and archival memory.
+
+## Practical Rule
+
+Approved or implemented work should be moved into `.github/.agent-reports/kadd/actioned-workflow/` once the action is complete. The actioned folder is the operational home for closed governance work, while the canonical KADs in `canonical/kadd/` remain the normative source set.

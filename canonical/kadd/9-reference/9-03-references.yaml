@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-03-REFERENCES
 udi: prismata.kad.reference.references
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  last-updated: 2026-11-18
+  last-updated: 2026-11-19
   path: canonical/kadd/9-reference/9-03-references.yaml
 
 metadata:
@@ -102,6 +102,30 @@ content:
     review-cycle: 2 weeks
     review-past-due: false
     next-review-date: 2026-11-29
+
+  validation:
+    purpose: >
+      Preserve reference provenance and ensure the catalog remains a reliable
+      support layer for glossary, appendices, and canonical KAD terminology.
+
+    recurring-pass:
+      cadence: bi-weekly
+      trigger: >
+        Runs during KADD review cycles and whenever the glossary or canonical
+        vocabulary evolves.
+
+    rules:
+      - Reference entries shall keep a durable title, owner, and provenance trail.
+      - Internal references must map to canonical KADs or approved ecosystem sources.
+      - External references shall not be presented as authoritative governance policy unless explicitly stated.
+      - Terminology aliases, duplicates, and undefined ecosystem terms shall be flagged during review.
+      - Missing provenance metadata shall be reported before acceptance.
+
+    outputs:
+      - reference-provenance-report
+      - glossary-alignment-report
+      - alias-and-duplicate-detection
+      - provenance-gap-report
 
   governance:
     owner: prismata-architecture-team

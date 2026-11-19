@@ -1,7 +1,8 @@
 # KADD Change Proposal Set - 2026-11-18
 
 **Date Submitted:** 2026-11-18 20:14:55 -05:00
-**Status:** Proposed
+**Status:** Actioned
+**Actioned Date:** 2026-11-19
 **Historical Cutoff:** 2026-11-16
 
 ## Inbox Proposals
@@ -18,5 +19,6 @@ These proposals derive from the 2026-11-18 current-collection review. Existing r
 
 ## Status
 
-Status: Approved
-Decision: Awaiting sequential human review
+Status: Actioned
+Decision: Approved
+Actioned Location: `.github/.agent-reports/kadd/actioned-workflow/`

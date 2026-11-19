@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-02-APPENDICES
 udi: prismata.kad.reference.appendices
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  last-updated: 2026-11-18
+  last-updated: 2026-11-19
   path: canonical/kadd/9-reference/9-02-appendices.yaml
 
 metadata:
@@ -102,6 +102,30 @@ content:
     review-cycle: 2 weeks
     review-past-due: false
     next-review-date: 2026-11-29
+
+  validation:
+    purpose: >
+      Ensure appendix material remains supplemental, clearly sourced,
+      and aligned with glossary and reference provenance.
+
+    recurring-pass:
+      cadence: bi-weekly
+      trigger: >
+        Runs alongside glossary and reference validation to detect provenance
+        gaps and drift in supporting material.
+
+    rules:
+      - Appendix entries must preserve explicit provenance for narrative, lineage, and workflow context.
+      - Terminology in appendix content shall remain aligned with glossary definitions unless intentionally descriptive.
+      - Appendix material shall not reinterpret canonical terms without traceable stewardship review.
+      - Workflow references must point to current KADD governance artifacts.
+      - Historical or conceptual references must record source context.
+
+    outputs:
+      - appendix-provenance-report
+      - glossary-alignment-report
+      - workflow-reference-verification
+      - historical-source-gap-report
 
   governance:
     owner: prismata-architecture-team

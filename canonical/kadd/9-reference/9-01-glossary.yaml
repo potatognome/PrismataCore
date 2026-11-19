@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-01-GLOSSARY
 udi: prismata.kad.reference.glossary
 kind: knowledge architecture document
-version: 1.1.6
+version: 1.1.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-31
-  last-updated: 2026-11-18
+  last-updated: 2026-11-19
   path: canonical/kadd/9-reference/9-01-glossary.yaml
 
 metadata:
@@ -93,6 +93,30 @@ content:
     review-cycle: 2 weeks
     review-past-due: false
     next-review-date: 2026-11-29
+
+  validation:
+    purpose: >
+      Maintain glossary authority and detect drift in term usage,
+      aliases, duplicate vocabulary, and undefined ecosystem terminology.
+
+    recurring-pass:
+      cadence: bi-weekly
+      trigger: >
+        Runs with each KADD review cycle and whenever a canonical document
+        introduces or revises ecosystem terminology.
+
+    rules:
+      - Glossary entries shall retain stable id and udi values across revisions.
+      - Every canonical term used outside the glossary shall be checked against the glossary or explicitly marked as an alias.
+      - Duplicate terms with distinct meanings require distinct udi values and explicit disambiguation.
+      - Undefined ecosystem vocabulary must be reported before publication or approval.
+      - Appendix and reference provenance must identify whether a term is canonical, derived, or historical.
+
+    outputs:
+      - glossary-alignment-report
+      - alias-and-duplicate-detection
+      - undefined-vocabulary-report
+      - provenance-gap-report
 
   governance:
     owner: prismata-architecture-team

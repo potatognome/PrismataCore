@@ -1,6 +1,7 @@
 # KADD Change Proposal: Shared Assessment Rubric Gate
 
-**Status:** Proposed
+**Status:** Actioned
+**Actioned Date:** 2026-11-19
 **Date Submitted:** 2026-11-18
 **Submitted By:** KADD Orchestration Workflow
 **Priority:** High

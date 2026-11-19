@@ -1,6 +1,7 @@
 # KADD Change Proposal: Reference and Glossary Validation
 
-**Status:** Proposed
+**Status:** Actioned
+**Actioned Date:** 2026-11-19
 **Date Submitted:** 2026-11-18
 **Submitted By:** KADD Reference Review
 **Priority:** Medium
@@ -35,4 +36,4 @@ The glossary is authoritative; appendices and references should reinforce rather
 
 ## Decision
 
-Status: Approved with Modifications
+Status: Approved
