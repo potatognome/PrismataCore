@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-01-VISION
 udi: prismata.kad.definitions.vision
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Principal
   created: 2026-10-30
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/1-definitions/1-01-vision.yaml
 
 metadata:
@@ -61,7 +61,7 @@ content:
   status:
     maturity: mature
     last-review-date: 2026-11-15
-    review-status: complete
+    review-status: passed-review
     review-cycle: 3 months
     review-past-due: false
     next-review-date: 2027-02-15
@@ -188,4 +188,4 @@ content:
     providing universal identity, universal structure, shared knowledge,
     historical memory, validation, discoverability, and interoperability for a
     broad ecosystem of applications, agents, devices, services, robots, and
-    future cybernetic systems.
+    future cybernetic systems. 

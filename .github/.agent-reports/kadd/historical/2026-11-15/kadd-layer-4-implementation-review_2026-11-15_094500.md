@@ -11,14 +11,6 @@ The key issue in Layer 4 is that the development KAD still sits in a provisional
 
 Overall readiness: good direction with a clear need for explicit review gating and naming consistency.
 
-## Scope Reviewed
-
-- `4-01-interfaces.yaml`
-- `4-02-data-model.yaml`
-- `4-03-storage.yaml`
-- `4-04-configuration.yaml`
-- `4-05-development.yaml`
-
 ## Assessment Summary
 
 | Dimension | Score | Notes |

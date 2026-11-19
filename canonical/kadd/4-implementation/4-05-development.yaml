@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-4-05-DEVELOPMENT
 udi: prismata.kad.implementation.development
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-08
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/4-implementation/4-05-development.yaml
 
 metadata:
@@ -59,22 +59,27 @@ relations:
     convenience.
 
   imports:
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
+    - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
     - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
     - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
+    - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
     - prismata.kad.architecture.subsystems
     - prismata.kad.architecture.relationships
     - prismata.kad.architecture.decisions
     - prismata.kad.planning.requirements
+    - prismata.kad.planning.risks
+    - prismata.kad.planning.roadmap
     - prismata.kad.implementation.interfaces
     - prismata.kad.implementation.data-model
     - prismata.kad.implementation.storage
     - prismata.kad.implementation.configuration
-    - prismata.kad.reference.glossary
-    - prismata.kad.reference.references
-    - prismata.kad.reference.appendices
 
 notes:
   - Version 1.0.0 represented the initial implementation draft and established the foundational development framework.

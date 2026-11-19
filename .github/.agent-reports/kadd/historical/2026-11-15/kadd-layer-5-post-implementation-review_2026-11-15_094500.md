@@ -11,12 +11,6 @@ This means the project has a useful knowledge memory, but not yet a full closed-
 
 Overall readiness: improved but incomplete; needs formal lifecycle coverage and routine review cadence.
 
-## Scope Reviewed
-
-- `5-01-research.yaml`
-- `5-02-lessons-learned.yaml`
-- `5-03-retrospectives.yaml`
-
 ## Assessment Summary
 
 | Dimension | Score | Notes |

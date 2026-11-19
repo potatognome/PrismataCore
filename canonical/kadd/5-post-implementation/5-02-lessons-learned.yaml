@@ -1,13 +1,13 @@
 id: PRISMATA-KAD-5-02-LESSONS-LEARNED
 udi: prismata.kad.post-implementation.lessons-learned
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: The Principal
   created: 2026-11-09
-  last-updated: 2026-11-16
+  last-updated: 2026-11-18
   path: canonical/kadd/5-post-implementation/5-02-lessons-learned.yaml
 
 metadata:
@@ -36,11 +36,15 @@ relations:
   conflict-resolution: preserve-author-intent
 
   imports:
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
     - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
     - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
     - prismata.kad.architecture.subsystems
@@ -54,10 +58,8 @@ relations:
     - prismata.kad.implementation.storage
     - prismata.kad.implementation.configuration
     - prismata.kad.implementation.development
-    - prismata.kad.reference.glossary
-    - prismata.kad.reference.references
-    - prismata.kad.reference.appendices
-    
+    - prismata.kad.post-implementation.research
+
 notes:
   - Lessons Learned Records (LLRs) are first-class knowledge artifacts.
   - LLRs capture validated learning derived from project experience.
@@ -69,7 +71,7 @@ content:
   status:
     maturity: mature
     last-review-date: 2026-11-15
-    review-status: complete
+    review-status: passed-review
     review-cycle: 3 months
     review-past-due: false
     next-review-date: 2027-02-15
@@ -221,4 +223,4 @@ content:
         - Repeated architectural evolution
         - Stable conceptual direction
 
-      
+       

@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-04-PRINCIPLES
 udi: prismata.kad.definitions.principles
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-01
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/1-definitions/1-04-principles.yaml
 
 metadata:
@@ -67,7 +67,7 @@ content:
   status:
     maturity: mature
     last-review-date: 2026-11-15
-    review-status: complete
+    review-status: passed-review
     review-cycle: 3 months
     review-past-due: false
     next-review-date: 2027-02-15
@@ -305,4 +305,4 @@ content:
     knowledge, capability, validation, interoperability,
     and understanding become easier to discover,
     easier to manage, easier to reuse, easier to govern,
-    and easier to preserve over time.
+    and easier to preserve over time. 

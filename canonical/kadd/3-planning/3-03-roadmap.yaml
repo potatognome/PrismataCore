@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-3-03-ROADMAP
 udi: prismata.kad.planning.roadmap
 kind: knowledge architecture document
-version: 1.0.4
+version: 1.0.5
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/3-planning/3-03-roadmap.yaml
 
 metadata:
@@ -46,6 +46,7 @@ relations:
     - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
     - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
     - prismata.kad.architecture.subsystems
@@ -73,7 +74,7 @@ content:
   status:
     maturity: evolving
     last-review-date: 2026-11-15
-    review-status: passed review
+    review-status: passed-review
     review-cycle: 2 weeks
     review-past-due: false
     next-review-date: 2026-11-29
@@ -434,3 +435,4 @@ content:
         roadmap:
           - prismata.kadd.roadmap.capability-ecosystem
           - prismata.kadd.roadmap.registry-framework
+ 

@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-00-DOCUMENTATION-DISCIPLINE
 udi: prismata.kad.definitions.documentation-discipline
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.8
 tenant: null
 
 source:
-  author: Principal
+  author: Prismata Architecture Team
   created: 2026-10-28
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/1-definitions/1-00-documentation-discipline.yaml
 
 metadata:
@@ -38,16 +38,16 @@ notes:
 
 content:
   status:
-    maturity: mature
-    last-review-date: 2026-11-15
-    review-status: complete
-    review-cycle: 3 months
+    maturity: comprehensive
+    last-review-date: 2026-11-18
+    review-status: passed-review
+    review-cycle: 6 months
     review-past-due: false
-    next-review-date: 2027-02-15
+    next-review-date: 2027-05-18
 
   governance:
-    owner: prismata-architecture-team
-    review-frequency: quarterly
+    owner: principal
+    review-frequency: semi-annually
     review-principle: documentation discipline remains authoring guidance and should not be treated as operational policy or implementation mandate
 
   standard:
@@ -153,6 +153,27 @@ content:
         layer: 1
         category: definition
         name: Concepts
+        required: true
+        default_status: stub
+      - id: DOC-PRINCIPLES
+        file: 1-04-principles.yaml
+        layer: 1
+        category: definition
+        name: Principles
+        required: true
+        default_status: stub
+      - id: DOC-FOUNDATIONAL-NARRATIVES
+        file: 1-05-foundational-narratives.yaml
+        layer: 1
+        category: definition
+        name: Foundational Narratives
+        required: true
+        default_status: stub
+      - id: DOC-DOCTRINES
+        file: 1-06-doctrines.yaml
+        layer: 1
+        category: definition
+        name: Doctrines
         required: true
         default_status: stub
       - id: DOC-SYSTEMS
@@ -298,10 +319,53 @@ content:
     statuses:
       - stub
       - draft
-      - review
+      - in-review
+      - changes-requested
       - approved
       - deprecated
       - archived
+    status-guidelines:
+      lifecycle-status:
+        purpose: Tracks the governance state of the entire KAD document.
+        values:
+          - stub
+          - draft
+          - in-review
+          - changes-requested
+          - approved
+          - deprecated
+          - archived
+      review-status:
+        purpose: Tracks the result or current state of a formal document review.
+        values:
+          - not-reviewed
+          - ready-for-review
+          - in-review
+          - passed-review
+          - changes-requested
+          - deprecated
+          - archived
+      maturity:
+        purpose: >
+          Describes descriptive completeness and stability of document content.
+          Maturity is not a lifecycle status and may use domain-appropriate values.
+      item-status:
+        purpose: >
+          Tracks status for domain objects inside a KAD, such as roadmap items,
+          lessons learned records, and runtime objects.
+        rule: >
+          Item status sets are defined by the containing KAD and must not reuse
+          document lifecycle or review-status values unless intentionally identical.
+      naming:
+        rule: Use lowercase kebab-case for status values.
+        examples:
+          - passed-review
+          - changes-requested
+          - ready-for-review
+        prohibited:
+          - "passed review"
+          - "ready for review"
+          - "approved-for-review"
     validation:
       require_standard_filenames: true
       require_cmf_envelope: true

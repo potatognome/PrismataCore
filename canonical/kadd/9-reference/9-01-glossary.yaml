@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-01-GLOSSARY
 udi: prismata.kad.reference.glossary
 kind: knowledge architecture document
-version: 1.1.5
+version: 1.1.6
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-31
-  last-updated: 2026-11-16
+  last-updated: 2026-11-18
   path: canonical/kadd/9-reference/9-01-glossary.yaml
 
 metadata:
@@ -51,11 +51,14 @@ relations:
     interpretation across all KADs.
 
   imports:
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
     - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
     - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
     - prismata.kad.architecture.subsystems
@@ -69,6 +72,9 @@ relations:
     - prismata.kad.implementation.storage
     - prismata.kad.implementation.configuration
     - prismata.kad.implementation.development
+    - prismata.kad.post-implementation.research
+    - prismata.kad.post-implementation.lessons-learned
+    - prismata.kad.post-implementation.retrospectives
 
 notes:
   - Definitions are descriptive only.

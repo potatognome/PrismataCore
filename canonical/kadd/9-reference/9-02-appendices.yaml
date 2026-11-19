@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-02-APPENDICES
 udi: prismata.kad.reference.appendices
 kind: knowledge architecture document
-version: 1.0.3
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/9-reference/9-02-appendices.yaml
 
 metadata:
@@ -61,12 +61,30 @@ relations:
     Decisions, and related KADs.
 
   imports:
+    - prismata.kad.reference.references
     - prismata.kad.reference.glossary
+    - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
     - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
+    - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
     - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.planning.risks
+    - prismata.kad.planning.roadmap
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.implementation.data-model
+    - prismata.kad.implementation.storage
+    - prismata.kad.implementation.configuration
+    - prismata.kad.implementation.development
+    - prismata.kad.post-implementation.research
+    - prismata.kad.post-implementation.lessons-learned
+    - prismata.kad.post-implementation.retrospectives
 
 notes:
   - Appendices provide supporting context.

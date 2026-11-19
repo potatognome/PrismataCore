@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-03-CONCEPTS
 udi: prismata.kad.definitions.concepts
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Principal
   created: 2026-11-01
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/1-definitions/1-03-concepts.yaml
 
 metadata:
@@ -57,7 +57,7 @@ content:
   status:
     maturity: mature
     last-review-date: 2026-11-15
-    review-status: complete
+    review-status: passed-review
     review-cycle: 3 months
     review-past-due: false
     next-review-date: 2027-02-15
@@ -338,4 +338,4 @@ content:
     behavioral rules, discoverable capabilities, organized
     knowledge, and reusable metadata. These concepts work
     together to create a self-describing, interoperable, and
-    continuously evolving cybernetic ecosystem.
+    continuously evolving cybernetic ecosystem. 

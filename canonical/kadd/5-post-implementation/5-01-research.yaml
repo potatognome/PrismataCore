@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-5-01-RESEARCH
 udi: prismata.kad.post-implementation.research
 kind: knowledge architecture document
-version: 1.0.2
+version: 1.0.3
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-14
-  last-updated: 2026-11-16
+  last-updated: 2026-11-18
   path: canonical/kadd/5-post-implementation/5-01-research.yaml
 
 metadata:
@@ -60,14 +60,28 @@ relations:
     decisions without governance review.
 
   imports:
-    - prismata.kad.definitions.documentation-discipline
-    - prismata.kad.definitions.concepts
-    - prismata.kad.definitions.principles
-    - prismata.kad.architecture.decisions
-    - prismata.kad.implementation.development
     - prismata.kad.reference.glossary
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.planning.risks
+    - prismata.kad.planning.roadmap
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.implementation.data-model
+    - prismata.kad.implementation.storage
+    - prismata.kad.implementation.configuration
+    - prismata.kad.implementation.development
 
 notes:
   - Research may validate existing assumptions or challenge them.

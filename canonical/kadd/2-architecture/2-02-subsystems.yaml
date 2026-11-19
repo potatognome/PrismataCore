@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-02-SUBSYSTEMS
 udi: prismata.kad.architecture.subsystems
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Principal
   created: 2026-11-02
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/2-architecture/2-02-subsystems.yaml
 
 metadata:
@@ -46,6 +46,7 @@ relations:
     - prismata.kad.definitions.vision
     - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.doctrines
     - prismata.kad.definitions.principles
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
@@ -64,7 +65,7 @@ content:
   status:
     maturity: comprehensive
     last-review-date: 2026-11-15
-    review-status: complete
+    review-status: passed-review
     review-cycle: 1 month
     review-past-due: false
     next-review-date: 2026-12-15
@@ -343,4 +344,4 @@ content:
 
       Foundational assets define the ecosystem.
       Subsystems operate the ecosystem.
-      Governance preserves the ecosystem.
+      Governance preserves the ecosystem. 

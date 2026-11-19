@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-03-RELATIONSHIPS
 udi: prismata.kad.architecture.relationships
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Prismata Architecture Team 
   created: 2026-11-02
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/2-architecture/2-03-relationships.yaml 
 
 metadata:
@@ -46,6 +46,7 @@ relations:
     - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
     - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.architecture.systems
     - prismata.kad.architecture.subsystems
@@ -64,7 +65,7 @@ content:
   status:
     maturity: formal
     last-review-date: 2026-11-15
-    review-status: complete
+    review-status: passed-review
     review-cycle: 2 months
     review-past-due: false
     next-review-date: 2027-01-15
@@ -199,3 +200,4 @@ content:
           description: >
             A tenant may own many archives.
 
+ 

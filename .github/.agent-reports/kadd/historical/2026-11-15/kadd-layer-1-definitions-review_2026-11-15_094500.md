@@ -11,15 +11,6 @@ The main weakness in Layer 1 is not conceptual drift; it is a gap in storytellin
 
 Overall readiness: strong, with one meaningful gap and a few cross-layer alignment opportunities.
 
-## Scope Reviewed
-
-- `1-00-documentation-discipline.yaml`
-- `1-01-vision.yaml`
-- `1-02-project-profile.yaml`
-- `1-03-concepts.yaml`
-- `1-04-principles.yaml`
-- `1-05-foundational-narratives.yaml`
-
 ## Assessment Summary
 
 | Dimension | Score | Notes |

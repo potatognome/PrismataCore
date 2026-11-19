@@ -1,0 +1,352 @@
+id: KAD-PRISMATA-1-06-DOCTRINES
+udi: prismata.kad.definitions.doctrines
+kind: knowledge architecture document
+version: 1.0.1
+tenant: null
+
+source:
+  author: Prismata Architecture Team
+  created: 2026-11-18
+  updated: 2026-11-18
+  path: canonical/kadd/1-definitions/1-06-doctrines.yaml
+
+metadata:
+  name: Prismata Doctrines
+  description: >
+    Foundational philosophical beliefs that influence
+    the design, governance, evolution, operation,
+    and stewardship of the Prismata ecosystem.
+
+  tags:
+    - prismata
+    - doctrines
+    - philosophy
+    - knowledge
+    - governance
+    - learning
+    - cybernetics
+
+relations:
+  domain:
+    - Foundational Philosophy
+    - Knowledge Theory
+    - Governance
+    - Learning Systems
+
+  scope:
+    - Foundational Beliefs
+    - Knowledge Preservation
+    - Knowledge Generation
+    - Learning
+    - Falsifiability
+
+  exclusions:
+    - Architectural Decisions
+    - Requirements
+    - Technology Selection
+    - Implementation Details
+    - Operational Procedures
+
+  priority: critical
+
+  conflict-resolution: >
+    Doctrines exist above architecture, process,
+    implementation, and technology decisions.
+    When interpretation conflicts arise, doctrines
+    should inform the decision-making process while
+    remaining subordinate to reality, evidence,
+    and falsifiability.
+
+  imports:
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.reference.glossary
+    - prismata.kad.reference.references
+    - prismata.kad.reference.appendices
+
+notes:
+  - Doctrines represent enduring philosophical beliefs rather than operational rules.
+  - Doctrines should evolve rarely.
+  - Doctrines influence principles, architecture, governance, and implementation.
+  - Doctrines are intended to remain valid across changing technologies and implementations.
+  - The purpose of doctrine is guidance rather than enforcement.
+  - Doctrines should remain challengeable and subject to falsification.
+
+content:
+  status:
+    maturity: developed
+    last-review-date: 2026-11-18
+    review-status: passed-review
+    review-cycle: 30 days
+    review-past-due: false
+    next-review-date: 2026-12-18
+
+  summary: >
+    Prismata doctrines capture foundational
+    philosophical beliefs that influence the
+    design, governance, evolution, and operation
+    of the Prismata ecosystem. Doctrines exist
+    above architecture, process, implementation,
+    and technology decisions. They provide enduring
+    guidance concerning how knowledge is generated,
+    preserved, challenged, and evolved.
+
+  purpose: >
+    Establish a durable philosophical foundation
+    for the Prismata ecosystem that remains
+    applicable across changing implementations,
+    technologies, architectures, and operational
+    models.
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: monthly
+    review-principle: doctrines are enduring philosophical beliefs, non-authoritative, and not treated as approved work
+
+  guiding-statement: >
+    Knowledge is the enduring asset.
+    Implementation is the instrument.
+
+  doctrines:
+    - id: knowledge-as-legacy
+      udi: prismata.kad.doctrine.knowledge-as-legacy
+      title: Knowledge as Legacy
+
+      statement: >
+        Knowledge is the preserved essence of
+        experience.
+
+      description: >
+        Experiences are transient. Implementations
+        are transient. Technologies, contexts, and
+        representations are transient. Knowledge is
+        the durable value that remains after their
+        transient aspects have faded, evolved, or
+        been intentionally removed. Prismata
+        regards knowledge as the primary legacy
+        generated through experience.
+
+      implications:
+        - Knowledge should outlive implementations.
+        - Historical understanding should be preserved.
+        - Lessons learned have enduring value.
+        - Knowledge retention is more important than implementation retention.
+        - Experience should be distilled into reusable knowledge.
+
+    - id: freedom-from-implementation
+      udi: prismata.kad.doctrine.freedom-from-implementation
+      title: Freedom from Implementation
+
+      statement: >
+        Implementations are temporary expressions
+        of current understanding.
+
+      description: >
+        Implementations exist to express and test
+        understanding. As understanding evolves,
+        implementations may require modification,
+        replacement, retirement, or removal.
+        Attachment to an implementation should never
+        prevent adoption of improved understanding.
+        Knowledge generated through implementation
+        is often more durable than the implementation
+        itself.
+
+      implications:
+        - Refactoring is expected.
+        - Replacement is sometimes preferable to preservation.
+        - Historical investment alone does not justify retention.
+        - Implementations should persist only while useful.
+        - Knowledge should be extracted before implementations are retired.
+
+    - id: knowledge-evolution
+      udi: prismata.kad.doctrine.knowledge-evolution
+      title: Knowledge Evolution
+
+      statement: >
+        Building systems generates knowledge, and
+        knowledge changes systems.
+
+      description: >
+        Development is not merely the application
+        of existing knowledge. Development generates
+        new observations, lessons, and insights.
+        New knowledge frequently changes the
+        understanding that produced the original
+        system, resulting in architectural evolution
+        and revised approaches. Change driven by
+        improved understanding should be regarded
+        as a natural outcome of learning.
+
+      lifecycle:
+        - Observe
+        - Understand
+        - Design
+        - Build
+        - Experience
+        - Learn
+        - Refine Understanding
+        - Evolve
+
+      implications:
+        - Learning is expected.
+        - Architectural change is expected.
+        - Refactoring may indicate improved understanding.
+        - Knowledge acquisition is a primary output of development.
+
+    - id: preservation-of-falsifiability
+      udi: prismata.kad.doctrine.preservation-of-falsifiability
+      title: Preservation of Falsifiability
+
+      statement: >
+        Learning requires the continued possibility
+        of being wrong.
+
+      description: >
+        Falsifiability represents the opportunity
+        for a belief, theory, assumption, decision,
+        model, or implementation to be demonstrated
+        incorrect. The ability to be challenged is
+        a prerequisite for meaningful learning.
+        Systems, organizations, and individuals
+        should preserve opportunities for
+        contradiction, challenge, testing,
+        and revision.
+
+      implications:
+        - Assumptions should remain challengeable.
+        - Decisions should remain reviewable.
+        - Alternative explanations should be considered.
+        - Contradictory evidence should be examined.
+        - Learning should be valued over certainty.
+
+    - id: confirmation-bias
+      udi: prismata.kad.doctrine.confirmation-bias
+      title: Confirmation Bias Consumes Falsifiability
+
+      statement: >
+        Confirmation bias consumes falsifiability
+        by progressively reducing the willingness
+        to consider contradictory evidence.
+
+      description: >
+        Individuals and organizations naturally
+        develop attachments to ideas, decisions,
+        identities, beliefs, architectures,
+        and implementations. As attachment
+        increases, contradictory evidence becomes
+        more difficult to recognize, evaluate,
+        or accept. Confirmation bias reduces
+        opportunities for learning by reducing
+        exposure to meaningful challenges and
+        potential falsification.
+
+      indicators:
+        - Seeking validation over challenge.
+        - Explaining away contradictory evidence.
+        - Protecting assumptions from examination.
+        - Excessive attachment to existing solutions.
+        - Equating criticism with opposition.
+
+      mitigations:
+        - Preserve opportunities for challenge.
+        - Encourage alternative viewpoints.
+        - Capture dissenting observations.
+        - Review underlying assumptions.
+        - Prefer evidence over identity alignment.
+
+    - id: testing-as-inquiry
+      udi: prismata.kad.doctrine.testing-as-inquiry
+      title: Testing as Inquiry
+
+      statement: >
+        Testing is not a phase.
+        Testing is the process.
+
+      description: >
+        Every implementation represents a hypothesis
+        regarding reality. Testing is the process
+        through which implementations are exposed
+        to reality and evaluated against expectations.
+        The purpose of testing is not merely to
+        demonstrate success. The purpose of testing
+        is to maximize opportunities to discover
+        failure, limitations, assumptions,
+        and new knowledge.
+
+      principles:
+        - Every implementation is a hypothesis.
+        - Demonstration establishes capability.
+        - Falsification establishes confidence.
+        - Testing generates knowledge.
+        - Deployment extends testing into reality.
+
+      implications:
+        - Testing continues after release.
+        - Reality is the ultimate testing environment.
+        - Stress testing is more informative than demonstration.
+        - Failure can generate valuable knowledge.
+        - Exposure to reality should be increased rather than avoided.
+
+    - id: knowledge-over-certainty
+      udi: prismata.kad.doctrine.knowledge-over-certainty
+      title: Knowledge Over Certainty
+
+      statement: >
+        Knowledge generation is more valuable than
+        certainty preservation.
+
+      description: >
+        Certainty often emerges when opportunities
+        for challenge are reduced. Knowledge emerges
+        when opportunities for challenge are preserved.
+        Prismata prioritizes environments that enable
+        learning, questioning, testing, and revision
+        over environments that seek to protect
+        existing conclusions from examination.
+
+      implications:
+        - Questions are often more valuable than answers.
+        - Openness to revision should be preserved.
+        - Confidence should be earned through exposure to challenge.
+        - Learning should take precedence over being correct.
+
+  relationships:
+
+    knowledge-as-legacy:
+      enables:
+        - freedom-from-implementation
+
+    freedom-from-implementation:
+      enables:
+        - knowledge-evolution
+
+    knowledge-evolution:
+      requires:
+        - preservation-of-falsifiability
+
+    preservation-of-falsifiability:
+      threatened-by:
+        - confirmation-bias
+
+    testing-as-inquiry:
+      supports:
+        - knowledge-evolution
+        - preservation-of-falsifiability
+
+    knowledge-over-certainty:
+      reinforces:
+        - preservation-of-falsifiability
+        - testing-as-inquiry
+
+  closing-statement: >
+    Prismata exists to capture, preserve,
+    challenge, refine, and evolve knowledge.
+    Implementations, technologies,
+    architectures, and representations may
+    change over time. Knowledge remains the
+    enduring asset and the primary legacy of
+    experience.

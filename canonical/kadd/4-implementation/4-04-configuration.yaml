@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-4-04-CONFIGURATION
 udi: prismata.kad.implementation.configuration
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-07
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/4-implementation/4-04-configuration.yaml
 
 metadata:
@@ -55,15 +55,26 @@ relations:
     schema structures, or ecosystem laws.
 
   imports:
-    - prismata.kad.definitions.concepts
-    - prismata.kad.definitions.principles
-    - prismata.kad.architecture.decisions
-    - prismata.kad.implementation.interfaces
-    - prismata.kad.implementation.data-model
-    - prismata.kad.implementation.storage
     - prismata.kad.reference.glossary
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
+    - prismata.kad.definitions.documentation-discipline
+    - prismata.kad.definitions.vision
+    - prismata.kad.definitions.project-profile
+    - prismata.kad.definitions.concepts
+    - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
+    - prismata.kad.definitions.foundational-narratives
+    - prismata.kad.architecture.systems
+    - prismata.kad.architecture.subsystems
+    - prismata.kad.architecture.relationships
+    - prismata.kad.architecture.decisions
+    - prismata.kad.planning.requirements
+    - prismata.kad.planning.risks
+    - prismata.kad.planning.roadmap
+    - prismata.kad.implementation.interfaces
+    - prismata.kad.implementation.data-model
+    - prismata.kad.implementation.storage
 
 notes:
   - Configuration exists to alter settings rather than behavior.

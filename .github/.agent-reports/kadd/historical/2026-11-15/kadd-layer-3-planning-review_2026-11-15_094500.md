@@ -11,12 +11,6 @@ The main issue is not quality of planning concepts; it is traceability and gover
 
 Overall readiness: good structure with important traceability cleanup required before final closure.
 
-## Scope Reviewed
-
-- `3-01-requirements.yaml`
-- `3-02-risks.yaml`
-- `3-03-roadmap.yaml`
-
 ## Assessment Summary
 
 | Dimension | Score | Notes |

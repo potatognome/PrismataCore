@@ -11,13 +11,6 @@ The main opportunity is not reversal of the architecture, but refinement of term
 
 Overall readiness: strong and near-ready for review closure, pending a traceability polish pass.
 
-## Scope Reviewed
-
-- `2-01-systems.yaml`
-- `2-02-subsystems.yaml`
-- `2-03-relationships.yaml`
-- `2-04-decisions.yaml`
-
 ## Assessment Summary
 
 | Dimension | Score | Notes |

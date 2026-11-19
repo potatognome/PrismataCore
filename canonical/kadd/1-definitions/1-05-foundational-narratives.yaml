@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-05-FOUNDATIONAL-NARRATIVES
 udi: prismata.kad.definitions.foundational-narratives
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/1-definitions/1-05-foundational-narratives.yaml
 
 metadata:
@@ -94,12 +94,12 @@ notes:
 
 content:
   status:
-    maturity: developing
-    last-review-date: 2026-11-15
-    review-status: updated
-    review-cycle: 1 months
+    maturity: developed
+    last-review-date: 2026-11-18
+    review-status: passed-review
+    review-cycle: 30 days
     review-past-due: false
-    next-review-date: 2026-12-15
+    next-review-date: 2026-12-18
 
   purpose: >
     Foundational narratives describe meaningful situations,
@@ -127,7 +127,6 @@ content:
       requirement or roadmap commitment.
 
   narrative-guidance:
-
     objective: >
       Communicate the human value of Prismata by illustrating
       realistic situations in which knowledge architecture,
@@ -166,13 +165,9 @@ content:
   narratives:
 
     - narrative_id: NARRATIVE-001
-
       udi: prismata.kad.narrative.the-forgotten-architecture
-
       title: The Forgotten Architecture
-
       type: experiential
-
       timeframe: future
 
       actors:
@@ -216,13 +211,9 @@ content:
         valuable than the implementation itself.
 
     - narrative_id: NARRATIVE-002
-
       udi: prismata.kad.narrative.the-community-stem-lab
-
       title: The Community STEM Lab
-
       type: speculative
-
       timeframe: future
 
       actors:
@@ -260,13 +251,9 @@ content:
         software and can be applied beyond traditional development.
 
     - narrative_id: NARRATIVE-003
-
       udi: prismata.kad.narrative.the-endless-data-migration
-
       title: The Endless Data Migration
-
       type: historical
-
       timeframe: past
 
       actors:
@@ -352,13 +339,9 @@ content:
         those deficiencies are formally recognized.
 
     - narrative_id: NARRATIVE-004
-
       udi: prismata.kad.narrative.the-implementation-trap
-
       title: The Implementation Trap
-
       type: historical
-
       timeframe: past
 
       actors:

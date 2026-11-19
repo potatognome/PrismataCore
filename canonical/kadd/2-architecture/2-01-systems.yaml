@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-01-SYSTEMS
 udi: prismata.kad.architecture.systems
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-30
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/2-architecture/2-01-systems.yaml
 
 metadata:
@@ -49,6 +49,7 @@ relations:
     - prismata.kad.definitions.project-profile
     - prismata.kad.definitions.concepts
     - prismata.kad.definitions.principles
+    - prismata.kad.definitions.doctrines
     - prismata.kad.definitions.foundational-narratives
     - prismata.kad.reference.glossary
     - prismata.kad.reference.references
@@ -65,7 +66,7 @@ content:
   status:
     maturity: definitive
     last-review-date: 2026-11-15
-    review-status: complete
+    review-status: passed-review
     review-cycle: 3 months
     review-past-due: false
     next-review-date: 2027-02-15
@@ -308,3 +309,4 @@ content:
       Together these three mandatory layers establish the
       complete architectural foundation of the Prismata
       ecosystem.
+ 

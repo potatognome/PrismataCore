@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-02-PROJECT-PROFILE
 udi: prismata.kad.definitions.project-profile
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Principal
   created: 2026-10-31
-  last-updated: 2026-11-14
+  last-updated: 2026-11-18
   path: canonical/kadd/1-definitions/1-02-project-profile.yaml
 
 metadata:
@@ -59,7 +59,7 @@ content:
   status:
     maturity: mature
     last-review-date: 2026-11-15
-    review-status: complete
+    review-status: passed-review
     review-cycle: 3 months
     review-past-due: false
     next-review-date: 2027-02-15
@@ -234,4 +234,4 @@ content:
     governs identity, structure, capability discovery, validation,
     knowledge organization, and interoperability while enabling
     increasingly sophisticated ecosystem applications to evolve
-    independently around it.
+    independently around it. 

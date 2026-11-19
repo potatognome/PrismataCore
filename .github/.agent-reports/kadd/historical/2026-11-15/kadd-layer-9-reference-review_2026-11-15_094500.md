@@ -11,12 +11,6 @@ The main remaining concern is quality control. A few glossary entries remain inc
 
 Overall readiness: strong support layer with a final quality pass recommended.
 
-## Scope Reviewed
-
-- `9-01-glossary.yaml`
-- `9-02-appendices.yaml`
-- `9-03-references.yaml`
-
 ## Assessment Summary
 
 | Dimension | Score | Notes |
