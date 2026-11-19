@@ -34,31 +34,28 @@ validation:
 notes: []
 
 content:
-  capabilities:
-    type: array
-    description: >
-      List of capability UDIs provided by this manifest. Capabilities define
-      what the project exposes to other components.
-
-  interfaces:
-    type: object
-    description: >
-      Mapping of interface names to interface definitions. Interfaces describe
-      how external systems interact with this project.
-
-  dependencies:
-    type: array
-    description: >
-      List of UDI references to other manifests or objects required by this project.
-
-  tags:
-    type: array
-    description: Optional list of semantic tags associated with this manifest.
-
-  metadata:
-    type: object
-    description: Optional metadata block for tenant or project-specific information.
-
+  type: object
+  fields:
+    capabilities:
+      type: array
+      description: >
+        List of capability UDIs provided by this manifest. Capabilities define
+        what the project exposes to other components.
+    interfaces:
+      type: object
+      description: >
+        Mapping of interface names to interface definitions. Interfaces describe
+        how external systems interact with this project.
+    dependencies:
+      type: array
+      description: >
+        List of UDI references to other manifests or objects required by this project.
+    tags:
+      type: array
+      description: Optional list of semantic tags associated with this manifest.
+    metadata:
+      type: object
+      description: Optional metadata block for tenant or project-specific information.
   required:
     - capabilities
     - interfaces
