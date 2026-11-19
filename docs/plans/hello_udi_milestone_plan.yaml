@@ -109,7 +109,7 @@ content:
       udi: prismata.core.milestone.hello_udi.m0_foundation_validation
       name: Foundation Validation
       sequence: 0
-      status: pending
+      status: in_progress
       estimated_duration_days: 7
       
       goal: |
