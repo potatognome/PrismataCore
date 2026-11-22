@@ -36,7 +36,7 @@ The KADD governance workflow is a repeatable review cycle for proposals, reviews
 
 Use the templates in `.github/.agent-reports/kadd/templates/` for standard workflow entries:
 
-- `proposal-template.md`
+- `.github/kad-change-proposal.template.md`
 - `review-template.md`
 - `archive-template.md`
 

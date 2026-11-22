@@ -11,7 +11,7 @@ This directory manages the operational lifecycle for KADD proposals, reviews, an
 - `reviews/` — review records, change notes, and recommendation memos.
 - `archive/` — current operational archive for approved and superseded artifacts.
 - `historical/` — long-lived legacy snapshots retained for traceability.
-- `templates/` — reusable proposal, review, and archival templates.
+- `templates/` — reusable review and archival templates. KADD change proposals use the single authoritative repository template at `.github/kad-change-proposal.template.md`.
 
 ## Lifecycle
 

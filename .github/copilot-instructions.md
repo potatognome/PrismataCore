@@ -7,6 +7,40 @@ Agents must generate the canonical PrismataCore schema set and core validators.
 All schemas MUST conform to the Canonical Metadata Format (CMF) and runtime
 Prismata Schematic Object (PSO) model.
 
+## Repository and Architectural Authority
+
+PrismataCore is the definition and validation repository for the Prismata ecosystem.
+Its authority is limited to:
+
+- Canonical knowledge and KADD architectural intent
+- CMF and PSO structural definitions
+- UDI identity rules
+- Canonical schemas and laws
+- Core manifests
+- Validators and reference test assets
+
+The normative architectural source is `canonical/kadd/`.
+Operational KADD proposals and reviews belong in `.github/.agent-reports/kadd/`.
+Repository instruction modules are indexed at `.github/copilot-instructions.d/index.md`.
+
+PrismataSDK consumes Core definitions and owns runtime implementation.
+PrismataCorp owns governance, tenant isolation, archives, and preservation.
+Do not implement SDK or Corp behavior in this repository.
+
+For separate-clone workspaces, resolve KADD from PrismataCore only. Do not copy
+canonical KAD content into SDK or Corp as an independent normative source.
+
+## Instruction References
+
+Read `.github/copilot-instructions.d/index.md` first.
+The index defines the loading policy and links:
+
+- KADD reference and change workflow
+- CMF/PSO envelope rules
+- UDI compliance
+- Schema-driven design
+- Cross-repository ownership boundaries
+
 ## Extensions to this Specification
 The folder copilot-instructions.d contains additional instruction files that extend or override the base instructions for specific scenarios or components.
 
