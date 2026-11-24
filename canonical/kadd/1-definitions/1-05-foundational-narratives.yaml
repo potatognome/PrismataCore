@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-05-FOUNDATIONAL-NARRATIVES
 udi: prismata.kad.definitions.foundational-narratives
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/1-definitions/1-05-foundational-narratives.yaml
 
 metadata:
@@ -74,6 +74,17 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2026-12-18
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Foundational narratives are illustrative rather than authoritative.
   - Narratives may be hypothetical, historical, composite, speculative, or experiential.
@@ -91,15 +102,10 @@ notes:
   - Narrative-derived ideas should be promoted to planning artifacts for review and approval before implementation consideration.
   - Foundational narratives represent possibilities, not commitments.
   - Foundational narratives are intended to expand understanding, not define scope.
-
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
+ 
 content:
-  status:
-    maturity: developed
-    last-review-date: 2026-11-18
-    review-status: passed-review
-    review-cycle: 30 days
-    review-past-due: false
-    next-review-date: 2026-12-18
+  status: active
 
   purpose: >
     Foundational narratives describe meaningful situations,

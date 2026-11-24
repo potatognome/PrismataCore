@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-4-03-STORAGE
 udi: prismata.kad.implementation.storage
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-07
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/4-implementation/4-03-storage.yaml
 
 metadata:
@@ -77,7 +77,18 @@ relations:
     - prismata.kad.planning.roadmap
     - prismata.kad.implementation.interfaces
     - prismata.kad.implementation.data-model
- 
+
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2026-12-03
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Storage exists to preserve knowledge rather than files.
   - CMF artifacts are the authoritative sources of truth.
@@ -89,15 +100,14 @@ notes:
   - Summarization and recompilation may reduce storage cost without replacing original preserved artifacts.
   - Storage behavior may vary by operating mode, tenant policy, artifact class, and governance rules.
   - Preservation and archival policy remain stewardship guidance and do not override authoritative artifact ownership or canonical governance.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: developing
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 2 weeks
-    review-past-due: false
-    next-review-date: 2026-11-29
+  status: active
+
+  purpose: >
+    Define and govern the storage architecture within the Prismata ecosystem,
+    ensuring preservation, discoverability, and alignment with canonical artifact authority.
 
   governance:
     owner: prismata-architecture-team

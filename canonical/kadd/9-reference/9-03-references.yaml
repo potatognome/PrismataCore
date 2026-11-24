@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-03-REFERENCES
 udi: prismata.kad.reference.references
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  last-updated: 2026-11-19
+  last-updated: 2026-11-23
   path: canonical/kadd/9-reference/9-03-references.yaml
 
 metadata:
@@ -85,6 +85,36 @@ relations:
     - prismata.kad.post-implementation.lessons-learned
     - prismata.kad.post-implementation.retrospectives
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2026-12-03
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
+  recurring-pass:
+    cadence: bi-weekly
+    trigger: >
+      Runs during KADD review cycles and whenever the glossary or canonical
+      vocabulary evolves.
+
+  rules:
+    - Reference entries shall keep a durable title, owner, and provenance trail.
+    - Internal references must map to canonical KADs or approved ecosystem sources.
+    - External references shall not be presented as authoritative governance policy unless explicitly stated.
+    - Terminology aliases, duplicates, and undefined ecosystem terms shall be flagged during review.
+    - Missing provenance metadata shall be reported before acceptance.
+
+  outputs:
+    - reference-provenance-report
+    - glossary-alignment-report
+    - alias-and-duplicate-detection
+    - provenance-gap-report
+
 notes:
   - References may be internal, external, conceptual, historical, or inspirational.
   - Inclusion within this document does not imply adoption or endorsement.
@@ -93,49 +123,20 @@ notes:
   - Internal project artifacts should be preferred where authoritative ecosystem guidance exists.
   - Reference records should preserve provenance and supporting context without being mistaken for normative policy or implementation requirements.
   - The KADD review cycle uses a standardized proposal-review-archive template set to maintain consistent status tracking, decision records, and archive flow across governance updates.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: rapidly-evolving
-    last-review-date: 2026-11-15
-    review-status: ready-for-review
-    review-cycle: 2 weeks
-    review-past-due: false
-    next-review-date: 2026-11-29
-
-  validation:
-    purpose: >
-      Preserve reference provenance and ensure the catalog remains a reliable
-      support layer for glossary, appendices, and canonical KAD terminology.
-
-    recurring-pass:
-      cadence: bi-weekly
-      trigger: >
-        Runs during KADD review cycles and whenever the glossary or canonical
-        vocabulary evolves.
-
-    rules:
-      - Reference entries shall keep a durable title, owner, and provenance trail.
-      - Internal references must map to canonical KADs or approved ecosystem sources.
-      - External references shall not be presented as authoritative governance policy unless explicitly stated.
-      - Terminology aliases, duplicates, and undefined ecosystem terms shall be flagged during review.
-      - Missing provenance metadata shall be reported before acceptance.
-
-    outputs:
-      - reference-provenance-report
-      - glossary-alignment-report
-      - alias-and-duplicate-detection
-      - provenance-gap-report
-
-  governance:
-    owner: prismata-architecture-team
-    review-frequency: bi-weekly
-    review-principle: references preserve lineage and supporting context without conferring authoritative policy or architecture
+  status: active
 
   purpose: >
     Preserve the knowledge lineage, influences, standards,
     methodologies, and supporting materials that contribute
     to understanding the Prismata ecosystem and KADD discipline.
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: bi-weekly
+    review-principle: references preserve lineage and supporting context without conferring authoritative policy or architecture
 
   reference-categories:
     internal-references:

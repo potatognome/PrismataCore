@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-00-DOCUMENTATION-DISCIPLINE
 udi: prismata.kad.definitions.documentation-discipline
 kind: knowledge architecture document
-version: 1.0.8
+version: 1.0.9
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-28
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/1-definitions/1-00-documentation-discipline.yaml
 
 metadata:
@@ -30,20 +30,31 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-05-19
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    errors: []
+
 notes:
   - Layered architecture-first documentation standard intended for planning, architecture, implementation, operation, and long-term project knowledge management.
   - Objective - Establish a clear and consistent approach to project documentation that supports planning, architecture, implementation, operation, and long-term knowledge management.
   - The documentation standard itself is a CMF document and serves as the authoritative schema for documentation generation, validation, migration, reporting, and agent-assisted project analysis.
   - This discipline guides authoring and stewardship but does not impose operational policy unless a separate governance authority explicitly adopts it.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: comprehensive
-    last-review-date: 2026-11-18
-    review-status: passed-review
-    review-cycle: 6 months
-    review-past-due: false
-    next-review-date: 2027-05-18
+  status: active
+
+  purpose: >
+    Establish a clear and consistent approach to project documentation
+    that supports planning, architecture, implementation, operation,
+    and long-term knowledge management.
 
   governance:
     owner: principal
@@ -313,6 +324,7 @@ content:
         - source
         - metadata
         - relations
+        - validation
         - notes
         - content
   governance:

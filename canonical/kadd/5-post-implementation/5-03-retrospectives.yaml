@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-5-03-RETROSPECTIVES
 udi: prismata.kad.post-implementation.retrospectives
 kind: knowledge architecture document
-version: 1.0.3
+version: 1.0.4
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-14
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/5-post-implementation/5-03-retrospectives.yaml
 
 metadata:
@@ -84,6 +84,17 @@ relations:
     - prismata.kad.post-implementation.research
     - prismata.kad.post-implementation.lessons-learned
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-02-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Retrospectives should focus on learning rather than blame.
   - Successes should be documented as rigorously as failures.
@@ -91,15 +102,10 @@ notes:
   - Retrospectives should contribute to organizational memory.
   - Retrospectives are intended to improve future outcomes rather than judge past decisions.
   - Retrospective records are part of the KADD proposal-review-archive workflow and must retain traceability from proposal to implementation to archival status.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: developing
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 3 months
-    review-past-due: false
-    next-review-date: 2027-02-15
+  status: active
 
   purpose: >
     Capture structured reflection on completed

@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-01-GLOSSARY
 udi: prismata.kad.reference.glossary
 kind: knowledge architecture document
-version: 1.1.7
+version: 1.1.8
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-31
-  last-updated: 2026-11-19
+  last-updated: 2026-11-23
   path: canonical/kadd/9-reference/9-01-glossary.yaml
 
 metadata:
@@ -76,6 +76,36 @@ relations:
     - prismata.kad.post-implementation.lessons-learned
     - prismata.kad.post-implementation.retrospectives
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2026-12-03
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
+  recurring-pass:
+    cadence: bi-weekly
+    trigger: >
+      Runs with each KADD review cycle and whenever a canonical document
+      introduces or revises ecosystem terminology.
+
+  rules:
+    - Glossary entries shall retain stable id and udi values across revisions.
+    - Every canonical term used outside the glossary shall be checked against the glossary or explicitly marked as an alias.
+    - Duplicate terms with distinct meanings require distinct udi values and explicit disambiguation.
+    - Undefined ecosystem vocabulary must be reported before publication or approval.
+    - Appendix and reference provenance must identify whether a term is canonical, derived, or historical.
+
+  outputs:
+    - glossary-alignment-report
+    - alias-and-duplicate-detection
+    - undefined-vocabulary-report
+    - provenance-gap-report
+
 notes:
   - Definitions are descriptive only.
   - Architectural rules belong in Laws and Architecture KADs.
@@ -84,39 +114,14 @@ notes:
   - Every glossary entry shall maintain a stable id and udi.
   - Relationship terminology should remain consistent across the ecosystem.
   - Definitions should favor conceptual durability over implementation specificity.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: comprehensive
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 2 weeks
-    review-past-due: false
-    next-review-date: 2026-11-29
+  status: active
 
-  validation:
-    purpose: >
-      Maintain glossary authority and detect drift in term usage,
-      aliases, duplicate vocabulary, and undefined ecosystem terminology.
-
-    recurring-pass:
-      cadence: bi-weekly
-      trigger: >
-        Runs with each KADD review cycle and whenever a canonical document
-        introduces or revises ecosystem terminology.
-
-    rules:
-      - Glossary entries shall retain stable id and udi values across revisions.
-      - Every canonical term used outside the glossary shall be checked against the glossary or explicitly marked as an alias.
-      - Duplicate terms with distinct meanings require distinct udi values and explicit disambiguation.
-      - Undefined ecosystem vocabulary must be reported before publication or approval.
-      - Appendix and reference provenance must identify whether a term is canonical, derived, or historical.
-
-    outputs:
-      - glossary-alignment-report
-      - alias-and-duplicate-detection
-      - undefined-vocabulary-report
-      - provenance-gap-report
+  purpose: >
+    Define and maintain authoritative terminology for the Prismata ecosystem,
+    ensuring consistent interpretation and usage across all KADs.
 
   governance:
     owner: prismata-architecture-team

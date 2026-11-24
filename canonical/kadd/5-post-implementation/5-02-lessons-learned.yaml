@@ -1,13 +1,13 @@
 id: PRISMATA-KAD-5-02-LESSONS-LEARNED
 udi: prismata.kad.post-implementation.lessons-learned
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: The Principal
   created: 2026-11-09
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/5-post-implementation/5-02-lessons-learned.yaml
 
 metadata:
@@ -60,25 +60,31 @@ relations:
     - prismata.kad.implementation.development
     - prismata.kad.post-implementation.research
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2026-12-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Lessons Learned Records (LLRs) are first-class knowledge artifacts.
   - LLRs capture validated learning derived from project experience.
   - LLRs may be referenced by future KADs, ADRs, governance rules, diagnostics, and agents.
   - Lessons should remain implementation-agnostic whenever possible.
   - Lessons Learned entries participate in the KADD review lifecycle to ensure recommendations remain current, traceable, and properly archived.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: mature
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 3 months
-    review-past-due: false
-    next-review-date: 2027-02-15
+  status: active
 
   governance:
     owner: prismata-architecture-team
-    review-frequency: quarterly
+    review-frequency: monthly
     review-principle: lessons learned remain evidence-based, durable, and aligned with project intent without becoming normative
     archive-policy: preserve-by-status
     proposal-review-lifecycle:

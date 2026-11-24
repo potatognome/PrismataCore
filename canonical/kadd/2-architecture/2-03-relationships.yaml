@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-03-RELATIONSHIPS
 udi: prismata.kad.architecture.relationships
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team 
   created: 2026-11-02
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/2-architecture/2-03-relationships.yaml 
 
 metadata:
@@ -54,21 +54,32 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-02-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Relationships describe architectural dependency and ownership rather than execution order.
   - Relationships should remain stable even if implementations change.
   - Ownership relationships are preferred over implementation relationships.
   - Cardinalities describe architectural expectations rather than storage implementation details.
   - Relationship definitions remain architecture-level guidance and should not be treated as a replacement for runtime implementation choices.
-  
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
+
 content:
-  status:
-    maturity: formal
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 2 months
-    review-past-due: false
-    next-review-date: 2027-01-15
+  status: active
+
+  purpose: >
+    Define the ownership, dependency, and cardinality relationships
+    between subsystems, assets, and components within the Prismata ecosystem
+    to ensure clarity, separation of concerns, and effective governance.
 
   governance:
     owner: prismata-architecture-team

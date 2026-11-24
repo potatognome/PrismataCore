@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-02-PROJECT-PROFILE
 udi: prismata.kad.definitions.project-profile
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Principal
   created: 2026-10-31
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/1-definitions/1-02-project-profile.yaml
 
 metadata:
@@ -49,20 +49,32 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-02-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Prismata is intended to remain small, deterministic, portable, and extensible.
   - Prismata serves as a substrate and foundation rather than a standalone application.
   - Long-term growth should occur in ecosystem consumers and adjunct systems rather than within Prismata itself.
   - Project boundaries remain stewardship and responsibility definitions and should only change through explicit governance review.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: mature
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 3 months
-    review-past-due: false
-    next-review-date: 2027-02-15
+  status: active
+
+  purpose: >
+    Provide the foundational standards, structures, validation mechanisms,
+    knowledge organization systems, and interoperability mechanisms required
+    for cybernetic ecosystems, agents, devices, applications, and future
+    intelligent systems.
 
   governance:
     owner: prismata-architecture-team
@@ -77,12 +89,6 @@ content:
   classification:
     project-type: Cybernetic Framework
     project-form: Cybernetic Substrate
-
-  purpose: >
-    Provide the foundational standards, structures, validation mechanisms,
-    knowledge organization systems, and interoperability mechanisms required
-    for cybernetic ecosystems, agents, devices, applications, and future
-    intelligent systems.
 
   primary-responsibilities:
     - Maintain canonical object schemas.

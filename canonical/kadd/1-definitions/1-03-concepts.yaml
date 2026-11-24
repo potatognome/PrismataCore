@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-03-CONCEPTS
 udi: prismata.kad.definitions.concepts
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Principal
   created: 2026-11-01
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/1-definitions/1-03-concepts.yaml
 
 metadata:
@@ -47,20 +47,31 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-02-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Concepts define meaning rather than implementation.
   - Architectural realization of concepts belongs in Layer 2.
   - Concepts should change rarely and evolve cautiously.
   - Concept stewardship remains architectural guidance and should not be treated as direct operational policy for implementation teams.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: mature
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 3 months
-    review-past-due: false
-    next-review-date: 2027-02-15
+  status: active
+  
+  purpose: >
+    Concepts define the fundamental meaning and identity of
+    ecosystem assets, independent of their implementation or
+    operational context.
 
   governance:
     owner: prismata-architecture-team

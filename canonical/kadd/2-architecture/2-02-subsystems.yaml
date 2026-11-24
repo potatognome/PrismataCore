@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-02-SUBSYSTEMS
 udi: prismata.kad.architecture.subsystems
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Principal
   created: 2026-11-02
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/2-architecture/2-02-subsystems.yaml
 
 metadata:
@@ -36,11 +36,8 @@ relations:
     - Storage Design
     - Configuration Design
     - Implementation Details
-
   priority: critical
-
   conflict-resolution: Subsystem ownership follows the architectural boundaries established by the Systems KAD.
-
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
@@ -54,25 +51,36 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-02-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Subsystems represent major architectural building blocks.
   - Some entries represent foundational assets rather than executable subsystems.
   - Foundational assets are documented because they are structurally required by the ecosystem.
   - Architectural significance, rather than implementation form, determines inclusion.
   - Subsystem decomposition remains architectural guidance and should remain stable unless governance explicitly revises the decomposition model.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: comprehensive
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 1 month
-    review-past-due: false
-    next-review-date: 2026-12-15
+  status: active
+
+  purpose: >
+    Define the major subsystems, foundational assets,
+    and runtime and tooling components within the Prismata ecosystem
+    to ensure clarity, separation of concerns, and effective governance.
 
   governance:
     owner: prismata-architecture-team
-    review-frequency: monthly
+    review-frequency: quarterly
     review-principle: subsystem boundaries remain architectural decomposition guidance and should only change through explicit stewardship review
 
   classification-model:

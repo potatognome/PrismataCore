@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-2-01-SYSTEMS
 udi: prismata.kad.architecture.systems
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-10-30
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/2-architecture/2-01-systems.yaml
 
 metadata:
@@ -40,9 +40,7 @@ relations:
     - Interfaces
 
   priority: critical
-
   conflict-resolution: System responsibilities are exclusive and non-overlapping unless explicitly documented.
-
   imports:
     - prismata.kad.definitions.documentation-discipline
     - prismata.kad.definitions.vision
@@ -55,21 +53,32 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-02-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Prismata is composed of three mandatory architectural layers.
   - Architectural layers represent different concerns and ownership boundaries.
   - Layers are intentionally non-overlapping and collision resistant.
   - Consumer applications are not part of the mandatory Prismata ecosystem layers.
   - Architectural layer boundaries remain stewardship guidance and should only change through explicit governance review.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: definitive
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 3 months
-    review-past-due: false
-    next-review-date: 2027-02-15
+  status: active
+
+  purpose: >
+    Define the architectural layers, system responsibilities, and ownership
+    boundaries within the Prismata ecosystem to ensure clarity, separation
+    of concerns, and effective governance.
 
   governance:
     owner: prismata-architecture-team

@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-1-04-PRINCIPLES
 udi: prismata.kad.definitions.principles
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-01
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/1-definitions/1-04-principles.yaml
 
 metadata:
@@ -53,6 +53,17 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-02-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Principles are guidance rather than enforcement mechanisms.
   - Laws define permitted behavior; principles influence decisions.
@@ -62,26 +73,22 @@ notes:
   - Principles are decision heuristics rather than mandatory rules.
   - When principles conflict, laws and explicit governance constraints take precedence.
   - When no law applies, prefer the principle that preserves identity, safety, clarity, interoperability, and long-term knowledge integrity.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: mature
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 3 months
-    review-past-due: false
-    next-review-date: 2027-02-15
-
-  governance:
-    owner: prismata-architecture-team
-    review-frequency: quarterly
-    review-principle: principles remain decision guidance and should not be treated as enforced policy
+  status: active
 
   purpose: >
     Principles define the enduring rules of thought that guide
     decisions throughout the Prismata ecosystem. Unlike laws,
     principles are not enforced. They exist to influence design,
     architecture, governance, and evolution.
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: quarterly
+    review-principle: principles remain decision guidance and should not be treated as enforced policy
+
   decision-logic: >
     Principles are preferred decision heuristics for trade-offs,
     architecture review, and design judgment. They do not
@@ -93,7 +100,6 @@ content:
     long-term knowledge integrity.
 
   principle-groups:
-
     core:
 
       identity-before-interaction:

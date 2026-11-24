@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-9-02-APPENDICES
 udi: prismata.kad.reference.appendices
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-09
-  last-updated: 2026-11-19
+  last-updated: 2026-11-23
   path: canonical/kadd/9-reference/9-02-appendices.yaml
 
 metadata:
@@ -86,6 +86,36 @@ relations:
     - prismata.kad.post-implementation.lessons-learned
     - prismata.kad.post-implementation.retrospectives
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2026-12-03
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
+  recurring-pass:
+    cadence: bi-weekly
+    trigger: >
+      Runs alongside glossary and reference validation to detect provenance
+      gaps and drift in supporting material.
+
+  rules:
+    - Appendix entries must preserve explicit provenance for narrative, lineage, and workflow context.
+    - Terminology in appendix content shall remain aligned with glossary definitions unless intentionally descriptive.
+    - Appendix material shall not reinterpret canonical terms without traceable stewardship review.
+    - Workflow references must point to current KADD governance artifacts.
+    - Historical or conceptual references must record source context.
+
+  outputs:
+    - appendix-provenance-report
+    - glossary-alignment-report
+    - workflow-reference-verification
+    - historical-source-gap-report
+
 notes:
   - Appendices provide supporting context.
   - Appendix content may evolve independently of implementation.
@@ -93,49 +123,20 @@ notes:
   - Appendices should prioritize clarity and discoverability.
   - Appendix content should remain implementation-agnostic whenever possible.
   - Appendix material should remain supplemental context and not be treated as authoritative architectural or policy direction unless explicitly stated.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: rapidly-evolving
-    last-review-date: 2026-11-15
-    review-status: ready-for-review
-    review-cycle: 2 weeks
-    review-past-due: false
-    next-review-date: 2026-11-29
-
-  validation:
-    purpose: >
-      Ensure appendix material remains supplemental, clearly sourced,
-      and aligned with glossary and reference provenance.
-
-    recurring-pass:
-      cadence: bi-weekly
-      trigger: >
-        Runs alongside glossary and reference validation to detect provenance
-        gaps and drift in supporting material.
-
-    rules:
-      - Appendix entries must preserve explicit provenance for narrative, lineage, and workflow context.
-      - Terminology in appendix content shall remain aligned with glossary definitions unless intentionally descriptive.
-      - Appendix material shall not reinterpret canonical terms without traceable stewardship review.
-      - Workflow references must point to current KADD governance artifacts.
-      - Historical or conceptual references must record source context.
-
-    outputs:
-      - appendix-provenance-report
-      - glossary-alignment-report
-      - workflow-reference-verification
-      - historical-source-gap-report
-
-  governance:
-    owner: prismata-architecture-team
-    review-frequency: bi-weekly
-    review-principle: appendices provide supporting context and should remain supplemental rather than authoritative policy
+  status: active
 
   purpose: >
     Provide durable supporting material that improves
     navigation, understanding, onboarding, governance,
     and knowledge continuity across the Prismata ecosystem.
+
+  governance:
+    owner: prismata-architecture-team
+    review-frequency: bi-weekly
+    review-principle: appendices provide supporting context and should remain supplemental rather than authoritative policy
 
   appendices:
     - appendix_id: APPENDIX-001

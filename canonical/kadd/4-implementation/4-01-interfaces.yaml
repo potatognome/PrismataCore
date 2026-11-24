@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-4-01-INTERFACES
 udi: prismata.kad.implementation.interfaces
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-03
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/4-implementation/4-01-interfaces.yaml
 
 metadata:
@@ -80,6 +80,17 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2026-12-03
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Everything addressable is selectable.
   - Everything selectable is resolvable.
@@ -93,15 +104,14 @@ notes:
   - Renderers are adaptive presentation services.
   - Pane roles influence presentation decisions.
   - Interface definitions should prioritize portability across terminals and display environments.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: developing
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 2 weeks
-    review-past-due: false
-    next-review-date: 2026-11-29
+  status: active
+
+  purpose: >
+    Define and govern interface contracts within the Prismata ecosystem,
+    ensuring discoverability, alignment to manifests, and stability for portable interaction models.
 
   governance:
     owner: prismata-architecture-team

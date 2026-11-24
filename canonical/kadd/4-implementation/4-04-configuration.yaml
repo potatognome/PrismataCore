@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-4-04-CONFIGURATION
 udi: prismata.kad.implementation.configuration
 kind: knowledge architecture document
-version: 1.0.6
+version: 1.0.7
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-07
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/4-implementation/4-04-configuration.yaml
 
 metadata:
@@ -76,6 +76,17 @@ relations:
     - prismata.kad.implementation.data-model
     - prismata.kad.implementation.storage
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2026-12-03
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Configuration exists to alter settings rather than behavior.
   - Capabilities define behavior.
@@ -86,15 +97,14 @@ notes:
   - Override behavior is full replacement unless a configuration schema explicitly specifies otherwise.
   - Merge behavior is schema governed.
   - Configuration precedence remains a governance and runtime guidance mechanism subordinate to canonical architecture, identity, and tenant policy.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: developing
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 2 weeks
-    review-past-due: false
-    next-review-date: 2026-11-29
+  status: active
+
+  purpose: >
+    Define and govern the configuration architecture within the Prismata ecosystem,
+    ensuring alignment with canonical artifact authority, runtime constraints, and tenant governance.
 
   governance:
     owner: prismata-architecture-team

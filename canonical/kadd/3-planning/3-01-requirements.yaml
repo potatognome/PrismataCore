@@ -1,13 +1,13 @@
 id: KAD-PRISMATA-3-01-REQUIREMENTS
 udi: prismata.kad.planning.requirements
 kind: knowledge architecture document
-version: 1.0.5
+version: 1.0.6
 tenant: null
 
 source:
   author: Prismata Architecture Team
   created: 2026-11-02
-  last-updated: 2026-11-18
+  last-updated: 2026-11-23
   path: canonical/kadd/3-planning/3-01-requirements.yaml
 
 metadata:
@@ -56,6 +56,17 @@ relations:
     - prismata.kad.reference.references
     - prismata.kad.reference.appendices
 
+validation:
+  agent-review:
+    review-status: completed
+    validation-status: valid
+    viability: strong
+    last-review-date: 2026-11-19
+    next-review-date: 2027-02-19
+    review-report: .github/.agent-reports/kadd/reviews/2026-11-19/kadd-review-report_2026-11-19_091500.md
+    readme: .github/.agent-reports/kadd/reviews/2026-11-19/README_2026-11-19.md
+    errors: []
+
 notes:
   - Requirements define mandatory expectations.
   - Requirements should be technology-agnostic whenever practical.
@@ -65,16 +76,15 @@ notes:
   - SHALL statements indicate mandatory compliance.
   - Requirement identifiers exist for human readability.
   - Requirement UDIs exist for indexing, traceability, relationships, comparison, automation, and governance.
+  - 2026-11-23 - Addition of validation section to main CMF fields and populated with agent review report metadata.
 
 content:
-  status:
-    maturity: definitive
-    last-review-date: 2026-11-15
-    review-status: passed-review
-    review-cycle: 1 months
-    review-past-due: false
-    next-review-date: 2026-12-15
+  status: active
 
+  purpose: >
+    Capture and govern requirements within the Prismata ecosystem,
+    ensuring clarity, traceability, and durable guidance for system evolution.
+    
   governance:
     owner: prismata-architecture-team
     review-frequency: monthly
